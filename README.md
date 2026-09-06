@@ -50,9 +50,19 @@ renseignez qu'une clé, et le fournisseur s'en déduit :
 | `ANTHROPIC_API_KEY` | Claude | `claude-opus-5` |
 | les deux | Claude, sauf si `AI_PROVIDER=gemini` | selon le fournisseur |
 
-Gemini propose un palier gratuit, ce qui en fait le choix le plus simple pour essayer.
-Si le modèle configuré n'est pas accessible avec votre clé, le serveur ne renvoie pas un
-404 opaque : il liste les modèles que la clé peut réellement atteindre.
+Le défaut `gemini-2.5-flash` est un choix prudent : il gère la vision et la sortie
+structurée, et reste disponible partout. Une clé récente donne accès à bien plus rapide et
+plus capable (`gemini-flash-latest`, `gemini-pro-latest`, les versions 3.x) ; changez de
+modèle avec `GEMINI_MODEL` sans rien toucher d'autre.
+
+Deux erreurs sont traduites plutôt que remontées brutes :
+
+- **modèle inaccessible** — le serveur liste les modèles que votre clé peut réellement
+  atteindre, au lieu d'un 404 opaque ;
+- **crédits épuisés** — un projet Google AI Studio sans crédits refuse tous les appels, même
+  un simple « bonjour ». Le message renvoie vers
+  [ai.studio/projects](https://ai.studio/projects) pour recharger, et distingue ce cas d'un
+  simple dépassement de cadence.
 
 Sans aucune clé, l'application démarre quand même : vous pouvez saisir vos meubles à la main,
 enregistrer vos pièces et parcourir les catalogues. Seules l'analyse des photos et la
