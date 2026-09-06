@@ -1,15 +1,13 @@
-import { el, toast, confirmDialog, emptyState, formatDate, formatPrice } from '../lib/ui.js';
+import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage } from '../lib/ui.js';
 import { STORES, get, remove, all, allSorted } from '../lib/db.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
 
 function productRow(product) {
   return el('a', { class: 'product', href: product.url || '#', target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'none', color: 'inherit' } }, [
-    el('div', { class: 'product__media' }, [
-      product.imageUrl ? el('img', { src: product.imageUrl, alt: '', loading: 'lazy' }) : el('span', { text: '▤', 'aria-hidden': 'true' }),
-    ]),
+    el('div', { class: 'product__media' }, [productImage(product)]),
     el('div', { class: 'grow' }, [
-      el('div', { style: { fontWeight: '600', fontSize: '0.94rem' }, text: product.title }),
+      el('div', { class: 'clamp-2', style: { fontWeight: '600', fontSize: '0.94rem' }, text: product.title }),
       el('div', { class: 'small muted', text: `${product.storeName}${product.priceIsIndicative ? ' · prix indicatif' : ''}` }),
     ]),
     el('div', { class: 'product__price', text: formatPrice(product.price, product.currency) }),

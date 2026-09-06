@@ -1,18 +1,18 @@
-import { el, formatPrice, progress, toast } from '../lib/ui.js';
+import { el, formatPrice, progress, toast, productImage } from '../lib/ui.js';
 import { listStores, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
 
 function productCard(product) {
   return el('a', { class: 'card item-card', href: product.url || '#', target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'none', color: 'inherit' } }, [
     el('div', { class: 'item-card__thumb', style: { display: 'grid', placeItems: 'center', fontSize: '24px' } }, [
-      product.imageUrl ? el('img', { src: product.imageUrl, alt: '', loading: 'lazy' }) : el('span', { text: '▤', 'aria-hidden': 'true' }),
+      productImage(product),
     ]),
     el('div', { class: 'grow' }, [
-      el('h3', { text: product.title, style: { marginBottom: '4px', fontSize: '0.95rem' } }),
+      el('h3', { class: 'clamp-2', text: product.title, style: { marginBottom: '4px', fontSize: '0.95rem' } }),
       el('div', { class: 'chips' }, [
         el('span', { class: 'chip chip--accent', text: product.storeName }),
         product.priceIsIndicative ? el('span', { class: 'chip', text: 'prix indicatif' }) : el('span', { class: 'chip chip--sage', text: 'catalogue réel' }),
       ]),
-      product.description ? el('p', { class: 'small muted', style: { margin: '6px 0 0' }, text: product.description.slice(0, 110) }) : null,
+      product.description ? el('p', { class: 'small muted clamp-2', style: { margin: '6px 0 0' }, text: product.description }) : null,
     ]),
     el('div', { class: 'product__price', text: formatPrice(product.price, product.currency) }),
   ]);

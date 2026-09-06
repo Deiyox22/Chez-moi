@@ -98,6 +98,15 @@ export function progress(label) {
   return el('div', { class: 'progress' }, [el('span', { class: 'spinner', 'aria-hidden': 'true' }), el('span', { text: label })]);
 }
 
+/** Product thumbnail that falls back to a glyph when the image fails to load. */
+export function productImage(product, { className = '' } = {}) {
+  const placeholder = () => el('span', { 'aria-hidden': 'true', text: '\u25a4' });
+  if (!product.imageUrl) return placeholder();
+  const image = el('img', { src: product.imageUrl, alt: '', loading: 'lazy', class: className });
+  image.addEventListener('error', () => image.replaceWith(placeholder()), { once: true });
+  return image;
+}
+
 export function formatPrice(value, currency = 'EUR') {
   if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
   return new Intl.NumberFormat('fr-FR', { style: 'currency', currency, maximumFractionDigits: 0 }).format(Number(value));
