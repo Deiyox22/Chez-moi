@@ -1,0 +1,60 @@
+# Rafraichit les catalogues produits importes.
+#
+# En production le systeme de fichiers est en lecture seule, donc la
+# synchronisation ne peut pas y tourner : elle se fait ici, et le resultat est
+# commite. La poussee declenche a son tour le deploiement.
+name: Rafraichir les catalogues
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: catalogues
+  cancel-in-progress: false
+
+jobs:
+  synchroniser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+
+      - name: Importer les flux
+        run: npm run catalog:sync | tee /tmp/sync.log
+
+      - name: Verifier que les catalogues restent exploitables
+        run: |
+          node --input-type=module -e "
+            const { loadCatalog } = await import('./server/catalog/store.js');
+            const catalog = loadCatalog({ force: true });
+            const reels = catalog.sources.filter((s) => s.type === 'feed');
+            console.log(catalog.products.length + ' produits, ' + reels.length + ' flux');
+            if (!reels.length) { console.error('Aucun flux reel importe.'); process.exit(1); }
+            if (catalog.products.length < 100) { console.error('Catalogue anormalement petit, import ignore.'); process.exit(1); }
+          "
+
+      - name: Commiter les changements
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/catalog; then
+            echo "Catalogues inchanges."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          {
+            echo "chore: rafraichir les catalogues produits"
+            echo ""
+            grep -E "^- " /tmp/sync.log || true
+          } > /tmp/message.txt
+          git add data/catalog
+          git commit -F /tmp/message.txt
+          git push

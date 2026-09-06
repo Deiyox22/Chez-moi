@@ -10,7 +10,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { config, ROOT } from '../config.js';
 import { loadStores, invalidateCatalog } from './store.js';
-import { parseFeed } from './providers/feed.js';
+import { parseFeed, parseShopifyProducts } from './providers/feed.js';
 
 async function fetchFeed(store) {
   const source = store.feed.url;
@@ -31,12 +31,32 @@ async function fetchFeed(store) {
   return response.text();
 }
 
+const PAGE_SIZE = 250;
+const MAX_PAGES = 40;
+
+/** Shopify serves its public catalogue 250 products at a time. */
+async function fetchShopify(store) {
+  const base = store.feed.url.replace(/\/+$/, '').replace(/\/products\.json$/, '');
+  const products = [];
+  for (let page = 1; page <= MAX_PAGES; page += 1) {
+    const response = await fetch(`${base}/products.json?limit=${PAGE_SIZE}&page=${page}`, {
+      headers: { 'user-agent': 'chez-moi-catalog-sync/0.1', accept: 'application/json' },
+      redirect: 'follow',
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+    const batch = (await response.json()).products || [];
+    products.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
+  }
+  return parseShopifyProducts(products, store);
+}
+
 async function syncStore(store) {
   if (!store.feed?.url) {
     return { store: store.id, skipped: "aucune URL de flux dans config/stores.json" };
   }
-  const text = await fetchFeed(store);
-  const products = parseFeed(text, store);
+  const products =
+    store.feed.type === 'shopify' ? await fetchShopify(store) : parseFeed(await fetchFeed(store), store);
   if (!products.length) {
     return { store: store.id, skipped: 'le flux ne contient aucun produit exploitable' };
   }

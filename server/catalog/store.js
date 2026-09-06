@@ -13,6 +13,10 @@ export function normalizeText(value) {
     .trim();
 }
 
+// Catalogues mix whole products with spare parts and covers. A "housse seule"
+// is not an armchair, and should not outrank one.
+const ACCESSORY = /housse seule|piece detachee|pieces detachees|recharge|pied seul|pieds seuls|echantillon|kit de reparation/;
+
 const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'en', 'et', 'pour', 'avec', 'a', 'au', 'aux', 'sur', 'dans']);
 
 function tokenize(value) {
@@ -87,13 +91,14 @@ export function loadCatalog({ force = false } = {}) {
     }
   }
 
-  const storesWithFeed = new Set(sources.map((source) => source.store));
-  const seed = JSON.parse(fs.readFileSync(config.paths.seedCatalog, 'utf8'));
-  const seedItems = (seed.products || [])
-    .filter((product) => !storesWithFeed.has(product.store))
-    .map((product) => decorate({ ...product, source: 'exemple' }, storesById));
-  products.push(...seedItems);
-  if (seedItems.length) sources.push({ store: 'catalogue-exemple', type: 'exemple', count: seedItems.length, updatedAt: seed.updatedAt || null });
+  // The sample catalogue is a fallback, not a supplement: once real feeds are
+  // imported, showing invented prices next to real ones would only mislead.
+  if (!sources.length) {
+    const seed = JSON.parse(fs.readFileSync(config.paths.seedCatalog, 'utf8'));
+    const seedItems = (seed.products || []).map((product) => decorate({ ...product, source: 'exemple' }, storesById));
+    products.push(...seedItems);
+    if (seedItems.length) sources.push({ store: 'catalogue-exemple', type: 'exemple', count: seedItems.length, updatedAt: seed.updatedAt || null });
+  }
 
   cache = { stores, storesById, products, sources };
   return cache;
@@ -127,10 +132,14 @@ export function searchProducts({ query = '', category = '', store = '', maxPrice
       else score -= 3;
     }
 
+    const title = normalizeText(product.title);
+    const titleHead = title.split(' ').slice(0, 3).join(' ');
     for (const token of queryTokens) {
-      if (normalizeText(product.title).includes(token)) score += 4;
+      if (titleHead.includes(token)) score += 5;
+      else if (title.includes(token)) score += 4;
       else if (haystack.includes(token)) score += 2;
     }
+    if (ACCESSORY.test(title)) score -= 6;
 
     for (const style of styles) {
       if (normalizeText((product.styles || []).join(' ')).includes(normalizeText(style))) score += 3;

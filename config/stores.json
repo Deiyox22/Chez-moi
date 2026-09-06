@@ -1,15 +1,93 @@
 {
   "$comment": [
     "Liste des magasins interrogeables par Chez Moi.",
-    "Aucune enseigne francaise ne publie d'API produit publique et ouverte : la voie legale pour",
-    "disposer d'un VRAI catalogue est un flux produit (programme d'affiliation, flux Google Merchant,",
-    "export marchand, accord partenaire). Renseignez l'URL du flux dans 'feed.url', activez le magasin",
-    "avec 'enabled': true, puis lancez 'npm run catalog:sync'.",
-    "Tant qu'aucun flux n'est configure, l'application utilise le catalogue d'exemple embarque et",
-    "renvoie des liens vers la recherche du site du magasin (jamais des references inventees).",
+    "Deux familles d'entrees.",
+    "1) Enseignes avec flux reel deja branche : leur catalogue complet est importe par",
+    "   'npm run catalog:sync' depuis un point d'acces produit public et documente.",
+    "2) Grandes enseignes : aucune ne publie d'API produit ouverte. Leur catalogue passe",
+    "   par un flux d'affiliation (Google Merchant, export CSV, accord partenaire) que vous",
+    "   renseignez dans 'feed.url' avant de passer 'enabled' a true.",
+    "Tant qu'une enseigne n'a pas de flux, l'application utilise le catalogue d'exemple et",
+    "renvoie vers la recherche de son site, jamais vers une reference inventee.",
     "Le champ 'domain' limite la recherche en ligne (web search) a ce seul domaine par enseigne."
   ],
   "stores": [
+    {
+      "id": "harto",
+      "name": "Hartô",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://harto.fr",
+      "domain": "harto.fr",
+      "searchUrlTemplate": "https://harto.fr/search?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "shopify",
+        "url": "https://harto.fr",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
+    },
+    {
+      "id": "maison-sarah-lavoine",
+      "name": "Maison Sarah Lavoine",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://maisonsarahlavoine.com",
+      "domain": "maisonsarahlavoine.com",
+      "searchUrlTemplate": "https://maisonsarahlavoine.com/search?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "shopify",
+        "url": "https://maisonsarahlavoine.com",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
+    },
+    {
+      "id": "honore-deco",
+      "name": "Honoré Déco",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://honoredeco.com",
+      "domain": "honoredeco.com",
+      "searchUrlTemplate": "https://honoredeco.com/search?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "shopify",
+        "url": "https://honoredeco.com",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
+    },
+    {
+      "id": "tediber",
+      "name": "Tediber",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://tediber.com",
+      "domain": "tediber.com",
+      "searchUrlTemplate": "https://tediber.com/search?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "shopify",
+        "url": "https://tediber.com",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
+    },
     {
       "id": "ikea",
       "name": "IKEA",

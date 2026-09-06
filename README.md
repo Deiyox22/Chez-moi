@@ -78,78 +78,85 @@ génération d'aménagements sont désactivées.
 
 ## Les vrais catalogues de magasins
 
-Deux chemins, complémentaires, parce qu'aucune enseigne d'ameublement française ne publie
-d'API produit ouverte et que gratter leur site public serait fragile et contraire à leurs
-conditions d'utilisation.
+**1 310 produits réels sont déjà chargés**, importés depuis les catalogues de quatre boutiques
+françaises : [Hartô](https://harto.fr) (mobilier design), [Maison Sarah
+Lavoine](https://maisonsarahlavoine.com) (mobilier et décoration), [Honoré
+Déco](https://honoredeco.com) (décoration) et [Tediber](https://tediber.com) (literie). Vrais
+titres, vrais prix, vraies photos, lien direct vers la fiche produit.
 
-### 1. Recherche en direct sur les sites des magasins
+L'import passe par le point d'accès `/products.json` que ces boutiques exposent publiquement
+et que leur `robots.txt` n'interdit pas. Aucun compte, aucune clé, aucune extraction de page.
 
-C'est le chemin qui marche sans compte ni contrat. Le modèle interroge le web (recherche
-intégrée côté Claude, ancrage Google Search côté Gemini), **cadré sur les domaines déclarés**
-dans `config/stores.json`,
-et rapporte de vraies fiches produit : titre tel qu'il apparaît sur le site, prix affiché,
-lien direct. Chaque produit porte une mention `vérifié` ou `probable` selon que le prix vient
-d'une page réellement consultée, et l'interface marque les prix `probable` comme indicatifs.
+```bash
+npm run catalog:sync              # toutes les enseignes activées
+npm run catalog:sync -- harto     # une seule
+```
+
+Les catalogues importés sont **commités** dans `data/catalog/` : en production le système de
+fichiers est en lecture seule, la synchronisation ne peut donc pas y tourner. Un workflow
+GitHub les rafraîchit tous les lundis et redéploie
+(`.github/workflows/refresh-catalogues.yml`), avec un garde-fou qui refuse un import vide ou
+anormalement petit.
+
+### Ajouter une enseigne
+
+Quatre formats de flux sont reconnus : `shopify`, `google-merchant-xml`, `csv`, `json`.
+
+```jsonc
+{
+  "id": "ma-boutique",
+  "name": "Ma Boutique",
+  "currency": "EUR",
+  "site": "https://ma-boutique.fr",
+  "domain": "ma-boutique.fr",
+  "searchUrlTemplate": "https://ma-boutique.fr/search?q={query}",
+  "enabled": true,
+  "feed": { "type": "shopify", "url": "https://ma-boutique.fr" }
+}
+```
+
+Pour savoir si une boutique expose un flux Shopify :
+`curl -s https://la-boutique.fr/products.json?limit=1`. Une réponse JSON avec un tableau
+`products`, et pas de `Disallow` correspondant dans son `robots.txt`, suffisent.
+
+### Les grandes enseignes
+
+IKEA, Maisons du Monde, Leroy Merlin, La Redoute Intérieurs, Conforama et BUT restent
+déclarées mais désactivées : **aucune ne publie d'API produit ouverte**, et extraire leur site
+serait fragile et contraire à leurs conditions d'utilisation. Leur catalogue passe par le flux
+produit qu'elles réservent à leurs partenaires (Google Merchant, export CSV d'affiliation,
+accord direct). Renseignez `feed.url` et passez `enabled` à `true`, puis relancez la
+synchronisation.
+
+Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import sans compte :
+`docs/exemple-flux-google-merchant.xml` en fournit un.
+
+Vous pouvez renseigner un `affiliate.param` / `affiliate.value` par enseigne : il est ajouté
+aux liens sortants.
+
+### Recherche en direct, en complément
+
+Quand les catalogues chargés n'ont rien de pertinent pour un besoin, le modèle peut chercher
+sur les sites des magasins : recherche web intégrée côté Claude, ancrage Google Search côté
+Gemini, cadrés sur les domaines déclarés dans `config/stores.json`. Chaque produit porte une
+mention `vérifié` ou `probable` selon que le prix vient d'une page réellement consultée.
 
 ```bash
 CATALOG_LIVE_SEARCH=1 npm start
 ```
 
-Dans l'écran **Magasins**, le bouton « Chercher sur les sites des magasins » lance la recherche
-à la demande. Pendant la génération d'un aménagement, elle ne se déclenche que pour les besoins
-que les catalogues locaux ne couvrent pas — au-dessus de `CATALOG_LIVE_MIN_RESULTS` produits
-trouvés localement, rien n'est dépensé. Chaque recherche consomme des jetons, d'où le réglage
-désactivé par défaut.
+Elle est désactivée par défaut car chaque recherche consomme des jetons, et ne se déclenche
+pendant une génération que sous le seuil `CATALOG_LIVE_MIN_RESULTS`.
 
-### 2. Import d'un flux produit
+### Le catalogue d'exemple
 
-Pour disposer d'un catalogue **complet et hors ligne**, la voie prévue par les enseignes est le
-flux produit qu'elles fournissent déjà à leurs partenaires : flux Google Merchant (XML), export
-CSV d'affiliation, ou accord direct. Trois formats sont reconnus : `google-merchant-xml`, `csv`,
-`json`.
-
-1. Ouvrez `config/stores.json`.
-2. Renseignez `feed.url` pour l'enseigne voulue et passez `enabled` à `true`.
-3. Lancez l'import :
-
-```bash
-npm run catalog:sync              # toutes les enseignes activées
-npm run catalog:sync -- ikea      # une seule
-```
-
-Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import tout de suite,
-sans compte affilié. Un exemple est fourni :
-
-```jsonc
-// config/stores.json, entrée "ikea"
-"enabled": true,
-"feed": { "type": "google-merchant-xml", "url": "./docs/exemple-flux-google-merchant.xml" }
-```
-
-```bash
-npm run catalog:sync -- ikea
-# - IKEA : 4 produits importes -> data/catalog/ikea.json
-```
-
-Les produits importés atterrissent dans `data/catalog/<magasin>.json` et **remplacent aussitôt**
-le catalogue d'exemple pour cette enseigne. L'écran **Magasins** indique, enseigne par enseigne,
-d'où viennent les produits.
-
-Vous pouvez renseigner un `affiliate.param` / `affiliate.value` par enseigne : il est ajouté aux
-liens sortants.
-
-### Sans rien configurer
-
-L'application utilise le catalogue d'exemple embarqué (`server/catalog/data/seed-catalog.json`,
-32 produits génériques). Ses prix sont indicatifs et ses liens pointent vers la **recherche du
-site** du magasin, jamais vers une référence inventée. L'interface signale systématiquement
-quand un prix est indicatif.
-
-Enseignes pré-déclarées : IKEA, Maisons du Monde, Leroy Merlin, La Redoute Intérieurs,
-Conforama, BUT. En ajouter une revient à ajouter un objet dans `config/stores.json`, avec son
-`domain` pour la recherche en ligne et son `searchUrlTemplate` pour les liens de repli.
+`server/catalog/data/seed-catalog.json` contient 32 produits génériques. Il ne sert que
+lorsqu'**aucun** flux réel n'est chargé, pour que l'application reste utilisable à vide ; ses
+prix sont marqués comme indicatifs et ses liens pointent vers la recherche du magasin, jamais
+vers une référence inventée.
 
 ---
+
 
 ## Déploiement sur Vercel
 
