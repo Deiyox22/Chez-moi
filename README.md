@@ -153,6 +153,25 @@ vercel env add ANTHROPIC_API_KEY production
 vercel --prod
 ```
 
+### Déploiement automatique depuis GitHub
+
+Le dépôt contient un workflow qui fait tout le travail : `.github/workflows/deploy-vercel.yml`.
+Il vérifie le projet, crée et lie le projet Vercel, publie les variables d'environnement, puis
+déploie en production. Deux secrets à créer une seule fois, dans
+**Settings → Secrets and variables → Actions** :
+
+| Secret | Où l'obtenir |
+| --- | --- |
+| `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) |
+| `ANTHROPIC_API_KEY` | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
+
+Ensuite, chaque poussée sur la branche par défaut déploie. Vous pouvez aussi lancer le
+déploiement à la main depuis l'onglet **Actions → Déployer sur Vercel → Run workflow**, en
+choisissant `production` ou `preview`. L'URL du déploiement apparaît dans le résumé du job.
+
+Les secrets ne quittent jamais GitHub : le workflow les transmet directement à Vercel, ils
+n'apparaissent pas dans les journaux et ne transitent par aucun intermédiaire.
+
 Trois points à connaître avant de déployer.
 
 **Le système de fichiers est en lecture seule.** `npm run catalog:sync` ne peut donc pas tourner
