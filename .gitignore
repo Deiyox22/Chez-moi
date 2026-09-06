@@ -8,3 +8,8 @@ data/catalog/*.json
 !data/catalog/.gitkeep
 *.log
 .DS_Store
+
+# Lien local vers le projet Vercel, ne doit jamais etre commite
+.vercel/
+.vercel
+.env*

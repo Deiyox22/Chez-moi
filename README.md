@@ -194,7 +194,7 @@ gardez le déploiement en preview privée.
 ## Architecture
 
 ```
-api/[...path].js        point d'entree serverless (Vercel)
+api/                    points d'entree serverless (Vercel), un par route
 vercel.json             configuration du deploiement
 server/                 API Node, sans framework
   index.js              serveur local
