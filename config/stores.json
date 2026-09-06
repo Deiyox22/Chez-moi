@@ -113,6 +113,54 @@
       "note": "robots.txt autorise les fiches produit à tous les robots, le sitemap produits France est public, et les pages portent des données schema.org."
     },
     {
+      "id": "habitat",
+      "name": "Habitat",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.habitat.fr",
+      "domain": "www.habitat.fr",
+      "searchUrlTemplate": "https://www.habitat.fr/recherche?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.habitat.fr/sitemap.xml",
+        "sitemapPattern": "product_vu",
+        "urlPattern": "/p/",
+        "maxProducts": 320,
+        "perCategory": 18,
+        "delayMs": 700
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et sitemap produits public ; les pages portent des données schema.org."
+    },
+    {
+      "id": "camif",
+      "name": "Camif",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.camif.fr",
+      "domain": "www.camif.fr",
+      "searchUrlTemplate": "https://www.camif.fr/recherche?q={query}",
+      "enabled": true,
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.camif.fr/sitemap.xml",
+        "sitemapPattern": "sitemap.products",
+        "urlPattern": "/p/",
+        "maxProducts": 320,
+        "perCategory": 18,
+        "delayMs": 700
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et sitemap produits public ; les pages portent des données schema.org."
+    },
+    {
       "id": "maisons-du-monde",
       "name": "Maisons du Monde",
       "country": "FR",
@@ -203,6 +251,26 @@
       "enabled": false,
       "feed": {
         "type": "csv",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "Répond HTTP 403 aux requêtes automatisées (pare-feu applicatif). Son catalogue passe par un flux d'affiliation : renseignez feed.url, puis activez l'enseigne."
+    },
+    {
+      "id": "alinea",
+      "name": "Alinéa",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.alinea.com",
+      "domain": "www.alinea.com",
+      "searchUrlTemplate": "https://www.alinea.com/search?q={query}",
+      "enabled": false,
+      "feed": {
+        "type": "google-merchant-xml",
         "url": "",
         "headers": {}
       },

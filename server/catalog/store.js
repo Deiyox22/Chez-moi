@@ -115,7 +115,8 @@ export function loadCatalog({ force = false } = {}) {
     if (seedItems.length) sources.push({ store: 'catalogue-exemple', type: 'exemple', count: seedItems.length, updatedAt: seed.updatedAt || null });
   }
 
-  cache = { stores, storesById, products, sources, medians: medianPrices(products) };
+  const unique = dedupe(products);
+  cache = { stores, storesById, products: unique, sources, medians: medianPrices(unique) };
   return cache;
 }
 
@@ -124,6 +125,19 @@ export function loadCatalog({ force = false } = {}) {
  * words alone; the typical one for its category is the better suggestion, and
  * this is what keeps a 0.60 EUR box from answering "bibliotheque".
  */
+/** Same shop, same title, same price: one entry is enough. */
+function dedupe(products) {
+  const seen = new Set();
+  const kept = [];
+  for (const product of products) {
+    const key = `${product.store}|${normalizeText(product.title)}|${product.price ?? ''}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    kept.push(product);
+  }
+  return kept;
+}
+
 function medianPrices(products) {
   const byCategory = new Map();
   for (const product of products) {
@@ -146,8 +160,10 @@ export function invalidateCatalog() {
 /**
  * Ranked product search over every loaded catalogue.
  */
-export function searchProducts({ query = '', category = '', store = '', maxPrice = null, styles = [], colors = [], limit = 12 } = {}) {
+export function searchProducts({ query = '', category = '', store = '', stores = [], maxPrice = null, styles = [], colors = [], limit = 12 } = {}) {
   const catalog = loadCatalog();
+  // One store or several: both shapes are accepted, an empty list means all.
+  const wanted = new Set([...(Array.isArray(stores) ? stores : String(stores).split(',')), store].map((id) => String(id).trim()).filter(Boolean));
   const queryTokens = tokenize([query, styles.join(' '), colors.join(' ')].join(' '));
   // "matelas 160x200" names a category even when the caller passes none; without
   // this, a protege-matelas outranks a mattress simply for being cheaper.
@@ -155,7 +171,7 @@ export function searchProducts({ query = '', category = '', store = '', maxPrice
 
   const scored = [];
   for (const product of catalog.products) {
-    if (store && product.store !== store) continue;
+    if (wanted.size && !wanted.has(product.store)) continue;
     if (maxPrice !== null && maxPrice !== undefined && product.price !== null && product.price > maxPrice) continue;
 
     let score = 0;

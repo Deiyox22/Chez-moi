@@ -74,18 +74,17 @@ async function attachProducts(design, preferences) {
   const shopping = [];
   for (const need of design.besoinsAchat || []) {
     const maxPrice = need.budgetMaxEuros || preferences?.budget || null;
-    let products = searchProducts({
+    // The store filter belongs inside the search: filtering the top four
+    // results afterwards nearly always left nothing.
+    const products = searchProducts({
       query: need.requeteRecherche || need.besoin,
       category: need.categorie,
+      stores: wantedStores || [],
       maxPrice,
       styles: need.styles || [],
       colors: need.couleurs || [],
       limit: 4,
     });
-    if (wantedStores) {
-      const preferred = products.filter((product) => wantedStores.includes(product.store));
-      if (preferred.length) products = preferred;
-    }
 
     // Thin local results are exactly where a live lookup on the store sites earns its cost.
     let live = [];

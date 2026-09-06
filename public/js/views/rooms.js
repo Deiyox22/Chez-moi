@@ -1,7 +1,7 @@
 import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate } from '../lib/ui.js';
 import { STORES, put, get, remove, allSorted, all, savePhoto, photoUrl, deletePhoto } from '../lib/db.js';
 import { normalizeImage, pickImages, captureFromCamera, blobsToImagePayload } from '../lib/images.js';
-import { analyzeRoom, createDesign } from '../lib/api.js';
+import { analyzeRoom, createDesign, listStores } from '../lib/api.js';
 
 const ROOM_TYPES = [
   'salon', 'chambre', 'cuisine', 'salle_a_manger', 'bureau', 'salle_de_bain',
@@ -132,6 +132,42 @@ async function startDesignFlow(room) {
     return;
   }
 
+  const magasinsChoisis = new Set();
+  const magasinsBox = el('div', { class: 'chips' }, [el('span', { class: 'small muted', text: 'Chargement des magasins…' })]);
+
+  listStores()
+    .then((status) => {
+      const connectes = status.stores.filter((store) => store.hasRealFeed);
+      if (connectes.length < 2) {
+        magasinsBox.replaceChildren(
+          el('span', { class: 'small muted', text: 'Un seul catalogue est connecté : aucune restriction possible.' })
+        );
+        return;
+      }
+      const rendre = () => {
+        magasinsBox.replaceChildren();
+        for (const store of connectes) {
+          const actif = magasinsChoisis.has(store.id);
+          magasinsBox.appendChild(
+            el('button', {
+              class: actif ? 'chip chip--accent' : 'chip',
+              type: 'button',
+              'aria-pressed': actif ? 'true' : 'false',
+              style: { cursor: 'pointer', font: 'inherit', fontSize: '0.8rem' },
+              text: store.name,
+              onclick: () => {
+                if (actif) magasinsChoisis.delete(store.id);
+                else magasinsChoisis.add(store.id);
+                rendre();
+              },
+            })
+          );
+        }
+      };
+      rendre();
+    })
+    .catch(() => magasinsBox.replaceChildren());
+
   const close = openModal('Générer un aménagement', (dismiss) => {
     const styleInput = el('input', { type: 'text', list: 'styles-list', placeholder: 'Laisser vide pour déduire de vos meubles' });
     const styleList = el('datalist', { id: 'styles-list' }, STYLE_SUGGESTIONS.map((style) => el('option', { value: style })));
@@ -187,6 +223,7 @@ async function startDesignFlow(room) {
             children: childrenBox.checked,
             pets: petsBox.checked,
             renting: rentingBox.checked,
+            stores: [...magasinsChoisis],
           },
           images: await blobsToImagePayload(blobs),
         });
@@ -218,6 +255,11 @@ async function startDesignFlow(room) {
         el('label', { class: 'checkbox' }, [childrenBox, el('span', { text: 'Enfants' })]),
         el('label', { class: 'checkbox' }, [petsBox, el('span', { text: 'Animaux' })]),
         el('label', { class: 'checkbox' }, [rentingBox, el('span', { text: 'Locataire' })]),
+      ]),
+      el('div', {}, [
+        el('label', { text: 'Magasins pour les achats suggérés' }),
+        el('p', { class: 'small muted', style: { margin: '0 0 6px' }, text: 'Aucun choix signifie tous les magasins.' }),
+        magasinsBox,
       ]),
       el('hr', { class: 'sep' }),
       el('div', {}, [el('label', { text: 'Meubles à prendre en compte' }), furnitureList]),

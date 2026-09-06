@@ -15,7 +15,7 @@ export async function search(query) {
   const products = searchProducts({
     query: term,
     category: query.get('category') || '',
-    store: query.get('store') || '',
+    stores: list(query.get('store') || query.get('stores')),
     maxPrice,
     styles,
     colors,
@@ -30,8 +30,8 @@ export async function search(query) {
       error.code = 'ai_not_configured';
       throw error;
     }
-    const storeFilter = query.get('store');
-    const stores = loadStores().filter((store) => (storeFilter ? store.id === storeFilter : true));
+    const wanted = list(query.get('store') || query.get('stores'));
+    const stores = loadStores().filter((store) => (wanted.length ? wanted.includes(store.id) : true));
     const live = await searchLiveProducts({ query: term, maxPrice, styles, colors, stores, limit: 5 });
     return { products, live };
   }

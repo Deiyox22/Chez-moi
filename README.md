@@ -88,14 +88,22 @@ génération d'aménagements sont désactivées.
 
 ## Les vrais catalogues de magasins
 
-**1 310 produits réels sont déjà chargés**, importés depuis les catalogues de quatre boutiques
-françaises : [Hartô](https://harto.fr) (mobilier design), [Maison Sarah
-Lavoine](https://maisonsarahlavoine.com) (mobilier et décoration), [Honoré
-Déco](https://honoredeco.com) (décoration) et [Tediber](https://tediber.com) (literie). Vrais
-titres, vrais prix, vraies photos, lien direct vers la fiche produit.
+**Sept catalogues sont chargés**, avec vrais titres, vrais prix, vraies photos et lien direct
+vers la fiche produit :
 
-L'import passe par le point d'accès `/products.json` que ces boutiques exposent publiquement
-et que leur `robots.txt` n'interdit pas. Aucun compte, aucune clé, aucune extraction de page.
+| Enseigne | Ce qu'on y trouve | Comment |
+| --- | --- | --- |
+| [IKEA](https://www.ikea.com/fr/fr/) | mobilier et décoration | sitemap + schema.org |
+| [Habitat](https://www.habitat.fr) | mobilier | sitemap + schema.org |
+| [Camif](https://www.camif.fr) | mobilier français et éco-conçu | sitemap + schema.org |
+| [Maison Sarah Lavoine](https://maisonsarahlavoine.com) | mobilier et décoration | flux Shopify |
+| [Honoré Déco](https://honoredeco.com) | décoration et assises | flux Shopify |
+| [Tediber](https://tediber.com) | literie | flux Shopify |
+| [Hartô](https://harto.fr) | mobilier design | flux Shopify |
+
+Aucun compte, aucune clé, aucune extraction de page : soit le point d'accès `/products.json`
+que ces boutiques exposent publiquement, soit le sitemap et les données schema.org que les
+enseignes publient à destination des moteurs de recherche.
 
 ```bash
 npm run catalog:sync              # toutes les enseignes activées
@@ -135,19 +143,21 @@ Pour savoir si une boutique expose un flux Shopify :
 Aucune ne publie d'API produit ouverte, mais elles ne se valent pas toutes face à un accès
 automatisé, et chacune a été vérifiée plutôt que supposée.
 
-**IKEA est connectée.** Son `robots.txt` autorise explicitement les fiches produit à tous les
-robots, son sitemap produits France est public, et ses pages portent des données schema.org
-complètes. C'est exactement le mécanisme que les sites publient *à destination* des moteurs de
-recherche et des comparateurs, et le lecteur `sitemap-jsonld` l'utilise comme tel :
+**IKEA, Habitat et Camif sont connectées.** Leur `robots.txt` est lisible et n'interdit pas les
+fiches produit, leur sitemap produits est public, et leurs pages portent des données
+schema.org. C'est exactement le mécanisme que les sites publient *à destination* des moteurs
+de recherche et des comparateurs, et le lecteur `sitemap-jsonld` l'utilise comme tel :
 
 - `robots.txt` est lu en premier et ses règles `Disallow` sont respectées ;
 - les requêtes sont sérialisées avec un délai, jamais parallélisées ;
 - l'agent utilisateur dit qui appelle et renvoie vers ce dépôt ;
 - le nombre de pages est plafonné et **équilibré par catégorie** grâce au type de produit lu
   dans l'URL, ce qui évite de balayer tout le site pour obtenir un catalogue représentatif ;
+- les variantes d'un même produit sont écartées **avant** téléchargement, pour que le budget de
+  pages achète des produits distincts ;
 - cinq refus consécutifs arrêtent l'import.
 
-**BUT, Leroy Merlin, Conforama, Maisons du Monde et La Redoute répondent HTTP 403** aux
+**BUT, Leroy Merlin, Conforama, Maisons du Monde, La Redoute et Alinéa répondent HTTP 403** aux
 requêtes automatisées, par pare-feu applicatif. C'est un refus explicite, et il est respecté :
 ces enseignes restent désactivées, avec la raison inscrite dans `config/stores.json` et
 affichée dans l'écran Magasins. Pour les brancher, il faut le flux produit qu'elles réservent
@@ -159,6 +169,15 @@ Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import 
 
 Vous pouvez renseigner un `affiliate.param` / `affiliate.value` par enseigne : il est ajouté
 aux liens sortants.
+
+### Filtrer par magasin
+
+L'écran **Magasins** affiche une puce par catalogue connecté, avec son nombre de produits.
+Cliquer sur une ou plusieurs puces restreint la recherche à ces enseignes, et le choix est
+conservé d'une visite à l'autre. La recherche en direct sur les sites respecte le même filtre.
+
+Au moment de générer un aménagement, la même sélection est proposée : les achats suggérés ne
+viendront alors que des magasins choisis. Sans sélection, tous les catalogues sont interrogés.
 
 ### Recherche en direct, en complément
 

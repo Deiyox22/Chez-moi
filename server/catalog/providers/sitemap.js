@@ -93,6 +93,9 @@ async function collectUrls(store, disallow) {
 
   const perCategoryCount = new Map();
   const chosen = [];
+  // Variants are often the same page under a different query string. Dropping
+  // them here means the page budget buys distinct products.
+  const seenPaths = new Set();
 
   for (const child of childSitemaps) {
     if (chosen.length >= maxProducts) break;
@@ -115,6 +118,8 @@ async function collectUrls(store, disallow) {
         continue;
       }
       if (!isAllowed(pathname, disallow)) continue;
+      if (seenPaths.has(pathname)) continue;
+      seenPaths.add(pathname);
 
       // The slug carries the product type, so the mix can be balanced before
       // a single page is downloaded.
@@ -126,7 +131,7 @@ async function collectUrls(store, disallow) {
       if (seen >= perCategory) continue;
 
       perCategoryCount.set(category, seen + 1);
-      chosen.push({ url, category });
+      chosen.push({ url: url.split('?')[0], category });
     }
   }
   return chosen;
@@ -152,6 +157,24 @@ function firstProduct(html) {
   return null;
 }
 
+const OG_IMAGE = /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i;
+
+/**
+ * Shops describe a price in three shapes: a single Offer, a list of Offers, or
+ * an AggregateOffer spanning variants. All three end up as one number here.
+ */
+function priceOf(item) {
+  let offer = item.offers || {};
+  if (Array.isArray(offer)) offer = offer[0] || {};
+  const raw = offer.price ?? offer.lowPrice ?? null;
+  const value = Number(String(raw ?? '').replace(',', '.'));
+  return {
+    price: Number.isFinite(value) && value > 0 ? value : null,
+    currency: offer.priceCurrency || null,
+    availability: offer.availability || (offer.offers && offer.offers[0]?.availability) || '',
+  };
+}
+
 const firstImage = (image) => {
   const value = Array.isArray(image) ? image[0] : image;
   if (!value) return null;
@@ -163,28 +186,29 @@ export function productFromHtml(html, { url, store, category }) {
   const item = firstProduct(html);
   if (!item?.name) return null;
 
-  let offer = item.offers || {};
-  if (Array.isArray(offer)) offer = offer[0] || {};
-  const price = Number(String(offer.price ?? '').replace(',', '.'));
+  const { price, currency, availability } = priceOf(item);
   const brandName = typeof item.brand === 'object' ? item.brand?.name : item.brand;
+  const variant = (item.hasVariant || [])[0] || {};
+  const imageUrl = firstImage(item.image) || firstImage(variant.image) || html.match(OG_IMAGE)?.[1] || null;
+  const reference = item.sku || item.mpn || item.productGroupID || url.split(/[?#]/)[0].split('/').filter(Boolean).pop();
 
   return {
-    id: `${store.id}-${item.sku || item.mpn || url.split('/').filter(Boolean).pop()}`,
+    id: `${store.id}-${reference}`,
     store: store.id,
     title: String(item.name).trim(),
     description: String(item.description || '').replace(/\s+/g, ' ').trim().slice(0, 400),
     category: guessCategory(item.category, item.name) || category,
     rawCategory: String(item.category || '').trim(),
-    price: Number.isFinite(price) && price > 0 ? price : null,
-    currency: offer.priceCurrency || store.currency || 'EUR',
+    price,
+    currency: currency || store.currency || 'EUR',
     url,
-    imageUrl: firstImage(item.image),
+    imageUrl,
     brand: String(brandName || store.name).trim(),
     colors: [],
     materials: [],
     styles: [],
     dimensionsCm: null,
-    availability: /InStock/i.test(String(offer.availability || '')) ? 'in stock' : 'out of stock',
+    availability: /InStock/i.test(String(availability)) ? 'in stock' : 'out of stock',
     source: 'feed',
   };
 }
@@ -201,13 +225,22 @@ export async function crawlSitemap(store, { onProgress } = {}) {
   const targets = await collectUrls(store, disallow);
   const delayMs = store.feed.delayMs || DEFAULT_DELAY_MS;
   const products = [];
+  // Shops often give each colourway its own URL while the page describes the
+  // whole range, so the same product would land in the catalogue many times.
+  const seen = new Set();
   let refused = 0;
 
   for (const [index, target] of targets.entries()) {
     try {
       const html = await get(target.url);
       const product = productFromHtml(html, { url: target.url, store, category: target.category });
-      if (product && !isOutOfScope(product.title)) products.push(product);
+      if (product && !isOutOfScope(product.title)) {
+        const key = `${product.title.toLowerCase().trim()}|${product.price ?? ''}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          products.push(product);
+        }
+      }
     } catch (error) {
       if (error.status === 403 || error.status === 429) {
         refused += 1;

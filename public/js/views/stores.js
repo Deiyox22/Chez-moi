@@ -18,11 +18,31 @@ function productCard(product) {
   ]);
 }
 
+const FILTER_KEY = 'chez-moi:magasins-filtres';
+
+function readFilter() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(FILTER_KEY) || '[]'));
+  } catch {
+    return new Set();
+  }
+}
+
+function writeFilter(selection) {
+  try {
+    localStorage.setItem(FILTER_KEY, JSON.stringify([...selection]));
+  } catch {
+    /* le filtre reste valable pour la session */
+  }
+}
+
 export async function render({ query }) {
   const wrap = el('div', { class: 'stack' });
   wrap.appendChild(el('h1', { text: 'Magasins' }));
 
   const searchInput = el('input', { type: 'search', placeholder: 'tapis laine ecru, lampadaire noir…', value: query.get('q') || '' });
+  const selection = readFilter();
+  const filterBox = el('div', { class: 'chips', style: { marginTop: '4px' } });
   const resultsBox = el('div', { class: 'stack' });
   const liveBox = el('div', { class: 'stack' });
   const linksBox = el('div');
@@ -37,7 +57,9 @@ export async function render({ query }) {
     liveButton.disabled = true;
     liveBox.replaceChildren(progress('Recherche en cours sur les sites des magasins…'));
     try {
-      const { live } = await searchCatalogLive({ q: term });
+      const liveParams = { q: term };
+      if (selection.size) liveParams.store = [...selection].join(',');
+      const { live } = await searchCatalogLive(liveParams);
       liveBox.replaceChildren(
         el('h2', { text: 'Trouvés en ligne' }),
         ...(live && live.length
@@ -57,7 +79,9 @@ export async function render({ query }) {
     resultsBox.replaceChildren(progress('Recherche dans les catalogues…'));
     linksBox.replaceChildren();
     try {
-      const [{ products }, links] = await Promise.all([searchCatalog({ q: term, limit: 12 }), storeLinks(term)]);
+      const params = { q: term, limit: '12' };
+      if (selection.size) params.store = [...selection].join(',');
+      const [{ products }, links] = await Promise.all([searchCatalog(params), storeLinks(term)]);
       resultsBox.replaceChildren();
       liveBox.replaceChildren();
       if (!products.length) {
@@ -85,6 +109,7 @@ export async function render({ query }) {
     ]),
   ]);
   wrap.appendChild(form);
+  wrap.appendChild(filterBox);
   wrap.appendChild(resultsBox);
   wrap.appendChild(liveButton);
   wrap.appendChild(liveBox);
@@ -93,8 +118,50 @@ export async function render({ query }) {
   const statusCard = el('div', { class: 'card card--flat' }, [progress('Chargement des magasins…')]);
   wrap.appendChild(statusCard);
 
+  const buildFilter = (connected) => {
+    filterBox.replaceChildren();
+    if (connected.length < 2) return;
+
+    const chip = (label, active, onclick) =>
+      el('button', {
+        class: active ? 'chip chip--accent' : 'chip',
+        type: 'button',
+        'aria-pressed': active ? 'true' : 'false',
+        style: { cursor: 'pointer', font: 'inherit', fontSize: '0.8rem' },
+        text: label,
+        onclick,
+      });
+
+    filterBox.appendChild(
+      chip('Tous', selection.size === 0, () => {
+        selection.clear();
+        writeFilter(selection);
+        buildFilter(connected);
+        runSearch();
+      })
+    );
+    for (const store of connected) {
+      filterBox.appendChild(
+        chip(`${store.name} (${store.productCount})`, selection.has(store.id), () => {
+          if (selection.has(store.id)) selection.delete(store.id);
+          else selection.add(store.id);
+          writeFilter(selection);
+          buildFilter(connected);
+          runSearch();
+        })
+      );
+    }
+  };
+
   listStores()
     .then((status) => {
+      const connected = status.stores.filter((store) => store.hasRealFeed);
+      // Un magasin retire du catalogue ne doit pas rester dans un filtre enregistre.
+      for (const id of [...selection]) {
+        if (!connected.some((store) => store.id === id)) selection.delete(id);
+      }
+      buildFilter(connected);
+
       const usesSample = status.sources.some((source) => source.type === 'exemple');
       statusCard.replaceChildren(
         el('h3', { text: 'Catalogues connectés' }),
