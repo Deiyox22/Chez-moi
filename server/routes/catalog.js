@@ -25,7 +25,7 @@ export async function search(query) {
   // Live lookup on the real store sites, on demand.
   if (query.get('live') === '1' && term) {
     if (!aiConfigured()) {
-      const error = new Error("La recherche en ligne necessite une cle ANTHROPIC_API_KEY sur le serveur.");
+      const error = new Error("La recherche en ligne necessite une cle d'IA sur le serveur (GEMINI_API_KEY ou ANTHROPIC_API_KEY).");
       error.status = 503;
       error.code = 'ai_not_configured';
       throw error;

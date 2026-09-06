@@ -29,13 +29,37 @@ const EFFORTS = new Set(['low', 'medium', 'high', 'xhigh', 'max']);
 // the design call inside that window. Override with ANTHROPIC_EFFORT.
 const DEFAULT_EFFORT = process.env.VERCEL ? 'medium' : 'high';
 
+const GEMINI_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
+const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY || '';
+
+// Which provider runs is decided by AI_PROVIDER, or simply by the key present.
+function resolveProvider() {
+  const forced = (process.env.AI_PROVIDER || '').toLowerCase();
+  if (forced === 'gemini' || forced === 'google') return 'gemini';
+  if (forced === 'anthropic' || forced === 'claude') return 'anthropic';
+  if (ANTHROPIC_KEY) return 'anthropic';
+  if (GEMINI_KEY) return 'gemini';
+  return null;
+}
+
+const PROVIDER = resolveProvider();
+
+const DEFAULT_MODELS = {
+  anthropic: 'claude-opus-5',
+  gemini: 'gemini-2.5-flash',
+};
+
 export const config = {
   port: Number(process.env.PORT || 8787),
   host: process.env.HOST || '0.0.0.0',
   maxBodyBytes: Number(process.env.MAX_BODY_BYTES || 26_214_400),
-  anthropic: {
-    apiKey: process.env.ANTHROPIC_API_KEY || '',
-    model: process.env.ANTHROPIC_MODEL || 'claude-opus-5',
+  ai: {
+    provider: PROVIDER,
+    apiKey: PROVIDER === 'gemini' ? GEMINI_KEY : ANTHROPIC_KEY,
+    model:
+      (PROVIDER === 'gemini' ? process.env.GEMINI_MODEL : process.env.ANTHROPIC_MODEL) ||
+      DEFAULT_MODELS[PROVIDER] ||
+      '',
     effort: EFFORTS.has(process.env.ANTHROPIC_EFFORT) ? process.env.ANTHROPIC_EFFORT : DEFAULT_EFFORT,
     enableFallbacks: process.env.ANTHROPIC_ENABLE_FALLBACKS === '1',
   },
@@ -53,4 +77,4 @@ export const config = {
   },
 };
 
-export const aiConfigured = () => Boolean(config.anthropic.apiKey);
+export const aiConfigured = () => Boolean(config.ai.provider && config.ai.apiKey);

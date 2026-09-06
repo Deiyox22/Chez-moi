@@ -1,4 +1,4 @@
-import { askForJson, imageBlocks } from '../lib/anthropic.js';
+import { askForJson, imageParts, textPart } from '../lib/ai/index.js';
 import { furnitureSchema, roomSchema, FURNITURE_CATEGORIES, ROOM_TYPES } from '../lib/schemas.js';
 
 const FURNITURE_SYSTEM = `Tu es un architecte d'interieur qui inventorie le mobilier d'un particulier a partir de photos.
@@ -33,11 +33,10 @@ export async function analyzeFurniture(body) {
   }
 
   const hint = String(body.hint || '').slice(0, 500);
-  const content = [
-    ...imageBlocks(images),
-    {
-      type: 'text',
-      text: [
+  const parts = [
+    ...imageParts(images),
+    textPart(
+      [
         images.length > 1
           ? `Voici ${images.length} photos. Elles peuvent montrer le meme meuble sous plusieurs angles : dans ce cas, ne cree qu'une seule entree.`
           : 'Voici une photo du mobilier a inventorier.',
@@ -45,13 +44,13 @@ export async function analyzeFurniture(body) {
         'Inventorie les meubles et objets de decoration marquants.',
       ]
         .filter(Boolean)
-        .join('\n'),
-    },
+        .join('\n')
+    ),
   ];
 
   const { data, usage } = await askForJson({
     system: FURNITURE_SYSTEM,
-    content,
+    parts,
     schema: furnitureSchema,
     maxTokens: 8000,
     effort: 'medium',
@@ -69,24 +68,23 @@ export async function analyzeRoom(body) {
 
   const givenName = String(body.name || '').slice(0, 120);
   const notes = String(body.notes || '').slice(0, 800);
-  const content = [
-    ...imageBlocks(images),
-    {
-      type: 'text',
-      text: [
+  const parts = [
+    ...imageParts(images),
+    textPart(
+      [
         `Voici ${images.length} photo(s) d'une piece a analyser.`,
         givenName ? `Nom donne par la personne : ${givenName}. Reprends-le dans "nomPropose" s'il est coherent.` : "Aucun nom n'a ete donne : propose-en un a partir de ce que tu vois.",
         notes ? `Notes complementaires : ${notes}` : '',
         'Fais le releve de la piece.',
       ]
         .filter(Boolean)
-        .join('\n'),
-    },
+        .join('\n')
+    ),
   ];
 
   const { data, usage } = await askForJson({
     system: ROOM_SYSTEM,
-    content,
+    parts,
     schema: roomSchema,
     maxTokens: 8000,
     effort: 'medium',

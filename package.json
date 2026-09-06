@@ -15,6 +15,7 @@
     "check": "node --check server/index.js && node scripts/check-syntax.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.124.0"
+    "@anthropic-ai/sdk": "^0.124.0",
+    "@google/genai": "^2.21.0"
   }
 }

@@ -32,14 +32,29 @@ et la génération d'aménagements nécessitent une connexion.
 git clone https://github.com/Deiyox22/chez-moi.git
 cd chez-moi
 npm install
-cp .env.example .env        # puis renseignez ANTHROPIC_API_KEY
+cp .env.example .env        # puis renseignez GEMINI_API_KEY ou ANTHROPIC_API_KEY
 npm start
 ```
 
 Ouvrez http://localhost:8787. Sur mobile, le navigateur propose d'installer l'application
 sur l'écran d'accueil.
 
-Sans clé API, l'application démarre quand même : vous pouvez saisir vos meubles à la main,
+### Quel fournisseur d'IA
+
+L'application marche indifféremment avec **Google Gemini** ou **Anthropic Claude**. Vous ne
+renseignez qu'une clé, et le fournisseur s'en déduit :
+
+| Clé présente | Fournisseur retenu | Modèle par défaut |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | Gemini | `gemini-2.5-flash` |
+| `ANTHROPIC_API_KEY` | Claude | `claude-opus-5` |
+| les deux | Claude, sauf si `AI_PROVIDER=gemini` | selon le fournisseur |
+
+Gemini propose un palier gratuit, ce qui en fait le choix le plus simple pour essayer.
+Si le modèle configuré n'est pas accessible avec votre clé, le serveur ne renvoie pas un
+404 opaque : il liste les modèles que la clé peut réellement atteindre.
+
+Sans aucune clé, l'application démarre quand même : vous pouvez saisir vos meubles à la main,
 enregistrer vos pièces et parcourir les catalogues. Seules l'analyse des photos et la
 génération d'aménagements sont désactivées.
 
@@ -47,8 +62,11 @@ génération d'aménagements sont désactivées.
 
 | Variable | Défaut | Rôle |
 | --- | --- | --- |
-| `ANTHROPIC_API_KEY` | — | Clé API. Sans elle, les fonctions d'analyse renvoient une erreur explicite. |
-| `ANTHROPIC_MODEL` | `claude-opus-5` | Modèle utilisé pour l'analyse et la conception. |
+| `GEMINI_API_KEY` | — | Clé Google Gemini. Sans clé d'IA, les fonctions d'analyse renvoient une erreur explicite. |
+| `GEMINI_MODEL` | `gemini-2.5-flash` | Modèle Gemini utilisé pour l'analyse et la conception. |
+| `ANTHROPIC_API_KEY` | — | Clé Anthropic, alternative à la précédente. |
+| `ANTHROPIC_MODEL` | `claude-opus-5` | Modèle Claude utilisé pour l'analyse et la conception. |
+| `AI_PROVIDER` | déduit de la clé | Force `gemini` ou `anthropic` quand les deux clés sont présentes. |
 | `ANTHROPIC_EFFORT` | `high`, `medium` sur Vercel | Profondeur de raisonnement : `low` à `max`. |
 | `ANTHROPIC_ENABLE_FALLBACKS` | désactivé | Mettre à `1` pour activer le repli serveur en cas de refus du modèle. |
 | `CATALOG_LIVE_SEARCH` | `0` | Mettre à `1` pour chercher en direct sur les sites des magasins. |
@@ -66,8 +84,9 @@ conditions d'utilisation.
 
 ### 1. Recherche en direct sur les sites des magasins
 
-C'est le chemin qui marche sans compte ni contrat. Le modèle interroge le web avec sa
-recherche intégrée, **strictement limitée aux domaines déclarés** dans `config/stores.json`,
+C'est le chemin qui marche sans compte ni contrat. Le modèle interroge le web (recherche
+intégrée côté Claude, ancrage Google Search côté Gemini), **cadré sur les domaines déclarés**
+dans `config/stores.json`,
 et rapporte de vraies fiches produit : titre tel qu'il apparaît sur le site, prix affiché,
 lien direct. Chaque produit porte une mention `vérifié` ou `probable` selon que le prix vient
 d'une page réellement consultée, et l'interface marque les prix `probable` comme indicatifs.
@@ -140,7 +159,7 @@ expose l'API en fonction serverless, et `vercel.json` porte la configuration.
 1. Sur [vercel.com/new](https://vercel.com/new), importez `Deiyox22/Chez-moi`.
 2. Laissez le framework sur « Other ». Aucune commande de build n'est nécessaire.
 3. Ajoutez les variables d'environnement dans **Settings → Environment Variables** :
-   `ANTHROPIC_API_KEY`, et si vous le voulez `CATALOG_LIVE_SEARCH=1`.
+   `GEMINI_API_KEY` (ou `ANTHROPIC_API_KEY`), et si vous le voulez `CATALOG_LIVE_SEARCH=1`.
 4. Déployez.
 
 En ligne de commande :
@@ -163,7 +182,7 @@ déploie en production. Deux secrets à créer une seule fois, dans
 | Secret | Où l'obtenir |
 | --- | --- |
 | `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) |
-| `ANTHROPIC_API_KEY` | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
+| `GEMINI_API_KEY` | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
 
 Ensuite, chaque poussée sur la branche par défaut déploie. Vous pouvez aussi lancer le
 déploiement à la main depuis l'onglet **Actions → Déployer sur Vercel → Run workflow**, en
@@ -216,8 +235,10 @@ public/                 la PWA (ES modules, sans étape de build)
   sw.js                 service worker : coquille hors ligne, API toujours en direct
 ```
 
-Trois appels modèle, chacun en **sortie structurée** (`output_config.format`), donc validés
-contre un schéma JSON plutôt que devinés dans du texte libre :
+Trois appels modèle, chacun en **sortie structurée** validée contre un schéma JSON plutôt que
+devinée dans du texte libre : `output_config.format` côté Claude, `responseJsonSchema` côté
+Gemini. Les routes ne connaissent aucun des deux : elles assemblent des blocs neutres que
+l'adaptateur du fournisseur traduit.
 
 - inventaire d'un meuble depuis 1 à 4 photos ;
 - relevé d'une pièce depuis 1 à 6 photos ;

@@ -1,8 +1,9 @@
 # Deploiement automatique sur Vercel.
 #
 # Deux secrets a creer dans Settings > Secrets and variables > Actions :
-#   VERCEL_TOKEN       https://vercel.com/account/tokens
-#   ANTHROPIC_API_KEY  https://console.anthropic.com/settings/keys
+#   VERCEL_TOKEN     https://vercel.com/account/tokens
+#   GEMINI_API_KEY   https://aistudio.google.com/apikey
+# (ANTHROPIC_API_KEY est accepte a la place de GEMINI_API_KEY.)
 #
 # Les secrets restent dans GitHub : ils sont transmis a Vercel par ce workflow
 # et n'apparaissent jamais dans les journaux.
@@ -71,7 +72,7 @@ jobs:
               echo ""
               echo "1. Creez un jeton sur https://vercel.com/account/tokens"
               echo "2. Ajoutez-le dans Settings > Secrets and variables > Actions sous le nom \`VERCEL_TOKEN\`"
-              echo "3. Ajoutez aussi \`ANTHROPIC_API_KEY\`"
+              echo "3. Ajoutez aussi \`GEMINI_API_KEY\`"
               echo "4. Relancez ce workflow depuis l'onglet Actions"
             } >> "$GITHUB_STEP_SUMMARY"
           else
@@ -99,6 +100,7 @@ jobs:
         if: steps.jeton.outputs.pret == 'true'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           set -euo pipefail
@@ -115,11 +117,11 @@ jobs:
             echo "$nom publie sur $cible."
           }
 
-          if [ -z "$ANTHROPIC_API_KEY" ]; then
-            echo "::warning::Le secret ANTHROPIC_API_KEY est absent. Le site sera deploye, mais l'analyse des photos et la generation d'amenagements resteront desactivees."
+          if [ -z "$GEMINI_API_KEY" ] && [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::warning::Aucune cle d'IA (GEMINI_API_KEY ou ANTHROPIC_API_KEY). Le site sera deploye, mais l'analyse des photos et la generation d'amenagements resteront desactivees."
           fi
+          pousser_variable GEMINI_API_KEY "$GEMINI_API_KEY"
           pousser_variable ANTHROPIC_API_KEY "$ANTHROPIC_API_KEY"
-          pousser_variable ANTHROPIC_MODEL "claude-opus-5"
 
       - name: Deployer
         id: deploiement

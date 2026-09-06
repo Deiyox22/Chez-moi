@@ -26,7 +26,8 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
         sendJson(res, 200, {
           ok: true,
           ia: aiConfigured() ? 'configuree' : 'non configuree',
-          modele: aiConfigured() ? config.anthropic.model : null,
+          fournisseur: config.ai.provider,
+          modele: aiConfigured() ? config.ai.model : null,
           rechercheEnLigne: config.catalog.liveSearch,
           catalogue: { produits: catalog.products.length, sources: catalog.sources },
         });

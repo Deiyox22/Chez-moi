@@ -1,4 +1,4 @@
-import { askForJson, imageBlocks } from '../lib/anthropic.js';
+import { askForJson, imageParts, textPart } from '../lib/ai/index.js';
 import { designSchema } from '../lib/schemas.js';
 import { searchProducts, loadCatalog, loadStores } from '../catalog/store.js';
 import { searchLiveProducts } from '../catalog/providers/websearch.js';
@@ -129,24 +129,23 @@ export async function createDesign(body) {
 
   const images = Array.isArray(body.images) ? body.images.slice(0, 4) : [];
   const context = buildContext(body);
-  const content = [
-    ...imageBlocks(images),
-    {
-      type: 'text',
-      text: [
+  const parts = [
+    ...imageParts(images),
+    textPart(
+      [
         images.length ? `Voici ${images.length} photo(s) de la piece a amenager.` : "Aucune photo n'est jointe : appuie-toi uniquement sur le releve ci-dessous.",
         '',
         'Contexte du projet (JSON) :',
         JSON.stringify(context, null, 2),
         '',
         "Propose un amenagement complet de cette piece qui reutilise au maximum le mobilier possede.",
-      ].join('\n'),
-    },
+      ].join('\n')
+    ),
   ];
 
   const { data, usage } = await askForJson({
     system: DESIGN_SYSTEM,
-    content,
+    parts,
     schema: designSchema,
     maxTokens: 16000,
   });
