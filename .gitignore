@@ -1,6 +1,9 @@
 node_modules/
 .env
 .env.local
+# Les catalogues synchronises sont ignores par defaut. Pour un deploiement
+# serverless (Vercel), commitez-les : le systeme de fichiers y est en lecture
+# seule, donc npm run catalog:sync ne peut pas tourner en production.
 data/catalog/*.json
 !data/catalog/.gitkeep
 *.log

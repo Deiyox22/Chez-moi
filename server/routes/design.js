@@ -1,6 +1,8 @@
 import { askForJson, imageBlocks } from '../lib/anthropic.js';
 import { designSchema } from '../lib/schemas.js';
-import { searchProducts, loadCatalog } from '../catalog/store.js';
+import { searchProducts, loadCatalog, loadStores } from '../catalog/store.js';
+import { searchLiveProducts } from '../catalog/providers/websearch.js';
+import { config } from '../config.js';
 
 const DESIGN_SYSTEM = `Tu es architecte d'interieur. Tu proposes l'amenagement d'une piece a un particulier qui possede deja du mobilier.
 
@@ -62,11 +64,15 @@ function buildContext({ room, furniture, preferences }) {
 }
 
 /** Attaches catalogue products to each shopping need returned by the model. */
-function attachProducts(design, preferences) {
+async function attachProducts(design, preferences) {
   const catalog = loadCatalog();
   const wantedStores = Array.isArray(preferences?.stores) && preferences.stores.length ? preferences.stores : null;
+  const stores = loadStores();
+  const liveWanted = config.catalog.liveSearch;
+  let liveUsed = false;
 
-  const shopping = (design.besoinsAchat || []).map((need) => {
+  const shopping = [];
+  for (const need of design.besoinsAchat || []) {
     const maxPrice = need.budgetMaxEuros || preferences?.budget || null;
     let products = searchProducts({
       query: need.requeteRecherche || need.besoin,
@@ -80,8 +86,27 @@ function attachProducts(design, preferences) {
       const preferred = products.filter((product) => wantedStores.includes(product.store));
       if (preferred.length) products = preferred;
     }
-    return { ...need, produits: products };
-  });
+
+    // Thin local results are exactly where a live lookup on the store sites earns its cost.
+    let live = [];
+    if (liveWanted && products.length < config.catalog.liveSearchMinResults) {
+      try {
+        live = await searchLiveProducts({
+          query: need.requeteRecherche || need.besoin,
+          maxPrice,
+          styles: need.styles || [],
+          colors: need.couleurs || [],
+          stores: wantedStores ? stores.filter((store) => wantedStores.includes(store.id)) : stores,
+          limit: 4,
+        });
+        if (live.length) liveUsed = true;
+      } catch (error) {
+        console.error('[catalogue] recherche en ligne indisponible :', error.message);
+      }
+    }
+
+    shopping.push({ ...need, produits: products, produitsEnLigne: live });
+  }
 
   return {
     ...design,
@@ -89,6 +114,7 @@ function attachProducts(design, preferences) {
     catalogue: {
       magasinsAvecFluxReel: catalog.sources.filter((source) => source.type === 'feed').map((source) => source.store),
       utiliseCatalogueExemple: catalog.sources.some((source) => source.type === 'exemple'),
+      rechercheEnLigne: liveUsed,
     },
   };
 }
@@ -125,5 +151,5 @@ export async function createDesign(body) {
     maxTokens: 16000,
   });
 
-  return { ...attachProducts(data, body.preferences), usage };
+  return { ...(await attachProducts(data, body.preferences)), usage };
 }

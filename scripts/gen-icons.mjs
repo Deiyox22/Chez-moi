@@ -8,7 +8,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { fileURLToPath } from 'node:url';
 
-const OUT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'web', 'icons');
+const OUT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'public', 'icons');
 
 const CRC_TABLE = (() => {
   const table = new Int32Array(256);
@@ -124,5 +124,5 @@ const files = [
 ];
 for (const [name, buffer] of files) {
   fs.writeFileSync(path.join(OUT_DIR, name), buffer);
-  console.log(`- web/icons/${name} (${(buffer.length / 1024).toFixed(1)} ko)`);
+  console.log(`- public/icons/${name} (${(buffer.length / 1024).toFixed(1)} ko)`);
 }

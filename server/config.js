@@ -25,6 +25,10 @@ loadDotEnv();
 
 const EFFORTS = new Set(['low', 'medium', 'high', 'xhigh', 'max']);
 
+// Serverless hosts cap a request at a minute or so; a lighter default keeps
+// the design call inside that window. Override with ANTHROPIC_EFFORT.
+const DEFAULT_EFFORT = process.env.VERCEL ? 'medium' : 'high';
+
 export const config = {
   port: Number(process.env.PORT || 8787),
   host: process.env.HOST || '0.0.0.0',
@@ -32,11 +36,17 @@ export const config = {
   anthropic: {
     apiKey: process.env.ANTHROPIC_API_KEY || '',
     model: process.env.ANTHROPIC_MODEL || 'claude-opus-5',
-    effort: EFFORTS.has(process.env.ANTHROPIC_EFFORT) ? process.env.ANTHROPIC_EFFORT : 'high',
+    effort: EFFORTS.has(process.env.ANTHROPIC_EFFORT) ? process.env.ANTHROPIC_EFFORT : DEFAULT_EFFORT,
     enableFallbacks: process.env.ANTHROPIC_ENABLE_FALLBACKS === '1',
   },
+  catalog: {
+    // Fall back to a live web search on the store sites when the local
+    // catalogues have nothing good for a need.
+    liveSearch: process.env.CATALOG_LIVE_SEARCH === '1',
+    liveSearchMinResults: Number(process.env.CATALOG_LIVE_MIN_RESULTS || 2),
+  },
   paths: {
-    web: path.join(ROOT, 'web'),
+    web: path.join(ROOT, 'public'),
     stores: path.join(ROOT, 'config', 'stores.json'),
     seedCatalog: path.join(ROOT, 'server', 'catalog', 'data', 'seed-catalog.json'),
     syncedCatalog: path.join(ROOT, 'data', 'catalog'),

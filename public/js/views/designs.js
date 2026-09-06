@@ -17,6 +17,7 @@ function productRow(product) {
 }
 
 function needCard(need) {
+  const live = need.produitsEnLigne || [];
   return el('div', { class: 'card' }, [
     el('div', { class: 'row' }, [
       el('span', { class: `badge badge--${need.priorite || 'bonus'}`, text: need.priorite || 'bonus' }),
@@ -25,7 +26,15 @@ function needCard(need) {
     need.pourquoi ? el('p', { class: 'small muted', text: need.pourquoi }) : null,
     (need.produits || []).length
       ? el('div', {}, (need.produits || []).map(productRow))
-      : el('p', { class: 'small muted', text: "Aucun produit correspondant dans les catalogues configurés." }),
+      : live.length
+        ? null
+        : el('p', { class: 'small muted', text: "Aucun produit correspondant dans les catalogues configurés." }),
+    live.length
+      ? el('div', {}, [
+          el('p', { class: 'small muted', style: { margin: '10px 0 2px' }, text: 'Trouvés en ligne sur les sites des magasins :' }),
+          ...live.map(productRow),
+        ])
+      : null,
     el('a', {
       class: 'button button--ghost button--small',
       href: `#/magasins?q=${encodeURIComponent(need.requeteRecherche || need.besoin)}`,

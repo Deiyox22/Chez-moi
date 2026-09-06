@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Exemple minimal de flux produit Google Merchant (RSS 2.0).
+  C'est le format que la plupart des enseignes fournissent a leurs partenaires.
+  Pour tester l'import sans compte affilie :
+    1. dans config/stores.json, mettez "enabled": true et
+       "feed": { "type": "google-merchant-xml", "url": "./docs/exemple-flux-google-merchant.xml" }
+    2. lancez : npm run catalog:sync -- ikea
+-->
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Exemple de flux produit</title>
+    <link>https://example.com</link>
+    <description>Quatre produits de demonstration au format Google Merchant.</description>
+    <item>
+      <g:id>DEMO-001</g:id>
+      <g:title>Tapis en laine tissee 200 x 300 cm</g:title>
+      <g:description>Tapis epais en laine, tissage plat, coloris ecru et noir.</g:description>
+      <g:link>https://example.com/produits/tapis-laine-200x300</g:link>
+      <g:image_link>https://example.com/images/tapis-laine.jpg</g:image_link>
+      <g:price>249.00 EUR</g:price>
+      <g:availability>in stock</g:availability>
+      <g:brand>Exemple</g:brand>
+      <g:product_type>Maison &gt; Textiles &gt; Tapis</g:product_type>
+      <g:color>ecru</g:color>
+      <g:material>laine</g:material>
+    </item>
+    <item>
+      <g:id>DEMO-002</g:id>
+      <g:title>Lampadaire arceau metal noir</g:title>
+      <g:description>Lampadaire a arceau, abat-jour tissu, hauteur 175 cm.</g:description>
+      <g:link>https://example.com/produits/lampadaire-arceau</g:link>
+      <g:image_link>https://example.com/images/lampadaire.jpg</g:image_link>
+      <g:price>89,90 EUR</g:price>
+      <g:availability>in stock</g:availability>
+      <g:brand>Exemple</g:brand>
+      <g:product_type>Luminaires &gt; Lampadaires</g:product_type>
+      <g:color>noir</g:color>
+      <g:material>metal</g:material>
+    </item>
+    <item>
+      <g:id>DEMO-003</g:id>
+      <g:title><![CDATA[Fauteuil en velours cotele, pieds laiton]]></g:title>
+      <g:description><![CDATA[Assise large & confortable, structure bois massif.]]></g:description>
+      <g:link>https://example.com/produits/fauteuil-velours</g:link>
+      <g:image_link>https://example.com/images/fauteuil.jpg</g:image_link>
+      <g:price>329.00 EUR</g:price>
+      <g:availability>out of stock</g:availability>
+      <g:brand>Exemple</g:brand>
+      <g:product_type>Mobilier &gt; Salon &gt; Fauteuils</g:product_type>
+      <g:color>vert sapin, ocre</g:color>
+      <g:material>velours, bois</g:material>
+    </item>
+    <item>
+      <g:id>DEMO-004</g:id>
+      <g:title>Etagere murale chene 120 cm</g:title>
+      <g:description>Tablette murale en chene massif avec equerres invisibles.</g:description>
+      <g:link>https://example.com/produits/etagere-chene-120</g:link>
+      <g:image_link>https://example.com/images/etagere.jpg</g:image_link>
+      <g:price>39.00 EUR</g:price>
+      <g:availability>in stock</g:availability>
+      <g:brand>Exemple</g:brand>
+      <g:product_type>Rangement &gt; Etageres</g:product_type>
+      <g:color>chene</g:color>
+      <g:material>bois</g:material>
+    </item>
+  </channel>
+</rss>

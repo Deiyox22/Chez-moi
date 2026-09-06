@@ -1,0 +1,6 @@
+node_modules
+docs
+scripts
+.env
+.env.local
+*.tar.gz

@@ -6,7 +6,8 @@
     "export marchand, accord partenaire). Renseignez l'URL du flux dans 'feed.url', activez le magasin",
     "avec 'enabled': true, puis lancez 'npm run catalog:sync'.",
     "Tant qu'aucun flux n'est configure, l'application utilise le catalogue d'exemple embarque et",
-    "renvoie des liens vers la recherche du site du magasin (jamais des references inventees)."
+    "renvoie des liens vers la recherche du site du magasin (jamais des references inventees).",
+    "Le champ 'domain' limite la recherche en ligne (web search) a ce seul domaine par enseigne."
   ],
   "stores": [
     {
@@ -15,10 +16,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.ikea.com/fr/fr/",
+      "domain": "www.ikea.com",
       "searchUrlTemplate": "https://www.ikea.com/fr/fr/search/?q={query}",
       "enabled": false,
-      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "google-merchant-xml",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     },
     {
       "id": "maisons-du-monde",
@@ -26,10 +35,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.maisonsdumonde.com/FR/fr",
+      "domain": "www.maisonsdumonde.com",
       "searchUrlTemplate": "https://www.maisonsdumonde.com/FR/fr/search?q={query}",
       "enabled": false,
-      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "google-merchant-xml",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     },
     {
       "id": "leroy-merlin",
@@ -37,10 +54,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.leroymerlin.fr/",
+      "domain": "www.leroymerlin.fr",
       "searchUrlTemplate": "https://www.leroymerlin.fr/produits/recherche.html?rechercher={query}",
       "enabled": false,
-      "feed": { "type": "csv", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "csv",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     },
     {
       "id": "la-redoute-interieurs",
@@ -48,10 +73,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.laredoute.fr/",
+      "domain": "www.laredoute.fr",
       "searchUrlTemplate": "https://www.laredoute.fr/srch/{query}.aspx",
       "enabled": false,
-      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "google-merchant-xml",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     },
     {
       "id": "conforama",
@@ -59,10 +92,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.conforama.fr/",
+      "domain": "www.conforama.fr",
       "searchUrlTemplate": "https://www.conforama.fr/recherche?text={query}",
       "enabled": false,
-      "feed": { "type": "csv", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "csv",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     },
     {
       "id": "but",
@@ -70,10 +111,18 @@
       "country": "FR",
       "currency": "EUR",
       "site": "https://www.but.fr/",
+      "domain": "www.but.fr",
       "searchUrlTemplate": "https://www.but.fr/recherche?text={query}",
       "enabled": false,
-      "feed": { "type": "csv", "url": "", "headers": {} },
-      "affiliate": { "param": "", "value": "" }
+      "feed": {
+        "type": "csv",
+        "url": "",
+        "headers": {}
+      },
+      "affiliate": {
+        "param": "",
+        "value": ""
+      }
     }
   ]
 }

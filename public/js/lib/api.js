@@ -38,6 +38,9 @@ export const createDesign = (body) =>
 export const searchCatalog = (params) =>
   request(`/api/catalog/search?${new URLSearchParams(params)}`);
 
+export const searchCatalogLive = (params) =>
+  request(`/api/catalog/search?${new URLSearchParams({ ...params, live: '1' })}`);
+
 export const listStores = () => request('/api/catalog/stores');
 
 export const storeLinks = (query) => request(`/api/catalog/links?${new URLSearchParams({ q: query })}`);

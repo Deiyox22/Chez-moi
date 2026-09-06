@@ -38,6 +38,18 @@ export function sendError(res, error) {
 }
 
 export async function readJsonBody(req) {
+  // Some hosts (Vercel) parse the body before the handler runs and drain the stream.
+  if (req.body !== undefined && req.body !== null) {
+    if (typeof req.body === 'object') return req.body;
+    try {
+      return JSON.parse(String(req.body));
+    } catch {
+      const error = new Error('Corps de requete JSON invalide.');
+      error.status = 400;
+      throw error;
+    }
+  }
+
   const chunks = [];
   let size = 0;
   for await (const chunk of req) {

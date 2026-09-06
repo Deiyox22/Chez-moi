@@ -3,7 +3,7 @@ import { config, aiConfigured } from '../config.js';
 
 let client = null;
 
-function getClient() {
+export function getClient() {
   if (!aiConfigured()) {
     const error = new Error(
       "Aucune cle ANTHROPIC_API_KEY n'est configuree sur le serveur. Copiez .env.example vers .env et renseignez votre cle."

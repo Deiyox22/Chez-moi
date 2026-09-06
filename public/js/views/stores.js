@@ -1,5 +1,5 @@
 import { el, formatPrice, progress, toast } from '../lib/ui.js';
-import { listStores, searchCatalog, storeLinks } from '../lib/api.js';
+import { listStores, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
 
 function productCard(product) {
   return el('a', { class: 'card item-card', href: product.url || '#', target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'none', color: 'inherit' } }, [
@@ -24,7 +24,32 @@ export async function render({ query }) {
 
   const searchInput = el('input', { type: 'search', placeholder: 'tapis laine ecru, lampadaire noir…', value: query.get('q') || '' });
   const resultsBox = el('div', { class: 'stack' });
+  const liveBox = el('div', { class: 'stack' });
   const linksBox = el('div');
+
+  const liveButton = el('button', {
+    class: 'button button--soft button--block',
+    text: 'Chercher sur les sites des magasins',
+  });
+  liveButton.addEventListener('click', async () => {
+    const term = searchInput.value.trim();
+    if (!term) return;
+    liveButton.disabled = true;
+    liveBox.replaceChildren(progress('Recherche en cours sur les sites des magasins…'));
+    try {
+      const { live } = await searchCatalogLive({ q: term });
+      liveBox.replaceChildren(
+        el('h2', { text: 'Trouvés en ligne' }),
+        ...(live && live.length
+          ? live.map(productCard)
+          : [el('p', { class: 'small muted', text: 'Rien trouvé sur les sites autorisés pour cette recherche.' })])
+      );
+    } catch (error) {
+      liveBox.replaceChildren(el('p', { class: 'notice small', text: error.message }));
+    } finally {
+      liveButton.disabled = false;
+    }
+  });
 
   const runSearch = async () => {
     const term = searchInput.value.trim();
@@ -34,6 +59,7 @@ export async function render({ query }) {
     try {
       const [{ products }, links] = await Promise.all([searchCatalog({ q: term, limit: 12 }), storeLinks(term)]);
       resultsBox.replaceChildren();
+      liveBox.replaceChildren();
       if (!products.length) {
         resultsBox.appendChild(el('p', { class: 'small muted', text: 'Aucun produit dans les catalogues chargés. Essayez les liens ci-dessous.' }));
       } else {
@@ -60,6 +86,8 @@ export async function render({ query }) {
   ]);
   wrap.appendChild(form);
   wrap.appendChild(resultsBox);
+  wrap.appendChild(liveButton);
+  wrap.appendChild(liveBox);
   wrap.appendChild(linksBox);
 
   const statusCard = el('div', { class: 'card card--flat' }, [progress('Chargement des magasins…')]);

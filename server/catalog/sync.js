@@ -7,12 +7,23 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { config } from '../config.js';
+import { fileURLToPath } from 'node:url';
+import { config, ROOT } from '../config.js';
 import { loadStores, invalidateCatalog } from './store.js';
 import { parseFeed } from './providers/feed.js';
 
 async function fetchFeed(store) {
-  const response = await fetch(store.feed.url, {
+  const source = store.feed.url;
+
+  // A feed exported by hand is just as valid as one served over HTTP.
+  if (source.startsWith('file://') || source.startsWith('./') || source.startsWith('/') || source.startsWith('..')) {
+    const filePath = source.startsWith('file://')
+      ? fileURLToPath(source)
+      : path.resolve(ROOT, source);
+    return fs.readFileSync(filePath, 'utf8');
+  }
+
+  const response = await fetch(source, {
     headers: { 'user-agent': 'chez-moi-catalog-sync/0.1', ...(store.feed.headers || {}) },
     redirect: 'follow',
   });
