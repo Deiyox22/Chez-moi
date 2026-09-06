@@ -161,6 +161,122 @@
       "note": "robots.txt lisible et sitemap produits public ; les pages portent des données schema.org."
     },
     {
+      "id": "fly",
+      "name": "FLY",
+      "site": "https://fly.fr",
+      "domain": "fly.fr",
+      "searchUrlTemplate": "https://fly.fr/?s={query}&post_type=product",
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://fly.fr/sitemap_index.xml",
+        "sitemapPattern": "product-sitemap",
+        "urlPattern": "/boutique/",
+        "maxProducts": 260,
+        "perCategory": 16,
+        "delayMs": 700
+      },
+      "country": "FR",
+      "currency": "EUR",
+      "enabled": true,
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et catalogue produit public."
+    },
+    {
+      "id": "vente-unique",
+      "name": "Vente-unique",
+      "site": "https://www.vente-unique.com",
+      "domain": "www.vente-unique.com",
+      "searchUrlTemplate": "https://www.vente-unique.com/recherche?q={query}",
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.vente-unique.com/sitemap.xml",
+        "sitemapPattern": "product_mkp",
+        "urlPattern": "/p/",
+        "maxProducts": 300,
+        "perCategory": 16,
+        "delayMs": 700
+      },
+      "country": "FR",
+      "currency": "EUR",
+      "enabled": true,
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et catalogue produit public."
+    },
+    {
+      "id": "westwing",
+      "name": "Westwing",
+      "site": "https://www.westwing.fr",
+      "domain": "www.westwing.fr",
+      "searchUrlTemplate": "https://www.westwing.fr/recherche/?q={query}",
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.westwing.fr/sitemap.xml",
+        "sitemapPattern": "sitemap-products",
+        "urlPattern": "\\.html$",
+        "maxProducts": 240,
+        "perCategory": 14,
+        "delayMs": 700
+      },
+      "country": "FR",
+      "currency": "EUR",
+      "enabled": true,
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et catalogue produit public."
+    },
+    {
+      "id": "silvera",
+      "name": "Silvera",
+      "site": "https://www.silvera.fr",
+      "domain": "www.silvera.fr",
+      "searchUrlTemplate": "https://www.silvera.fr/recherche?q={query}",
+      "feed": {
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.silvera.fr/sitemap_index.xml",
+        "sitemapPattern": "sitemap/products",
+        "urlPattern": "/eshop/",
+        "maxProducts": 180,
+        "perCategory": 12,
+        "delayMs": 700
+      },
+      "country": "FR",
+      "currency": "EUR",
+      "enabled": true,
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et catalogue produit public."
+    },
+    {
+      "id": "zago",
+      "name": "Zago",
+      "site": "https://www.zago-store.com",
+      "domain": "www.zago-store.com",
+      "searchUrlTemplate": "https://www.zago-store.com/search?q={query}",
+      "feed": {
+        "type": "shopify",
+        "url": "https://www.zago-store.com",
+        "headers": {}
+      },
+      "country": "FR",
+      "currency": "EUR",
+      "enabled": true,
+      "affiliate": {
+        "param": "",
+        "value": ""
+      },
+      "note": "robots.txt lisible et catalogue produit public."
+    },
+    {
       "id": "maisons-du-monde",
       "name": "Maisons du Monde",
       "country": "FR",

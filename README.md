@@ -88,18 +88,23 @@ génération d'aménagements sont désactivées.
 
 ## Les vrais catalogues de magasins
 
-**Sept catalogues sont chargés**, avec vrais titres, vrais prix, vraies photos et lien direct
-vers la fiche produit :
+**Douze catalogues sont chargés, soit environ 4 200 produits**, avec vrais titres, vrais prix,
+vraies photos et lien direct vers la fiche produit :
 
 | Enseigne | Ce qu'on y trouve | Comment |
 | --- | --- | --- |
-| [IKEA](https://www.ikea.com/fr/fr/) | mobilier et décoration | sitemap + schema.org |
-| [Habitat](https://www.habitat.fr) | mobilier | sitemap + schema.org |
-| [Camif](https://www.camif.fr) | mobilier français et éco-conçu | sitemap + schema.org |
+| [Hartô](https://harto.fr) | mobilier design | flux Shopify |
 | [Maison Sarah Lavoine](https://maisonsarahlavoine.com) | mobilier et décoration | flux Shopify |
 | [Honoré Déco](https://honoredeco.com) | décoration et assises | flux Shopify |
 | [Tediber](https://tediber.com) | literie | flux Shopify |
-| [Hartô](https://harto.fr) | mobilier design | flux Shopify |
+| [IKEA](https://www.ikea.com/fr/fr/) | mobilier et décoration | sitemap + schema.org |
+| [Habitat](https://www.habitat.fr) | mobilier | sitemap + schema.org |
+| [Camif](https://www.camif.fr) | mobilier français et éco-conçu | sitemap + schema.org |
+| [FLY](https://fly.fr) | mobilier grand public | sitemap + schema.org |
+| [Vente-unique](https://www.vente-unique.com) | mobilier grand public | sitemap + schema.org |
+| [Westwing](https://www.westwing.fr) | décoration et textile | sitemap + schema.org |
+| [Silvera](https://www.silvera.fr) | mobilier haut de gamme | sitemap + schema.org |
+| [Zago](https://www.zago-store.com) | mobilier design | flux Shopify |
 
 Aucun compte, aucune clé, aucune extraction de page : soit le point d'accès `/products.json`
 que ces boutiques exposent publiquement, soit le sitemap et les données schema.org que les
@@ -143,9 +148,9 @@ Pour savoir si une boutique expose un flux Shopify :
 Aucune ne publie d'API produit ouverte, mais elles ne se valent pas toutes face à un accès
 automatisé, et chacune a été vérifiée plutôt que supposée.
 
-**IKEA, Habitat et Camif sont connectées.** Leur `robots.txt` est lisible et n'interdit pas les
-fiches produit, leur sitemap produits est public, et leurs pages portent des données
-schema.org. C'est exactement le mécanisme que les sites publient *à destination* des moteurs
+**IKEA, Habitat, Camif, FLY, Vente-unique, Westwing et Silvera sont connectées.** Leur
+`robots.txt` est lisible et n'interdit pas les fiches produit, leur sitemap produits est
+public, et leurs pages portent des données schema.org. C'est exactement le mécanisme que les sites publient *à destination* des moteurs
 de recherche et des comparateurs, et le lecteur `sitemap-jsonld` l'utilise comme tel :
 
 - `robots.txt` est lu en premier et ses règles `Disallow` sont respectées ;
