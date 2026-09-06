@@ -1,0 +1,79 @@
+{
+  "$comment": [
+    "Liste des magasins interrogeables par Chez Moi.",
+    "Aucune enseigne francaise ne publie d'API produit publique et ouverte : la voie legale pour",
+    "disposer d'un VRAI catalogue est un flux produit (programme d'affiliation, flux Google Merchant,",
+    "export marchand, accord partenaire). Renseignez l'URL du flux dans 'feed.url', activez le magasin",
+    "avec 'enabled': true, puis lancez 'npm run catalog:sync'.",
+    "Tant qu'aucun flux n'est configure, l'application utilise le catalogue d'exemple embarque et",
+    "renvoie des liens vers la recherche du site du magasin (jamais des references inventees)."
+  ],
+  "stores": [
+    {
+      "id": "ikea",
+      "name": "IKEA",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.ikea.com/fr/fr/",
+      "searchUrlTemplate": "https://www.ikea.com/fr/fr/search/?q={query}",
+      "enabled": false,
+      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    },
+    {
+      "id": "maisons-du-monde",
+      "name": "Maisons du Monde",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.maisonsdumonde.com/FR/fr",
+      "searchUrlTemplate": "https://www.maisonsdumonde.com/FR/fr/search?q={query}",
+      "enabled": false,
+      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    },
+    {
+      "id": "leroy-merlin",
+      "name": "Leroy Merlin",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.leroymerlin.fr/",
+      "searchUrlTemplate": "https://www.leroymerlin.fr/produits/recherche.html?rechercher={query}",
+      "enabled": false,
+      "feed": { "type": "csv", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    },
+    {
+      "id": "la-redoute-interieurs",
+      "name": "La Redoute Interieurs",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.laredoute.fr/",
+      "searchUrlTemplate": "https://www.laredoute.fr/srch/{query}.aspx",
+      "enabled": false,
+      "feed": { "type": "google-merchant-xml", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    },
+    {
+      "id": "conforama",
+      "name": "Conforama",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.conforama.fr/",
+      "searchUrlTemplate": "https://www.conforama.fr/recherche?text={query}",
+      "enabled": false,
+      "feed": { "type": "csv", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    },
+    {
+      "id": "but",
+      "name": "BUT",
+      "country": "FR",
+      "currency": "EUR",
+      "site": "https://www.but.fr/",
+      "searchUrlTemplate": "https://www.but.fr/recherche?text={query}",
+      "enabled": false,
+      "feed": { "type": "csv", "url": "", "headers": {} },
+      "affiliate": { "param": "", "value": "" }
+    }
+  ]
+}

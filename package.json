@@ -1,0 +1,20 @@
+{
+  "name": "chez-moi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PWA de design d'interieur : vos meubles photographies, vos pieces, et des propositions d'amenagement qui reutilisent ce que vous possedez.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "catalog:sync": "node server/catalog/sync.js",
+    "icons": "node scripts/gen-icons.mjs",
+    "check": "node --check server/index.js && node scripts/check-syntax.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.124.0"
+  }
+}

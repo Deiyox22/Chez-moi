@@ -1,0 +1,23 @@
+{
+  "name": "Chez Moi — design d'intérieur",
+  "short_name": "Chez Moi",
+  "description": "Photographiez vos meubles, envoyez les photos de vos pièces, et recevez des aménagements qui réutilisent ce que vous possédez.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#faf7f2",
+  "theme_color": "#b5613f",
+  "categories": ["lifestyle", "shopping", "productivity"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Ajouter un meuble", "url": "/#/meubles?ajouter=1" },
+    { "name": "Ajouter une pièce", "url": "/#/pieces?ajouter=1" }
+  ]
+}

@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.local
+data/catalog/*.json
+!data/catalog/.gitkeep
+*.log
+.DS_Store
