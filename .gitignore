@@ -11,5 +11,8 @@ data/catalog/*.json
 
 # Lien local vers le projet Vercel, ne doit jamais etre commite
 .vercel/
-.vercel
-.env*
+
+# Fichiers d'environnement locaux (le modele .env.example reste suivi)
+.env
+.env.local
+.env.*.local
