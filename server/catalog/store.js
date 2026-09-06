@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../config.js';
+import { guessCategory } from './providers/feed.js';
 
 let cache = null;
 
@@ -114,7 +115,9 @@ export function invalidateCatalog() {
 export function searchProducts({ query = '', category = '', store = '', maxPrice = null, styles = [], colors = [], limit = 12 } = {}) {
   const catalog = loadCatalog();
   const queryTokens = tokenize([query, styles.join(' '), colors.join(' ')].join(' '));
-  const categoryKey = normalizeText(category);
+  // "matelas 160x200" names a category even when the caller passes none; without
+  // this, a protege-matelas outranks a mattress simply for being cheaper.
+  const categoryKey = normalizeText(category || guessCategory(query));
 
   const scored = [];
   for (const product of catalog.products) {
