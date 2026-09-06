@@ -18,6 +18,20 @@ export function normalizeText(value) {
 // is not an armchair, and should not outrank one.
 const ACCESSORY = /housse seule|piece detachee|pieces detachees|recharge|pied seul|pieds seuls|echantillon|kit de reparation/;
 
+// Shops name the same piece of furniture differently: IKEA files bookcases
+// under "etagere", so a search for "bibliotheque" has to reach them.
+const SIBLINGS = {
+  bibliotheque: ['etagere'],
+  etagere: ['bibliotheque'],
+  rangement: ['etagere', 'buffet', 'commode'],
+  buffet: ['rangement', 'commode'],
+  commode: ['rangement', 'buffet'],
+  lampe_table: ['lampadaire'],
+  lampadaire: ['lampe_table'],
+  canape: ['fauteuil'],
+  plaid: ['linge_de_lit'],
+};
+
 const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'en', 'et', 'pour', 'avec', 'a', 'au', 'aux', 'sur', 'dans']);
 
 function tokenize(value) {
@@ -101,8 +115,28 @@ export function loadCatalog({ force = false } = {}) {
     if (seedItems.length) sources.push({ store: 'catalogue-exemple', type: 'exemple', count: seedItems.length, updatedAt: seed.updatedAt || null });
   }
 
-  cache = { stores, storesById, products, sources };
+  cache = { stores, storesById, products, sources, medians: medianPrices(products) };
   return cache;
+}
+
+/**
+ * Median price per category. Two products can answer a query equally well on
+ * words alone; the typical one for its category is the better suggestion, and
+ * this is what keeps a 0.60 EUR box from answering "bibliotheque".
+ */
+function medianPrices(products) {
+  const byCategory = new Map();
+  for (const product of products) {
+    if (!product.category || !product.price) continue;
+    if (!byCategory.has(product.category)) byCategory.set(product.category, []);
+    byCategory.get(product.category).push(product.price);
+  }
+  const medians = new Map();
+  for (const [category, prices] of byCategory) {
+    prices.sort((a, b) => a - b);
+    medians.set(category, prices[Math.floor(prices.length / 2)]);
+  }
+  return medians;
 }
 
 export function invalidateCatalog() {
@@ -130,7 +164,10 @@ export function searchProducts({ query = '', category = '', store = '', maxPrice
 
     if (categoryKey) {
       if (productCategory === categoryKey) score += 12;
-      else if (productCategory.includes(categoryKey) || categoryKey.includes(productCategory)) score += 6;
+      else if (SIBLINGS[categoryKey]?.includes(productCategory)) score += 8;
+      // An empty product category must not count as a partial match: an
+      // uncategorised item is not a better answer than a categorised one.
+      else if (productCategory && (productCategory.includes(categoryKey) || categoryKey.includes(productCategory))) score += 6;
       else if (haystack.includes(categoryKey)) score += 2;
       else score -= 3;
     }
@@ -155,7 +192,18 @@ export function searchProducts({ query = '', category = '', store = '', maxPrice
     if (score > 0) scored.push({ product, score });
   }
 
-  scored.sort((a, b) => b.score - a.score || (a.product.price ?? 1e9) - (b.product.price ?? 1e9));
+  // Ties go to the product most typical of its category, then to the cheaper one.
+  const typicality = (product) => {
+    const median = catalog.medians.get(product.category);
+    if (!median || !product.price) return 1;
+    return Math.abs(Math.log(product.price / median));
+  };
+  scored.sort(
+    (a, b) =>
+      b.score - a.score ||
+      typicality(a.product) - typicality(b.product) ||
+      (a.product.price ?? 1e9) - (b.product.price ?? 1e9)
+  );
   return scored.slice(0, limit).map(({ product, score }) => {
     const { haystack, ...rest } = product;
     return { ...rest, score };
@@ -172,6 +220,7 @@ export function catalogStatus() {
       enabled: Boolean(store.enabled),
       feedConfigured: Boolean(store.feed?.url),
       feedType: store.feed?.type || null,
+      note: store.note || null,
       productCount: catalog.products.filter((product) => product.store === store.id).length,
       hasRealFeed: catalog.sources.some((source) => source.store === store.id && source.type === 'feed'),
     })),

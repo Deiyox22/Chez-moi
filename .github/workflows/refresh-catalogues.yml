@@ -20,6 +20,9 @@ concurrency:
 jobs:
   synchroniser:
     runs-on: ubuntu-latest
+    # Le parcours du sitemap IKEA est volontairement lent (une page a la fois,
+    # avec un delai) et prend une vingtaine de minutes.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

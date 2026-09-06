@@ -110,7 +110,8 @@ anormalement petit.
 
 ### Ajouter une enseigne
 
-Quatre formats de flux sont reconnus : `shopify`, `google-merchant-xml`, `csv`, `json`.
+Cinq formats de flux sont reconnus : `shopify`, `sitemap-jsonld`, `google-merchant-xml`,
+`csv`, `json`.
 
 ```jsonc
 {
@@ -131,12 +132,27 @@ Pour savoir si une boutique expose un flux Shopify :
 
 ### Les grandes enseignes
 
-IKEA, Maisons du Monde, Leroy Merlin, La Redoute Intérieurs, Conforama et BUT restent
-déclarées mais désactivées : **aucune ne publie d'API produit ouverte**, et extraire leur site
-serait fragile et contraire à leurs conditions d'utilisation. Leur catalogue passe par le flux
-produit qu'elles réservent à leurs partenaires (Google Merchant, export CSV d'affiliation,
-accord direct). Renseignez `feed.url` et passez `enabled` à `true`, puis relancez la
-synchronisation.
+Aucune ne publie d'API produit ouverte, mais elles ne se valent pas toutes face à un accès
+automatisé, et chacune a été vérifiée plutôt que supposée.
+
+**IKEA est connectée.** Son `robots.txt` autorise explicitement les fiches produit à tous les
+robots, son sitemap produits France est public, et ses pages portent des données schema.org
+complètes. C'est exactement le mécanisme que les sites publient *à destination* des moteurs de
+recherche et des comparateurs, et le lecteur `sitemap-jsonld` l'utilise comme tel :
+
+- `robots.txt` est lu en premier et ses règles `Disallow` sont respectées ;
+- les requêtes sont sérialisées avec un délai, jamais parallélisées ;
+- l'agent utilisateur dit qui appelle et renvoie vers ce dépôt ;
+- le nombre de pages est plafonné et **équilibré par catégorie** grâce au type de produit lu
+  dans l'URL, ce qui évite de balayer tout le site pour obtenir un catalogue représentatif ;
+- cinq refus consécutifs arrêtent l'import.
+
+**BUT, Leroy Merlin, Conforama, Maisons du Monde et La Redoute répondent HTTP 403** aux
+requêtes automatisées, par pare-feu applicatif. C'est un refus explicite, et il est respecté :
+ces enseignes restent désactivées, avec la raison inscrite dans `config/stores.json` et
+affichée dans l'écran Magasins. Pour les brancher, il faut le flux produit qu'elles réservent
+à leurs partenaires (Google Merchant, export CSV d'affiliation, accord direct) : renseignez
+`feed.url` et passez `enabled` à `true`.
 
 Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import sans compte :
 `docs/exemple-flux-google-merchant.xml` en fournit un.

@@ -99,19 +99,31 @@ export async function render({ query }) {
       statusCard.replaceChildren(
         el('h3', { text: 'Catalogues connectés' }),
         el('div', { class: 'stack' }, status.stores.map((store) =>
-          el('div', { class: 'row' }, [
-            el('div', { class: 'grow' }, [
-              el('div', { style: { fontWeight: '600' }, text: store.name }),
-              el('div', { class: 'small muted', text: store.hasRealFeed ? `${store.productCount} produits importés du flux` : store.feedConfigured ? 'flux configuré, pas encore synchronisé' : 'aucun flux configuré' }),
+          el('div', {}, [
+            el('div', { class: 'row' }, [
+              el('div', { class: 'grow' }, [
+                el('div', { style: { fontWeight: '600' }, text: store.name }),
+                el('div', {
+                  class: 'small muted',
+                  text: store.hasRealFeed
+                    ? `${store.productCount} produits importés`
+                    : store.feedConfigured
+                      ? 'flux configuré, pas encore synchronisé'
+                      : 'pas de catalogue connecté',
+                }),
+              ]),
+              el('span', { class: store.hasRealFeed ? 'chip chip--sage' : 'chip', text: store.hasRealFeed ? 'connecté' : 'non connecté' }),
             ]),
-            el('span', { class: store.hasRealFeed ? 'chip chip--sage' : 'chip', text: store.hasRealFeed ? 'flux réel' : 'exemple' }),
+            !store.hasRealFeed && store.note
+              ? el('div', { class: 'small muted', style: { marginTop: '2px', opacity: '0.85' }, text: store.note })
+              : null,
           ])
         )),
         usesSample
           ? el('p', {
               class: 'notice small',
               style: { marginTop: '12px' },
-              html: "Pour interroger les <strong>vrais</strong> catalogues, renseignez l'URL du flux produit de chaque enseigne dans <code>config/stores.json</code> (programme d'affiliation ou flux Google Merchant), puis lancez <code>npm run catalog:sync</code>.",
+              html: "Pour brancher une enseigne supplémentaire, renseignez l'URL de son flux produit dans <code>config/stores.json</code>, puis lancez <code>npm run catalog:sync</code>.",
             })
           : null
       );

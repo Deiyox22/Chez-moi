@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { config, ROOT } from '../config.js';
 import { loadStores, invalidateCatalog } from './store.js';
 import { parseFeed, parseShopifyProducts } from './providers/feed.js';
+import { crawlSitemap } from './providers/sitemap.js';
 
 async function fetchFeed(store) {
   const source = store.feed.url;
@@ -52,11 +53,16 @@ async function fetchShopify(store) {
 }
 
 async function syncStore(store) {
-  if (!store.feed?.url) {
+  if (!store.feed?.url && !store.feed?.sitemap) {
     return { store: store.id, skipped: "aucune URL de flux dans config/stores.json" };
   }
-  const products =
-    store.feed.type === 'shopify' ? await fetchShopify(store) : parseFeed(await fetchFeed(store), store);
+  let products;
+  if (store.feed.type === 'shopify') products = await fetchShopify(store);
+  else if (store.feed.type === 'sitemap-jsonld') {
+    products = await crawlSitemap(store, {
+      onProgress: (done, total) => console.log(`  ${store.name} : ${done} produits lus sur ${total} pages ciblees...`),
+    });
+  } else products = parseFeed(await fetchFeed(store), store);
   if (!products.length) {
     return { store: store.id, skipped: 'le flux ne contient aucun produit exploitable' };
   }

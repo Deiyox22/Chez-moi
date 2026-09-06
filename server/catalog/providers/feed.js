@@ -59,7 +59,10 @@ function splitList(value) {
 // "Maison > Textiles > Tapis"). Mapping them onto the app's vocabulary is what
 // lets a shopping need find the right products.
 const CATEGORY_RULES = [
-  [/table\s*basse|bout de canap/i, 'table_basse'],
+  // Specific before generic: "plante de bureau" is a plant, not a desk, and
+  // "table d'appoint" is a side table, not a dining table.
+  [/plante|cache-pot|jardini(e|è)re/i, 'plante'],
+  [/table\s*basse|bout de canap|table d(')?appoint/i, 'table_basse'],
   [/table\s*(a|à)\s*manger|table de repas|table de salle/i, 'table_repas'],
   [/t(e|ê)te de lit/i, 'tete_de_lit'],
   [/canap(e|é)|sofa|banquette/i, 'canape'],
@@ -89,7 +92,6 @@ const CATEGORY_RULES = [
   [/lampadaire/i, 'lampadaire'],
   [/lampe|applique|liseuse/i, 'lampe_table'],
   [/affiche|cadre|tableau|d(e|é)co murale/i, 'decoration_murale'],
-  [/plante|cache-pot|jardini(e|è)re/i, 'plante'],
   [/vase|bougie|bougeoir|photophore|plateau|vide[-\s]poche|bo(i|î)te|pot d(e|é)coratif|corbeille|panier/i, 'decoration'],
   [/serviette|drap de bain|peignoir|gant de toilette/i, 'linge_de_bain'],
   [/table/i, 'table_repas'],

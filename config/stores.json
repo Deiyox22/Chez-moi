@@ -96,16 +96,21 @@
       "site": "https://www.ikea.com/fr/fr/",
       "domain": "www.ikea.com",
       "searchUrlTemplate": "https://www.ikea.com/fr/fr/search/?q={query}",
-      "enabled": false,
+      "enabled": true,
       "feed": {
-        "type": "google-merchant-xml",
-        "url": "",
-        "headers": {}
+        "type": "sitemap-jsonld",
+        "sitemap": "https://www.ikea.com/sitemaps/sitemap.xml",
+        "sitemapPattern": "prod-fr-FR",
+        "urlPattern": "/fr/fr/p/",
+        "maxProducts": 420,
+        "perCategory": 22,
+        "delayMs": 700
       },
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "robots.txt autorise les fiches produit pour tous les robots ; le sitemap produits France est public et les pages portent des donnees schema.org."
     },
     {
       "id": "maisons-du-monde",
@@ -124,7 +129,8 @@
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "Repond HTTP 403 aux requetes automatisees (pare-feu applicatif). Passe par un flux d'affiliation : renseignez feed.url puis activez."
     },
     {
       "id": "leroy-merlin",
@@ -143,7 +149,8 @@
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "Repond HTTP 403 aux requetes automatisees (pare-feu applicatif). Passe par un flux d'affiliation : renseignez feed.url puis activez."
     },
     {
       "id": "la-redoute-interieurs",
@@ -162,7 +169,8 @@
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "Repond HTTP 403 aux requetes automatisees (pare-feu applicatif). Passe par un flux d'affiliation : renseignez feed.url puis activez."
     },
     {
       "id": "conforama",
@@ -181,7 +189,8 @@
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "Repond HTTP 403 aux requetes automatisees (pare-feu applicatif). Passe par un flux d'affiliation : renseignez feed.url puis activez."
     },
     {
       "id": "but",
@@ -200,7 +209,8 @@
       "affiliate": {
         "param": "",
         "value": ""
-      }
+      },
+      "note": "Repond HTTP 403 aux requetes automatisees (pare-feu applicatif). Passe par un flux d'affiliation : renseignez feed.url puis activez."
     }
   ]
 }
