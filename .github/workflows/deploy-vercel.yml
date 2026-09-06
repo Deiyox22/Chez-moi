@@ -54,24 +54,42 @@ jobs:
         with:
           node-version: 22
 
+      # Sans jeton, le deploiement est saute plutot qu'echoue : la CI reste verte
+      # tant que le depot n'est pas relie a un compte Vercel.
       - name: Verifier la presence du jeton Vercel
+        id: jeton
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           if [ -z "$VERCEL_TOKEN" ]; then
-            echo "::error::Le secret VERCEL_TOKEN est absent. Creez-le dans Settings > Secrets and variables > Actions, puis relancez ce workflow."
-            exit 1
+            echo "pret=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Deploiement saute : le secret VERCEL_TOKEN est absent."
+            {
+              echo "## Deploiement saute"
+              echo ""
+              echo "Le secret \`VERCEL_TOKEN\` n'est pas defini."
+              echo ""
+              echo "1. Creez un jeton sur https://vercel.com/account/tokens"
+              echo "2. Ajoutez-le dans Settings > Secrets and variables > Actions sous le nom \`VERCEL_TOKEN\`"
+              echo "3. Ajoutez aussi \`ANTHROPIC_API_KEY\`"
+              echo "4. Relancez ce workflow depuis l'onglet Actions"
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "pret=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Installer la CLI Vercel
+        if: steps.jeton.outputs.pret == 'true'
         run: npm i -g vercel@latest
 
       - name: Lier le projet Vercel
+        if: steps.jeton.outputs.pret == 'true'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: vercel link --yes --project chez-moi --token "$VERCEL_TOKEN"
 
       - name: Publier les variables d'environnement
+        if: steps.jeton.outputs.pret == 'true'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -98,6 +116,7 @@ jobs:
 
       - name: Deployer
         id: deploiement
+        if: steps.jeton.outputs.pret == 'true'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
