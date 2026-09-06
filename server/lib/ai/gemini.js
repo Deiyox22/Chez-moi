@@ -26,9 +26,27 @@ const toContents = (parts) => [
 ];
 
 /**
- * Gemini rejects an unknown model with a bare 404. Listing what the key can
- * actually reach turns that into something the user can act on.
+ * Turns Gemini's raw API errors into something the person in front of the app
+ * can act on: an exhausted quota and an unreachable model look identical
+ * otherwise (a bare status code buried in a JSON string).
  */
+function describeQuotaError(error) {
+  const message = String(error?.message || error);
+  if (!/RESOURCE_EXHAUSTED|429|quota|credits are depleted/i.test(message)) return null;
+  if (/credits are depleted|billing/i.test(message)) {
+    return {
+      text: "Le projet Google associe a cette cle n'a plus de credits. Rechargez-le sur https://ai.studio/projects, puis reessayez.",
+      code: 'quota_depleted',
+      status: 402,
+    };
+  }
+  return {
+    text: 'Quota Gemini atteint pour le moment. Reessayez dans quelques minutes.',
+    code: 'rate_limited',
+    status: 429,
+  };
+}
+
 async function describeModelError(error) {
   const message = String(error?.message || error);
   if (!/not found|404|is not supported/i.test(message)) return null;
@@ -60,6 +78,13 @@ export async function askForJson({ system, parts, schema, maxTokens = 16000 }) {
       },
     });
   } catch (error) {
+    const quota = describeQuotaError(error);
+    if (quota) {
+      const friendly = new Error(quota.text);
+      friendly.status = quota.status;
+      friendly.code = quota.code;
+      throw friendly;
+    }
     const hint = await describeModelError(error);
     if (hint) {
       const friendly = new Error(hint);
