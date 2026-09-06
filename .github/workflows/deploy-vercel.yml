@@ -1,0 +1,115 @@
+# Deploiement automatique sur Vercel.
+#
+# Deux secrets a creer dans Settings > Secrets and variables > Actions :
+#   VERCEL_TOKEN       https://vercel.com/account/tokens
+#   ANTHROPIC_API_KEY  https://console.anthropic.com/settings/keys
+#
+# Les secrets restent dans GitHub : ils sont transmis a Vercel par ce workflow
+# et n'apparaissent jamais dans les journaux.
+name: Deployer sur Vercel
+
+on:
+  push:
+    branches:
+      - main
+      - claude/pwa-interior-design-app-kr5euz
+  workflow_dispatch:
+    inputs:
+      environnement:
+        description: Environnement cible
+        type: choice
+        options: [production, preview]
+        default: production
+
+concurrency:
+  group: vercel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    name: Verifications
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Analyse syntaxique
+        run: npm run check
+      - name: Validation des fichiers de configuration
+        run: |
+          node -e "['config/stores.json','vercel.json','public/manifest.webmanifest','server/catalog/data/seed-catalog.json'].forEach(f=>{JSON.parse(require('fs').readFileSync(f,'utf8'));console.log('ok',f)})"
+
+  deployer:
+    name: Deploiement
+    needs: verifier
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environnement || 'production' }}
+      url: ${{ steps.deploiement.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verifier la presence du jeton Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Le secret VERCEL_TOKEN est absent. Creez-le dans Settings > Secrets and variables > Actions, puis relancez ce workflow."
+            exit 1
+          fi
+
+      - name: Installer la CLI Vercel
+        run: npm i -g vercel@latest
+
+      - name: Lier le projet Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel link --yes --project chez-moi --token "$VERCEL_TOKEN"
+
+      - name: Publier les variables d'environnement
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          cible="${{ inputs.environnement || 'production' }}"
+
+          pousser_variable() {
+            nom="$1"; valeur="$2"
+            if [ -z "$valeur" ]; then
+              echo "$nom non fourni, ignore."
+              return 0
+            fi
+            vercel env rm "$nom" "$cible" --yes --token "$VERCEL_TOKEN" > /dev/null 2>&1 || true
+            printf '%s' "$valeur" | vercel env add "$nom" "$cible" --token "$VERCEL_TOKEN" > /dev/null
+            echo "$nom publie sur $cible."
+          }
+
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::warning::Le secret ANTHROPIC_API_KEY est absent. Le site sera deploye, mais l'analyse des photos et la generation d'amenagements resteront desactivees."
+          fi
+          pousser_variable ANTHROPIC_API_KEY "$ANTHROPIC_API_KEY"
+          pousser_variable ANTHROPIC_MODEL "claude-opus-5"
+
+      - name: Deployer
+        id: deploiement
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.environnement || 'production' }}" = "production" ]; then
+            url=$(vercel deploy --prod --yes --token "$VERCEL_TOKEN")
+          else
+            url=$(vercel deploy --yes --token "$VERCEL_TOKEN")
+          fi
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Chez Moi est en ligne"
+            echo ""
+            echo "$url"
+          } >> "$GITHUB_STEP_SUMMARY"
