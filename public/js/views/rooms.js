@@ -179,10 +179,18 @@ async function startDesignFlow(room) {
     const rentingBox = el('input', { type: 'checkbox' });
 
     const selection = new Map(furniture.map((item) => [item.id, true]));
-    const furnitureList = el('div', { class: 'stack' }, furniture.map((item) => {
+    const ligne = (item) => {
       const box = el('input', { type: 'checkbox', checked: true, onchange: (event) => selection.set(item.id, event.target.checked) });
       return el('label', { class: 'checkbox' }, [box, el('span', { text: item.nom })]);
-    }));
+    };
+    const possedes = furniture.filter((item) => (item.statut || 'possede') === 'possede');
+    const envies = furniture.filter((item) => item.statut === 'a_acheter');
+    const furnitureList = el('div', { class: 'stack' }, [
+      possedes.length ? el('p', { class: 'small muted', style: { margin: '0' }, text: 'Ce que vous possédez' }) : null,
+      ...possedes.map(ligne),
+      envies.length ? el('p', { class: 'small muted', style: { margin: '10px 0 0' }, text: 'Envies d’achat repérées au catalogue' }) : null,
+      ...envies.map(ligne),
+    ]);
 
     const status = el('div');
     const generateButton = el('button', { class: 'button button--block', text: 'Générer la proposition' });
@@ -207,6 +215,7 @@ async function startDesignFlow(room) {
           furniture: chosen.map((item) => ({
             id: item.id,
             nom: item.nom,
+            statut: item.statut || 'possede',
             categorie: item.categorie,
             styles: item.styles,
             couleurs: item.couleurs,
@@ -214,6 +223,9 @@ async function startDesignFlow(room) {
             dimensionsEstimeesCm: item.dimensionsEstimeesCm,
             etat: item.etat,
             particularites: item.particularites,
+            boutique: item.boutique
+              ? { magasin: item.boutique.magasinNom, prix: item.boutique.prix, url: item.boutique.url }
+              : null,
           })),
           preferences: {
             style: styleInput.value.trim(),

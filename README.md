@@ -17,6 +17,7 @@ cherchant dans les catalogues des magasins que vous avez configurés.
 | **Relevé de pièce** | Une à six photos d'une pièce. Le modèle estime la surface et la hauteur, relève la luminosité, le sol, les couleurs des murs, les éléments fixes (radiateur, cheminée, poutre) et les contraintes de circulation. |
 | **Aménagement** | À partir du relevé et de votre inventaire : une direction de style, une palette, un plan vu de dessus en centimètres, le rôle de chaque meuble que vous possédez, les meubles écartés et pourquoi, les gains rapides gratuits, et les étapes. |
 | **Achats** | Chaque manque devient une recherche produit : d'abord dans les catalogues importés, puis, si besoin, en direct sur les sites des magasins, avec le prix et le lien. |
+| **Envies** | Un produit repéré au catalogue s'ajoute à vos meubles dans une catégorie à part, « envies d'achat ». L'aménagement le place comme un meuble à acquérir et ne propose plus rien d'autre à sa place. |
 | **Moodboard** | Export PNG du projet : palette, photo de la pièce, vos meubles réutilisés, résumé. |
 
 L'application fonctionne hors ligne pour consulter ce qui est déjà enregistré. Les analyses
@@ -174,6 +175,19 @@ Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import 
 
 Vous pouvez renseigner un `affiliate.param` / `affiliate.value` par enseigne : il est ajouté
 aux liens sortants.
+
+### Des envies d'achat, à côté des meubles possédés
+
+Chaque carte produit porte un bouton d'ajout. Le produit rejoint alors **Mes meubles**, mais
+dans une section distincte : « Envies d'achat », séparée de « Ce que je possède ». La
+différence compte au moment de générer un aménagement — le mobilier possédé reste le point de
+départ, tandis qu'une envie est traitée comme un choix déjà fait : elle est placée dans le
+plan comme un meuble à acquérir, et rien d'autre n'est proposé pour la même fonction. Si elle
+ne convient pas à la pièce, le modèle doit le dire plutôt que de l'ignorer.
+
+Les dimensions sont lues dans le titre du produit quand elles y figurent — « Tapis 240x160 »,
+« L.180 x P.90 x H.75 » — pour que le plan puisse le placer à l'échelle. Une fois l'achat
+fait, un bouton déplace la fiche vers les meubles possédés.
 
 ### Parcourir le catalogue
 

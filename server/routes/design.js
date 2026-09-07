@@ -10,6 +10,7 @@ Principe directeur : partir de ce que la personne possede. Le mobilier existant 
 
 Regles :
 - Reutilise en priorite les meubles de l'inventaire, y compris dans un autre role que leur usage actuel. Explique ou les placer et pourquoi.
+- "enviesDAchat" liste des produits que la personne a elle-meme reperes en boutique. Traite-les comme deja choisis : place-les dans le plan avec la nature "a_acheter", cite-les dans meublesReutilises avec leur identifiant, et ne propose surtout pas d'autre produit pour la meme fonction. S'ils ne conviennent pas, dis-le franchement dans meublesEcartes plutot que de les ignorer.
 - Ecarte un meuble uniquement avec une raison concrete (proportions, style irreconciliable, circulation), et propose-lui une autre destination.
 - Le plan est vu de dessus, en centimetres, origine en haut a gauche. Laisse au moins 70 cm de passage dans les zones de circulation et 40 cm entre un canape et une table basse. Les elements ne doivent pas se chevaucher et doivent tenir dans les dimensions de la piece.
 - "besoinsAchat" contient de vrais manques, pas une liste de courses. Cite la fonction manquante, pas une marque. La requete de recherche doit etre courte et generique (ex : "tapis laine 200x300 ecru").
@@ -18,7 +19,7 @@ Regles :
 - Reponds uniquement avec le JSON demande, en francais.`;
 
 function buildContext({ room, furniture, preferences }) {
-  const inventory = (furniture || []).map((item) => ({
+  const decrire = (item) => ({
     id: item.id,
     nom: item.nom,
     categorie: item.categorie,
@@ -28,7 +29,12 @@ function buildContext({ room, furniture, preferences }) {
     dimensionsCm: item.dimensionsEstimeesCm,
     etat: item.etat,
     particularites: item.particularites,
-  }));
+    ...(item.boutique ? { boutique: item.boutique } : {}),
+  });
+
+  const tous = furniture || [];
+  const inventory = tous.filter((item) => (item.statut || 'possede') === 'possede').map(decrire);
+  const envies = tous.filter((item) => item.statut === 'a_acheter').map(decrire);
 
   return {
     piece: {
@@ -49,6 +55,7 @@ function buildContext({ room, furniture, preferences }) {
       circulation: room?.circulation,
     },
     mobilierPossede: inventory,
+    enviesDAchat: envies,
     preferences: {
       styleSouhaite: preferences?.style || 'a deduire des meubles possedes',
       budgetMaxEuros: preferences?.budget ?? null,

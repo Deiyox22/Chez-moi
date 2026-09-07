@@ -428,6 +428,30 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, .button:focus
   grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
   gap: 12px;
 }
+.produit-carte { position: relative; display: flex; }
+.produit-carte > .produit { flex: 1 1 auto; }
+.produit__ajout {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper-raised) 92%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.produit__ajout:hover { border-color: var(--accent); color: var(--accent); }
+.produit__ajout--ajoute { background: var(--sage); border-color: transparent; color: #fff; }
+
 .produit {
   display: flex;
   flex-direction: column;

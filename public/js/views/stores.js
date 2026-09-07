@@ -1,6 +1,8 @@
-import { el, clear, formatPrice, progress, productImage, toast } from '../lib/ui.js';
+import { el, clear, formatPrice, progress, productImage, toast, uid } from '../lib/ui.js';
 import { listStores, listCategories, catalogHighlights, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
 import { categoryLabel } from './furniture.js';
+import { STORES, put, all } from '../lib/db.js';
+import { lireDimensions } from '../lib/dimensions.js';
 
 const PAR_PAGE = 24;
 const FILTRE_MAGASINS = 'chez-moi:magasins-filtres';
@@ -28,21 +30,84 @@ function ecrireMagasins(selection) {
   }
 }
 
+/** Identifiants catalogue deja presents dans la liste d'achats. */
+const dejaAjoutes = new Set();
+
+async function chargerDejaAjoutes() {
+  const meubles = (await all(STORES.furniture)) || [];
+  dejaAjoutes.clear();
+  for (const meuble of meubles) {
+    if (meuble.produitId) dejaAjoutes.add(meuble.produitId);
+  }
+}
+
+async function ajouterAuxAchats(produit, bouton) {
+  if (dejaAjoutes.has(produit.id)) return;
+  await put(STORES.furniture, {
+    id: uid('meuble'),
+    createdAt: new Date().toISOString(),
+    statut: 'a_acheter',
+    source: 'catalogue',
+    produitId: produit.id,
+    photoIds: [],
+    nom: produit.title,
+    categorie: produit.category || 'autre',
+    styles: produit.styles || [],
+    couleurs: (produit.colors || []).map((nom) => ({ name: nom, hex: '#cccccc' })),
+    materiaux: produit.materials || [],
+    dimensionsEstimeesCm: lireDimensions(produit.title, produit.dimensionsText, produit.description),
+    etat: 'neuf',
+    particularites: [],
+    atouts: '',
+    confiance: 1,
+    boutique: {
+      magasin: produit.store,
+      magasinNom: produit.storeName,
+      prix: produit.price,
+      devise: produit.currency,
+      url: produit.url,
+      imageUrl: produit.imageUrl,
+    },
+  });
+  dejaAjoutes.add(produit.id);
+  bouton.classList.add('produit__ajout--ajoute');
+  bouton.textContent = '✓';
+  bouton.title = 'Déjà dans votre liste d’achats';
+  toast(`« ${produit.title.slice(0, 40)} » ajouté à votre liste d’achats.`);
+}
+
 function carteProduit(produit) {
-  return el(
-    'a',
-    { class: 'produit', href: produit.url || '#', target: '_blank', rel: 'noopener noreferrer', title: produit.title },
-    [
-      el('div', { class: 'produit__image' }, [productImage(produit)]),
-      el('div', { class: 'produit__corps' }, [
-        el('div', { class: 'produit__titre clamp-2', text: produit.title }),
-        el('div', { class: 'produit__pied' }, [
-          el('span', { class: 'produit__magasin', text: produit.storeName }),
-          el('span', { class: 'produit__tarif', text: formatPrice(produit.price, produit.currency) }),
+  const ajoute = dejaAjoutes.has(produit.id);
+  const bouton = el('button', {
+    class: ajoute ? 'produit__ajout produit__ajout--ajoute' : 'produit__ajout',
+    type: 'button',
+    title: ajoute ? 'Déjà dans votre liste d’achats' : 'Ajouter à ma liste d’achats',
+    'aria-label': ajoute ? 'Déjà dans votre liste d’achats' : `Ajouter ${produit.title} à ma liste d’achats`,
+    text: ajoute ? '✓' : '+',
+  });
+  bouton.addEventListener('click', (evenement) => {
+    evenement.preventDefault();
+    evenement.stopPropagation();
+    ajouterAuxAchats(produit, bouton).catch((erreur) => toast(erreur.message, 'error'));
+  });
+
+  return el('div', { class: 'produit-carte' }, [
+    el(
+      'a',
+      { class: 'produit', href: produit.url || '#', target: '_blank', rel: 'noopener noreferrer', title: produit.title },
+      [
+        el('div', { class: 'produit__image' }, [productImage(produit)]),
+        el('div', { class: 'produit__corps' }, [
+          el('div', { class: 'produit__titre clamp-2', text: produit.title }),
+          el('div', { class: 'produit__pied' }, [
+            el('span', { class: 'produit__magasin', text: produit.storeName }),
+            el('span', { class: 'produit__tarif', text: formatPrice(produit.price, produit.currency) }),
+          ]),
         ]),
-      ]),
-    ]
-  );
+      ]
+    ),
+    bouton,
+  ]);
 }
 
 const squelettes = (n) =>
@@ -496,6 +561,7 @@ export async function render({ query }) {
     });
 
   if (etat.category) rayon.value = etat.category;
+  await chargerDejaAjoutes();
   majVitrine();
   charger();
   return wrap;

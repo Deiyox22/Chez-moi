@@ -1,4 +1,4 @@
-import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate } from '../lib/ui.js';
+import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate, formatPrice, productImage } from '../lib/ui.js';
 import { STORES, put, get, remove, allSorted, savePhoto, photoUrl, deletePhoto } from '../lib/db.js';
 import { normalizeImage, pickImages, captureFromCamera, blobsToImagePayload } from '../lib/images.js';
 import { analyzeFurniture } from '../lib/api.js';
@@ -23,6 +23,9 @@ const CATEGORY_LABELS = {
 };
 
 export const categoryLabel = (key) => CATEGORY_LABELS[key] || key || 'Autre';
+
+/** Les fiches d'avant la liste d'achats n'ont pas de statut : ce sont des meubles possedes. */
+export const statutDe = (item) => item.statut || 'possede';
 
 const emptyItem = () => ({
   nom: '', categorie: 'autre', styles: [], couleurs: [], materiaux: [],
@@ -273,6 +276,29 @@ async function listView(query) {
     ])
   );
 
+  const possedes = items.filter((item) => statutDe(item) === 'possede');
+  const aAcheter = items.filter((item) => statutDe(item) === 'a_acheter');
+
+  const carte = async (item) => {
+    const url = item.photoIds?.[0] ? await photoUrl(item.photoIds[0]) : null;
+    const vignette = url
+      ? el('img', { src: url, alt: '' })
+      : item.boutique?.imageUrl
+        ? productImage({ imageUrl: item.boutique.imageUrl })
+        : null;
+    return el('a', { class: 'card item-card', href: `#/meubles/${item.id}`, style: { textDecoration: 'none', color: 'inherit' } }, [
+      el('div', { class: 'item-card__thumb' }, [vignette]),
+      el('div', { class: 'grow' }, [
+        el('h3', { class: 'clamp-2', text: item.nom, style: { marginBottom: '4px' } }),
+        el('div', { class: 'chips' }, [
+          el('span', { class: 'chip chip--accent', text: categoryLabel(item.categorie) }),
+          item.boutique?.magasinNom ? el('span', { class: 'chip', text: item.boutique.magasinNom }) : null,
+          item.boutique?.prix ? el('span', { class: 'chip', text: formatPrice(item.boutique.prix, item.boutique.devise) }) : null,
+        ]),
+      ]),
+    ]);
+  };
+
   if (!items.length) {
     wrap.appendChild(
       emptyState(
@@ -283,23 +309,17 @@ async function listView(query) {
       )
     );
   } else {
-    const list = el('div', { class: 'stack' });
-    for (const item of items) {
-      const url = item.photoIds?.[0] ? await photoUrl(item.photoIds[0]) : null;
-      list.appendChild(
-        el('a', { class: 'card item-card', href: `#/meubles/${item.id}`, style: { textDecoration: 'none', color: 'inherit' } }, [
-          el('div', { class: 'item-card__thumb' }, [url ? el('img', { src: url, alt: '' }) : null]),
-          el('div', { class: 'grow' }, [
-            el('h3', { text: item.nom, style: { marginBottom: '4px' } }),
-            el('div', { class: 'chips' }, [
-              el('span', { class: 'chip chip--accent', text: categoryLabel(item.categorie) }),
-              ...(item.styles || []).slice(0, 2).map((style) => el('span', { class: 'chip', text: style })),
-            ]),
-          ]),
-        ])
-      );
+    if (possedes.length) {
+      wrap.appendChild(el('h2', { text: `Ce que je possède (${possedes.length})`, style: { marginTop: '10px' } }));
+      for (const item of possedes) wrap.appendChild(await carte(item));
     }
-    wrap.appendChild(list);
+    if (aAcheter.length) {
+      wrap.appendChild(el('h2', { text: `Envies d'achat (${aAcheter.length})`, style: { marginTop: '18px' } }));
+      wrap.appendChild(
+        el('p', { class: 'small muted', style: { marginTop: '-6px' }, text: "Repérés dans le catalogue. Les aménagements les placeront comme des meubles à acquérir, sans en suggérer d'autres à leur place." })
+      );
+      for (const item of aAcheter) wrap.appendChild(await carte(item));
+    }
   }
 
   if (query.get('ajouter') === '1') setTimeout(() => startAddFlow(() => location.reload()), 60);
@@ -313,13 +333,50 @@ async function detailView(id) {
   const wrap = el('div', { class: 'stack' });
   wrap.appendChild(el('a', { class: 'small muted', href: '#/meubles', text: '← Mes meubles' }));
   wrap.appendChild(el('h1', { text: item.nom }));
+  const origine = { ia: 'identifié par analyse photo', catalogue: 'repéré dans le catalogue' }[item.source] || 'saisi à la main';
   wrap.appendChild(
     el('div', { class: 'chips' }, [
       el('span', { class: 'chip chip--accent', text: categoryLabel(item.categorie) }),
+      statutDe(item) === 'a_acheter' ? el('span', { class: 'chip chip--sage', text: 'envie d’achat' }) : null,
       el('span', { class: 'chip', text: `état : ${item.etat}` }),
-      item.source === 'ia' ? el('span', { class: 'chip', text: 'identifié par analyse photo' }) : el('span', { class: 'chip', text: 'saisi à la main' }),
+      el('span', { class: 'chip', text: origine }),
     ])
   );
+
+  if (item.boutique) {
+    wrap.appendChild(
+      el('div', { class: 'card' }, [
+        el('div', { class: 'item-card' }, [
+          el('div', { class: 'item-card__thumb' }, [productImage({ imageUrl: item.boutique.imageUrl })]),
+          el('div', { class: 'grow' }, [
+            el('h3', { text: item.boutique.magasinNom || 'Boutique', style: { marginBottom: '2px' } }),
+            el('div', { class: 'produit__tarif', text: formatPrice(item.boutique.prix, item.boutique.devise) }),
+            item.boutique.url
+              ? el('a', {
+                  class: 'small',
+                  href: item.boutique.url,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  text: 'Voir la fiche produit',
+                })
+              : null,
+          ]),
+        ]),
+        statutDe(item) === 'a_acheter'
+          ? el('button', {
+              class: 'button button--soft button--block',
+              style: { marginTop: '12px' },
+              text: 'Je l’ai acheté',
+              onclick: async () => {
+                await put(STORES.furniture, { ...item, statut: 'possede' });
+                toast('Déplacé dans les meubles que vous possédez.');
+                location.reload();
+              },
+            })
+          : null,
+      ])
+    );
+  }
 
   wrap.appendChild(await thumbGrid(item.photoIds || [], null));
 
