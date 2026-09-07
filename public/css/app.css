@@ -42,6 +42,9 @@
 
 * { box-sizing: border-box; }
 
+/* Un display explicite l'emporte sur la regle [hidden] du navigateur. */
+[hidden] { display: none !important; }
+
 html, body { margin: 0; padding: 0; }
 
 body {
@@ -322,6 +325,102 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, .button:focus
 }
 .vignette__image--visible { opacity: 1; background: var(--paper-sunken); }
 @media (prefers-reduced-motion: reduce) { .vignette__image { transition: none; } }
+
+/* ---------- catalogue : rangees et rayons ---------- */
+.section-titre {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0 10px;
+}
+.section-titre h2 { margin: 0; font-size: 1.05rem; }
+.section-titre a, .section-titre button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.rangee {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 6px;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.rangee > * { flex: 0 0 auto; scroll-snap-align: start; }
+.rangee .produit { width: 148px; }
+
+.tuile-rayon {
+  width: 92px;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
+}
+.tuile-rayon__image {
+  width: 92px;
+  height: 92px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--paper-sunken);
+  border: 1px solid var(--line);
+  margin-bottom: 6px;
+  transition: transform 0.08s ease;
+}
+.tuile-rayon:hover .tuile-rayon__image, .tuile-rayon:focus-visible .tuile-rayon__image { transform: translateY(-2px); }
+.tuile-rayon__nom {
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.25;
+  display: block;
+  min-height: 2.5em;
+}
+.tuile-rayon__compte { font-size: 0.7rem; color: var(--ink-faint); }
+
+.filtres-bascule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 40px;
+}
+.filtres-bascule[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.filtres-bascule__compte {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 999px;
+  min-width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+}
+
+.sentinelle { height: 1px; }
 
 /* ---------- grille catalogue ---------- */
 .produits {

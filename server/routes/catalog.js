@@ -1,4 +1,4 @@
-import { browseCatalog, catalogStatus, searchUrlFor, loadStores } from '../catalog/store.js';
+import { browseCatalog, catalogHighlights, catalogStatus, searchUrlFor, loadStores } from '../catalog/store.js';
 import { searchLiveProducts } from '../catalog/providers/websearch.js';
 import { aiConfigured } from '../config.js';
 
@@ -21,6 +21,7 @@ export async function search(query) {
   const resultat = browseCatalog({
     query: term,
     category: query.get('category') || '',
+    categories: list(query.get('categories')),
     stores: list(query.get('store') || query.get('stores')),
     maxPrice,
     minPrice,
@@ -50,6 +51,11 @@ export async function search(query) {
 
 export function stores() {
   return catalogStatus();
+}
+
+/** The catalogue's front page: shelves and ready-made selections. */
+export function highlights() {
+  return catalogHighlights();
 }
 
 /** Categories actually present in the catalogue, most furnished first. */

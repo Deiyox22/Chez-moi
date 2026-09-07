@@ -1,5 +1,5 @@
 import { el, clear, formatPrice, progress, productImage, toast } from '../lib/ui.js';
-import { listStores, listCategories, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
+import { listStores, listCategories, catalogHighlights, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
 import { categoryLabel } from './furniture.js';
 
 const PAR_PAGE = 24;
@@ -31,13 +31,7 @@ function ecrireMagasins(selection) {
 function carteProduit(produit) {
   return el(
     'a',
-    {
-      class: 'produit',
-      href: produit.url || '#',
-      target: '_blank',
-      rel: 'noopener noreferrer',
-      title: produit.title,
-    },
+    { class: 'produit', href: produit.url || '#', target: '_blank', rel: 'noopener noreferrer', title: produit.title },
     [
       el('div', { class: 'produit__image' }, [productImage(produit)]),
       el('div', { class: 'produit__corps' }, [
@@ -54,39 +48,104 @@ function carteProduit(produit) {
 const squelettes = (n) =>
   Array.from({ length: n }, () => el('div', { class: 'skeleton', style: { aspectRatio: '3 / 4' } }));
 
+function enTeteSection(titre, actionLibelle, action) {
+  return el('div', { class: 'section-titre' }, [
+    el('h2', { text: titre }),
+    action ? el('button', { type: 'button', text: actionLibelle, onclick: action }) : null,
+  ]);
+}
+
 export async function render({ query }) {
   const etat = {
     q: query.get('q') || '',
     category: query.get('category') || '',
+    categories: [],
     sort: 'pertinence',
     minPrice: '',
     maxPrice: '',
     magasins: lireMagasins(),
     offset: 0,
     total: 0,
+    chargement: false,
+    fini: false,
   };
 
+  const filtreActif = () =>
+    Boolean(etat.q || etat.category || etat.categories.length || etat.minPrice || etat.maxPrice || etat.magasins.size);
+
+  const nombreFiltres = () =>
+    [etat.category || etat.categories.length, etat.minPrice, etat.maxPrice, etat.magasins.size].filter(Boolean).length;
+
   const wrap = el('div', { class: 'stack' });
-  wrap.appendChild(el('h1', { text: 'Catalogue' }));
+  wrap.appendChild(el('h1', { text: 'Catalogue', style: { marginBottom: '2px' } }));
+  const sousTitre = el('p', { class: 'small muted', style: { margin: '0 0 4px' }, text: '' });
+  wrap.appendChild(sousTitre);
 
   /* ---------- recherche ---------- */
-  const champ = el('input', { type: 'search', placeholder: 'tapis laine écru, lampadaire noir…', value: etat.q });
-  const formulaire = el('form', { onsubmit: (evenement) => { evenement.preventDefault(); relancer(); } }, [
-    el('div', { class: 'row' }, [
-      el('div', { class: 'grow' }, [champ]),
-      el('button', { class: 'button', type: 'submit', text: 'Chercher' }),
-    ]),
-  ]);
-  wrap.appendChild(formulaire);
+  const champ = el('input', { type: 'search', placeholder: 'canapé velours, tapis écru, lampadaire…', value: etat.q });
+  wrap.appendChild(
+    el('form', { onsubmit: (evenement) => { evenement.preventDefault(); relancer(); } }, [
+      el('div', { class: 'row' }, [
+        el('div', { class: 'grow' }, [champ]),
+        el('button', { class: 'button', type: 'submit', text: 'Chercher' }),
+      ]),
+    ])
+  );
 
-  /* ---------- filtres ---------- */
+  /* ---------- magasins ---------- */
   const puces = el('div', { class: 'chips chips--defilantes' });
+  wrap.appendChild(puces);
+
+  /* ---------- filtres repliables ---------- */
+  const compteFiltres = el('span', { class: 'filtres-bascule__compte', hidden: true });
+  const bascule = el('button', { class: 'filtres-bascule', type: 'button', 'aria-expanded': 'false' }, [
+    el('span', { text: 'Filtrer et trier' }),
+    compteFiltres,
+  ]);
   const rayon = el('select', {}, [el('option', { value: '', text: 'Tous les rayons' })]);
   const tri = el('select', {}, TRIS.map(([valeur, libelle]) => el('option', { value: valeur, text: libelle })));
   const prixMin = el('input', { type: 'number', min: '0', step: '10', placeholder: 'min' });
   const prixMax = el('input', { type: 'number', min: '0', step: '10', placeholder: 'max' });
+  const boutonEffacer = el('button', {
+    class: 'button button--ghost button--small',
+    type: 'button',
+    text: 'Tout effacer',
+    onclick: () => {
+      etat.q = '';
+      etat.category = '';
+      etat.categories = [];
+      etat.minPrice = '';
+      etat.maxPrice = '';
+      etat.magasins.clear();
+      ecrireMagasins(etat.magasins);
+      champ.value = '';
+      rayon.value = '';
+      prixMin.value = '';
+      prixMax.value = '';
+      tri.value = 'pertinence';
+      etat.sort = 'pertinence';
+      construirePuces(magasinsConnectes);
+      relancer();
+    },
+  });
 
-  rayon.addEventListener('change', () => { etat.category = rayon.value; relancer(); });
+  const panneau = el('div', { class: 'stack', hidden: true }, [
+    el('div', { class: 'barre-filtres' }, [
+      el('div', {}, [el('label', { text: 'Rayon' }), rayon]),
+      el('div', {}, [el('label', { text: 'Trier par' }), tri]),
+      el('div', {}, [el('label', { text: 'Prix minimum' }), prixMin]),
+      el('div', {}, [el('label', { text: 'Prix maximum' }), prixMax]),
+    ]),
+    el('div', { class: 'row row--end' }, [boutonEffacer]),
+  ]);
+
+  bascule.addEventListener('click', () => {
+    const ouvert = panneau.hidden;
+    panneau.hidden = !ouvert;
+    bascule.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+  });
+
+  rayon.addEventListener('change', () => { etat.category = rayon.value; etat.categories = []; relancer(); });
   tri.addEventListener('change', () => { etat.sort = tri.value; relancer(); });
   let minuterie = null;
   for (const champPrix of [prixMin, prixMax]) {
@@ -100,82 +159,143 @@ export async function render({ query }) {
     });
   }
 
-  wrap.appendChild(puces);
-  wrap.appendChild(
-    el('div', { class: 'barre-filtres' }, [
-      el('div', {}, [el('label', { text: 'Rayon' }), rayon]),
-      el('div', {}, [el('label', { text: 'Trier par' }), tri]),
-      el('div', {}, [el('label', { text: 'Prix minimum' }), prixMin]),
-      el('div', {}, [el('label', { text: 'Prix maximum' }), prixMax]),
-    ])
-  );
+  wrap.appendChild(el('div', { class: 'row' }, [bascule]));
+  wrap.appendChild(panneau);
 
-  /* ---------- résultats ---------- */
+  /* ---------- zones ---------- */
+  const vitrine = el('div');
+  const enTeteResultats = el('div');
   const compteur = el('p', { class: 'compteur' });
   const grille = el('div', { class: 'produits' });
+  const sentinelle = el('div', { class: 'sentinelle' });
   const pied = el('div', { class: 'center' });
-  wrap.appendChild(compteur);
-  wrap.appendChild(grille);
-  wrap.appendChild(pied);
+  wrap.append(vitrine, enTeteResultats, compteur, grille, sentinelle, pied);
 
+  /* ---------- chargement des résultats ---------- */
   const parametres = () => {
     const p = { limit: String(PAR_PAGE), offset: String(etat.offset), sort: etat.sort };
     if (etat.q) p.q = etat.q;
     if (etat.category) p.category = etat.category;
+    if (etat.categories.length) p.categories = etat.categories.join(',');
     if (etat.minPrice) p.minPrice = etat.minPrice;
     if (etat.maxPrice) p.maxPrice = etat.maxPrice;
     if (etat.magasins.size) p.store = [...etat.magasins].join(',');
     return p;
   };
 
-  async function charger({ ajouter = false } = {}) {
-    if (!ajouter) {
+  async function charger({ suite = false } = {}) {
+    if (etat.chargement || (suite && etat.fini)) return;
+    etat.chargement = true;
+    if (!suite) {
       clear(grille).append(...squelettes(6));
       compteur.textContent = 'Chargement…';
+      clear(pied);
     }
-    clear(pied);
     try {
       const donnees = await searchCatalog(parametres());
       etat.total = donnees.total;
-      if (!ajouter) clear(grille);
+      if (!suite) clear(grille);
       for (const produit of donnees.products) grille.appendChild(carteProduit(produit));
+
+      const affiches = grille.querySelectorAll('.produit').length;
+      etat.fini = affiches >= donnees.total || donnees.products.length === 0;
 
       if (!donnees.total) {
         compteur.textContent = '';
         clear(grille).appendChild(
-          el('p', { class: 'empty', text: 'Aucun produit ne correspond à ces critères.' })
+          el('div', { class: 'empty' }, [
+            el('span', { class: 'empty__mark', 'aria-hidden': 'true', text: '∅' }),
+            el('p', { text: 'Aucun produit ne correspond à ces critères.' }),
+            el('button', { class: 'button button--soft', text: 'Effacer les filtres', onclick: () => boutonEffacer.click() }),
+          ])
         );
         return;
       }
 
-      const affiches = Math.min(etat.offset + donnees.products.length, donnees.total);
       compteur.textContent = `${affiches} produit${affiches > 1 ? 's' : ''} sur ${donnees.total.toLocaleString('fr-FR')}`;
-
-      if (affiches < donnees.total) {
-        const bouton = el('button', { class: 'button button--ghost', text: 'Charger plus' });
-        bouton.addEventListener('click', () => {
-          bouton.disabled = true;
-          bouton.textContent = 'Chargement…';
-          etat.offset += PAR_PAGE;
-          charger({ ajouter: true });
-        });
-        pied.appendChild(bouton);
-      }
       majRayons(donnees.categories);
+      clear(pied);
+      if (etat.fini && affiches > PAR_PAGE) pied.appendChild(el('p', { class: 'small muted', text: 'Fin du catalogue.' }));
+      // Un observateur ne se declenche qu'au changement d'etat : si la sentinelle
+      // est restee visible pendant le chargement, il faut la lui represente.
+      relancerObservation();
     } catch (erreur) {
       clear(grille);
       compteur.textContent = '';
-      pied.appendChild(el('p', { class: 'notice small', text: erreur.message }));
+      clear(pied).appendChild(el('p', { class: 'notice small', text: erreur.message }));
+      etat.fini = true;
+    } finally {
+      etat.chargement = false;
     }
   }
 
   function relancer() {
     etat.q = champ.value.trim();
     etat.offset = 0;
+    etat.fini = false;
+    compteFiltres.textContent = String(nombreFiltres());
+    compteFiltres.hidden = nombreFiltres() === 0;
+    majVitrine();
     charger();
   }
 
-  /* ---------- rayons, alimentés par les facettes ---------- */
+  /* ---------- défilement infini ---------- */
+  const observateur =
+    'IntersectionObserver' in window
+      ? new IntersectionObserver(
+          (entrees) => {
+            if (entrees.some((entree) => entree.isIntersecting) && !etat.chargement && !etat.fini) {
+              etat.offset += PAR_PAGE;
+              charger({ suite: true });
+            }
+          },
+          { rootMargin: '600px 0px' }
+        )
+      : null;
+
+  function relancerObservation() {
+    if (!observateur) return;
+    observateur.unobserve(sentinelle);
+    if (!etat.fini) observateur.observe(sentinelle);
+  }
+
+  if (observateur) observateur.observe(sentinelle);
+  else {
+    // Sans observateur, un bouton fait le meme travail.
+    pied.appendChild(
+      el('button', {
+        class: 'button button--ghost',
+        text: 'Charger plus',
+        onclick: () => { etat.offset += PAR_PAGE; charger({ suite: true }); },
+      })
+    );
+  }
+
+  // Un defilement rapide peut franchir la sentinelle entre deux images sans
+  // qu'elle soit jamais observee intersectante. Une verification de proximite
+  // du bas rattrape ce cas.
+  let planifie = false;
+  function auDefilement() {
+    // La vue a ete remplacee par le routeur : on se retire.
+    if (!sentinelle.isConnected) {
+      window.removeEventListener('scroll', auDefilement);
+      observateur?.disconnect();
+      return;
+    }
+    if (planifie || etat.chargement || etat.fini) return;
+    planifie = true;
+    requestAnimationFrame(() => {
+      planifie = false;
+      const restant = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+      if (restant < 900 && !etat.chargement && !etat.fini) {
+        etat.offset += PAR_PAGE;
+        charger({ suite: true });
+      }
+    });
+  }
+  window.addEventListener('scroll', auDefilement, { passive: true });
+
+  /* ---------- rayons du sélecteur ---------- */
   let rayonsConnus = false;
   function majRayons(facettes) {
     if (rayonsConnus && !facettes?.length) return;
@@ -183,23 +303,73 @@ export async function render({ query }) {
     clear(rayon);
     rayon.appendChild(el('option', { value: '', text: 'Tous les rayons' }));
     for (const facette of facettes || []) {
-      rayon.appendChild(
-        el('option', { value: facette.id, text: `${categoryLabel(facette.id)} (${facette.count})` })
-      );
+      rayon.appendChild(el('option', { value: facette.id, text: `${categoryLabel(facette.id)} (${facette.count})` }));
     }
-    // La facette du rayon choisi disparait des resultats filtres : on la garde.
     if (choix && !rayon.querySelector(`option[value="${choix}"]`)) {
       rayon.appendChild(el('option', { value: choix, text: categoryLabel(choix) }));
     }
     rayon.value = choix;
     rayonsConnus = true;
   }
+  listCategories().then(({ categories }) => majRayons(categories)).catch(() => {});
 
-  listCategories()
-    .then(({ categories }) => majRayons(categories))
-    .catch(() => {});
+  /* ---------- vitrine d'accueil ---------- */
+  let vitrineChargee = null;
+
+  function ouvrirRayon(id) {
+    etat.category = id;
+    etat.categories = [];
+    rayon.value = id;
+    champ.value = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    relancer();
+  }
+
+  function ouvrirSelection(selection) {
+    etat.category = '';
+    etat.categories = selection.categories;
+    etat.maxPrice = selection.maxPrice ? String(selection.maxPrice) : '';
+    prixMax.value = etat.maxPrice;
+    rayon.value = '';
+    champ.value = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    relancer();
+  }
+
+  function dessinerVitrine(donnees) {
+    clear(vitrine);
+    vitrine.appendChild(enTeteSection('Rayons'));
+    vitrine.appendChild(
+      el('div', { class: 'rangee' }, donnees.rayons.map((rayonDonnee) =>
+        el('button', { class: 'tuile-rayon', type: 'button', onclick: () => ouvrirRayon(rayonDonnee.id) }, [
+          el('div', { class: 'tuile-rayon__image' }, [productImage({ imageUrl: rayonDonnee.imageUrl })]),
+          el('span', { class: 'tuile-rayon__nom', text: categoryLabel(rayonDonnee.id) }),
+          el('span', { class: 'tuile-rayon__compte', text: `${rayonDonnee.count}` }),
+        ])
+      ))
+    );
+
+    for (const selection of donnees.selections) {
+      vitrine.appendChild(enTeteSection(selection.titre, 'Voir tout', () => ouvrirSelection(selection)));
+      vitrine.appendChild(el('div', { class: 'rangee' }, selection.produits.map(carteProduit)));
+    }
+    vitrine.appendChild(enTeteSection('Tout le catalogue'));
+  }
+
+  function majVitrine() {
+    const surAccueil = !filtreActif();
+    vitrine.hidden = !surAccueil;
+    clear(enTeteResultats);
+    if (!surAccueil) enTeteResultats.appendChild(enTeteSection('Résultats'));
+    if (surAccueil && !vitrineChargee) {
+      vitrineChargee = catalogHighlights()
+        .then((donnees) => dessinerVitrine(donnees))
+        .catch(() => { vitrine.hidden = true; });
+    }
+  }
 
   /* ---------- puces magasin ---------- */
+  let magasinsConnectes = [];
   function construirePuces(connectes) {
     clear(puces);
     if (connectes.length < 2) return;
@@ -253,13 +423,12 @@ export async function render({ query }) {
       if (etat.magasins.size) parametresEnLigne.store = [...etat.magasins].join(',');
       const { live } = await searchCatalogLive(parametresEnLigne);
       clear(zoneEnLigne);
-      zoneEnLigne.appendChild(el('h2', { text: 'Trouvés en ligne' }));
-      if (live?.length) {
-        const grilleEnLigne = el('div', { class: 'produits' }, live.map(carteProduit));
-        zoneEnLigne.appendChild(grilleEnLigne);
-      } else {
-        zoneEnLigne.appendChild(el('p', { class: 'small muted', text: 'Rien trouvé sur les sites autorisés.' }));
-      }
+      zoneEnLigne.appendChild(enTeteSection('Trouvés en ligne'));
+      zoneEnLigne.appendChild(
+        live?.length
+          ? el('div', { class: 'produits' }, live.map(carteProduit))
+          : el('p', { class: 'small muted', text: 'Rien trouvé sur les sites autorisés.' })
+      );
       const liens = await storeLinks(terme);
       zoneEnLigne.appendChild(
         el('div', { class: 'card card--flat' }, [
@@ -285,11 +454,12 @@ export async function render({ query }) {
 
   listStores()
     .then((statut) => {
-      const connectes = statut.stores.filter((magasin) => magasin.hasRealFeed);
+      magasinsConnectes = statut.stores.filter((magasin) => magasin.hasRealFeed);
       for (const id of [...etat.magasins]) {
-        if (!connectes.some((magasin) => magasin.id === id)) etat.magasins.delete(id);
+        if (!magasinsConnectes.some((magasin) => magasin.id === id)) etat.magasins.delete(id);
       }
-      construirePuces(connectes);
+      construirePuces(magasinsConnectes);
+      sousTitre.textContent = `${statut.totalProducts.toLocaleString('fr-FR')} produits chez ${magasinsConnectes.length} enseignes`;
 
       clear(carteEtat).append(
         el('h3', { text: 'Catalogues connectés' }),
@@ -325,6 +495,8 @@ export async function render({ query }) {
       );
     });
 
+  if (etat.category) rayon.value = etat.category;
+  majVitrine();
   charger();
   return wrap;
 }

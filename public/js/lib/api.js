@@ -45,4 +45,6 @@ export const listStores = () => request('/api/catalog/stores');
 
 export const listCategories = () => request('/api/catalog/categories');
 
+export const catalogHighlights = () => request('/api/catalog/highlights');
+
 export const storeLinks = (query) => request(`/api/catalog/links?${new URLSearchParams({ q: query })}`);

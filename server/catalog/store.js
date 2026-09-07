@@ -176,7 +176,7 @@ export function invalidateCatalog() {
  * category facets.
  */
 export function browseCatalog({
-  query = '', category = '', store = '', stores = [], maxPrice = null, minPrice = null,
+  query = '', category = '', categories = [], store = '', stores = [], maxPrice = null, minPrice = null,
   styles = [], colors = [], sort = 'pertinence', limit = 24, offset = 0,
 } = {}) {
   const catalog = loadCatalog();
@@ -186,10 +186,13 @@ export function browseCatalog({
   // "matelas 160x200" names a category even when the caller passes none; without
   // this, a protege-matelas outranks a mattress simply for being cheaper.
   const categoryKey = normalizeText(category || guessCategory(query));
+  // A selection spans several categories at once ("le salon" is sofas, coffee
+  // tables and rugs), so they are matched as a set rather than one by one.
+  const categorySet = new Set(categories.map((value) => normalizeText(value)).filter(Boolean));
 
   // Browsing is search without a question: everything that passes the filters
   // qualifies, and the ordering is left to `sort`.
-  const browsing = !queryTokens.length && !categoryKey;
+  const browsing = !queryTokens.length && !categoryKey && !categorySet.size;
 
   const scored = [];
   const facets = new Map();
@@ -201,6 +204,11 @@ export function browseCatalog({
     let score = browsing ? 1 : 0;
     const haystack = normalizeText(product.haystack);
     const productCategory = normalizeText(product.category);
+
+    if (categorySet.size) {
+      if (categorySet.has(productCategory)) score += 12;
+      else continue;
+    }
 
     if (categoryKey) {
       if (productCategory === categoryKey) score += 12;
@@ -304,6 +312,49 @@ function diversifier(scored) {
     }
   }
   return sortie;
+}
+
+/**
+ * The catalogue's front page: shelves to walk into, and a few ready-made
+ * selections. Everything is computed from what the catalogue actually holds,
+ * so an enseigne added or removed changes the page without any other edit.
+ */
+const SELECTIONS = [
+  { id: 'salon', titre: 'Pour le salon', categories: ['canape', 'fauteuil', 'table_basse', 'meuble_tv', 'tapis'] },
+  { id: 'chambre', titre: 'Pour la chambre', categories: ['lit', 'chevet', 'armoire', 'commode', 'tete_de_lit'] },
+  { id: 'repas', titre: 'Pour les repas', categories: ['table_repas', 'chaise', 'buffet'] },
+  { id: 'bureau', titre: 'Pour travailler', categories: ['bureau', 'bibliotheque', 'etagere'] },
+  { id: 'lumiere', titre: 'Lumière', categories: ['luminaire_plafond', 'lampadaire', 'lampe_table'] },
+  { id: 'petits-prix', titre: 'Moins de 100 €', categories: [...CATEGORIES_MEUBLANTES], maxPrice: 100 },
+];
+
+export function catalogHighlights({ parRangee = 12, rayons = 12 } = {}) {
+  const catalog = loadCatalog();
+
+  const compte = new Map();
+  const illustration = new Map();
+  for (const product of catalog.products) {
+    if (!product.category) continue;
+    compte.set(product.category, (compte.get(product.category) || 0) + 1);
+    if (product.imageUrl && !illustration.has(product.category)) illustration.set(product.category, product.imageUrl);
+  }
+
+  const classement = [...compte.entries()]
+    .map(([id, count]) => ({ id, count, imageUrl: illustration.get(id) || null }))
+    // Furnishing categories lead: this is a catalogue for planning a room.
+    .sort((a, b) => (CATEGORIES_MEUBLANTES.has(b.id) ? 1 : 0) - (CATEGORIES_MEUBLANTES.has(a.id) ? 1 : 0) || b.count - a.count)
+    .slice(0, rayons);
+
+  const selections = SELECTIONS.map((selection) => {
+    const { products, total } = browseCatalog({
+      categories: selection.categories,
+      maxPrice: selection.maxPrice ?? null,
+      limit: parRangee,
+    });
+    return { id: selection.id, titre: selection.titre, categories: selection.categories, maxPrice: selection.maxPrice ?? null, total, produits: products };
+  }).filter((selection) => selection.produits.length >= 4);
+
+  return { rayons: classement, selections, total: catalog.products.length };
 }
 
 /** Ranked search, first page only. Kept for the callers that just want products. */

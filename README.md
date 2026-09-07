@@ -177,8 +177,14 @@ aux liens sortants.
 
 ### Parcourir le catalogue
 
-L'onglet **Catalogue** ouvre directement sur les produits : pas besoin de chercher pour voir
-quelque chose. On y trouve une grille illustrée, et quatre façons de la restreindre.
+L'onglet **Catalogue** ouvre sur une vitrine plutôt que sur un champ vide : une rangée de
+**rayons** illustrés menant aux catégories les plus fournies, puis des **sélections** prêtes à
+parcourir — pour le salon, la chambre, les repas, le travail, la lumière, et moins de 100 € —
+chacune avec un « Voir tout » qui applique le filtre correspondant. Le catalogue entier suit
+en dessous.
+
+Dès qu'un filtre ou une recherche est actif, la vitrine s'efface au profit des seuls résultats,
+et un bouton « Tout effacer » y ramène. Quatre façons de restreindre :
 
 - **Magasins** : une puce par catalogue connecté, dans une rangée qui défile. Le choix est
   conservé d'une visite à l'autre, et la recherche en direct sur les sites le respecte aussi.
@@ -187,7 +193,10 @@ quelque chose. On y trouve une grille illustrée, et quatre façons de la restre
 - **Tri** : pertinence, prix croissant, prix décroissant, nom.
 - **Prix** : un minimum et un maximum.
 
-Les résultats se chargent par pages de 24, avec le total affiché et un bouton pour la suite.
+Les résultats se chargent par pages de 24 en **défilement infini**, avec le total affiché.
+Deux mécanismes se relaient : une sentinelle observée sous la grille, et une vérification de
+proximité du bas qui rattrape les défilements rapides, où la sentinelle peut être franchie
+entre deux images sans jamais être vue. Sans `IntersectionObserver`, un bouton prend le relais.
 
 Deux détails d'ordonnancement méritent d'être connus. À l'ouverture, les catégories qui
 meublent vraiment une pièce passent devant les serviettes de table, et les résultats sont
