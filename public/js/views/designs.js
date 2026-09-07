@@ -1,7 +1,7 @@
 import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage, progress } from '../lib/ui.js';
 import { STORES, get, put, remove, all, allSorted, photoBlob, photoUrl, savePhoto } from '../lib/db.js';
 import { blobToBase64 } from '../lib/images.js';
-import { createRender } from '../lib/api.js';
+import { createRender, health } from '../lib/api.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
 
@@ -253,14 +253,24 @@ async function detailView(id) {
   if (design.renduPhotoId) {
     await afficherRendu(design.renduPhotoId);
   } else {
+    const cout = el('p', { class: 'small muted', style: { margin: '0' } });
     zoneRendu.replaceChildren(
       el('h3', { text: 'Votre pièce, réaménagée' }),
       el('p', {
         class: 'small muted',
         text: 'Une image de votre pièce avec les meubles retenus, composée à partir de votre photo.',
       }),
-      el('button', { class: 'button button--block', text: '✦ Générer le rendu', onclick: lancerRendu })
+      el('button', { class: 'button button--block', text: '✦ Générer le rendu', onclick: lancerRendu }),
+      cout
     );
+    // Le rendu est le seul geste facture a l'image : autant l'annoncer avant.
+    health()
+      .then((etat) => {
+        if (etat.renduPrixIndicatif) {
+          cout.textContent = `Environ ${etat.renduPrixIndicatif.toFixed(2).replace('.', ',')} € par rendu, facturés sur votre compte ${etat.fournisseur}. Le reste de l'application coûte des fractions de centime.`;
+        }
+      })
+      .catch(() => {});
   }
   wrap.appendChild(zoneRendu);
 

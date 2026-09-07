@@ -55,9 +55,29 @@ Cette fonction demande une clé **Gemini** : c'est le seul des deux fournisseurs
 modèle d'image ici. Le rendu est conservé avec l'aménagement et signalé comme une
 illustration — **les cotes du plan font foi, pas l'image**.
 
-Deux points pratiques. Chaque rendu est facturé à l'image, plus cher qu'un appel texte. Et sur
-Vercel, la fonction est plafonnée à 60 secondes : si un rendu dépasse, passez à un modèle plus
-rapide avec `GEMINI_IMAGE_MODEL=gemini-3.1-flash-image`.
+#### Ce que ça coûte
+
+C'est le seul poste de dépense notable, et de loin. Les appels texte sont minuscules : mesurés
+avec `countTokens`, une analyse de meuble fait 264 jetons en entrée, un relevé de pièce 784,
+une génération d'aménagement 1 525. Aux tarifs de `gemini-2.5-flash`, un projet complet — dix
+meubles photographiés, une pièce, un aménagement — revient à **environ deux centimes**. Et ce
+modèle a un palier gratuit : en restant dans ses limites de débit, cette partie ne coûte rien.
+
+Un rendu, lui, se facture à l'image, sans palier gratuit :
+
+| Modèle | Prix par image | |
+| --- | --- | --- |
+| `gemini-2.5-flash-image` | ~0,036 € | **défaut** |
+| `gemini-3.1-flash-image` | ~0,062 € (1K) | plus fin |
+| `gemini-3-pro-image` | ~0,124 € (1K/2K) | le plus abouti |
+
+Un rendu coûte donc entre deux et six fois le reste du projet réuni. L'application l'annonce
+avant de le lancer, ne le génère jamais d'elle-même, et conserve celui obtenu plutôt que de le
+refaire. Tarifs relevés sur la [grille Google](https://ai.google.dev/gemini-api/docs/pricing),
+à vérifier avant de vous y fier.
+
+Dernier point pratique : sur Vercel la fonction est plafonnée à 60 secondes ; si un rendu
+dépasse, un modèle plus rapide règle le problème.
 
 ### Quel fournisseur d'IA
 

@@ -31,6 +31,7 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
           modele: aiConfigured() ? config.ai.model : null,
           rechercheEnLigne: config.catalog.liveSearch,
           rendu: aiConfigured() && config.ai.imageAvailable ? config.ai.imageModel : null,
+          renduPrixIndicatif: aiConfigured() && config.ai.imageAvailable ? config.ai.imagePrixIndicatif : null,
           catalogue: { produits: catalog.products.length, sources: catalog.sources },
         });
         return;

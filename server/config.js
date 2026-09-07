@@ -51,7 +51,22 @@ const DEFAULT_MODELS = {
 
 // Le rendu photographique passe par un modele d'image, distinct de celui qui
 // redige les amenagements. Seul Gemini en propose ici.
-const DEFAULT_IMAGE_MODEL = 'gemini-3-pro-image';
+//
+// C'est le seul poste de depense notable de l'application : les appels texte
+// coutent des fractions de centime et beneficient d'un palier gratuit, un
+// rendu se facture a l'image. Le defaut est donc le moins cher qui fasse le
+// travail, les autres restant accessibles via GEMINI_IMAGE_MODEL.
+const DEFAULT_IMAGE_MODEL = 'gemini-2.5-flash-image';
+
+// Tarifs Google par image, en euros, indicatifs et releves a l'ecriture.
+// Ils servent a annoncer un ordre de grandeur avant de depenser, pas a facturer.
+const TARIFS_IMAGE = {
+  'gemini-2.5-flash-image': 0.036,
+  'gemini-3.1-flash-image': 0.062,
+  'gemini-3.1-flash-image-preview': 0.062,
+  'gemini-3-pro-image': 0.124,
+  'gemini-3-pro-image-preview': 0.124,
+};
 
 export const config = {
   port: Number(process.env.PORT || 8787),
@@ -68,6 +83,7 @@ export const config = {
     enableFallbacks: process.env.ANTHROPIC_ENABLE_FALLBACKS === '1',
     imageModel: process.env.GEMINI_IMAGE_MODEL || DEFAULT_IMAGE_MODEL,
     imageAvailable: PROVIDER === 'gemini',
+    imagePrixIndicatif: TARIFS_IMAGE[process.env.GEMINI_IMAGE_MODEL || DEFAULT_IMAGE_MODEL] ?? null,
   },
   catalog: {
     // Fall back to a live web search on the store sites when the local
