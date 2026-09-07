@@ -1,6 +1,6 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-09-06T19:09:56.535Z",
+  "updatedAt": "2026-09-07T08:52:47.700Z",
   "feedType": "shopify",
   "products": [
     {
@@ -1372,30 +1372,6 @@
       "source": "feed"
     },
     {
-      "id": "tediber-15527830749508",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride",
-      "description": "",
-      "category": "matelas",
-      "rawCategory": "Reconditionné",
-      "price": 150.5,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048.jpg?v=1776327005",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Encombrant",
-        "phenix",
-        "PRODUITS_FRENCHDAYSP26",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "tediber-15524408557892",
       "store": "tediber",
       "title": "[Reconditionné] - Couette légère Plus",
@@ -1619,54 +1595,6 @@
       "styles": [
         "Encombrant",
         "phenix",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15524409082180",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride Infinite",
-      "description": "",
-      "category": "matelas",
-      "rawCategory": "Reconditionné",
-      "price": 367.5,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride-infinite",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/mini-main.png?v=1776092885",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Encombrant",
-        "phenix",
-        "PRODUITS_FRENCHDAYSP26",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15524409016644",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride Premium",
-      "description": "",
-      "category": "matelas",
-      "rawCategory": "Reconditionné",
-      "price": 234.5,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride-premium",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048-1.jpg?v=1779701435",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Encombrant",
-        "phenix",
-        "PRODUITS_FRENCHDAYSP26",
         "reconditionne"
       ],
       "dimensionsCm": null,

@@ -1,6 +1,6 @@
 {
   "store": "maison-sarah-lavoine",
-  "updatedAt": "2026-09-06T19:09:54.738Z",
+  "updatedAt": "2026-09-07T08:52:43.034Z",
   "feedType": "shopify",
   "products": [
     {
@@ -2205,7 +2205,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Gégé - Bleu Sarah",
       "description": "Envolée déco. Héritière des premiers travaux du Studio sur l'acier, la collection Gégé met sur un piédestal la pureté de ce matériau signature. La table d’appoint Gégé est une petite beauté à l’ergonomie aérienne, déclinée en cinq teintes ultra désirables (bleu sarah, écru, noir et carmin), mais aussi en inox. Pièce architecturale qui peut se suffire à elle-même, cette table basse aux deux pliages",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 590,
       "currency": "EUR",
@@ -2406,12 +2406,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BOUGIE-PARFUM-COLLECTION",
         "FM-12DECLESBOU-ROSE",
         "MAISON-PE26"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -2712,30 +2713,6 @@
       "source": "feed"
     },
     {
-      "id": "maison-sarah-lavoine-8258834170054",
-      "store": "maison-sarah-lavoine",
-      "title": "Sweat Passy - Gris Chine",
-      "description": "Sweat cocon. Le sweat Passy enveloppe grâce à sa coupe ample et son molleton gratté ultra-doux. Détail signature : l’épaule est fermée par des boutons pressions noir et doré, petit twist qui modernise ce basique. Fabriqué au Portugal.",
-      "category": "",
-      "rawCategory": "SWEAT",
-      "price": 125,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/sweat-passy-gris-chine-gris-chine",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/013_0035_5c61a428-e5a4-4dca-b524-b4ba035ad986.jpg?v=1757061834",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "a-verifier",
-        "AH24-PAP",
-        "ALERTE STOCK BOUTIQUE",
-        "FM-14SWEPAS-GRIS CHINE"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "maison-sarah-lavoine-15337369600377",
       "store": "maison-sarah-lavoine",
       "title": "Jean Marlow - Noir",
@@ -2750,7 +2727,6 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAMAR-NOIR",
         "PAP-PE26"
@@ -2964,7 +2940,6 @@
       "materials": [],
       "styles": [
         "ACCESSOIRES-COLLECTION",
-        "ALERTE STOCK BOUTIQUE",
         "FM-14BASCLA-SILVER",
         "PAP-PE26"
       ],
@@ -5379,10 +5354,10 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "EUCALYPTUS",
-        "FM-11TAPBOR-EUCALYPTUS"
+        "FM-11TAPBOR-EUCALYPTUS",
+        "ICONIQUES-COLLECTION"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5585,7 +5560,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Gégé - Carmin",
       "description": "Envolée déco. Héritière des premiers travaux du Studio sur l'acier, la collection Gégé met sur un piédestal la pureté de ce matériau signature. La table d’appoint Gégé est une petite beauté à l’ergonomie aérienne, déclinée en quatre teintes ultra désirables (écru, noir et carmin), mais aussi en inox. Pièce architecturale qui peut se suffire à elle-même, cette table basse aux deux pliages et à la t",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 590,
       "currency": "EUR",
@@ -5609,7 +5584,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Gégé - Inox brossé",
       "description": "Envolée déco. Héritière des premiers travaux du Studio sur lʼacier, la collection Gégé met sur un piédestal la pureté de ce matériau signature. La table d’appoint Gégé est une petite beauté à l’ergonomie aérienne, déclinée en quatre teintes ultra-désirables (écru, noir et carmin), mais aussi en inox. Pièce architecturale qui peut se suffire à elle-même, cette table basse aux deux pliages et à la t",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 790,
       "currency": "EUR",
@@ -5633,7 +5608,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Gégé - Ecru",
       "description": "Envolée déco. Héritière des premiers travaux du Studio sur lʼacier, la collection Gégé met sur un piédestal la pureté de ce matériau signature. La table d’appoint Gégé est une petite beauté à l’ergonomie aérienne, déclinée en quatre teintes ultra-désirables (écru, noir et carmin), mais aussi en inox. Pièce architecturale qui peut se suffire à elle-même, cette table basse aux deux pliages et à la t",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 590,
       "currency": "EUR",
@@ -5657,7 +5632,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Gégé - Noir",
       "description": "Envolée déco. Héritière des premiers travaux du Studio sur lʼacier, la collection Gégé met sur un piédestal la pureté de ce matériau signature. La table d’appoint Gégé est une petite beauté à l’ergonomie aérienne, déclinée en quatre teintes ultra-désirables (écru, noir et carmin), mais aussi en inox. Pièce architecturale qui peut se suffire à elle-même, cette table basse aux deux pliages et à la t",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 590,
       "currency": "EUR",
@@ -6363,13 +6338,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "FM-19LIVROCR",
-        "FM-SPLIT_MASTER_COLOR",
-        "MIF"
+        "FM-SPLIT_MASTER_COLOR"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -9233,7 +9208,7 @@
       "store": "maison-sarah-lavoine",
       "title": "Table d'appoint Kara - Noir",
       "description": "Vertige de l'appoint. Conjuguant inspiration japonaise et lignes graphiques, la table d'appoint Kara déploie sa silhouette aérienne via la finesse des pieds portant sa structure. Sur celle-ci se succèdent deux plateaux, comme en lévitation, et dont la rondeur des bords adoucit l'allure de cette pièce. Dressée sur ses pieds de table carrés, Kara est une pièce hybride capable de s'inviter en bout de",
-      "category": "chevet",
+      "category": "table_basse",
       "rawCategory": "CHEVET",
       "price": 585,
       "currency": "EUR",
@@ -11023,30 +10998,6 @@
         "ART-DE-LA-TABLE-COLLECTION",
         "BESTSELLER",
         "BLACKFRIDAY"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-8258975072454",
-      "store": "maison-sarah-lavoine",
-      "title": "Cuillère à soupe Sabre - Noir / Ivoire",
-      "description": "Brillante idée. Depuis plus de 30 ans, Sabre Paris imagine des couverts élégants et résistants, savamment fabriqués en France. Leur ligne Bistrot, véritable best-seller, marie l'esthétisme contemporain d'un manche oblong à rivets métalliques et la nostalgie joyeuse des tables françaises. C'est donc tout naturellement que Maison Sarah Lavoine s'est tournée vers ce fabricant d'exception pour imagine",
-      "category": "table_repas",
-      "rawCategory": "COUVERTS",
-      "price": 14,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/cuillere-table-sabre-brillante",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511006370_2315CUITABSAB01-vide--vide_1.jpg?v=1720522057",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "a-verifier",
-        "ART-DE-LA-TABLE-COLLECTION",
-        "COUVERTS-USTENSILES-COLLECTION",
-        "FM-15CUITABSAB01"
       ],
       "dimensionsCm": null,
       "availability": "in stock",

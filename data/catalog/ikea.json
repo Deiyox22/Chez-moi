@@ -1,6 +1,6 @@
 {
   "store": "ikea",
-  "updatedAt": "2026-09-06T19:58:31.067Z",
+  "updatedAt": "2026-09-07T09:04:10.211Z",
   "feedType": "sitemap-jsonld",
   "products": [
     {
@@ -4380,7 +4380,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Nisseholm blanc 180x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 418,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc-s99572298/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc__1372278_pe959391_s5.jpg",
@@ -4389,7 +4389,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4399,7 +4399,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Nisseholm blanc 90x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 218,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc-s89572307/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc__1372276_pe959389_s5.jpg",
@@ -4408,7 +4408,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4418,7 +4418,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Nisseholm blanc 140x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 288,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc-s19572283/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc__1372278_pe959391_s5.jpg",
@@ -4427,7 +4427,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4437,7 +4437,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Nisseholm blanc 160x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 358,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc-s09572293/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-nisseholm-blanc__1372278_pe959391_s5.jpg",
@@ -4446,7 +4446,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4456,7 +4456,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Näsfjället blanc 90x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. La mousse classique rend ce surmatelas confortable et lui permet d'assurer un bon soutien. IKEA of Sweden AB SE-343 81 Älmhult, IKEA.com",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 188,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc-s59572243/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc__1372280_pe959393_s5.jpg",
@@ -4465,7 +4465,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4475,7 +4475,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Näsfjället blanc 140x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. La mousse classique rend ce surmatelas confortable et lui permet d'assurer un bon soutien. IKEA of Sweden AB SE-343 81 Älmhult, IKEA.com",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 248,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc-s19572216/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc__1372282_pe959395_s5.jpg",
@@ -4484,7 +4484,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4494,7 +4494,7 @@
       "description": "VESTERÖY Matelas et surmatelas - mi-ferme bleu clair/Näsfjället blanc 160x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. La mousse classique rend ce surmatelas confortable et lui permet d'assurer un bon soutien. IKEA of Sweden AB SE-343 81 Älmhult, IKEA.com",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 298,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc-s09572226/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-mi-ferme-bleu-clair-naesfjaellet-blanc__1372282_pe959395_s5.jpg",
@@ -4503,7 +4503,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4513,7 +4513,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Nisseholm blanc 140x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 288,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc-s99572279/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc__1372278_pe959391_s5.jpg",
@@ -4522,7 +4522,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4532,7 +4532,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Nisseholm blanc 160x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 358,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc-s89572289/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc__1579883_pe1034665_s5.jpg",
@@ -4541,7 +4541,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4551,7 +4551,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Nisseholm blanc 180x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 418,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc-s39572296/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc__1372278_pe959391_s5.jpg",
@@ -4560,7 +4560,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4570,7 +4570,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Nisseholm blanc 90x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. Le tissu stretch doux suit les mouvements du corps et le rembourrage supplémentaire en laine apporte encore plus de moelleux.",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 218,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc-s29572305/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-nisseholm-blanc__1372276_pe959389_s5.jpg",
@@ -4579,7 +4579,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4589,7 +4589,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Näsfjället blanc 90x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. La mousse classique rend ce surmatelas confortable et lui permet d'assurer un bon soutien. IKEA of Sweden AB SE-343 81 Älmhult, IKEA.com",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 188,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-naesfjaellet-blanc-s79572242/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-naesfjaellet-blanc__1579884_pe1034666_s5.jpg",
@@ -4598,7 +4598,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4608,7 +4608,7 @@
       "description": "VESTERÖY Matelas et surmatelas - ferme bleu clair/Näsfjället blanc 140x200 cm. Les ressorts ensachés réagissent indépendamment sans transférer les mouvements. La mousse classique rend ce surmatelas confortable et lui permet d'assurer un bon soutien. IKEA of Sweden AB SE-343 81 Älmhult, IKEA.com",
       "category": "matelas",
       "rawCategory": "Matelas à ressorts",
-      "price": null,
+      "price": 248,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-naesfjaellet-blanc-s39572215/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/vesteroey-matelas-et-surmatelas-ferme-bleu-clair-naesfjaellet-blanc__1372282_pe959395_s5.jpg",
@@ -4617,7 +4617,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -5296,25 +5296,6 @@
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/varvial-drap-housse-pour-divan-beige-60628116/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/varvial-drap-housse-pour-divan-beige__0616631_pe688787_s5.jpg",
-      "brand": "IKEA",
-      "colors": [],
-      "materials": [],
-      "styles": [],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "ikea-204.475.80",
-      "store": "ikea",
-      "title": "VÅRVIAL Drap housse pour divan - beige 80x200 cm",
-      "description": "VÅRVIAL Drap housse pour divan - beige 80x200 cm. Idéal pour dormir, car le jersey de coton est doux au toucher et absorbe l'humidité pour un sommeil au sec. Il est plus facile de faire le lit et d'obtenir une surface lisse car le drap housse est fait dans un tissu souple et doté d'élastique.",
-      "category": "linge_de_lit",
-      "rawCategory": "Draps housse et draps",
-      "price": 9.99,
-      "currency": "EUR",
-      "url": "https://www.ikea.com/fr/fr/p/varvial-drap-housse-pour-divan-beige-20447580/",
-      "imageUrl": "https://www.ikea.com/fr/fr/images/products/varvial-drap-housse-pour-divan-beige__0689155_pe723387_s5.jpg",
       "brand": "IKEA",
       "colors": [],
       "materials": [],
@@ -7249,7 +7230,7 @@
       "description": "TVERSTED Tapis, poils ras - beige 133x195 cm. Le motif et les couleurs sont faciles à coordonner avec de nombreux styles. Tapis fabriqué en fibres synthétiques solide et résistant aux taches. Le matériau ne peluche pas et est facile à nettoyer. Ce produit a été testé pour un usage domestique.",
       "category": "tapis",
       "rawCategory": "Moyens et grands tapis",
-      "price": null,
+      "price": 79.99,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/tversted-tapis-poils-ras-beige-70482137/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/tversted-tapis-poils-ras-beige__1179213_pe895885_s5.jpg",
@@ -7258,7 +7239,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -7572,7 +7553,7 @@
       "description": "TRONES Armoire à chaussures/rangement - noir 52x18x39 cm. Ce rangement peu profond avec un faible encombrement est parfait pour ranger chaussures, gants et écharpes. Si vos besoins de rangement évoluent, vous pouvez créer plus d'espace en empilant plusieurs éléments ou en les plaçant côte à côte.",
       "category": "armoire",
       "rawCategory": "Meubles à chaussures",
-      "price": null,
+      "price": 29.99,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/trones-armoire-a-chaussures-rangement-noir-80397313/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/trones-armoire-a-chaussures-rangement-noir__0710712_pe727733_s5.jpg",
@@ -7581,7 +7562,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -7591,7 +7572,7 @@
       "description": "TRONES Armoire à chaussures/rangement - blanc 52x18x39 cm. Ce rangement peu profond avec un faible encombrement est parfait pour ranger chaussures, gants et écharpes. Si vos besoins de rangement évoluent, vous pouvez créer plus d'espace en empilant plusieurs éléments ou en les plaçant côte à côte.",
       "category": "armoire",
       "rawCategory": "Meubles à chaussures",
-      "price": null,
+      "price": 29.99,
       "currency": "EUR",
       "url": "https://www.ikea.com/fr/fr/p/trones-armoire-a-chaussures-rangement-blanc-00397307/",
       "imageUrl": "https://www.ikea.com/fr/fr/images/products/trones-armoire-a-chaussures-rangement-blanc__0710711_pe727734_s5.jpg",
@@ -7600,7 +7581,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
