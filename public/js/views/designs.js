@@ -3,6 +3,7 @@ import { STORES, get, put, remove, all, allSorted, photoBlob, photoUrl, savePhot
 import { blobToBase64 } from '../lib/images.js';
 import { createRender, health } from '../lib/api.js';
 import { chargerImage, detourer } from '../lib/montage.js';
+import { detourerParModele, segmentationPrete, POIDS_APPROXIMATIF } from '../lib/segmentation.js';
 import { EditeurMontage } from '../lib/montage-editeur.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
@@ -195,29 +196,32 @@ async function detailView(id) {
   /* ---------- montage, sans appel facturé ---------- */
   const zoneMontage = el('div', { class: 'card' });
 
-  /** Meubles du projet dont on possède une image exploitable. */
+  /**
+   * Meubles du projet dont on possède une image exploitable. Deux origines :
+   * les fiches boutique, sur fond uni, et vos propres photos, prises dans une
+   * pièce — celles-ci demandent le modèle de segmentation.
+   */
   function piecesMontables() {
     const pieces = [];
     for (const entree of result.meublesReutilises || []) {
       const item = byId.get(entree.meubleId);
-      if (item?.boutique?.imageUrl) {
-        pieces.push({
-          nom: item.nom,
-          url: item.boutique.imageUrl,
-          largeurCm: item.dimensionsEstimeesCm?.largeurCm || 0,
-        });
+      if (!item) continue;
+      const largeurCm = item.dimensionsEstimeesCm?.largeurCm || 0;
+      if (item.photoIds?.[0]) {
+        pieces.push({ nom: item.nom, origine: 'photo', photoId: item.photoIds[0], cle: item.photoIds[0], largeurCm });
+      } else if (item.boutique?.imageUrl) {
+        pieces.push({ nom: item.nom, origine: 'boutique', url: item.boutique.imageUrl, cle: item.boutique.imageUrl, largeurCm });
       }
     }
     for (const besoin of result.besoinsAchat || []) {
       for (const produit of [...(besoin.produits || []), ...(besoin.produitsEnLigne || [])]) {
         if (produit.imageUrl) {
-          pieces.push({ nom: produit.title, url: produit.imageUrl, largeurCm: 0 });
+          pieces.push({ nom: produit.title, origine: 'boutique', url: produit.imageUrl, cle: produit.imageUrl, largeurCm: 0 });
         }
       }
     }
-    // Un même produit peut venir de deux endroits.
     const vues = new Set();
-    return pieces.filter((piece) => (vues.has(piece.url) ? false : vues.add(piece.url)));
+    return pieces.filter((piece) => (vues.has(piece.cle) ? false : vues.add(piece.cle)));
   }
 
   async function ouvrirMontage() {
@@ -326,11 +330,47 @@ async function detailView(id) {
       ligneEchelle,
       el('div', { class: 'reglage' }, [el('span', { text: 'Taille' }), taille, supprimer]),
       pieces.length
-        ? el('div', {}, [el('p', { class: 'small muted', style: { margin: '10px 0 6px' }, text: 'Touchez un meuble pour le poser :' }), tiroir])
+        ? el('div', {}, [
+            el('p', { class: 'small muted', style: { margin: '10px 0 6px' }, text: 'Touchez un meuble pour le poser :' }),
+            tiroir,
+            pieces.some((piece) => piece.origine === 'photo')
+              ? el('p', {
+                  class: 'small muted',
+                  style: { margin: '6px 0 0' },
+                  text: `Vos propres photos sont détourées par un modèle qui s'exécute sur votre appareil : elles ne partent nulle part. Premier usage, ${Math.round(POIDS_APPROXIMATIF / 1024 / 1024)} Mo à télécharger une fois, puis environ deux secondes par photo.`,
+                })
+              : null,
+          ])
         : el('p', { class: 'notice small', text: "Aucun meuble de ce projet n'a de photo boutique. Ajoutez des produits depuis le catalogue pour les incruster." }),
       enregistrer
     );
     rendreCalage();
+
+    const poidsMo = Math.round(POIDS_APPROXIMATIF / 1024 / 1024);
+
+    async function poserPhotoPersonnelle(piece, bouton) {
+      const libelle = bouton.querySelector('.tiroir-piece__nom');
+      const texteInitial = libelle.textContent;
+      bouton.disabled = true;
+      libelle.textContent = segmentationPrete() ? 'Détourage…' : `Téléchargement (${poidsMo} Mo)…`;
+      try {
+        const blob = await photoBlob(piece.photoId);
+        const bitmap = await createImageBitmap(blob);
+        const { toile: decoupe, couverture } = await detourerParModele(bitmap, (etape) => {
+          libelle.textContent = { runtime: 'Préparation…', modele: 'Modèle chargé…', calcul: 'Détourage…' }[etape] || 'Détourage…';
+        });
+        if (couverture < 0.01) {
+          toast("Le modèle n'a rien trouvé à détourer sur cette photo.", 'error');
+          return;
+        }
+        editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm });
+      } catch (erreur) {
+        toast(`Détourage impossible : ${erreur.message}`, 'error');
+      } finally {
+        libelle.textContent = texteInitial;
+        bouton.disabled = false;
+      }
+    }
 
     for (const piece of pieces) {
       const bouton = el('button', { class: 'tiroir-piece', type: 'button', disabled: true }, [
@@ -339,13 +379,29 @@ async function detailView(id) {
       ]);
       tiroir.appendChild(bouton);
 
+      if (piece.origine === 'photo') {
+        photoUrl(piece.photoId)
+          .then((url) => {
+            bouton.replaceChildren(
+              el('img', { class: 'tiroir-piece__image', src: url, alt: '' }),
+              el('div', { class: 'tiroir-piece__nom', text: piece.nom })
+            );
+            bouton.disabled = false;
+            bouton.title = 'Votre photo — détourage par le modèle, sur votre appareil';
+            bouton.addEventListener('click', () => poserPhotoPersonnelle(piece, bouton));
+          })
+          .catch(() => {
+            bouton.replaceChildren(el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — photo illisible` }));
+          });
+        continue;
+      }
+
       chargerImage(piece.url)
         .then((bitmap) => {
           if (!bitmap) throw new Error('image illisible');
           const { toile: decoupe, detoure } = detourer(bitmap);
           const vignette = el('img', { class: 'tiroir-piece__image', alt: '' });
           bouton.replaceChildren(vignette, el('div', { class: 'tiroir-piece__nom', text: piece.nom }));
-          // OffscreenCanvas n'expose pas toDataURL : la vignette passe par un blob.
           decoupe.convertToBlob({ type: 'image/png' }).then((blob) => {
             vignette.src = URL.createObjectURL(blob);
           });

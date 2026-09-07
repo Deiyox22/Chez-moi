@@ -18,7 +18,7 @@ cherchant dans les catalogues des magasins que vous avez configurés.
 | **Aménagement** | À partir du relevé et de votre inventaire : une direction de style, une palette, un plan vu de dessus en centimètres, le rôle de chaque meuble que vous possédez, les meubles écartés et pourquoi, les gains rapides gratuits, et les étapes. |
 | **Achats** | Chaque manque devient une recherche produit : d'abord dans les catalogues importés, puis, si besoin, en direct sur les sites des magasins, avec le prix et le lien. |
 | **Envies** | Un produit repéré au catalogue s'ajoute à vos meubles dans une catégorie à part, « envies d'achat ». L'aménagement le place comme un meuble à acquérir et ne propose plus rien d'autre à sa place. |
-| **Montage** | Les meubles sont détourés et posés sur votre photo, à leurs proportions réelles, déplaçables au doigt. Gratuit, hors ligne, illimité. |
+| **Montage** | Les meubles sont détourés et posés sur votre photo, à leurs proportions réelles, déplaçables au doigt. Gratuit, hors ligne, illimité. Vos propres photos sont détourées par un modèle qui tourne sur votre appareil. |
 | **Rendu** | Pour la belle image : votre photo et celles des meubles retenus sont confiées à un modèle d'image, qui rend la pièce une fois aménagée. |
 | **Moodboard** | Export PNG du projet : palette, photo de la pièce, vos meubles réutilisés, résumé. |
 
@@ -53,6 +53,28 @@ propagation depuis les bords efface le fond tant que la couleur ne bouge pas, av
 adoucissement des contours. Quand les coins ne se ressemblent pas, ou quand la propagation
 mangerait presque toute l'image, le montage renonce et pose le produit tel quel plutôt que de
 le trouer.
+
+#### Vos propres photos : la segmentation embarquée
+
+Cette régularité n'existe pas pour vos photos : un meuble à vous est photographié dans une
+pièce, devant un mur, un tapis, d'autres meubles. Aucune propagation depuis les bords n'en
+viendra à bout. La question à poser n'est d'ailleurs pas « où est le fond » mais « où est le
+sujet », et c'est exactement ce que fait un modèle de **détection d'objet saillant**.
+
+L'application embarque donc **U²-Net-p** (4,4 Mo) exécuté par **ONNX Runtime Web** en
+WebAssembly, tous deux servis depuis le domaine de l'application plutôt qu'un CDN : le
+détourage marche hors ligne, et surtout **vos photos ne quittent jamais l'appareil** — il n'y
+a pas d'appel réseau à faire, donc rien à envoyer et rien à facturer.
+
+Le modèle travaille en 320×320 avec la normalisation d'ImageNet ; le masque produit est étalé
+entre 0 et 255 puis agrandi par le navigateur à la taille de la photo, dont il devient le canal
+alpha. Un seul fil d'exécution : les fils demanderaient l'isolation d'origine, qui casserait le
+chargement des images de boutique.
+
+Mesuré sur un meuble replacé sur un fond volontairement chargé, masque de référence à l'appui :
+**99,7 % de recouvrement**, environ 2 secondes par photo une fois le modèle chargé, et 19 Mo à
+télécharger la toute première fois. Ces 19 Mo vivent dans un cache que la mise à jour de
+l'application ne vide pas, et les réglages disent s'ils sont là et permettent de les rendre.
 
 #### Le calage du sol
 

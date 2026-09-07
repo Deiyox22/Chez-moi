@@ -1,6 +1,7 @@
 import { el, toast, confirmDialog, formatDate } from '../lib/ui.js';
 import { storageEstimate, pruneOrphanPhotos, exportAll, wipeEverything, all, STORES } from '../lib/db.js';
 import { downloadBlob } from '../lib/moodboard.js';
+import { modeleEnCache, oublierModele, POIDS_APPROXIMATIF } from '../lib/segmentation.js';
 
 function formatBytes(bytes) {
   if (!bytes) return '0 Mo';
@@ -14,11 +15,12 @@ export async function render() {
   wrap.appendChild(el('a', { class: 'small muted', href: '#/', text: '← Accueil' }));
   wrap.appendChild(el('h1', { text: 'Réglages et données' }));
 
-  const [furniture, rooms, designs, estimate] = await Promise.all([
+  const [furniture, rooms, designs, estimate, modelePresent] = await Promise.all([
     all(STORES.furniture),
     all(STORES.rooms),
     all(STORES.designs),
     storageEstimate(),
+    modeleEnCache().catch(() => false),
   ]);
 
   wrap.appendChild(
@@ -53,6 +55,33 @@ export async function render() {
     ])
   );
 
+  // Le modèle de détourage vit dans le cache du navigateur, pas dans IndexedDB :
+  // il mérite sa propre ligne, sinon ces 19 Mo n'ont aucun moyen d'être rendus.
+  const ligneModele = el('div', { style: { marginTop: '10px' } });
+  const rendreLigneModele = (present) => {
+    ligneModele.replaceChildren(
+      el('p', {
+        class: 'small muted',
+        style: { margin: '0 0 6px' },
+        text: present
+          ? `Modèle de détourage : ${formatBytes(POIDS_APPROXIMATIF)} gardés sur l'appareil, pour détourer vos photos hors ligne.`
+          : "Modèle de détourage : absent. Il se téléchargera au premier détourage d'une de vos photos.",
+      }),
+      present
+        ? el('button', {
+            class: 'button button--ghost button--block',
+            text: 'Libérer le modèle de détourage',
+            onclick: async () => {
+              await oublierModele();
+              rendreLigneModele(false);
+              toast('Modèle supprimé de cet appareil.');
+            },
+          })
+        : null
+    );
+  };
+  rendreLigneModele(modelePresent);
+
   wrap.appendChild(
     el('div', { class: 'card' }, [
       el('h3', { text: 'Entretien' }),
@@ -64,6 +93,7 @@ export async function render() {
           toast(removed ? `${removed} photo(s) supprimée(s).` : 'Aucune photo orpheline.');
         },
       }),
+      ligneModele,
       el('button', {
         class: 'button button--danger button--block',
         style: { marginTop: '10px' },

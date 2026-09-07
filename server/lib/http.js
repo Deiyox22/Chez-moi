@@ -15,6 +15,9 @@ const MIME = {
   '.ico': 'image/x-icon',
   '.woff2': 'font/woff2',
   '.txt': 'text/plain; charset=utf-8',
+  // Le runtime WebAssembly refuse de compiler à la volée sans ce type exact.
+  '.wasm': 'application/wasm',
+  '.onnx': 'application/octet-stream',
 };
 
 export function sendJson(res, status, payload) {
