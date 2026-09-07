@@ -18,7 +18,8 @@ cherchant dans les catalogues des magasins que vous avez configurés.
 | **Aménagement** | À partir du relevé et de votre inventaire : une direction de style, une palette, un plan vu de dessus en centimètres, le rôle de chaque meuble que vous possédez, les meubles écartés et pourquoi, les gains rapides gratuits, et les étapes. |
 | **Achats** | Chaque manque devient une recherche produit : d'abord dans les catalogues importés, puis, si besoin, en direct sur les sites des magasins, avec le prix et le lien. |
 | **Envies** | Un produit repéré au catalogue s'ajoute à vos meubles dans une catégorie à part, « envies d'achat ». L'aménagement le place comme un meuble à acquérir et ne propose plus rien d'autre à sa place. |
-| **Rendu** | Votre photo de pièce et les photos des meubles retenus sont confiées à un modèle d'image, qui rend la pièce une fois aménagée. |
+| **Montage** | Les meubles sont détourés et posés sur votre photo, à leurs proportions réelles, déplaçables au doigt. Gratuit, hors ligne, illimité. |
+| **Rendu** | Pour la belle image : votre photo et celles des meubles retenus sont confiées à un modèle d'image, qui rend la pièce une fois aménagée. |
 | **Moodboard** | Export PNG du projet : palette, photo de la pièce, vos meubles réutilisés, résumé. |
 
 L'application fonctionne hors ligne pour consulter ce qui est déjà enregistré. Les analyses
@@ -40,6 +41,32 @@ npm start
 
 Ouvrez http://localhost:8787. Sur mobile, le navigateur propose d'installer l'application
 sur l'écran d'accueil.
+
+### Le montage, gratuit et illimité
+
+Avant tout appel facturé, l'aménagement propose un **montage** : votre photo de pièce en fond,
+les meubles du projet détourés et posés dessus, déplaçables au doigt. Tout se calcule dans le
+navigateur — aucun appel réseau facturé, et rien n'empêche de recommencer vingt fois.
+
+Le détourage tire parti d'une régularité des fiches boutique : elles sont sur fond uni. Une
+propagation depuis les bords efface le fond tant que la couleur ne bouge pas, avec un
+adoucissement des contours. Quand les coins ne se ressemblent pas, ou quand la propagation
+mangerait presque toute l'image, le montage renonce et pose le produit tel quel plutôt que de
+le trouer.
+
+Deux échelles cohabitent, et la distinction compte. Celle des meubles entre eux est **exacte**,
+calculée depuis leurs dimensions réelles : un canapé de 210 cm reste exactement 1,75 fois plus
+large qu'une étagère de 120 cm. Celle de la pièce, en revanche, ne peut pas se déduire d'une
+photo — rien n'y dit combien de pixels vaut un mètre — alors elle se règle une fois, à la main,
+et tout le reste en découle.
+
+Les images produit sont servies par un **relais** côté serveur, sans quoi le navigateur ne
+pourrait pas lire leurs pixels. Ce relais n'accepte que les URL déjà présentes dans le
+catalogue : il ne peut pas servir de proxy ouvert.
+
+Le montage n'est pas un rendu photoréaliste, et ne prétend pas l'être : pas d'ombres portées
+justes, pas de perspective. Il répond à « est-ce que ce meuble tient là, à cette taille, avec
+ces couleurs », ce qui est la question qu'on se pose le plus souvent.
 
 ### Le rendu photographique
 

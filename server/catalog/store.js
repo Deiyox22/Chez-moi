@@ -125,7 +125,17 @@ export function loadCatalog({ force = false } = {}) {
   }
 
   const unique = dedupe(products);
-  cache = { stores, storesById, products: unique, sources, medians: medianPrices(unique) };
+  cache = {
+    stores,
+    storesById,
+    products: unique,
+    sources,
+    medians: medianPrices(unique),
+    // Le montage doit charger ces images sans etre bloque par CORS. Les relayer
+    // demande une liste blanche stricte : uniquement les images que nous
+    // publions nous-memes, jamais une URL arbitraire.
+    imagesConnues: new Set(unique.map((product) => product.imageUrl).filter(Boolean)),
+  };
   return cache;
 }
 
@@ -161,6 +171,9 @@ function medianPrices(products) {
   }
   return medians;
 }
+
+/** Vrai seulement si cette URL d'image figure telle quelle dans le catalogue. */
+export const imageAutorisee = (url) => loadCatalog().imagesConnues.has(url);
 
 export function invalidateCatalog() {
   cache = null;

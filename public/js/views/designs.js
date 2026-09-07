@@ -2,6 +2,8 @@ import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productI
 import { STORES, get, put, remove, all, allSorted, photoBlob, photoUrl, savePhoto } from '../lib/db.js';
 import { blobToBase64 } from '../lib/images.js';
 import { createRender, health } from '../lib/api.js';
+import { chargerImage, detourer } from '../lib/montage.js';
+import { EditeurMontage } from '../lib/montage-editeur.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
 
@@ -189,6 +191,139 @@ async function detailView(id) {
       ])
     );
   }
+
+  /* ---------- montage, sans appel facturé ---------- */
+  const zoneMontage = el('div', { class: 'card' });
+
+  /** Meubles du projet dont on possède une image exploitable. */
+  function piecesMontables() {
+    const pieces = [];
+    for (const entree of result.meublesReutilises || []) {
+      const item = byId.get(entree.meubleId);
+      if (item?.boutique?.imageUrl) {
+        pieces.push({
+          nom: item.nom,
+          url: item.boutique.imageUrl,
+          largeurCm: item.dimensionsEstimeesCm?.largeurCm || 0,
+        });
+      }
+    }
+    for (const besoin of result.besoinsAchat || []) {
+      for (const produit of [...(besoin.produits || []), ...(besoin.produitsEnLigne || [])]) {
+        if (produit.imageUrl) {
+          pieces.push({ nom: produit.title, url: produit.imageUrl, largeurCm: 0 });
+        }
+      }
+    }
+    // Un même produit peut venir de deux endroits.
+    const vues = new Set();
+    return pieces.filter((piece) => (vues.has(piece.url) ? false : vues.add(piece.url)));
+  }
+
+  async function ouvrirMontage() {
+    const photoPiece = room?.photoIds?.[0] ? await photoBlob(room.photoIds[0]) : null;
+    if (!photoPiece) {
+      toast("Cette pièce n'a pas de photo : le montage part de votre photo.", 'error');
+      return;
+    }
+    zoneMontage.replaceChildren(progress('Préparation du montage…'));
+
+    const fond = await createImageBitmap(photoPiece);
+    const toile = el('canvas', { class: 'montage-toile' });
+    const editeur = new EditeurMontage(toile, fond);
+
+    const echelle = el('input', { type: 'range', min: '1', max: '12', step: '0.1', value: String(fond.width / 400 / 1) });
+    echelle.value = String(editeur.pxParCm);
+    echelle.addEventListener('input', () => editeur.reglerEchelle(Number(echelle.value)));
+
+    const taille = el('input', { type: 'range', min: '0.4', max: '2.5', step: '0.02', value: '1', disabled: true });
+    taille.addEventListener('input', () => editeur.reglerTailleSelection(Number(taille.value)));
+
+    const supprimer = el('button', { class: 'button button--danger button--small', text: 'Retirer', disabled: true, onclick: () => editeur.retirerSelection() });
+
+    editeur.surChangement = () => {
+      const actif = Boolean(editeur.selection);
+      taille.disabled = !actif;
+      supprimer.disabled = !actif;
+      if (actif) taille.value = String(editeur.selection.ajustement);
+    };
+
+    const tiroir = el('div', { class: 'tiroir' });
+    const pieces = piecesMontables();
+
+    const enregistrer = el('button', {
+      class: 'button button--block',
+      text: 'Enregistrer le montage',
+      onclick: async () => {
+        const blob = await editeur.exporter();
+        if (!blob) return;
+        const photoId = await savePhoto(blob);
+        await put(STORES.designs, { ...design, montagePhotoId: photoId });
+        design.montagePhotoId = photoId;
+        toast('Montage enregistré.');
+      },
+    });
+
+    zoneMontage.replaceChildren(
+      el('h3', { text: 'Montage' }),
+      el('p', {
+        class: 'small muted',
+        text: "Posez les meubles sur votre photo et déplacez-les au doigt. Gratuit et illimité : tout se calcule dans votre navigateur. Les proportions entre meubles sont exactes ; réglez d'abord l'échelle de la pièce.",
+      }),
+      toile,
+      el('div', { class: 'reglage' }, [el('span', { text: 'Échelle' }), echelle]),
+      el('div', { class: 'reglage' }, [el('span', { text: 'Taille' }), taille, supprimer]),
+      pieces.length
+        ? el('div', {}, [el('p', { class: 'small muted', style: { margin: '10px 0 6px' }, text: 'Touchez un meuble pour le poser :' }), tiroir])
+        : el('p', { class: 'notice small', text: "Aucun meuble de ce projet n'a de photo boutique. Ajoutez des produits depuis le catalogue pour les incruster." }),
+      enregistrer
+    );
+
+    for (const piece of pieces) {
+      const bouton = el('button', { class: 'tiroir-piece', type: 'button', disabled: true }, [
+        el('div', { class: 'skeleton', style: { width: '100%', aspectRatio: '1' } }),
+        el('div', { class: 'tiroir-piece__nom', text: piece.nom }),
+      ]);
+      tiroir.appendChild(bouton);
+
+      chargerImage(piece.url)
+        .then((bitmap) => {
+          if (!bitmap) throw new Error('image illisible');
+          const { toile: decoupe, detoure } = detourer(bitmap);
+          const vignette = el('img', { class: 'tiroir-piece__image', alt: '' });
+          bouton.replaceChildren(vignette, el('div', { class: 'tiroir-piece__nom', text: piece.nom }));
+          // OffscreenCanvas n'expose pas toDataURL : la vignette passe par un blob.
+          decoupe.convertToBlob({ type: 'image/png' }).then((blob) => {
+            vignette.src = URL.createObjectURL(blob);
+          });
+          bouton.disabled = false;
+          bouton.title = detoure ? 'Détouré automatiquement' : 'Fond non détourable : posé tel quel';
+          bouton.addEventListener('click', () => editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm }));
+        })
+        .catch(() => {
+          bouton.replaceChildren(el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — image indisponible` }));
+        });
+    }
+  }
+
+  if (design.montagePhotoId) {
+    const url = await photoUrl(design.montagePhotoId);
+    zoneMontage.replaceChildren(
+      el('h3', { text: 'Montage' }),
+      url ? el('img', { class: 'rendu', src: url, alt: 'Montage de la pièce' }) : null,
+      el('button', { class: 'button button--soft', text: 'Reprendre le montage', onclick: ouvrirMontage })
+    );
+  } else {
+    zoneMontage.replaceChildren(
+      el('h3', { text: 'Montage' }),
+      el('p', {
+        class: 'small muted',
+        text: "Incrustez les meubles sur votre photo, à leurs proportions réelles. Gratuit, hors ligne, refaisable à volonté.",
+      }),
+      el('button', { class: 'button button--block', text: '◱ Ouvrir le montage', onclick: ouvrirMontage })
+    );
+  }
+  wrap.appendChild(zoneMontage);
 
   /* ---------- rendu photographique ---------- */
   const zoneRendu = el('div', { class: 'card' });

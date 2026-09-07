@@ -1,4 +1,4 @@
-import { browseCatalog, catalogHighlights, catalogStatus, searchUrlFor, loadStores } from '../catalog/store.js';
+import { browseCatalog, catalogHighlights, catalogStatus, imageAutorisee, searchUrlFor, loadStores } from '../catalog/store.js';
 import { searchLiveProducts } from '../catalog/providers/websearch.js';
 import { aiConfigured } from '../config.js';
 
@@ -51,6 +51,35 @@ export async function search(query) {
 
 export function stores() {
   return catalogStatus();
+}
+
+/**
+ * Relais d'image pour le montage. Le navigateur ne peut pas lire les pixels
+ * d'une image servie sans en-tete CORS ; passer par le serveur leve la
+ * contrainte. Seules les images deja presentes dans le catalogue sont
+ * relayees, ce qui interdit d'en faire un proxy ouvert.
+ */
+export async function proxyImage(query) {
+  const url = query.get('url') || '';
+  if (!imageAutorisee(url)) {
+    const erreur = new Error("Cette image ne fait pas partie du catalogue.");
+    erreur.status = 403;
+    throw erreur;
+  }
+
+  const reponse = await fetch(url, { headers: { 'user-agent': 'chez-moi/0.1' }, redirect: 'follow' });
+  if (!reponse.ok) {
+    const erreur = new Error(`Image indisponible (HTTP ${reponse.status}).`);
+    erreur.status = 502;
+    throw erreur;
+  }
+  const type = (reponse.headers.get('content-type') || '').split(';')[0];
+  if (!type.startsWith('image/')) {
+    const erreur = new Error("La ressource visee n'est pas une image.");
+    erreur.status = 415;
+    throw erreur;
+  }
+  return { type, corps: Buffer.from(await reponse.arrayBuffer()) };
 }
 
 /** The catalogue's front page: shelves and ready-made selections. */

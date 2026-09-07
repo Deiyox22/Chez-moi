@@ -42,6 +42,17 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
         return;
       }
 
+      if (req.method === 'GET' && pathname === '/api/catalog/image') {
+        const { type, corps } = await catalogRoutes.proxyImage(url.searchParams);
+        res.writeHead(200, {
+          'content-type': type,
+          'content-length': corps.length,
+          'cache-control': 'public, max-age=86400',
+        });
+        res.end(corps);
+        return;
+      }
+
       if (req.method === 'GET' && pathname === '/api/catalog/highlights') {
         sendJson(res, 200, catalogRoutes.highlights());
         return;
