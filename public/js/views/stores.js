@@ -1,205 +1,330 @@
-import { el, formatPrice, progress, toast, productImage } from '../lib/ui.js';
-import { listStores, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
+import { el, clear, formatPrice, progress, productImage, toast } from '../lib/ui.js';
+import { listStores, listCategories, searchCatalog, searchCatalogLive, storeLinks } from '../lib/api.js';
+import { categoryLabel } from './furniture.js';
 
-function productCard(product) {
-  return el('a', { class: 'card item-card', href: product.url || '#', target: '_blank', rel: 'noopener noreferrer', style: { textDecoration: 'none', color: 'inherit' } }, [
-    el('div', { class: 'item-card__thumb', style: { display: 'grid', placeItems: 'center', fontSize: '24px' } }, [
-      productImage(product),
-    ]),
-    el('div', { class: 'grow' }, [
-      el('h3', { class: 'clamp-2', text: product.title, style: { marginBottom: '4px', fontSize: '0.95rem' } }),
-      el('div', { class: 'chips' }, [
-        el('span', { class: 'chip chip--accent', text: product.storeName }),
-        product.priceIsIndicative ? el('span', { class: 'chip', text: 'prix indicatif' }) : el('span', { class: 'chip chip--sage', text: 'catalogue réel' }),
-      ]),
-      product.description ? el('p', { class: 'small muted clamp-2', style: { margin: '6px 0 0' }, text: product.description }) : null,
-    ]),
-    el('div', { class: 'product__price', text: formatPrice(product.price, product.currency) }),
-  ]);
-}
+const PAR_PAGE = 24;
+const FILTRE_MAGASINS = 'chez-moi:magasins-filtres';
 
-const FILTER_KEY = 'chez-moi:magasins-filtres';
+const TRIS = [
+  ['pertinence', 'Pertinence'],
+  ['prix-croissant', 'Prix croissant'],
+  ['prix-decroissant', 'Prix décroissant'],
+  ['nom', 'Nom'],
+];
 
-function readFilter() {
+function lireMagasins() {
   try {
-    return new Set(JSON.parse(localStorage.getItem(FILTER_KEY) || '[]'));
+    return new Set(JSON.parse(localStorage.getItem(FILTRE_MAGASINS) || '[]'));
   } catch {
     return new Set();
   }
 }
 
-function writeFilter(selection) {
+function ecrireMagasins(selection) {
   try {
-    localStorage.setItem(FILTER_KEY, JSON.stringify([...selection]));
+    localStorage.setItem(FILTRE_MAGASINS, JSON.stringify([...selection]));
   } catch {
     /* le filtre reste valable pour la session */
   }
 }
 
+function carteProduit(produit) {
+  return el(
+    'a',
+    {
+      class: 'produit',
+      href: produit.url || '#',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      title: produit.title,
+    },
+    [
+      el('div', { class: 'produit__image' }, [productImage(produit)]),
+      el('div', { class: 'produit__corps' }, [
+        el('div', { class: 'produit__titre clamp-2', text: produit.title }),
+        el('div', { class: 'produit__pied' }, [
+          el('span', { class: 'produit__magasin', text: produit.storeName }),
+          el('span', { class: 'produit__tarif', text: formatPrice(produit.price, produit.currency) }),
+        ]),
+      ]),
+    ]
+  );
+}
+
+const squelettes = (n) =>
+  Array.from({ length: n }, () => el('div', { class: 'skeleton', style: { aspectRatio: '3 / 4' } }));
+
 export async function render({ query }) {
-  const wrap = el('div', { class: 'stack' });
-  wrap.appendChild(el('h1', { text: 'Magasins' }));
-
-  const searchInput = el('input', { type: 'search', placeholder: 'tapis laine ecru, lampadaire noir…', value: query.get('q') || '' });
-  const selection = readFilter();
-  const filterBox = el('div', { class: 'chips', style: { marginTop: '4px' } });
-  const resultsBox = el('div', { class: 'stack' });
-  const liveBox = el('div', { class: 'stack' });
-  const linksBox = el('div');
-
-  const liveButton = el('button', {
-    class: 'button button--soft button--block',
-    text: 'Chercher sur les sites des magasins',
-  });
-  liveButton.addEventListener('click', async () => {
-    const term = searchInput.value.trim();
-    if (!term) return;
-    liveButton.disabled = true;
-    liveBox.replaceChildren(progress('Recherche en cours sur les sites des magasins…'));
-    try {
-      const liveParams = { q: term };
-      if (selection.size) liveParams.store = [...selection].join(',');
-      const { live } = await searchCatalogLive(liveParams);
-      liveBox.replaceChildren(
-        el('h2', { text: 'Trouvés en ligne' }),
-        ...(live && live.length
-          ? live.map(productCard)
-          : [el('p', { class: 'small muted', text: 'Rien trouvé sur les sites autorisés pour cette recherche.' })])
-      );
-    } catch (error) {
-      liveBox.replaceChildren(el('p', { class: 'notice small', text: error.message }));
-    } finally {
-      liveButton.disabled = false;
-    }
-  });
-
-  const runSearch = async () => {
-    const term = searchInput.value.trim();
-    if (!term) return;
-    resultsBox.replaceChildren(progress('Recherche dans les catalogues…'));
-    linksBox.replaceChildren();
-    try {
-      const params = { q: term, limit: '12' };
-      if (selection.size) params.store = [...selection].join(',');
-      const [{ products }, links] = await Promise.all([searchCatalog(params), storeLinks(term)]);
-      resultsBox.replaceChildren();
-      liveBox.replaceChildren();
-      if (!products.length) {
-        resultsBox.appendChild(el('p', { class: 'small muted', text: 'Aucun produit dans les catalogues chargés. Essayez les liens ci-dessous.' }));
-      } else {
-        products.forEach((product) => resultsBox.appendChild(productCard(product)));
-      }
-      linksBox.replaceChildren(
-        el('div', { class: 'card card--flat' }, [
-          el('h3', { text: 'Chercher directement sur les sites' }),
-          el('div', { class: 'chips' }, links.links.map((link) =>
-            el('a', { class: 'chip chip--accent', href: link.url, target: '_blank', rel: 'noopener noreferrer', text: link.name })
-          )),
-        ])
-      );
-    } catch (error) {
-      resultsBox.replaceChildren(el('p', { class: 'notice small', text: error.message }));
-    }
+  const etat = {
+    q: query.get('q') || '',
+    category: query.get('category') || '',
+    sort: 'pertinence',
+    minPrice: '',
+    maxPrice: '',
+    magasins: lireMagasins(),
+    offset: 0,
+    total: 0,
   };
 
-  const form = el('form', { onsubmit: (event) => { event.preventDefault(); runSearch(); } }, [
+  const wrap = el('div', { class: 'stack' });
+  wrap.appendChild(el('h1', { text: 'Catalogue' }));
+
+  /* ---------- recherche ---------- */
+  const champ = el('input', { type: 'search', placeholder: 'tapis laine écru, lampadaire noir…', value: etat.q });
+  const formulaire = el('form', { onsubmit: (evenement) => { evenement.preventDefault(); relancer(); } }, [
     el('div', { class: 'row' }, [
-      el('div', { class: 'grow' }, [searchInput]),
+      el('div', { class: 'grow' }, [champ]),
       el('button', { class: 'button', type: 'submit', text: 'Chercher' }),
     ]),
   ]);
-  wrap.appendChild(form);
-  wrap.appendChild(filterBox);
-  wrap.appendChild(resultsBox);
-  wrap.appendChild(liveButton);
-  wrap.appendChild(liveBox);
-  wrap.appendChild(linksBox);
+  wrap.appendChild(formulaire);
 
-  const statusCard = el('div', { class: 'card card--flat' }, [progress('Chargement des magasins…')]);
-  wrap.appendChild(statusCard);
+  /* ---------- filtres ---------- */
+  const puces = el('div', { class: 'chips chips--defilantes' });
+  const rayon = el('select', {}, [el('option', { value: '', text: 'Tous les rayons' })]);
+  const tri = el('select', {}, TRIS.map(([valeur, libelle]) => el('option', { value: valeur, text: libelle })));
+  const prixMin = el('input', { type: 'number', min: '0', step: '10', placeholder: 'min' });
+  const prixMax = el('input', { type: 'number', min: '0', step: '10', placeholder: 'max' });
 
-  const buildFilter = (connected) => {
-    filterBox.replaceChildren();
-    if (connected.length < 2) return;
+  rayon.addEventListener('change', () => { etat.category = rayon.value; relancer(); });
+  tri.addEventListener('change', () => { etat.sort = tri.value; relancer(); });
+  let minuterie = null;
+  for (const champPrix of [prixMin, prixMax]) {
+    champPrix.addEventListener('input', () => {
+      clearTimeout(minuterie);
+      minuterie = setTimeout(() => {
+        etat.minPrice = prixMin.value;
+        etat.maxPrice = prixMax.value;
+        relancer();
+      }, 450);
+    });
+  }
 
-    const chip = (label, active, onclick) =>
+  wrap.appendChild(puces);
+  wrap.appendChild(
+    el('div', { class: 'barre-filtres' }, [
+      el('div', {}, [el('label', { text: 'Rayon' }), rayon]),
+      el('div', {}, [el('label', { text: 'Trier par' }), tri]),
+      el('div', {}, [el('label', { text: 'Prix minimum' }), prixMin]),
+      el('div', {}, [el('label', { text: 'Prix maximum' }), prixMax]),
+    ])
+  );
+
+  /* ---------- résultats ---------- */
+  const compteur = el('p', { class: 'compteur' });
+  const grille = el('div', { class: 'produits' });
+  const pied = el('div', { class: 'center' });
+  wrap.appendChild(compteur);
+  wrap.appendChild(grille);
+  wrap.appendChild(pied);
+
+  const parametres = () => {
+    const p = { limit: String(PAR_PAGE), offset: String(etat.offset), sort: etat.sort };
+    if (etat.q) p.q = etat.q;
+    if (etat.category) p.category = etat.category;
+    if (etat.minPrice) p.minPrice = etat.minPrice;
+    if (etat.maxPrice) p.maxPrice = etat.maxPrice;
+    if (etat.magasins.size) p.store = [...etat.magasins].join(',');
+    return p;
+  };
+
+  async function charger({ ajouter = false } = {}) {
+    if (!ajouter) {
+      clear(grille).append(...squelettes(6));
+      compteur.textContent = 'Chargement…';
+    }
+    clear(pied);
+    try {
+      const donnees = await searchCatalog(parametres());
+      etat.total = donnees.total;
+      if (!ajouter) clear(grille);
+      for (const produit of donnees.products) grille.appendChild(carteProduit(produit));
+
+      if (!donnees.total) {
+        compteur.textContent = '';
+        clear(grille).appendChild(
+          el('p', { class: 'empty', text: 'Aucun produit ne correspond à ces critères.' })
+        );
+        return;
+      }
+
+      const affiches = Math.min(etat.offset + donnees.products.length, donnees.total);
+      compteur.textContent = `${affiches} produit${affiches > 1 ? 's' : ''} sur ${donnees.total.toLocaleString('fr-FR')}`;
+
+      if (affiches < donnees.total) {
+        const bouton = el('button', { class: 'button button--ghost', text: 'Charger plus' });
+        bouton.addEventListener('click', () => {
+          bouton.disabled = true;
+          bouton.textContent = 'Chargement…';
+          etat.offset += PAR_PAGE;
+          charger({ ajouter: true });
+        });
+        pied.appendChild(bouton);
+      }
+      majRayons(donnees.categories);
+    } catch (erreur) {
+      clear(grille);
+      compteur.textContent = '';
+      pied.appendChild(el('p', { class: 'notice small', text: erreur.message }));
+    }
+  }
+
+  function relancer() {
+    etat.q = champ.value.trim();
+    etat.offset = 0;
+    charger();
+  }
+
+  /* ---------- rayons, alimentés par les facettes ---------- */
+  let rayonsConnus = false;
+  function majRayons(facettes) {
+    if (rayonsConnus && !facettes?.length) return;
+    const choix = rayon.value;
+    clear(rayon);
+    rayon.appendChild(el('option', { value: '', text: 'Tous les rayons' }));
+    for (const facette of facettes || []) {
+      rayon.appendChild(
+        el('option', { value: facette.id, text: `${categoryLabel(facette.id)} (${facette.count})` })
+      );
+    }
+    // La facette du rayon choisi disparait des resultats filtres : on la garde.
+    if (choix && !rayon.querySelector(`option[value="${choix}"]`)) {
+      rayon.appendChild(el('option', { value: choix, text: categoryLabel(choix) }));
+    }
+    rayon.value = choix;
+    rayonsConnus = true;
+  }
+
+  listCategories()
+    .then(({ categories }) => majRayons(categories))
+    .catch(() => {});
+
+  /* ---------- puces magasin ---------- */
+  function construirePuces(connectes) {
+    clear(puces);
+    if (connectes.length < 2) return;
+    const puce = (libelle, actif, auClic) =>
       el('button', {
-        class: active ? 'chip chip--accent' : 'chip',
+        class: actif ? 'chip chip--accent' : 'chip',
         type: 'button',
-        'aria-pressed': active ? 'true' : 'false',
+        'aria-pressed': actif ? 'true' : 'false',
         style: { cursor: 'pointer', font: 'inherit', fontSize: '0.8rem' },
-        text: label,
-        onclick,
+        text: libelle,
+        onclick: auClic,
       });
 
-    filterBox.appendChild(
-      chip('Tous', selection.size === 0, () => {
-        selection.clear();
-        writeFilter(selection);
-        buildFilter(connected);
-        runSearch();
+    puces.appendChild(
+      puce('Tous les magasins', etat.magasins.size === 0, () => {
+        etat.magasins.clear();
+        ecrireMagasins(etat.magasins);
+        construirePuces(connectes);
+        relancer();
       })
     );
-    for (const store of connected) {
-      filterBox.appendChild(
-        chip(`${store.name} (${store.productCount})`, selection.has(store.id), () => {
-          if (selection.has(store.id)) selection.delete(store.id);
-          else selection.add(store.id);
-          writeFilter(selection);
-          buildFilter(connected);
-          runSearch();
+    for (const magasin of connectes) {
+      puces.appendChild(
+        puce(magasin.name, etat.magasins.has(magasin.id), () => {
+          if (etat.magasins.has(magasin.id)) etat.magasins.delete(magasin.id);
+          else etat.magasins.add(magasin.id);
+          ecrireMagasins(etat.magasins);
+          construirePuces(connectes);
+          relancer();
         })
       );
     }
-  };
+  }
+
+  /* ---------- recherche en ligne ---------- */
+  const boutonEnLigne = el('button', {
+    class: 'button button--soft button--block',
+    text: 'Chercher sur les sites des magasins',
+  });
+  const zoneEnLigne = el('div', { class: 'stack' });
+  boutonEnLigne.addEventListener('click', async () => {
+    const terme = champ.value.trim();
+    if (!terme) {
+      toast('Saisissez d’abord ce que vous cherchez.');
+      return;
+    }
+    boutonEnLigne.disabled = true;
+    clear(zoneEnLigne).appendChild(progress('Recherche sur les sites des magasins…'));
+    try {
+      const parametresEnLigne = { q: terme };
+      if (etat.magasins.size) parametresEnLigne.store = [...etat.magasins].join(',');
+      const { live } = await searchCatalogLive(parametresEnLigne);
+      clear(zoneEnLigne);
+      zoneEnLigne.appendChild(el('h2', { text: 'Trouvés en ligne' }));
+      if (live?.length) {
+        const grilleEnLigne = el('div', { class: 'produits' }, live.map(carteProduit));
+        zoneEnLigne.appendChild(grilleEnLigne);
+      } else {
+        zoneEnLigne.appendChild(el('p', { class: 'small muted', text: 'Rien trouvé sur les sites autorisés.' }));
+      }
+      const liens = await storeLinks(terme);
+      zoneEnLigne.appendChild(
+        el('div', { class: 'card card--flat' }, [
+          el('h3', { text: 'Chercher directement sur les sites' }),
+          el('div', { class: 'chips' }, liens.links.map((lien) =>
+            el('a', { class: 'chip chip--accent', href: lien.url, target: '_blank', rel: 'noopener noreferrer', text: lien.name })
+          )),
+        ])
+      );
+    } catch (erreur) {
+      clear(zoneEnLigne).appendChild(el('p', { class: 'notice small', text: erreur.message }));
+    } finally {
+      boutonEnLigne.disabled = false;
+    }
+  });
+  wrap.appendChild(el('hr', { class: 'sep' }));
+  wrap.appendChild(boutonEnLigne);
+  wrap.appendChild(zoneEnLigne);
+
+  /* ---------- état des catalogues ---------- */
+  const carteEtat = el('div', { class: 'card card--flat' }, [progress('Chargement des magasins…')]);
+  wrap.appendChild(carteEtat);
 
   listStores()
-    .then((status) => {
-      const connected = status.stores.filter((store) => store.hasRealFeed);
-      // Un magasin retire du catalogue ne doit pas rester dans un filtre enregistre.
-      for (const id of [...selection]) {
-        if (!connected.some((store) => store.id === id)) selection.delete(id);
+    .then((statut) => {
+      const connectes = statut.stores.filter((magasin) => magasin.hasRealFeed);
+      for (const id of [...etat.magasins]) {
+        if (!connectes.some((magasin) => magasin.id === id)) etat.magasins.delete(id);
       }
-      buildFilter(connected);
+      construirePuces(connectes);
 
-      const usesSample = status.sources.some((source) => source.type === 'exemple');
-      statusCard.replaceChildren(
+      clear(carteEtat).append(
         el('h3', { text: 'Catalogues connectés' }),
-        el('div', { class: 'stack' }, status.stores.map((store) =>
+        el('div', { class: 'stack' }, statut.stores.map((magasin) =>
           el('div', {}, [
             el('div', { class: 'row' }, [
               el('div', { class: 'grow' }, [
-                el('div', { style: { fontWeight: '600' }, text: store.name }),
+                el('div', { style: { fontWeight: '600' }, text: magasin.name }),
                 el('div', {
                   class: 'small muted',
-                  text: store.hasRealFeed
-                    ? `${store.productCount} produits importés`
-                    : store.feedConfigured
+                  text: magasin.hasRealFeed
+                    ? `${magasin.productCount} produits importés`
+                    : magasin.feedConfigured
                       ? 'flux configuré, pas encore synchronisé'
                       : 'pas de catalogue connecté',
                 }),
               ]),
-              el('span', { class: store.hasRealFeed ? 'chip chip--sage' : 'chip', text: store.hasRealFeed ? 'connecté' : 'non connecté' }),
+              el('span', {
+                class: magasin.hasRealFeed ? 'chip chip--sage' : 'chip',
+                text: magasin.hasRealFeed ? 'connecté' : 'non connecté',
+              }),
             ]),
-            !store.hasRealFeed && store.note
-              ? el('div', { class: 'small muted', style: { marginTop: '2px', opacity: '0.85' }, text: store.note })
+            !magasin.hasRealFeed && magasin.note
+              ? el('div', { class: 'small muted', style: { marginTop: '2px', opacity: '0.85' }, text: magasin.note })
               : null,
           ])
-        )),
-        usesSample
-          ? el('p', {
-              class: 'notice small',
-              style: { marginTop: '12px' },
-              html: "Pour brancher une enseigne supplémentaire, renseignez l'URL de son flux produit dans <code>config/stores.json</code>, puis lancez <code>npm run catalog:sync</code>.",
-            })
-          : null
+        ))
       );
     })
     .catch(() => {
-      statusCard.replaceChildren(el('p', { class: 'small muted', text: 'Serveur injoignable : la recherche catalogue nécessite une connexion.' }));
+      clear(carteEtat).appendChild(
+        el('p', { class: 'small muted', text: 'Serveur injoignable : le catalogue nécessite une connexion.' })
+      );
     });
 
-  if (query.get('q')) setTimeout(runSearch, 50);
-  void toast;
+  charger();
   return wrap;
 }

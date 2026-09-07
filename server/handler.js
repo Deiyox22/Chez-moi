@@ -39,6 +39,11 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
         return;
       }
 
+      if (req.method === 'GET' && pathname === '/api/catalog/categories') {
+        sendJson(res, 200, catalogRoutes.categories());
+        return;
+      }
+
       if (req.method === 'GET' && pathname === '/api/catalog/stores') {
         sendJson(res, 200, catalogRoutes.stores());
         return;

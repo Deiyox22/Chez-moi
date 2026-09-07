@@ -18,6 +18,8 @@ const CATEGORY_LABELS = {
   tapis: 'Tapis', rideaux: 'Rideaux', coussin: 'Coussin', plaid: 'Plaid', luminaire_plafond: 'Plafonnier',
   lampadaire: 'Lampadaire', lampe_table: 'Lampe à poser', decoration_murale: 'Décoration murale',
   plante: 'Plante', electromenager: 'Électroménager', autre: 'Autre',
+  decoration: 'Décoration', linge_de_lit: 'Linge de lit', linge_de_bain: 'Linge de bain',
+  oreiller: 'Oreiller', peinture: 'Peinture', etagere_murale: 'Étagère murale',
 };
 
 export const categoryLabel = (key) => CATEGORY_LABELS[key] || key || 'Autre';

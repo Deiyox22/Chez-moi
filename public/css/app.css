@@ -207,6 +207,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, .button:focus
 .item-card { display: flex; gap: 12px; align-items: flex-start; }
 .item-card__thumb { flex: 0 0 84px; width: 84px; aspect-ratio: 1; border-radius: var(--radius-sm); overflow: hidden; background: var(--paper-sunken); border: 1px solid var(--line); }
 .item-card__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item-card__thumb .vignette__glyphe { font-size: 20px; }
 
 /* ---------- swatches ---------- */
 .swatches { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -306,6 +307,73 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, .button:focus
 .product__media { flex: 0 0 56px; width: 56px; height: 56px; border-radius: 8px; display: grid; place-items: center; background: var(--paper-sunken); font-size: 20px; overflow: hidden; }
 .product__media img { width: 100%; height: 100%; object-fit: cover; }
 .product__price { font-weight: 650; white-space: nowrap; }
+
+/* ---------- vignettes produit ---------- */
+.vignette { position: relative; width: 100%; height: 100%; display: grid; place-items: center; }
+.vignette__glyphe { font-size: 1.6em; color: var(--ink-faint); opacity: 0.5; }
+.vignette__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.vignette__image--visible { opacity: 1; background: var(--paper-sunken); }
+@media (prefers-reduced-motion: reduce) { .vignette__image { transition: none; } }
+
+/* ---------- grille catalogue ---------- */
+.produits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+  gap: 12px;
+}
+.produit {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+.produit:hover, .produit:focus-visible { transform: translateY(-2px); box-shadow: var(--shadow); }
+.produit__image {
+  aspect-ratio: 1;
+  background: var(--paper-sunken);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  color: var(--ink-faint);
+  overflow: hidden;
+}
+.produit__corps { padding: 9px 10px 11px; display: flex; flex-direction: column; gap: 5px; flex: 1 1 auto; }
+.produit__titre { font-size: 0.84rem; font-weight: 600; line-height: 1.3; }
+.produit__pied { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 6px; }
+.produit__magasin { font-size: 0.72rem; color: var(--ink-soft); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.produit__tarif { font-weight: 680; font-size: 0.88rem; white-space: nowrap; }
+
+/* Douze enseignes tiennent sur quatre lignes ; une rangee qui defile en tient une. */
+.chips--defilantes {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.chips--defilantes > * { flex: 0 0 auto; }
+
+.barre-filtres { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.barre-filtres label { font-size: 0.76rem; margin-bottom: 3px; color: var(--ink-soft); }
+.barre-filtres select, .barre-filtres input { min-height: 40px; padding: 8px 10px; font-size: 0.9rem; }
+.compteur { font-size: 0.86rem; color: var(--ink-soft); }
+
+.skeleton { background: var(--paper-sunken); border-radius: var(--radius); animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
 
 .clamp-2 {
   display: -webkit-box;

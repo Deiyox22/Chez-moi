@@ -98,13 +98,22 @@ export function progress(label) {
   return el('div', { class: 'progress' }, [el('span', { class: 'spinner', 'aria-hidden': 'true' }), el('span', { text: label })]);
 }
 
-/** Product thumbnail that falls back to a glyph when the image fails to load. */
-export function productImage(product, { className = '' } = {}) {
-  const placeholder = () => el('span', { 'aria-hidden': 'true', text: '\u25a4' });
-  if (!product.imageUrl) return placeholder();
-  const image = el('img', { src: product.imageUrl, alt: '', loading: 'lazy', class: className });
-  image.addEventListener('error', () => image.replaceWith(placeholder()), { once: true });
-  return image;
+/**
+ * Product thumbnail. The glyph is the tile's floor rather than a replacement:
+ * it shows while the image loads, the image fades in over it once decoded, and
+ * a failed load simply leaves the glyph in place.
+ */
+export function productImage(product) {
+  const box = el('div', { class: 'vignette' }, [
+    el('span', { class: 'vignette__glyphe', 'aria-hidden': 'true', text: '\u25a4' }),
+  ]);
+  if (!product.imageUrl) return box;
+
+  const image = el('img', { class: 'vignette__image', src: product.imageUrl, alt: '', loading: 'lazy' });
+  image.addEventListener('load', () => image.classList.add('vignette__image--visible'), { once: true });
+  image.addEventListener('error', () => image.remove(), { once: true });
+  box.appendChild(image);
+  return box;
 }
 
 export function formatPrice(value, currency = 'EUR') {

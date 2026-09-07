@@ -175,14 +175,29 @@ Un flux peut aussi être un **fichier local**, ce qui permet d'essayer l'import 
 Vous pouvez renseigner un `affiliate.param` / `affiliate.value` par enseigne : il est ajouté
 aux liens sortants.
 
-### Filtrer par magasin
+### Parcourir le catalogue
 
-L'écran **Magasins** affiche une puce par catalogue connecté, avec son nombre de produits.
-Cliquer sur une ou plusieurs puces restreint la recherche à ces enseignes, et le choix est
-conservé d'une visite à l'autre. La recherche en direct sur les sites respecte le même filtre.
+L'onglet **Catalogue** ouvre directement sur les produits : pas besoin de chercher pour voir
+quelque chose. On y trouve une grille illustrée, et quatre façons de la restreindre.
 
-Au moment de générer un aménagement, la même sélection est proposée : les achats suggérés ne
-viendront alors que des magasins choisis. Sans sélection, tous les catalogues sont interrogés.
+- **Magasins** : une puce par catalogue connecté, dans une rangée qui défile. Le choix est
+  conservé d'une visite à l'autre, et la recherche en direct sur les sites le respecte aussi.
+- **Rayon** : les catégories réellement présentes, avec leur nombre de produits, recalculées
+  à chaque filtre.
+- **Tri** : pertinence, prix croissant, prix décroissant, nom.
+- **Prix** : un minimum et un maximum.
+
+Les résultats se chargent par pages de 24, avec le total affiché et un bouton pour la suite.
+
+Deux détails d'ordonnancement méritent d'être connus. À l'ouverture, les catégories qui
+meublent vraiment une pièce passent devant les serviettes de table, et les résultats sont
+répartis entre magasins et rayons pour éviter d'ouvrir sur six coloris du même meuble. Dès
+qu'un terme est tapé, en revanche, le classement redevient purement celui de la pertinence :
+une question mérite une réponse, pas un panachage.
+
+Au moment de générer un aménagement, la même sélection de magasins est proposée : les achats
+suggérés ne viendront alors que des enseignes choisies. Sans sélection, tous les catalogues
+sont interrogés.
 
 ### Recherche en direct, en complément
 

@@ -43,4 +43,6 @@ export const searchCatalogLive = (params) =>
 
 export const listStores = () => request('/api/catalog/stores');
 
+export const listCategories = () => request('/api/catalog/categories');
+
 export const storeLinks = (query) => request(`/api/catalog/links?${new URLSearchParams({ q: query })}`);

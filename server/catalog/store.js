@@ -32,6 +32,15 @@ const SIBLINGS = {
   plaid: ['linge_de_lit'],
 };
 
+// Landing on the catalogue should show furniture, not table napkins: these are
+// the categories an interior plan is actually built from.
+const CATEGORIES_MEUBLANTES = new Set([
+  'canape', 'fauteuil', 'chaise', 'table_repas', 'table_basse', 'bureau', 'lit',
+  'armoire', 'commode', 'buffet', 'bibliotheque', 'etagere', 'meuble_tv',
+  'rangement', 'tapis', 'luminaire_plafond', 'lampadaire', 'lampe_table',
+  'miroir', 'chevet', 'tete_de_lit', 'pouf',
+]);
+
 const STOP_WORDS = new Set(['de', 'du', 'des', 'le', 'la', 'les', 'un', 'une', 'en', 'et', 'pour', 'avec', 'a', 'au', 'aux', 'sur', 'dans']);
 
 function tokenize(value) {
@@ -160,7 +169,16 @@ export function invalidateCatalog() {
 /**
  * Ranked product search over every loaded catalogue.
  */
-export function searchProducts({ query = '', category = '', store = '', stores = [], maxPrice = null, styles = [], colors = [], limit = 12 } = {}) {
+/**
+ * Ranked search, and also plain browsing: with no query and no category every
+ * product passes, so the catalogue can be walked through by filters alone.
+ * Returns the page asked for plus the totals needed to paginate and to build
+ * category facets.
+ */
+export function browseCatalog({
+  query = '', category = '', store = '', stores = [], maxPrice = null, minPrice = null,
+  styles = [], colors = [], sort = 'pertinence', limit = 24, offset = 0,
+} = {}) {
   const catalog = loadCatalog();
   // One store or several: both shapes are accepted, an empty list means all.
   const wanted = new Set([...(Array.isArray(stores) ? stores : String(stores).split(',')), store].map((id) => String(id).trim()).filter(Boolean));
@@ -169,12 +187,18 @@ export function searchProducts({ query = '', category = '', store = '', stores =
   // this, a protege-matelas outranks a mattress simply for being cheaper.
   const categoryKey = normalizeText(category || guessCategory(query));
 
+  // Browsing is search without a question: everything that passes the filters
+  // qualifies, and the ordering is left to `sort`.
+  const browsing = !queryTokens.length && !categoryKey;
+
   const scored = [];
+  const facets = new Map();
   for (const product of catalog.products) {
     if (wanted.size && !wanted.has(product.store)) continue;
     if (maxPrice !== null && maxPrice !== undefined && product.price !== null && product.price > maxPrice) continue;
+    if (minPrice !== null && minPrice !== undefined && product.price !== null && product.price < minPrice) continue;
 
-    let score = 0;
+    let score = browsing ? 1 : 0;
     const haystack = normalizeText(product.haystack);
     const productCategory = normalizeText(product.category);
 
@@ -205,7 +229,16 @@ export function searchProducts({ query = '', category = '', store = '', stores =
     }
 
     if (product.source === 'feed') score += 1; // a real feed beats the sample catalogue
-    if (score > 0) scored.push({ product, score });
+    // A picture and a price make a product usable; prefer those when browsing.
+    if (browsing) {
+      if (product.imageUrl) score += 2;
+      if (product.price) score += 1;
+      if (CATEGORIES_MEUBLANTES.has(product.category)) score += 4;
+    }
+    if (score > 0) {
+      scored.push({ product, score });
+      if (product.category) facets.set(product.category, (facets.get(product.category) || 0) + 1);
+    }
   }
 
   // Ties go to the product most typical of its category, then to the cheaper one.
@@ -214,16 +247,68 @@ export function searchProducts({ query = '', category = '', store = '', stores =
     if (!median || !product.price) return 1;
     return Math.abs(Math.log(product.price / median));
   };
-  scored.sort(
-    (a, b) =>
-      b.score - a.score ||
-      typicality(a.product) - typicality(b.product) ||
-      (a.product.price ?? 1e9) - (b.product.price ?? 1e9)
-  );
-  return scored.slice(0, limit).map(({ product, score }) => {
+  const parPertinence = (a, b) =>
+    b.score - a.score ||
+    typicality(a.product) - typicality(b.product) ||
+    (a.product.price ?? 1e9) - (b.product.price ?? 1e9);
+
+  const ORDRES = {
+    pertinence: parPertinence,
+    'prix-croissant': (a, b) => (a.product.price ?? 1e9) - (b.product.price ?? 1e9) || parPertinence(a, b),
+    'prix-decroissant': (a, b) => (b.product.price ?? -1) - (a.product.price ?? -1) || parPertinence(a, b),
+    'nom': (a, b) => a.product.title.localeCompare(b.product.title, 'fr'),
+  };
+  scored.sort(ORDRES[sort] || parPertinence);
+
+  // Browsing a catalogue that opens on six colourways of one shelf is not
+  // browsing. Round-robin across store and category keeps the ranking's
+  // quality while giving the page variety.
+  // Only when nothing was typed: a text search must answer the question asked,
+  // best match first, without interleaving.
+  const ordonne = !queryTokens.length && (!sort || sort === 'pertinence') ? diversifier(scored) : scored;
+
+  const page = ordonne.slice(offset, offset + limit).map(({ product, score }) => {
     const { haystack, ...rest } = product;
     return { ...rest, score };
   });
+
+  return {
+    products: page,
+    total: ordonne.length,
+    offset,
+    limit,
+    categories: [...facets.entries()]
+      .map(([id, count]) => ({ id, count }))
+      .sort((a, b) => b.count - a.count),
+  };
+}
+
+function diversifier(scored) {
+  const groupes = new Map();
+  for (const entree of scored) {
+    const cle = `${entree.product.store}|${entree.product.category}`;
+    if (!groupes.has(cle)) groupes.set(cle, []);
+    groupes.get(cle).push(entree);
+  }
+  const files = [...groupes.values()];
+  const sortie = [];
+  let reste = true;
+  while (reste) {
+    reste = false;
+    for (const file of files) {
+      const entree = file.shift();
+      if (entree) {
+        sortie.push(entree);
+        reste = reste || file.length > 0;
+      }
+    }
+  }
+  return sortie;
+}
+
+/** Ranked search, first page only. Kept for the callers that just want products. */
+export function searchProducts(options = {}) {
+  return browseCatalog({ limit: 12, ...options }).products;
 }
 
 export function catalogStatus() {
