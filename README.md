@@ -54,11 +54,31 @@ adoucissement des contours. Quand les coins ne se ressemblent pas, ou quand la p
 mangerait presque toute l'image, le montage renonce et pose le produit tel quel plutôt que de
 le trouer.
 
-Deux échelles cohabitent, et la distinction compte. Celle des meubles entre eux est **exacte**,
-calculée depuis leurs dimensions réelles : un canapé de 210 cm reste exactement 1,75 fois plus
-large qu'une étagère de 120 cm. Celle de la pièce, en revanche, ne peut pas se déduire d'une
-photo — rien n'y dit combien de pixels vaut un mètre — alors elle se règle une fois, à la main,
-et tout le reste en découle.
+#### Le calage du sol
+
+Un collage se trahit toujours par la même chose : le meuble garde sa taille où qu'on le pose,
+alors qu'il devrait rétrécir en s'éloignant. Le montage règle ça par une **homographie du plan
+du sol**.
+
+Une photo perd la profondeur, mais pas complètement : un plan de la scène — ici le sol — reste
+lié à l'image par une transformation projective à huit paramètres, et quatre correspondances
+suffisent à la retrouver. Vous marquez donc une fois un rectangle posé à plat sur le sol — un
+tapis, un carrelage, un coin de pièce — et vous donnez ses dimensions réelles. À partir de là,
+l'application sait où tombe dans l'image n'importe quel point du sol, et combien de pixels y
+vaut un centimètre.
+
+Un meuble est alors posé à des coordonnées en centimètres dans la pièce, plus en pixels dans
+l'image. Le déplacer vers le fond le rétrécit tout seul, et l'ordre d'occultation suit la
+profondeur sans qu'on s'en occupe. Mesuré : un fauteuil passe de 449 px au premier plan à
+271 px à deux mètres cinquante, soit le rapport que la perspective impose.
+
+Sans calage, le montage reste utilisable : les meubles gardent une taille constante, et leurs
+proportions **entre eux** restent exactes puisque chacun est dessiné à sa largeur réelle. Le
+calage n'ajoute que la profondeur.
+
+Une approximation assumée : l'homographie décrit le sol, pas la hauteur. La verticale est
+mise à la même échelle que l'horizontale au point où le meuble est posé, ce qui est juste pour
+un appareil tenu droit et proche de la vérité sinon.
 
 Les images produit sont servies par un **relais** côté serveur, sans quoi le navigateur ne
 pourrait pas lire leurs pixels. Ce relais n'accepte que les URL déjà présentes dans le

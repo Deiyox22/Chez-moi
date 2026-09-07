@@ -232,20 +232,71 @@ async function detailView(id) {
     const toile = el('canvas', { class: 'montage-toile' });
     const editeur = new EditeurMontage(toile, fond);
 
-    const echelle = el('input', { type: 'range', min: '1', max: '12', step: '0.1', value: String(fond.width / 400 / 1) });
+    const echelle = el('input', { type: 'range', min: '1', max: '12', step: '0.1' });
     echelle.value = String(editeur.pxParCm);
     echelle.addEventListener('input', () => editeur.reglerEchelle(Number(echelle.value)));
+    const ligneEchelle = el('div', { class: 'reglage' }, [el('span', { text: 'Échelle' }), echelle]);
 
     const taille = el('input', { type: 'range', min: '0.4', max: '2.5', step: '0.02', value: '1', disabled: true });
     taille.addEventListener('input', () => editeur.reglerTailleSelection(Number(taille.value)));
 
     const supprimer = el('button', { class: 'button button--danger button--small', text: 'Retirer', disabled: true, onclick: () => editeur.retirerSelection() });
 
-    editeur.surChangement = () => {
-      const actif = Boolean(editeur.selection);
-      taille.disabled = !actif;
-      supprimer.disabled = !actif;
-      if (actif) taille.value = String(editeur.selection.ajustement);
+    /* ---------- calage du sol ---------- */
+    const largeurSol = el('input', { type: 'number', min: '50', max: '2000', step: '10', value: '300' });
+    const profondeurSol = el('input', { type: 'number', min: '50', max: '2000', step: '10', value: '250' });
+    const zoneCalage = el('div', { class: 'stack' });
+
+    const rendreCalage = () => {
+      if (editeur.reperage) {
+        zoneCalage.replaceChildren(
+          el('p', {
+            class: 'small muted',
+            style: { margin: '0' },
+            text: 'Déplacez les quatre points pour dessiner un rectangle posé à plat sur le sol — un tapis, un carrelage, ou simplement un coin de pièce — puis donnez ses dimensions réelles.',
+          }),
+          el('div', { class: 'barre-filtres' }, [
+            el('div', {}, [el('label', { text: 'Largeur du repère (cm)' }), largeurSol]),
+            el('div', {}, [el('label', { text: 'Profondeur (cm)' }), profondeurSol]),
+          ]),
+          el('div', { class: 'row' }, [
+            el('button', {
+              class: 'button grow',
+              text: 'Valider le calage',
+              onclick: () => {
+                const ok = editeur.calerSol(Number(largeurSol.value) || 300, Number(profondeurSol.value) || 250);
+                if (!ok) {
+                  toast('Les quatre points doivent former un vrai quadrilatère.', 'error');
+                  return;
+                }
+                toast('Sol calé : les meubles suivent maintenant la perspective.');
+                rendreCalage();
+              },
+            }),
+            el('button', { class: 'button button--ghost', text: 'Annuler', onclick: () => { editeur.entrerReperage(false); rendreCalage(); } }),
+          ])
+        );
+        ligneEchelle.hidden = true;
+        return;
+      }
+
+      if (editeur.calage) {
+        ligneEchelle.hidden = true;
+        zoneCalage.replaceChildren(
+          el('p', { class: 'notice notice--info small', style: { margin: '0' }, text: 'Sol calé. Un meuble déplacé vers le fond rétrécit tout seul, et passe derrière ceux du premier plan.' }),
+          el('div', { class: 'row' }, [
+            el('button', { class: 'button button--ghost button--small', text: 'Refaire le calage', onclick: () => { editeur.entrerReperage(true); rendreCalage(); } }),
+            el('button', { class: 'button button--ghost button--small', text: 'Retirer le calage', onclick: () => { editeur.annulerCalage(); rendreCalage(); } }),
+          ])
+        );
+        return;
+      }
+
+      ligneEchelle.hidden = false;
+      zoneCalage.replaceChildren(
+        el('p', { class: 'small muted', style: { margin: '0' }, text: 'Sans calage, un meuble garde la même taille où qu\'il soit posé. Caler le sol lui fait suivre la perspective.' }),
+        el('button', { class: 'button button--soft button--block', text: '◳ Caler le sol', onclick: () => { editeur.entrerReperage(true); rendreCalage(); } })
+      );
     };
 
     const tiroir = el('div', { class: 'tiroir' });
@@ -268,16 +319,18 @@ async function detailView(id) {
       el('h3', { text: 'Montage' }),
       el('p', {
         class: 'small muted',
-        text: "Posez les meubles sur votre photo et déplacez-les au doigt. Gratuit et illimité : tout se calcule dans votre navigateur. Les proportions entre meubles sont exactes ; réglez d'abord l'échelle de la pièce.",
+        text: "Posez les meubles sur votre photo et déplacez-les au doigt. Gratuit et illimité : tout se calcule dans votre navigateur. Calez le sol une fois, et chaque meuble prendra la taille que lui donne sa distance.",
       }),
       toile,
-      el('div', { class: 'reglage' }, [el('span', { text: 'Échelle' }), echelle]),
+      zoneCalage,
+      ligneEchelle,
       el('div', { class: 'reglage' }, [el('span', { text: 'Taille' }), taille, supprimer]),
       pieces.length
         ? el('div', {}, [el('p', { class: 'small muted', style: { margin: '10px 0 6px' }, text: 'Touchez un meuble pour le poser :' }), tiroir])
         : el('p', { class: 'notice small', text: "Aucun meuble de ce projet n'a de photo boutique. Ajoutez des produits depuis le catalogue pour les incruster." }),
       enregistrer
     );
+    rendreCalage();
 
     for (const piece of pieces) {
       const bouton = el('button', { class: 'tiroir-piece', type: 'button', disabled: true }, [
