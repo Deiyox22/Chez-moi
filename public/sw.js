@@ -1,6 +1,6 @@
 /* Chez Moi service worker: app shell offline, API always live. */
 
-const VERSION = 'chez-moi-v2';
+const VERSION = 'chez-moi-v3';
 // Le runtime WebAssembly et le modèle de segmentation pèsent 19 Mo et ne
 // changent jamais : ils vivent dans un cache à part, que la mise à jour du
 // shell ne vide pas. Ils ne sont pas préchargés — seulement gardés au premier
@@ -24,6 +24,9 @@ const SHELL = [
   '/js/lib/montage.js',
   '/js/lib/montage-editeur.js',
   '/js/lib/homographie.js',
+  '/js/lib/camera-photo.js',
+  '/js/lib/volume.js',
+  '/js/lib/rendu-volume.js',
   '/js/lib/segmentation.js',
   '/js/views/home.js',
   '/js/views/furniture.js',

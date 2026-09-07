@@ -1,4 +1,4 @@
-import { el, toast, confirmDialog, formatDate } from '../lib/ui.js';
+import { el, toast, confirmDialog, formatDate, remplir } from '../lib/ui.js';
 import { storageEstimate, pruneOrphanPhotos, exportAll, wipeEverything, all, STORES } from '../lib/db.js';
 import { downloadBlob } from '../lib/moodboard.js';
 import { modeleEnCache, oublierModele, POIDS_APPROXIMATIF } from '../lib/segmentation.js';
@@ -59,7 +59,7 @@ export async function render() {
   // il mérite sa propre ligne, sinon ces 19 Mo n'ont aucun moyen d'être rendus.
   const ligneModele = el('div', { style: { marginTop: '10px' } });
   const rendreLigneModele = (present) => {
-    ligneModele.replaceChildren(
+    remplir(ligneModele, 
       el('p', {
         class: 'small muted',
         style: { margin: '0 0 6px' },

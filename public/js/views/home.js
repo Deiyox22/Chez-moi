@@ -1,4 +1,4 @@
-import { el, emptyState } from '../lib/ui.js';
+import { el, emptyState, remplir } from '../lib/ui.js';
 import { all, STORES } from '../lib/db.js';
 import { health } from '../lib/api.js';
 
@@ -69,7 +69,7 @@ export async function render() {
 
   health()
     .then((status) => {
-      statusCard.replaceChildren(
+      remplir(statusCard, 
         el('h3', { text: 'État du service' }),
         el('div', { class: 'chips' }, [
           el('span', { class: status.ia === 'configuree' ? 'chip chip--sage' : 'chip', text: status.ia === 'configuree' ? `IA : ${status.modele}` : 'IA : non configurée' }),
@@ -85,7 +85,7 @@ export async function render() {
       );
     })
     .catch(() => {
-      statusCard.replaceChildren(
+      remplir(statusCard, 
         el('p', { class: 'small muted', text: "Serveur injoignable. Vos données locales restent consultables hors ligne." })
       );
     });

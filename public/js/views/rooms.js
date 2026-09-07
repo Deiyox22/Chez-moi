@@ -1,4 +1,4 @@
-import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate } from '../lib/ui.js';
+import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate, remplir } from '../lib/ui.js';
 import { STORES, put, get, remove, allSorted, all, savePhoto, photoUrl, deletePhoto } from '../lib/db.js';
 import { normalizeImage, pickImages, captureFromCamera, blobsToImagePayload } from '../lib/images.js';
 import { analyzeRoom, createDesign, listStores } from '../lib/api.js';
@@ -92,14 +92,14 @@ async function startAddFlow(onDone) {
     analyseButton.addEventListener('click', async () => {
       analyseButton.disabled = true;
       skipButton.disabled = true;
-      status.replaceChildren(progress('Relevé de la pièce en cours…'));
+      remplir(status, progress('Relevé de la pièce en cours…'));
       try {
         const images = await blobsToImagePayload(blobs);
         const analysis = await analyzeRoom({ images, name: nameInput.value.trim(), notes: notesInput.value.trim() });
         delete analysis.usage;
         await save(analysis);
       } catch (error) {
-        status.replaceChildren(el('p', { class: 'notice small', text: error.message }));
+        remplir(status, el('p', { class: 'notice small', text: error.message }));
         analyseButton.disabled = false;
         skipButton.disabled = false;
       }
@@ -108,7 +108,7 @@ async function startAddFlow(onDone) {
     skipButton.addEventListener('click', () => save(null));
 
     const photoBox = el('div');
-    thumbGrid(photoIds).then((grid) => photoBox.replaceChildren(grid));
+    thumbGrid(photoIds).then((grid) => remplir(photoBox, grid));
 
     return el('div', { class: 'stack' }, [
       photoBox,
@@ -139,13 +139,13 @@ async function startDesignFlow(room) {
     .then((status) => {
       const connectes = status.stores.filter((store) => store.hasRealFeed);
       if (connectes.length < 2) {
-        magasinsBox.replaceChildren(
+        remplir(magasinsBox, 
           el('span', { class: 'small muted', text: 'Un seul catalogue est connecté : aucune restriction possible.' })
         );
         return;
       }
       const rendre = () => {
-        magasinsBox.replaceChildren();
+        remplir(magasinsBox, );
         for (const store of connectes) {
           const actif = magasinsChoisis.has(store.id);
           magasinsBox.appendChild(
@@ -166,7 +166,7 @@ async function startDesignFlow(room) {
       };
       rendre();
     })
-    .catch(() => magasinsBox.replaceChildren());
+    .catch(() => remplir(magasinsBox, ));
 
   const close = openModal('Générer un aménagement', (dismiss) => {
     const styleInput = el('input', { type: 'text', list: 'styles-list', placeholder: 'Laisser vide pour déduire de vos meubles' });
@@ -197,7 +197,7 @@ async function startDesignFlow(room) {
 
     generateButton.addEventListener('click', async () => {
       generateButton.disabled = true;
-      status.replaceChildren(progress('Conception en cours, cela peut prendre une minute…'));
+      remplir(status, progress('Conception en cours, cela peut prendre une minute…'));
       try {
         const chosen = furniture.filter((item) => selection.get(item.id));
         if (!chosen.length) throw new Error('Sélectionnez au moins un meuble.');
@@ -253,7 +253,7 @@ async function startDesignFlow(room) {
         toast('Aménagement généré.');
         location.hash = `#/designs/${design.id}`;
       } catch (error) {
-        status.replaceChildren(el('p', { class: 'notice small', text: error.message }));
+        remplir(status, el('p', { class: 'notice small', text: error.message }));
         generateButton.disabled = false;
       }
     });

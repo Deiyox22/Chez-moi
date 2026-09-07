@@ -1,4 +1,4 @@
-import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate, formatPrice, productImage } from '../lib/ui.js';
+import { el, toast, openModal, confirmDialog, emptyState, progress, uid, formatDate, formatPrice, productImage, remplir } from '../lib/ui.js';
 import { STORES, put, get, remove, allSorted, savePhoto, photoUrl, deletePhoto } from '../lib/db.js';
 import { normalizeImage, pickImages, captureFromCamera, blobsToImagePayload } from '../lib/images.js';
 import { analyzeFurniture } from '../lib/api.js';
@@ -189,7 +189,7 @@ async function startAddFlow(onDone) {
     };
 
     const renderItems = (items, source) => {
-      results.replaceChildren();
+      remplir(results, );
       const entries = items.map((item) => {
         const form = itemForm(item);
         const keepBox = el('input', { type: 'checkbox', checked: true });
@@ -213,11 +213,11 @@ async function startAddFlow(onDone) {
     analyseButton.addEventListener('click', async () => {
       analyseButton.disabled = true;
       manualButton.disabled = true;
-      status.replaceChildren(progress('Analyse des photos en cours…'));
+      remplir(status, progress('Analyse des photos en cours…'));
       try {
         const images = await blobsToImagePayload(blobs);
         const response = await analyzeFurniture({ images, hint: hintInput.value.trim() });
-        status.replaceChildren();
+        remplir(status, );
         if (response.remarque) status.appendChild(el('p', { class: 'notice small', text: response.remarque }));
         if (!response.items?.length) {
           status.appendChild(el('p', { class: 'small muted', text: "Aucun meuble n'a été identifié. Vous pouvez le saisir à la main." }));
@@ -230,7 +230,7 @@ async function startAddFlow(onDone) {
         hintInput.closest('.field')?.remove();
         renderItems(response.items, 'ia');
       } catch (error) {
-        status.replaceChildren(el('p', { class: 'notice small', text: error.message }));
+        remplir(status, el('p', { class: 'notice small', text: error.message }));
         analyseButton.disabled = false;
         manualButton.disabled = false;
       }
@@ -244,7 +244,7 @@ async function startAddFlow(onDone) {
     });
 
     const photoBox = el('div');
-    thumbGrid(photoIds, null).then((grid) => photoBox.replaceChildren(grid));
+    thumbGrid(photoIds, null).then((grid) => remplir(photoBox, grid));
 
     return el('div', { class: 'stack' }, [
       photoBox,

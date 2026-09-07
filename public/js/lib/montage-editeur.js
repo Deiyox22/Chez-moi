@@ -17,8 +17,27 @@
 
 import { cadreVisible } from './montage.js';
 import { homographie, inverser, projeter, pixelsParCm } from './homographie.js';
+import { cameraDepuisSol } from './camera-photo.js';
+import { RenduVolume } from './rendu-volume.js';
+import {
+  LUMIERE_PAR_DEFAUT,
+  directionLumiere,
+  sommetsPanneau,
+  empriseAuSol,
+  aplatirAuSol,
+  projeter as projeterMonde,
+  seChevauchent,
+  dansPolygone,
+} from './volume.js';
 
 const LARGEUR_PAR_DEFAUT_CM = 100;
+
+/** Trois passes légèrement décalées valent une pénombre, sans passe de flou. */
+const PASSES_OMBRE = [
+  { ecart: 0, opacite: 0.2 },
+  { ecart: 7, opacite: 0.11 },
+  { ecart: -7, opacite: 0.11 },
+];
 
 export class EditeurMontage {
   constructor(toileAffichage, fond) {
@@ -30,8 +49,20 @@ export class EditeurMontage {
     this.couches = [];
     this.selection = null;
     this.calage = null;
+    this.camera = null;
     this.pxParCm = fond.width / 400; // une pièce de 4 m de large, à ajuster
     this.surChangement = () => {};
+
+    // Le moteur dessine hors écran puis vient se poser sur la toile visible :
+    // les gestes, la sélection et l'export continuent de passer par le 2D.
+    this.volume = false;
+    this.lumiere = { ...LUMIERE_PAR_DEFAUT };
+    this.toileVolume = document.createElement('canvas');
+    try {
+      this.moteur = RenduVolume.creer(this.toileVolume);
+    } catch {
+      this.moteur = null; // pilote graphique récalcitrant : on reste en 2D
+    }
 
     // Repère de calage : un quadrilatère posé sur le sol présumé.
     this.reperage = false;
@@ -71,6 +102,8 @@ export class EditeurMontage {
     if (!h || !hInv) return false;
 
     this.calage = { h, hInv, largeurCm, profondeurCm };
+    this.camera = cameraDepuisSol(h, this.fond.width, this.fond.height);
+    if (!this.camera) this.volume = false;
 
     // Les meubles déjà posés reprennent pied : leur position en pixels devient
     // une position au sol.
@@ -87,20 +120,63 @@ export class EditeurMontage {
 
   annulerCalage() {
     this.calage = null;
+    this.camera = null;
+    this.volume = false;
     for (const couche of this.couches) delete couche.monde;
+    this.dessiner();
+    this.surChangement();
+  }
+
+  /** Le moteur ne peut travailler qu'avec un sol calé et une carte graphique. */
+  volumeDisponible() {
+    return Boolean(this.calage && this.camera && this.moteur);
+  }
+
+  passerEnVolume(actif) {
+    this.volume = Boolean(actif) && this.volumeDisponible();
+    this.dessiner();
+    this.surChangement();
+    return this.volume;
+  }
+
+  reglerLumiere({ azimutDeg, elevationDeg }) {
+    if (Number.isFinite(azimutDeg)) this.lumiere.azimutDeg = azimutDeg;
+    if (Number.isFinite(elevationDeg)) this.lumiere.elevationDeg = elevationDeg;
+    this.dessiner();
+  }
+
+  reglerOrientationSelection(radians) {
+    if (!this.selection) return;
+    this.selection.orientation = radians;
     this.dessiner();
     this.surChangement();
   }
 
   /* ---------- couches ---------- */
 
-  ajouter({ nom, toile, largeurCm }) {
+  ajouter({ nom, toile, largeurCm, profondeurCm, hauteurCm }) {
     const cadre = cadreVisible(toile);
+    const annoncee = largeurCm > 20 ? largeurCm : LARGEUR_PAR_DEFAUT_CM;
+    const rapport = cadre.hauteur / cadre.largeur;
+
+    // Les cotes du fabricant et le cadrage de la photo se contredisent souvent :
+    // une fiche montre le meuble de trois quarts, avec de la marge autour. Plutôt
+    // que d'écraser l'image pour la faire entrer dans les cotes, on garde ses
+    // proportions et on répartit l'écart sur l'échelle — moyenne géométrique des
+    // deux largeurs possibles, celle de la cote et celle qu'impose la hauteur.
+    // Quand les deux s'accordent, elle redonne exactement la cote annoncée.
+    const largeurEffective = hauteurCm > 10 ? Math.sqrt(annoncee * (hauteurCm / rapport)) : annoncee;
+    const facteur = largeurEffective / annoncee;
+
     const couche = {
       nom,
       toile,
       cadre,
-      largeurCm: largeurCm > 20 ? largeurCm : LARGEUR_PAR_DEFAUT_CM,
+      cotesAnnoncees: { largeurCm: annoncee, profondeurCm: profondeurCm || 0, hauteurCm: hauteurCm || 0 },
+      largeurCm: largeurEffective,
+      hauteurCm: largeurEffective * rapport,
+      profondeurCm: (profondeurCm > 10 ? profondeurCm : annoncee * 0.6) * facteur,
+      orientation: 0,
       ajustement: 1,
       x: this.fond.width / 2,
       y: this.fond.height * 0.78,
@@ -160,10 +236,75 @@ export class EditeurMontage {
     return { largeur, hauteur, x: ancre.x - largeur / 2, y: ancre.y - hauteur, ancre };
   }
 
+  /**
+   * Géométrie d'une couche vue par le moteur : le panneau vertical dressé à sa
+   * place, son emprise au sol, et sa distance à l'objectif pour le tri.
+   */
+  #geometrieVolume(couche) {
+    if (!this.camera || !couche.monde) return null;
+    const assise = {
+      x: couche.monde.x,
+      y: couche.monde.y,
+      orientation: couche.orientation || 0,
+      largeurCm: couche.largeurCm * couche.ajustement,
+      hauteurCm: couche.hauteurCm * couche.ajustement,
+      profondeurCm: couche.profondeurCm * couche.ajustement,
+    };
+    const panneauMonde = sommetsPanneau(assise);
+    const panneau = projeterMonde(this.camera, panneauMonde);
+    if (!panneau) return null;
+    const centre = this.camera.projeter(assise.x, assise.y, 0);
+    return {
+      couche,
+      assise,
+      panneauMonde,
+      panneau,
+      emprise: empriseAuSol(assise),
+      profondeur: centre ? centre.profondeur : Infinity,
+    };
+  }
+
+  /** Les couches prêtes à dessiner, la plus lointaine d'abord. */
+  #rendus() {
+    return this.couches
+      .map((couche) => this.#geometrieVolume(couche))
+      .filter(Boolean)
+      .sort((a, b) => b.profondeur - a.profondeur);
+  }
+
   /** Taille à laquelle une couche est rendue, en pixels et en px/cm. */
   mesures(couche) {
+    if (this.volume) {
+      const rendu = this.#geometrieVolume(couche);
+      if (rendu) {
+        const [hg, hd, bd, bg] = rendu.panneau;
+        const largeurPx = Math.hypot(bd.x - bg.x, bd.y - bg.y);
+        const hauteurPx = (Math.hypot(bg.x - hg.x, bg.y - hg.y) + Math.hypot(bd.x - hd.x, bd.y - hd.y)) / 2;
+        return {
+          largeurPx,
+          hauteurPx,
+          echelle: largeurPx / rendu.assise.largeurCm,
+          ancre: { x: (bg.x + bd.x) / 2, y: (bg.y + bd.y) / 2 },
+        };
+      }
+    }
     const { largeur, hauteur, ancre } = this.#geometrie(couche);
     return { largeurPx: largeur, hauteurPx: hauteur, echelle: largeur / couche.largeurCm / couche.ajustement, ancre };
+  }
+
+  /** Les meubles dont les emprises au sol se marchent dessus. */
+  chevauchements() {
+    const rendus = this.#rendus();
+    const fautifs = new Set();
+    for (let i = 0; i < rendus.length; i += 1) {
+      for (let j = i + 1; j < rendus.length; j += 1) {
+        if (seChevauchent(rendus[i].emprise, rendus[j].emprise)) {
+          fautifs.add(rendus[i].couche);
+          fautifs.add(rendus[j].couche);
+        }
+      }
+    }
+    return fautifs;
   }
 
   /** Pose une couche à un point du sol, en centimètres. */
@@ -183,6 +324,10 @@ export class EditeurMontage {
   }
 
   dessiner() {
+    if (this.volume && this.volumeDisponible()) {
+      this.#dessinerVolume();
+      return;
+    }
     const { ctx } = this;
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     ctx.drawImage(this.fond, 0, 0);
@@ -217,6 +362,80 @@ export class EditeurMontage {
     }
 
     if (this.reperage) this.#dessinerRepere();
+  }
+
+  /**
+   * Le rendu du moteur : la photo, puis toutes les ombres, puis les meubles du
+   * plus lointain au plus proche. Les ombres passent avant tous les meubles,
+   * sans quoi celle d'un meuble du fond viendrait se poser sur un meuble proche.
+   */
+  #dessinerVolume() {
+    const { ctx, moteur } = this;
+    moteur.dimensionner(this.canvas.width, this.canvas.height);
+    moteur.effacer();
+    moteur.fond(this.fond);
+
+    const rendus = this.#rendus();
+
+    for (const rendu of rendus) {
+      for (const passe of PASSES_OMBRE) {
+        const direction = directionLumiere({
+          azimutDeg: this.lumiere.azimutDeg + passe.ecart,
+          elevationDeg: this.lumiere.elevationDeg,
+        });
+        const aplati = aplatirAuSol(rendu.panneauMonde, direction);
+        const projete = aplati && projeterMonde(this.camera, aplati);
+        if (projete) moteur.quad(rendu.couche.toile, rendu.couche.cadre, projete, [0.05, 0.04, 0.04, passe.opacite]);
+      }
+    }
+
+    for (const rendu of rendus) moteur.quad(rendu.couche.toile, rendu.couche.cadre, rendu.panneau);
+
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    ctx.drawImage(this.toileVolume, 0, 0);
+
+    if (this.reperage) {
+      this.#dessinerRepere();
+      return;
+    }
+
+    const fautifs = this.chevauchements();
+    for (const rendu of rendus) {
+      const selectionne = rendu.couche === this.selection;
+      if (!selectionne && !fautifs.has(rendu.couche)) continue;
+      this.#dessinerEncombrement(rendu, fautifs.has(rendu.couche) ? '#c0392b' : '#b5613f', selectionne);
+    }
+  }
+
+  /** L'emprise au sol et le volume du meuble, en fil de fer. */
+  #dessinerEncombrement(rendu, couleur, complet) {
+    const { ctx } = this;
+    const sol = projeterMonde(this.camera, rendu.emprise.map(([x, y]) => [x, y, 0]));
+    if (!sol) return;
+    const trait = Math.max(1.5, this.canvas.width / 500);
+
+    ctx.save();
+    ctx.strokeStyle = couleur;
+    ctx.lineWidth = trait;
+    ctx.setLineDash([9, 7]);
+    ctx.beginPath();
+    sol.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
+    ctx.closePath();
+    ctx.stroke();
+
+    if (complet) {
+      const haut = projeterMonde(this.camera, rendu.emprise.map(([x, y]) => [x, y, rendu.assise.hauteurCm]));
+      if (haut) {
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 0.55;
+        ctx.beginPath();
+        haut.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
+        ctx.closePath();
+        sol.forEach((p, i) => { ctx.moveTo(p.x, p.y); ctx.lineTo(haut[i].x, haut[i].y); });
+        ctx.stroke();
+      }
+    }
+    ctx.restore();
   }
 
   #dessinerRepere() {
@@ -254,6 +473,10 @@ export class EditeurMontage {
   }
 
   #coucheSous(point) {
+    if (this.volume && this.volumeDisponible()) {
+      const rendus = this.#rendus().reverse(); // le plus proche décide
+      return rendus.find((rendu) => dansPolygone(point, rendu.panneau))?.couche || null;
+    }
     const proches = [...this.#ordreProfondeur()].reverse();
     return (
       proches.find((couche) => {
@@ -286,7 +509,9 @@ export class EditeurMontage {
         this.dessiner();
         return;
       }
-      const { ancre } = this.#geometrie(couche);
+      // L'ancre est le milieu du contact avec le sol, en 2D comme en volume :
+      // c'est ce point-là qu'on fait glisser sur le plancher.
+      const { ancre } = this.mesures(couche);
       deplacement = { couche, dx: ancre.x - point.x, dy: ancre.y - point.y };
       this.canvas.setPointerCapture(evenement.pointerId);
       this.dessiner();

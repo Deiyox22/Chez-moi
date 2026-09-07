@@ -19,6 +19,7 @@ cherchant dans les catalogues des magasins que vous avez configurés.
 | **Achats** | Chaque manque devient une recherche produit : d'abord dans les catalogues importés, puis, si besoin, en direct sur les sites des magasins, avec le prix et le lien. |
 | **Envies** | Un produit repéré au catalogue s'ajoute à vos meubles dans une catégorie à part, « envies d'achat ». L'aménagement le place comme un meuble à acquérir et ne propose plus rien d'autre à sa place. |
 | **Montage** | Les meubles sont détourés et posés sur votre photo, à leurs proportions réelles, déplaçables au doigt. Gratuit, hors ligne, illimité. Vos propres photos sont détourées par un modèle qui tourne sur votre appareil. |
+| **Moteur** | Le calage du sol livre la caméra de votre photo : les meubles y sont dressés en perspective juste, avec leur ombre portée et leur encombrement au sol. |
 | **Rendu** | Pour la belle image : votre photo et celles des meubles retenus sont confiées à un modèle d'image, qui rend la pièce une fois aménagée. |
 | **Moodboard** | Export PNG du projet : palette, photo de la pièce, vos meubles réutilisés, résumé. |
 
@@ -98,9 +99,51 @@ Sans calage, le montage reste utilisable : les meubles gardent une taille consta
 proportions **entre eux** restent exactes puisque chacun est dessiné à sa largeur réelle. Le
 calage n'ajoute que la profondeur.
 
-Une approximation assumée : l'homographie décrit le sol, pas la hauteur. La verticale est
-mise à la même échelle que l'horizontale au point où le meuble est posé, ce qui est juste pour
-un appareil tenu droit et proche de la vérité sinon.
+#### Le moteur : la caméra de votre photo, retrouvée
+
+L'homographie ne parle que du sol. Elle fait rétrécir un meuble qu'on éloigne, mais elle ignore
+la hauteur : les arêtes verticales du meuble restent parallèles alors que celles de la pièce
+convergent. C'est le dernier détail qui trahit le collage.
+
+Or une homographie de plan en dit bien plus qu'elle n'en a l'air. Elle vaut `K·[r1 r2 t]` à un
+facteur près — deux colonnes d'une rotation et une translation, vues à travers la matrice
+interne de l'appareil. Comme `r1` et `r2` sont unitaires et orthogonaux, deux équations
+tombent et il ne reste qu'une inconnue, la focale. On la résout, on complète la rotation par
+`r3 = r1 × r2`, et **la caméra qui a pris la photo est reconstituée** : position, orientation,
+champ. Le calage du sol livrait donc la caméra depuis le début, sans qu'on le sache.
+
+À partir de là on ne projette plus le sol, on projette la pièce. Chaque meuble devient un
+objet à une position en centimètres, avec une orientation et un encombrement ; sa photo
+détourée est plaquée sur un panneau dressé à cet endroit. Un meuble n'est pas plat, et c'est
+une approximation — mais elle est juste là où l'œil regarde : la ligne de contact avec le sol,
+la hauteur apparente, la fuite des verticales.
+
+Ce que le moteur ajoute, concrètement :
+
+- **Les verticales fuient.** Vérifié : les arêtes verticales de cinq meubles posés et pivotés
+  au hasard se coupent toutes en un seul point de fuite, à 5·10⁻¹¹ pixel près.
+- **Les ombres sont des silhouettes, pas des ellipses.** L'ombre d'un meuble est sa propre
+  découpe aplatie sur le sol depuis la direction de la lumière, orientable au doigt. Pour
+  85 cm de haut et une lumière à 54° d'élévation, elle mesure 62 cm — exactement `85/tan 54°`.
+- **L'encombrement est visible.** Le meuble sélectionné montre sa boîte en fil de fer et son
+  emprise au sol ; deux meubles qui se marchent dessus passent au rouge. La question « est-ce
+  que ça rentre » a enfin une réponse.
+- **Rien n'est déformé.** Quand les cotes du fabricant et le cadrage de la photo se
+  contredisent, l'image garde ses proportions et l'écart est réparti sur l'échelle — moyenne
+  géométrique des deux largeurs possibles, qui redonne la cote annoncée quand les deux
+  s'accordent.
+
+La rasterisation tient en un shader WebGL de six lignes, sans aucune bibliothèque. Plaquer une
+image dans un quadrilatère quelconque est justement ce que le canvas 2D ne sait pas faire ; il
+suffit d'écrire `gl_Position` avec le `w` de la projection pour que la carte graphique rétablisse
+d'elle-même l'interpolation perspective. Sans WebGL, l'application reste en collage à plat et
+le dit.
+
+Reste une approximation assumée : le panneau est plat, et la focale se déduit du repère que
+vous avez posé. Sur un repère placé au doigt à ±5 pixels près, le haut d'un meuble tombe à
+10 pixels de sa vraie place sur une photo de 1400 px — invisible ; à ±20 pixels, 35 pixels.
+Quand le repère ne permet pas de mesurer la focale, un objectif courant est supposé et
+l'application le signale.
 
 Les images produit sont servies par un **relais** côté serveur, sans quoi le navigateur ne
 pourrait pas lire leurs pixels. Ce relais n'accepte que les URL déjà présentes dans le

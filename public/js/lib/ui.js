@@ -20,6 +20,21 @@ export function el(tag, props = {}, children = []) {
   return node;
 }
 
+/**
+ * Remplace le contenu d'un nœud en ignorant les enfants absents.
+ * `replaceChildren` écrirait « null » en toutes lettres pour une branche
+ * conditionnelle non prise ; `el` les filtre déjà, celle-ci fait de même.
+ */
+export function remplir(node, ...enfants) {
+  node.replaceChildren(
+    ...enfants
+      .flat()
+      .filter((enfant) => enfant !== null && enfant !== undefined && enfant !== false)
+      .map((enfant) => (typeof enfant === 'string' || typeof enfant === 'number' ? document.createTextNode(String(enfant)) : enfant))
+  );
+  return node;
+}
+
 export function clear(node) {
   while (node.firstChild) node.removeChild(node.firstChild);
   return node;

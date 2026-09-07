@@ -1,4 +1,4 @@
-import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage, progress } from '../lib/ui.js';
+import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage, progress, remplir } from '../lib/ui.js';
 import { STORES, get, put, remove, all, allSorted, photoBlob, photoUrl, savePhoto } from '../lib/db.js';
 import { blobToBase64 } from '../lib/images.js';
 import { createRender, health } from '../lib/api.js';
@@ -6,6 +6,7 @@ import { chargerImage, detourer } from '../lib/montage.js';
 import { detourerParModele, segmentationPrete, POIDS_APPROXIMATIF } from '../lib/segmentation.js';
 import { EditeurMontage } from '../lib/montage-editeur.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
+import { lireDimensions } from '../lib/dimensions.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
 
 function productRow(product) {
@@ -206,17 +207,25 @@ async function detailView(id) {
     for (const entree of result.meublesReutilises || []) {
       const item = byId.get(entree.meubleId);
       if (!item) continue;
-      const largeurCm = item.dimensionsEstimeesCm?.largeurCm || 0;
+      // Les cotes servent au moteur : sans profondeur ni hauteur, il ne peut ni
+      // dresser le meuble ni savoir l'encombrement qu'il prend au sol.
+      const cotes = {
+        largeurCm: item.dimensionsEstimeesCm?.largeurCm || 0,
+        profondeurCm: item.dimensionsEstimeesCm?.profondeurCm || 0,
+        hauteurCm: item.dimensionsEstimeesCm?.hauteurCm || 0,
+      };
       if (item.photoIds?.[0]) {
-        pieces.push({ nom: item.nom, origine: 'photo', photoId: item.photoIds[0], cle: item.photoIds[0], largeurCm });
+        pieces.push({ nom: item.nom, origine: 'photo', photoId: item.photoIds[0], cle: item.photoIds[0], ...cotes });
       } else if (item.boutique?.imageUrl) {
-        pieces.push({ nom: item.nom, origine: 'boutique', url: item.boutique.imageUrl, cle: item.boutique.imageUrl, largeurCm });
+        pieces.push({ nom: item.nom, origine: 'boutique', url: item.boutique.imageUrl, cle: item.boutique.imageUrl, ...cotes });
       }
     }
     for (const besoin of result.besoinsAchat || []) {
       for (const produit of [...(besoin.produits || []), ...(besoin.produitsEnLigne || [])]) {
         if (produit.imageUrl) {
-          pieces.push({ nom: produit.title, origine: 'boutique', url: produit.imageUrl, cle: produit.imageUrl, largeurCm: 0 });
+          // Les fiches boutique annoncent souvent leurs cotes dans le titre.
+          const lues = lireDimensions(produit.title, produit.description, produit.dimensions);
+          pieces.push({ nom: produit.title, origine: 'boutique', url: produit.imageUrl, cle: produit.imageUrl, ...lues });
         }
       }
     }
@@ -230,7 +239,7 @@ async function detailView(id) {
       toast("Cette pièce n'a pas de photo : le montage part de votre photo.", 'error');
       return;
     }
-    zoneMontage.replaceChildren(progress('Préparation du montage…'));
+    remplir(zoneMontage, progress('Préparation du montage…'));
 
     const fond = await createImageBitmap(photoPiece);
     const toile = el('canvas', { class: 'montage-toile' });
@@ -246,14 +255,77 @@ async function detailView(id) {
 
     const supprimer = el('button', { class: 'button button--danger button--small', text: 'Retirer', disabled: true, onclick: () => editeur.retirerSelection() });
 
+    /* ---------- le moteur : perspective réelle ---------- */
+    const orientation = el('input', { type: 'range', min: '-90', max: '90', step: '1', value: '0', disabled: true });
+    orientation.addEventListener('input', () => editeur.reglerOrientationSelection((Number(orientation.value) * Math.PI) / 180));
+    const ligneOrientation = el('div', { class: 'reglage', hidden: true }, [el('span', { text: 'Pivoter' }), orientation]);
+
+    const lumiere = el('input', { type: 'range', min: '-180', max: '180', step: '5', value: String(editeur.lumiere.azimutDeg) });
+    lumiere.addEventListener('input', () => editeur.reglerLumiere({ azimutDeg: Number(lumiere.value) }));
+    const ligneLumiere = el('div', { class: 'reglage', hidden: true }, [el('span', { text: 'Lumière' }), lumiere]);
+
+    const zoneMoteur = el('div', { class: 'stack' });
+
+    // Les réglages ne valent que pour le meuble sélectionné : ils suivent la
+    // sélection au lieu de rester éteints.
+    editeur.surChangement = () => {
+      const couche = editeur.selection;
+      taille.disabled = !couche;
+      supprimer.disabled = !couche;
+      orientation.disabled = !couche;
+      if (couche) {
+        taille.value = String(couche.ajustement);
+        orientation.value = String(Math.round(((couche.orientation || 0) * 180) / Math.PI));
+      }
+    };
+    editeur.surChangement();
+
     /* ---------- calage du sol ---------- */
     const largeurSol = el('input', { type: 'number', min: '50', max: '2000', step: '10', value: '300' });
     const profondeurSol = el('input', { type: 'number', min: '50', max: '2000', step: '10', value: '250' });
     const zoneCalage = el('div', { class: 'stack' });
 
+    /**
+     * Le moteur ne s'ouvre qu'une fois le sol calé : c'est le calage qui livre
+     * la caméra. On dit ce qu'il apporte plutôt que de le laisser deviner.
+     */
+    const rendreMoteur = () => {
+      const dispo = editeur.volumeDisponible();
+      ligneLumiere.hidden = !editeur.volume;
+      ligneOrientation.hidden = !editeur.volume;
+
+      if (!dispo) {
+        remplir(zoneMoteur, 
+          editeur.calage && !editeur.moteur
+            ? el('p', { class: 'small muted', style: { margin: '0' }, text: "Ce navigateur n'expose pas WebGL : la perspective réelle est indisponible, le montage reste en collage à plat." })
+            : null
+        );
+        return;
+      }
+
+      const cam = editeur.camera;
+      remplir(zoneMoteur, 
+        el('button', {
+          class: editeur.volume ? 'button button--block' : 'button button--soft button--block',
+          text: editeur.volume ? '✓ Perspective réelle' : '◨ Passer en perspective réelle',
+          onclick: () => { editeur.passerEnVolume(!editeur.volume); rendreMoteur(); },
+        }),
+        el('p', {
+          class: 'small muted',
+          style: { margin: '6px 0 0' },
+          text: editeur.volume
+            ? `Les meubles sont dressés dans la pièce et vus par la caméra de votre photo : ${Math.round(cam.champVerticalDeg)}° de champ, objectif à ${Math.round(cam.hauteurCameraCm)} cm du sol. Leurs verticales fuient comme celles de la pièce, et leur ombre est leur propre silhouette posée au sol.`
+            : "À plat, un meuble reste une vignette : ses arêtes verticales restent parallèles alors que celles de la pièce convergent. La perspective réelle le dresse dans la pièce et lui donne son ombre.",
+        }),
+        !cam.focaleMesuree
+          ? el('p', { class: 'small muted', style: { margin: '4px 0 0' }, text: 'La focale ne se déduit pas de ce repère : un objectif courant est supposé. Un repère plus large, et bien à plat, la rendrait mesurable.' })
+          : null
+      );
+    };
+
     const rendreCalage = () => {
       if (editeur.reperage) {
-        zoneCalage.replaceChildren(
+        remplir(zoneCalage, 
           el('p', {
             class: 'small muted',
             style: { margin: '0' },
@@ -274,6 +346,7 @@ async function detailView(id) {
                   return;
                 }
                 toast('Sol calé : les meubles suivent maintenant la perspective.');
+                rendreMoteur();
                 rendreCalage();
               },
             }),
@@ -286,18 +359,19 @@ async function detailView(id) {
 
       if (editeur.calage) {
         ligneEchelle.hidden = true;
-        zoneCalage.replaceChildren(
+        remplir(zoneCalage, 
           el('p', { class: 'notice notice--info small', style: { margin: '0' }, text: 'Sol calé. Un meuble déplacé vers le fond rétrécit tout seul, et passe derrière ceux du premier plan.' }),
           el('div', { class: 'row' }, [
             el('button', { class: 'button button--ghost button--small', text: 'Refaire le calage', onclick: () => { editeur.entrerReperage(true); rendreCalage(); } }),
-            el('button', { class: 'button button--ghost button--small', text: 'Retirer le calage', onclick: () => { editeur.annulerCalage(); rendreCalage(); } }),
+            el('button', { class: 'button button--ghost button--small', text: 'Retirer le calage', onclick: () => { editeur.annulerCalage(); rendreMoteur(); rendreCalage(); } }),
           ])
         );
+        rendreMoteur();
         return;
       }
 
       ligneEchelle.hidden = false;
-      zoneCalage.replaceChildren(
+      remplir(zoneCalage, 
         el('p', { class: 'small muted', style: { margin: '0' }, text: 'Sans calage, un meuble garde la même taille où qu\'il soit posé. Caler le sol lui fait suivre la perspective.' }),
         el('button', { class: 'button button--soft button--block', text: '◳ Caler le sol', onclick: () => { editeur.entrerReperage(true); rendreCalage(); } })
       );
@@ -319,7 +393,7 @@ async function detailView(id) {
       },
     });
 
-    zoneMontage.replaceChildren(
+    remplir(zoneMontage, 
       el('h3', { text: 'Montage' }),
       el('p', {
         class: 'small muted',
@@ -327,8 +401,11 @@ async function detailView(id) {
       }),
       toile,
       zoneCalage,
+      zoneMoteur,
       ligneEchelle,
       el('div', { class: 'reglage' }, [el('span', { text: 'Taille' }), taille, supprimer]),
+      ligneOrientation,
+      ligneLumiere,
       pieces.length
         ? el('div', {}, [
             el('p', { class: 'small muted', style: { margin: '10px 0 6px' }, text: 'Touchez un meuble pour le poser :' }),
@@ -344,6 +421,7 @@ async function detailView(id) {
         : el('p', { class: 'notice small', text: "Aucun meuble de ce projet n'a de photo boutique. Ajoutez des produits depuis le catalogue pour les incruster." }),
       enregistrer
     );
+    rendreMoteur();
     rendreCalage();
 
     const poidsMo = Math.round(POIDS_APPROXIMATIF / 1024 / 1024);
@@ -363,7 +441,7 @@ async function detailView(id) {
           toast("Le modèle n'a rien trouvé à détourer sur cette photo.", 'error');
           return;
         }
-        editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm });
+        editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm, profondeurCm: piece.profondeurCm, hauteurCm: piece.hauteurCm });
       } catch (erreur) {
         toast(`Détourage impossible : ${erreur.message}`, 'error');
       } finally {
@@ -382,7 +460,7 @@ async function detailView(id) {
       if (piece.origine === 'photo') {
         photoUrl(piece.photoId)
           .then((url) => {
-            bouton.replaceChildren(
+            remplir(bouton, 
               el('img', { class: 'tiroir-piece__image', src: url, alt: '' }),
               el('div', { class: 'tiroir-piece__nom', text: piece.nom })
             );
@@ -391,7 +469,7 @@ async function detailView(id) {
             bouton.addEventListener('click', () => poserPhotoPersonnelle(piece, bouton));
           })
           .catch(() => {
-            bouton.replaceChildren(el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — photo illisible` }));
+            remplir(bouton, el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — photo illisible` }));
           });
         continue;
       }
@@ -401,29 +479,31 @@ async function detailView(id) {
           if (!bitmap) throw new Error('image illisible');
           const { toile: decoupe, detoure } = detourer(bitmap);
           const vignette = el('img', { class: 'tiroir-piece__image', alt: '' });
-          bouton.replaceChildren(vignette, el('div', { class: 'tiroir-piece__nom', text: piece.nom }));
+          remplir(bouton, vignette, el('div', { class: 'tiroir-piece__nom', text: piece.nom }));
           decoupe.convertToBlob({ type: 'image/png' }).then((blob) => {
             vignette.src = URL.createObjectURL(blob);
           });
           bouton.disabled = false;
           bouton.title = detoure ? 'Détouré automatiquement' : 'Fond non détourable : posé tel quel';
-          bouton.addEventListener('click', () => editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm }));
+          bouton.addEventListener('click', () =>
+            editeur.ajouter({ nom: piece.nom, toile: decoupe, largeurCm: piece.largeurCm, profondeurCm: piece.profondeurCm, hauteurCm: piece.hauteurCm })
+          );
         })
         .catch(() => {
-          bouton.replaceChildren(el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — image indisponible` }));
+          remplir(bouton, el('div', { class: 'tiroir-piece__nom', text: `${piece.nom} — image indisponible` }));
         });
     }
   }
 
   if (design.montagePhotoId) {
     const url = await photoUrl(design.montagePhotoId);
-    zoneMontage.replaceChildren(
+    remplir(zoneMontage, 
       el('h3', { text: 'Montage' }),
       url ? el('img', { class: 'rendu', src: url, alt: 'Montage de la pièce' }) : null,
       el('button', { class: 'button button--soft', text: 'Reprendre le montage', onclick: ouvrirMontage })
     );
   } else {
-    zoneMontage.replaceChildren(
+    remplir(zoneMontage, 
       el('h3', { text: 'Montage' }),
       el('p', {
         class: 'small muted',
@@ -439,7 +519,7 @@ async function detailView(id) {
 
   async function afficherRendu(photoId) {
     const url = await photoUrl(photoId);
-    zoneRendu.replaceChildren(
+    remplir(zoneRendu, 
       el('h3', { text: 'Votre pièce, réaménagée' }),
       url ? el('img', { class: 'rendu', src: url, alt: `Rendu de ${room?.nom || 'la pièce'} réaménagée` }) : null,
       el('p', {
@@ -456,7 +536,7 @@ async function detailView(id) {
       toast("Cette pièce n'a pas de photo : le rendu part de votre photo.", 'error');
       return;
     }
-    zoneRendu.replaceChildren(progress('Composition du rendu, cela peut prendre une minute…'));
+    remplir(zoneRendu, progress('Composition du rendu, cela peut prendre une minute…'));
 
     try {
       const meubles = [];
@@ -486,7 +566,7 @@ async function detailView(id) {
       await afficherRendu(photoId);
       toast('Rendu généré.');
     } catch (erreur) {
-      zoneRendu.replaceChildren(
+      remplir(zoneRendu, 
         el('h3', { text: 'Votre pièce, réaménagée' }),
         el('p', { class: 'notice small', text: erreur.message }),
         el('button', { class: 'button button--soft', text: 'Réessayer', onclick: lancerRendu })
@@ -498,7 +578,7 @@ async function detailView(id) {
     await afficherRendu(design.renduPhotoId);
   } else {
     const cout = el('p', { class: 'small muted', style: { margin: '0' } });
-    zoneRendu.replaceChildren(
+    remplir(zoneRendu, 
       el('h3', { text: 'Votre pièce, réaménagée' }),
       el('p', {
         class: 'small muted',
