@@ -6,6 +6,7 @@ import { config, aiConfigured } from './config.js';
 import { sendJson, sendError, readJsonBody, serveStatic } from './lib/http.js';
 import { analyzeFurniture, analyzeRoom } from './routes/analyze.js';
 import { createDesign } from './routes/design.js';
+import { createRender } from './routes/render.js';
 import * as catalogRoutes from './routes/catalog.js';
 import { loadCatalog } from './catalog/store.js';
 
@@ -29,6 +30,7 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
           fournisseur: config.ai.provider,
           modele: aiConfigured() ? config.ai.model : null,
           rechercheEnLigne: config.catalog.liveSearch,
+          rendu: aiConfigured() && config.ai.imageAvailable ? config.ai.imageModel : null,
           catalogue: { produits: catalog.products.length, sources: catalog.sources },
         });
         return;
@@ -66,6 +68,11 @@ export async function handleRequest(req, res, { staticFiles = true } = {}) {
 
       if (req.method === 'POST' && pathname === '/api/rooms/analyze') {
         sendJson(res, 200, await analyzeRoom(await readJsonBody(req)));
+        return;
+      }
+
+      if (req.method === 'POST' && pathname === '/api/renders') {
+        sendJson(res, 200, await createRender(await readJsonBody(req)));
         return;
       }
 

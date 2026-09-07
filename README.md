@@ -18,6 +18,7 @@ cherchant dans les catalogues des magasins que vous avez configurés.
 | **Aménagement** | À partir du relevé et de votre inventaire : une direction de style, une palette, un plan vu de dessus en centimètres, le rôle de chaque meuble que vous possédez, les meubles écartés et pourquoi, les gains rapides gratuits, et les étapes. |
 | **Achats** | Chaque manque devient une recherche produit : d'abord dans les catalogues importés, puis, si besoin, en direct sur les sites des magasins, avec le prix et le lien. |
 | **Envies** | Un produit repéré au catalogue s'ajoute à vos meubles dans une catégorie à part, « envies d'achat ». L'aménagement le place comme un meuble à acquérir et ne propose plus rien d'autre à sa place. |
+| **Rendu** | Votre photo de pièce et les photos des meubles retenus sont confiées à un modèle d'image, qui rend la pièce une fois aménagée. |
 | **Moodboard** | Export PNG du projet : palette, photo de la pièce, vos meubles réutilisés, résumé. |
 
 L'application fonctionne hors ligne pour consulter ce qui est déjà enregistré. Les analyses
@@ -39,6 +40,24 @@ npm start
 
 Ouvrez http://localhost:8787. Sur mobile, le navigateur propose d'installer l'application
 sur l'écran d'accueil.
+
+### Le rendu photographique
+
+Le plan dit où va quoi, mais il ne donne pas envie. Depuis la fiche d'un aménagement, un bouton
+compose une **photographie de votre pièce réaménagée** : votre photo part en première image,
+suivie des photos des meubles retenus — les vôtres quand vous les avez photographiés, celles
+de la boutique pour les envies d'achat — et le modèle installe les seconds dans la première.
+La consigne insiste sur deux points : la pièce garde ses murs, ses fenêtres et son point de
+vue, et les meubles gardent leur forme et leur couleur, pour que le rendu montre vos meubles
+et non des meubles ressemblants.
+
+Cette fonction demande une clé **Gemini** : c'est le seul des deux fournisseurs à proposer un
+modèle d'image ici. Le rendu est conservé avec l'aménagement et signalé comme une
+illustration — **les cotes du plan font foi, pas l'image**.
+
+Deux points pratiques. Chaque rendu est facturé à l'image, plus cher qu'un appel texte. Et sur
+Vercel, la fonction est plafonnée à 60 secondes : si un rendu dépasse, passez à un modèle plus
+rapide avec `GEMINI_IMAGE_MODEL=gemini-3.1-flash-image`.
 
 ### Quel fournisseur d'IA
 
@@ -75,6 +94,7 @@ génération d'aménagements sont désactivées.
 | --- | --- | --- |
 | `GEMINI_API_KEY` | — | Clé Google Gemini. Sans clé d'IA, les fonctions d'analyse renvoient une erreur explicite. |
 | `GEMINI_MODEL` | `gemini-2.5-flash` | Modèle Gemini utilisé pour l'analyse et la conception. |
+| `GEMINI_IMAGE_MODEL` | `gemini-3-pro-image` | Modèle d'image pour le rendu des aménagements. |
 | `ANTHROPIC_API_KEY` | — | Clé Anthropic, alternative à la précédente. |
 | `ANTHROPIC_MODEL` | `claude-opus-5` | Modèle Claude utilisé pour l'analyse et la conception. |
 | `AI_PROVIDER` | déduit de la clé | Force `gemini` ou `anthropic` quand les deux clés sont présentes. |

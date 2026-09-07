@@ -1,5 +1,7 @@
-import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage } from '../lib/ui.js';
-import { STORES, get, remove, all, allSorted } from '../lib/db.js';
+import { el, toast, confirmDialog, emptyState, formatDate, formatPrice, productImage, progress } from '../lib/ui.js';
+import { STORES, get, put, remove, all, allSorted, photoBlob, photoUrl, savePhoto } from '../lib/db.js';
+import { blobToBase64 } from '../lib/images.js';
+import { createRender } from '../lib/api.js';
 import { renderPlan, planLegend } from '../lib/plan.js';
 import { buildMoodboard, downloadBlob } from '../lib/moodboard.js';
 
@@ -187,6 +189,80 @@ async function detailView(id) {
       ])
     );
   }
+
+  /* ---------- rendu photographique ---------- */
+  const zoneRendu = el('div', { class: 'card' });
+
+  async function afficherRendu(photoId) {
+    const url = await photoUrl(photoId);
+    zoneRendu.replaceChildren(
+      el('h3', { text: 'Votre pièce, réaménagée' }),
+      url ? el('img', { class: 'rendu', src: url, alt: `Rendu de ${room?.nom || 'la pièce'} réaménagée` }) : null,
+      el('p', {
+        class: 'small muted',
+        text: "Illustration générée à partir de votre photo et des meubles retenus. Les cotes du plan font foi, pas cette image.",
+      }),
+      el('button', { class: 'button button--ghost button--small', text: 'Générer un autre rendu', onclick: lancerRendu })
+    );
+  }
+
+  async function lancerRendu() {
+    const photoPiece = room?.photoIds?.[0] ? await photoBlob(room.photoIds[0]) : null;
+    if (!photoPiece) {
+      toast("Cette pièce n'a pas de photo : le rendu part de votre photo.", 'error');
+      return;
+    }
+    zoneRendu.replaceChildren(progress('Composition du rendu, cela peut prendre une minute…'));
+
+    try {
+      const meubles = [];
+      for (const entree of result.meublesReutilises || []) {
+        const item = byId.get(entree.meubleId);
+        if (!item) continue;
+        if (item.photoIds?.[0]) {
+          const blob = await photoBlob(item.photoIds[0]);
+          if (blob) {
+            meubles.push({ titre: item.nom, image: { media_type: 'image/jpeg', data: await blobToBase64(blob) } });
+            continue;
+          }
+        }
+        if (item.boutique?.imageUrl) meubles.push({ titre: item.nom, imageUrl: item.boutique.imageUrl });
+      }
+
+      const reponse = await createRender({
+        images: [{ media_type: 'image/jpeg', data: await blobToBase64(photoPiece) }],
+        meubles,
+        consignes: [result.directionStyle, (result.palette || []).map((c) => c.nom).join(', ')].filter(Boolean).join(' — '),
+      });
+
+      const octets = Uint8Array.from(atob(reponse.image.data), (c) => c.charCodeAt(0));
+      const photoId = await savePhoto(new Blob([octets], { type: reponse.image.media_type }));
+      await put(STORES.designs, { ...design, renduPhotoId: photoId });
+      design.renduPhotoId = photoId;
+      await afficherRendu(photoId);
+      toast('Rendu généré.');
+    } catch (erreur) {
+      zoneRendu.replaceChildren(
+        el('h3', { text: 'Votre pièce, réaménagée' }),
+        el('p', { class: 'notice small', text: erreur.message }),
+        el('button', { class: 'button button--soft', text: 'Réessayer', onclick: lancerRendu })
+      );
+    }
+  }
+
+  if (design.renduPhotoId) {
+    await afficherRendu(design.renduPhotoId);
+  } else {
+    zoneRendu.replaceChildren(
+      el('h3', { text: 'Votre pièce, réaménagée' }),
+      el('p', {
+        class: 'small muted',
+        text: 'Une image de votre pièce avec les meubles retenus, composée à partir de votre photo.',
+      }),
+      el('button', { class: 'button button--block', text: '✦ Générer le rendu', onclick: lancerRendu })
+    );
+  }
+  wrap.appendChild(zoneRendu);
 
   const exportButton = el('button', { class: 'button button--soft grow', text: 'Exporter le moodboard' });
   exportButton.addEventListener('click', async () => {

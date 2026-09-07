@@ -49,6 +49,10 @@ const DEFAULT_MODELS = {
   gemini: 'gemini-2.5-flash',
 };
 
+// Le rendu photographique passe par un modele d'image, distinct de celui qui
+// redige les amenagements. Seul Gemini en propose ici.
+const DEFAULT_IMAGE_MODEL = 'gemini-3-pro-image';
+
 export const config = {
   port: Number(process.env.PORT || 8787),
   host: process.env.HOST || '0.0.0.0',
@@ -62,6 +66,8 @@ export const config = {
       '',
     effort: EFFORTS.has(process.env.ANTHROPIC_EFFORT) ? process.env.ANTHROPIC_EFFORT : DEFAULT_EFFORT,
     enableFallbacks: process.env.ANTHROPIC_ENABLE_FALLBACKS === '1',
+    imageModel: process.env.GEMINI_IMAGE_MODEL || DEFAULT_IMAGE_MODEL,
+    imageAvailable: PROVIDER === 'gemini',
   },
   catalog: {
     // Fall back to a live web search on the store sites when the local

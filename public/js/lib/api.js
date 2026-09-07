@@ -35,6 +35,9 @@ export const analyzeRoom = (body) =>
 export const createDesign = (body) =>
   request('/api/designs', { method: 'POST', body: JSON.stringify(body) });
 
+export const createRender = (body) =>
+  request('/api/renders', { method: 'POST', body: JSON.stringify(body) });
+
 export const searchCatalog = (params) =>
   request(`/api/catalog/search?${new URLSearchParams(params)}`);
 
