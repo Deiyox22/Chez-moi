@@ -1,6 +1,6 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-09-07T08:52:46.086Z",
+  "updatedAt": "2026-09-14T09:31:14.826Z",
   "feedType": "shopify",
   "products": [
     {
@@ -295,7 +295,7 @@
       "title": "Table haute rectangle céramique Dolores",
       "description": "Table haute céramique Dolores La table haute Dolores débarque chez Honoré. Son plateau en carreaux de céramique unie, et son design wavy se marie facilement à tous les styles de décoration. Disponible en plusieurs coloris, la table haute Dolores s’adapte à tous vos besoins, que ce soit pour votre cuisine, dans une salle de restaurant ou une table de repas pour votre terrasse ou jardin La collectio",
       "category": "table_repas",
-      "rawCategory": "TABLES",
+      "rawCategory": "Tables",
       "price": 530,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/table-haute-dolores",
@@ -343,7 +343,7 @@
       "title": "Assiettes marron glacé et bleu - Le bel été Au Soleil",
       "description": "Assiettes marron glacé & bleu - Le bel été Au soleil Une collection pensée comme un souvenir de vacances que l’on garde toute l’année. Dessiné par Ingrid et façonné à la main par nos artisans marocains, chaque pièce raconte une histoire simple et joyeuse : celle du soleil, des repas partagés et des étés qui s’étirent. Le motif, presque naïf, esquisse un soleil graphique accompagné de l’inscription",
       "category": "",
-      "rawCategory": "VAISSELLES CERAMIQUE",
+      "rawCategory": "VAISSELLES",
       "price": 18,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/assiettes-marron-glace-et-bleu-le-bel-ete-au-soleil",
@@ -511,7 +511,7 @@
       "title": "Applique 3 etages corde structure noir",
       "description": "Les Imparfaites - Le charme de l'artisanat avec une petite imperfection. Les pièces Imparfaites présentent un défaut esthétique : variation de couleur, petit éclat, irrégularité de fabrication ou autre imperfection. Cela arrive parfois dans les productions artisanales, notamment sur certaines céramiques. Pour une totale transparence, une photo zoomée du défaut est toujours fournie afin que vous pu",
       "category": "lampe_table",
-      "rawCategory": "luminaires",
+      "rawCategory": "applique",
       "price": 85,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-3-etages-copie",
@@ -718,7 +718,7 @@
         "spo-enabled"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1259,7 +1259,7 @@
       "price": 655,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/bureau-croisette",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Bureauxcroisette_2.jpg?v=1767713571",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Bureauxcroisette_6.jpg?v=1767713831",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -2643,7 +2643,7 @@
     {
       "id": "honore-deco-14754487664984",
       "store": "honore-deco",
-      "title": "Étagère murale Necchi",
+      "title": "Etagère murale Necchi",
       "description": "Étagère murale céramique Necchi Les étagères Necchi avec leur design brut, associé à des finitions en cuir et céramique, leur confère une légèreté aérienne : ensemble, elles racontent une histoire de contraste et de complémentarité, alliant force et délicatesse. Disponible en bleu ciel, kaki ou caramel, elles se transforment en véritables îlots suspendus, idéales pour exposer vos objets déco préfé",
       "category": "etagere",
       "rawCategory": "ETAGERE DIVERS",
@@ -3250,7 +3250,7 @@
       "price": 195,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/lampe-de-chevet-jo",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/lampe-chvalet-KR.jpg?v=1705335211",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/shopify_nouveaute_collection_11.jpg?v=1789122477",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -4104,7 +4104,7 @@
       "price": 95,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-ines",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/applique_jaune_et_bleu_ciel_c_ramique.jpg?v=1769611425",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/eclaire.jpg?v=1778077902",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],

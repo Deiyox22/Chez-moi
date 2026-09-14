@@ -1,6 +1,6 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-09-07T08:52:47.700Z",
+  "updatedAt": "2026-09-14T09:31:17.246Z",
   "feedType": "shopify",
   "products": [
     {
@@ -58,7 +58,7 @@
       "description": "",
       "category": "lit",
       "rawCategory": "pack_lit",
-      "price": 1454.7,
+      "price": 1444.7,
       "currency": "EUR",
       "url": "https://tediber.com/products/pack-5-160-x-200-cm",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/p5-p2_hybride_beige_beige_2places_104f5210-78d2-47a3-bb0c-5864e5fc3c4a.jpg?v=1781250884",
@@ -82,7 +82,7 @@
       "description": "",
       "category": "lit",
       "rawCategory": "pack_lit",
-      "price": 1359.7,
+      "price": 1349.7,
       "currency": "EUR",
       "url": "https://tediber.com/products/pack-5-140-x-200-cm",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/p5-p2_hybride_beige_beige_2places_1ef72f75-a8a4-4cb8-8ab8-ba694a888afb.jpg?v=1781250832",
@@ -4661,7 +4661,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -5211,30 +5211,6 @@
         "B2B_GLOBAL",
         "CAMPAGNE/ALL",
         "Encombrant"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15173762777412",
-      "store": "tediber",
-      "title": "Sommier tapissier - Bleu",
-      "description": "Affirmez votre style avec le sommier bleu Tediber. Élégant, robuste et confortable, livré gratuitement chez vous.",
-      "category": "lit",
-      "rawCategory": "lit",
-      "price": 269.9,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/sommier-bleu",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-tapissier-bleu-standard-slide2.jpg?v=1776663514",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "B2B_GLOBAL",
-        "CAMPAGNE/ALL",
-        "Encombrant",
-        "Gamme iconique"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -6197,7 +6173,7 @@
         "Canapé"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6389,7 +6365,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6509,7 +6485,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6845,7 +6821,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -7211,7 +7187,7 @@
     {
       "id": "tediber-15179950358852",
       "store": "tediber",
-      "title": "Lit boxspring – Iconique",
+      "title": "Lit Grand Ours – Iconique",
       "description": "Lit boxspring Grand Ours iconique, robuste et confortable, conçu pour durer.",
       "category": "lit",
       "rawCategory": "lit",
@@ -7259,7 +7235,7 @@
     {
       "id": "tediber-15179948425540",
       "store": "tediber",
-      "title": "Lit boxspring – Bouclette Ardoise",
+      "title": "Lit Grand Ours – Bouclette Ardoise",
       "description": "Lit boxspring Grand Ours bouclette ardoise, robuste et confortable, conçu pour durer.",
       "category": "lit",
       "rawCategory": "lit",
@@ -7355,7 +7331,7 @@
     {
       "id": "tediber-15173761696068",
       "store": "tediber",
-      "title": "Sommier boxspring - Velours Havane",
+      "title": "Sommier Grand Ours - Velours Havane",
       "description": "Le sommier grand ours ressort velours havane, design soigné et structure durable.",
       "category": "lit",
       "rawCategory": "lit",
@@ -7379,7 +7355,7 @@
     {
       "id": "tediber-15173760549188",
       "store": "tediber",
-      "title": "Sommier boxspring - Iconique",
+      "title": "Sommier Grand Ours - Iconique",
       "description": "Montage facile et solidité garantie pour le sommier grand ours ressort iconique.",
       "category": "lit",
       "rawCategory": "lit",
