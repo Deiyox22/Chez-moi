@@ -1,8 +1,399 @@
 {
   "store": "zago",
-  "updatedAt": "2026-09-14T10:27:04.918Z",
+  "updatedAt": "2026-09-21T10:21:47.184Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "zago-15769271730516",
+      "store": "zago",
+      "title": "Chaise repas tissu sable",
+      "description": "Plutôt sable, jaune ou gris foncé ? Avec la chaise LISIA, la couleur donne le ton autour de la table. Avec son allure contemporaine et ses lignes généreuses, la chaise LISIA de la marque CERENNE apporte immédiatement du style à la salle à manger. Son tissu lui donne une allure chaleureuse, tandis que ses pieds fins en métal noir créent un joli contraste et modernisent l’ensemble. Côté confort, LIS",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 199,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-sable-lisia-cha025",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lisia-cha025__ps_01.jpg?v=1789513984",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769270288724",
+      "store": "zago",
+      "title": "Chaise repas tissu jaune",
+      "description": "Plutôt sable, jaune ou gris foncé ? Avec la chaise LISIA, la couleur donne le ton autour de la table. Avec son allure contemporaine et ses lignes généreuses, la chaise LISIA de la marque CERENNE apporte immédiatement du style à la salle à manger. Son tissu lui donne une allure chaleureuse, tandis que ses pieds fins en métal noir créent un joli contraste et modernisent l’ensemble. Côté confort, LIS",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 199,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-jaune-lisia-cha053",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lisia-cha053__ps_01.jpg?v=1789513946",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769269469524",
+      "store": "zago",
+      "title": "Chaise repas tissu gris foncé",
+      "description": "Plutôt sable, jaune ou gris foncé ? Avec la chaise LISIA, la couleur donne le ton autour de la table. Avec son allure contemporaine et ses lignes généreuses, la chaise LISIA de la marque CERENNE apporte immédiatement du style à la salle à manger. Son tissu lui donne une allure chaleureuse, tandis que ses pieds fins en métal noir créent un joli contraste et modernisent l’ensemble. Côté confort, LIS",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 199,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-gris-fonce-lisia-cha092",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lisia-cha092__ps_01.jpg?v=1789513933",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769268650324",
+      "store": "zago",
+      "title": "Chaise repas tissu sable",
+      "description": "Vous allez adorer la chaise TULIP et son allure de petit fauteuil autour de la table ! Avec son dossier arrondi qui se prolonge en accoudoirs, la chaise TULIP de la marque CERENNE offre une assise enveloppante et particulièrement accueillante. Son tissu tout doux et ses formes généreuses invitent à s’installer confortablement, que ce soit pour un repas en famille ou pour ces longues soirées où l’o",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 289,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-sable-tulip-cha025",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/tulip-cha025__ps_01.png?v=1789514180",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769261605204",
+      "store": "zago",
+      "title": "Chaise repas tissu jaune",
+      "description": "Vous allez adorer la chaise TULIP et son allure de petit fauteuil autour de la table ! Avec son dossier arrondi qui se prolonge en accoudoirs, la chaise TULIP de la marque CERENNE offre une assise enveloppante et particulièrement accueillante. Son tissu tout doux et ses formes généreuses invitent à s’installer confortablement, que ce soit pour un repas en famille ou pour ces longues soirées où l’o",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 289,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-jaune-tulip-cha053",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/tulip-cha053__ps_02.png?v=1789514135",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769250857300",
+      "store": "zago",
+      "title": "Chaise repas tissu orange",
+      "description": "Vous allez adorer la chaise TULIP et son allure de petit fauteuil autour de la table ! Avec son dossier arrondi qui se prolonge en accoudoirs, la chaise TULIP de la marque CERENNE offre une assise enveloppante et particulièrement accueillante. Son tissu tout doux et ses formes généreuses invitent à s’installer confortablement, que ce soit pour un repas en famille ou pour ces longues soirées où l’o",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 289,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-orange-tulip-cha08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/tulip-cha08__ps_01.png?v=1789513907",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769249612116",
+      "store": "zago",
+      "title": "Chaise repas tissu gris fonce",
+      "description": "Vous allez adorer la chaise TULIP et son allure de petit fauteuil autour de la table ! Avec son dossier arrondi qui se prolonge en accoudoirs, la chaise TULIP de la marque CERENNE offre une assise enveloppante et particulièrement accueillante. Son tissu tout doux et ses formes généreuses invitent à s’installer confortablement, que ce soit pour un repas en famille ou pour ces longues soirées où l’o",
+      "category": "chaise",
+      "rawCategory": "Assises> Chaises> Chaises repas",
+      "price": 289,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/chaise-repas-tissu-gris-fonce-tulip-cha092",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/tulip-cha092__ps_01.png?v=1789513888",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Chaises",
+        "Chaises repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769248760148",
+      "store": "zago",
+      "title": "Fauteuil noir imtation cuir",
+      "description": "Un look rétro, une assise généreuse et juste ce qu’il faut de caractère : le fauteuil POLA a tout pour se faire remarquer ! Avec ses formes arrondies et son assise généreuse, le fauteuil POLA invite immédiatement à s’installer. Son revêtement imitation cuir lui donne une allure élégante et facile à vivre, tandis que ses pieds en acier chromé apportent cette petite touche rétro qui fait toute la di",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-noir-imtation-cuir-pola-faut01pu",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pola-faut01pu__ps_01.jpg?v=1789513577",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769246761300",
+      "store": "zago",
+      "title": "Fauteuil imitation cuir camel",
+      "description": "Un look rétro, une assise généreuse et juste ce qu’il faut de caractère : le fauteuil POLA a tout pour se faire remarquer ! Avec ses formes arrondies et son assise généreuse, le fauteuil POLA invite immédiatement à s’installer. Son revêtement imitation cuir lui donne une allure élégante et facile à vivre, tandis que ses pieds en acier chromé apportent cette petite touche rétro qui fait toute la di",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-imitation-cuir-camel-pola-faut028pu",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pola-faut028pu__ps_01.png?v=1789513866",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769236799828",
+      "store": "zago",
+      "title": "Fauteuil imitation cuir marron clair",
+      "description": "Un look rétro, une assise généreuse et juste ce qu’il faut de caractère : le fauteuil POLA a tout pour se faire remarquer ! Avec ses formes arrondies et son assise généreuse, le fauteuil POLA invite immédiatement à s’installer. Son revêtement imitation cuir lui donne une allure élégante et facile à vivre, tandis que ses pieds en acier chromé apportent cette petite touche rétro qui fait toute la di",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-imitation-cuir-marron-clair-pola-faut071pu",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pola-faut071pu__ps_01.png?v=1789513726",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769231098196",
+      "store": "zago",
+      "title": "Fauteuil en tissu sable",
+      "description": "Avec MOCHI, difficile de résister à l’envie de s’installer ! Avec ses formes généreuses, son dossier enveloppant et ses accoudoirs, le fauteuil MOCHI de la marque CERENNE a tout du fauteuil cocooning qu’on aime retrouver dans le salon. Son tissu apporte une belle douceur visuelle, tandis que ses pieds en hêtre massif foncé réchauffent l’ensemble et lui donnent beaucoup de caractère. Avec sa hauteu",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 540,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-en-tissu-sable-mochi-faut025",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/mochi-faut025__ps_01.jpg?v=1789513348",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769230999892",
+      "store": "zago",
+      "title": "Fauteuil en tissu or",
+      "description": "Avec MOCHI, difficile de résister à l’envie de s’installer ! Avec ses formes généreuses, son dossier enveloppant et ses accoudoirs, le fauteuil MOCHI de la marque CERENNE a tout du fauteuil cocooning qu’on aime retrouver dans le salon. Son tissu apporte une belle douceur visuelle, tandis que ses pieds en hêtre massif foncé réchauffent l’ensemble et lui donnent beaucoup de caractère. Avec sa hauteu",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 540,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-en-tissu-or-mochi-faut053",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/mochi-faut053__ps_01.jpg?v=1789513342",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769230541140",
+      "store": "zago",
+      "title": "Fauteuil en tissu orange",
+      "description": "Avec MOCHI, difficile de résister à l’envie de s’installer ! Avec ses formes généreuses, son dossier enveloppant et ses accoudoirs, le fauteuil MOCHI de la marque CERENNE a tout du fauteuil cocooning qu’on aime retrouver dans le salon. Son tissu apporte une belle douceur visuelle, tandis que ses pieds en hêtre massif foncé réchauffent l’ensemble et lui donnent beaucoup de caractère. Avec sa hauteu",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 540,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-en-tissu-orange-mochi-faut08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/mochi-faut08__ps_01.jpg?v=1789513331",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769228214612",
+      "store": "zago",
+      "title": "Fauteuil avec accoudoir en tissu vert foncé",
+      "description": "Du tissu, du bois noir et une silhouette qui donne tout de suite envie de s’installer : ALORIS a beaucoup de charme ! Avec son assise généreuse, son dossier confortable et ses accoudoirs en bois massif noir , le fauteuil ALORIS de la marque CERENNE joue joliment sur le contraste des matières. Ses lignes chaleureuses et son petit coussin apportent une vraie sensation de confort tout en donnant du c",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-avec-accoudoir-en-tissu-vert-fonce-aloris-faut0614",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/aloris-faut0614__ps_01.jpg?v=1789513299",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769228247380",
+      "store": "zago",
+      "title": "Fauteuil avec accoudoir en tissu beige",
+      "description": "Du tissu, du bois noir et une silhouette qui donne tout de suite envie de s’installer : ALORIS a beaucoup de charme ! Avec son assise généreuse, son dossier confortable et ses accoudoirs en bois massif noir , le fauteuil ALORIS de la marque CERENNE joue joliment sur le contraste des matières. Ses lignes chaleureuses et son petit coussin apportent une vraie sensation de confort tout en donnant du c",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-avec-accoudoir-en-tissu-beige-aloris-faut022",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/aloris-faut022__ps_01.jpg?v=1789513295",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769228149076",
+      "store": "zago",
+      "title": "Fauteuil en tissu gris foncé",
+      "description": "Avec MOCHI, difficile de résister à l’envie de s’installer ! Avec ses formes généreuses, son dossier enveloppant et ses accoudoirs, le fauteuil MOCHI de la marque CERENNE a tout du fauteuil cocooning qu’on aime retrouver dans le salon. Son tissu apporte une belle douceur visuelle, tandis que ses pieds en hêtre massif foncé réchauffent l’ensemble et lui donnent beaucoup de caractère. Avec sa hauteu",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 540,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-en-tissu-gris-fonce-mochi-faut092",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/mochi-faut092__ps_01.jpg?v=1789513308",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15769228116308",
+      "store": "zago",
+      "title": "Fauteuil avec accoudoir en tissu taupe",
+      "description": "Du tissu, du bois noir et une silhouette qui donne tout de suite envie de s’installer : ALORIS a beaucoup de charme ! Avec son assise généreuse, son dossier confortable et ses accoudoirs en bois massif noir , le fauteuil ALORIS de la marque CERENNE joue joliment sur le contraste des matières. Ses lignes chaleureuses et son petit coussin apportent une vraie sensation de confort tout en donnant du c",
+      "category": "canape",
+      "rawCategory": "Assises> Fauteuils - Canapés> Fauteuils",
+      "price": 449,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/fauteuil-avec-accoudoir-en-tissu-taupe-aloris-faut074",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/aloris-faut074__ps_01.jpg?v=1789513291",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "Fauteuils",
+        "Fauteuils - Canapés"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "zago-15749046403412",
       "store": "zago",
@@ -9592,30 +9983,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11738589462868",
-      "store": "zago",
-      "title": "Chaise hauteur plan de travail PU blanc et chêne naturel",
-      "description": "Vous disposez d'une cuisine moderne avec un plan de travail ou un îlot central ? On vous propose de découvrir cette chaise plan de travail LETI en polyuréthane et son piétement contreplaqué chêne. On aime son style épuré ainsi que son piétement en bois et métal qui vient mettre en avant son assise confortable. Simple et sobre cette pièce minimaliste conviendra parfaitement dans un intérieur de sty",
-      "category": "chaise",
-      "rawCategory": "Assises > Chaises > Chaises hautes",
-      "price": 43.6,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/chaise-plan-de-travail-imitation-cuir-blanc-pietement-plaque-chene-h-68-5-cm-leti-18854",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_13e44d24-4ff3-4340-8825-630c5993ffd0.jpg?v=1738888181",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Chaises",
-        "Chaises hautes",
-        "Famiroot"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11738052755796",
       "store": "zago",
       "title": "Table basse rectangulaire 120 cm",
@@ -9948,7 +10315,7 @@
         "Poufs"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10738,31 +11105,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011710804",
-      "store": "zago",
-      "title": "Table repas 140-220 cm placage chêne avec 2 allonges",
-      "description": "Sublimez votre intérieur avec la table repas PEPPER , la quintessence du style scandinave moderne . Cette table est dotée d'un plateau rond en placage chêne et de pieds en hévéa massif . Grâce à ses deux allonges de 40cm chacune, la PEPPER s'adapte à toutes vos occasions. Dimensions disponibles : 100cm (extensible à 180cm) : Parfaite pour accueillir 4 à 8 personnes. 120cm (extensible à 200cm) : Id",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 299.5,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-140-220-cm-placage-chene-2-allonges-22685",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pepper-tr140a__ps_01.jpg?v=1737049684",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "PEPPER",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10858,7 +11201,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10882,7 +11225,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10906,7 +11249,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -16087,7 +16430,7 @@
         "Fauteuils - Canapes"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -19973,7 +20316,7 @@
         "Famiroot"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {

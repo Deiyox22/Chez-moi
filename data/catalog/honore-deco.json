@@ -1,49 +1,27 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-09-14T09:31:14.826Z",
+  "updatedAt": "2026-09-21T09:33:34.354Z",
   "feedType": "shopify",
   "products": [
     {
-      "id": "honore-deco-6984108572859",
+      "id": "honore-deco-16013484130648",
       "store": "honore-deco",
-      "title": "SAC CABAS GRAND TOILE ET CUIR",
-      "description": "Le grand Cabas de chez Honoré !!! L'incontournable sac, à a fois chic et décontracté Celui la, on l'aime autant porté tous les jours en grand sac fourre-tout qu'en sac de weekend. Son originalité : ces 2 poches à soufflet avec ses pièces de monnaie Réalisé à la main par nos artisans marocain, cette nouvelle version en toile doublée et cuir est LA pièce à posséder dans ses placards. Détails techniq",
-      "category": "",
-      "rawCategory": "ACCESSOIRES MODE",
-      "price": 215,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/gtand-caba-toile-et-cuir",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/4KR.jpg?v=1759236955",
-      "brand": "honoredeco",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires",
-        "comme honore",
-        "cuir",
-        "H++"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-5692512632989",
-      "store": "honore-deco",
-      "title": "Housse seule Fauteuil Croisette Coton jaune",
-      "description": "Jeu de housses en coton adaptées au fauteuil Croisette. Détails techniques : Fermeture par un zip latéral, Rembourrage non fourni Matériaux : Batiste de coton Coloris : Jaune Dossier : 60 x 69 cm. Assise : 46 x 69 cm. Facile à changer (comme une taie d'oreiller) Ce jeu de housses vous permettra de changer la couleur de votre fauteuil en fonction des saisons.",
+      "title": "Fauteuil Croisette Velours fuchsia structure blanc accoudoir bois foncé",
+      "description": "Archives - Des pièces rares issues de collections passées Les pièces Archives proviennent d'anciennes collections Honoré. Il peut s'agir de modèles dont le tissu, la couleur ou certaines finitions ne sont plus produits aujourd'hui. Ces pièces sont neuves, mais correspondent à des éditions passées que nous avons conservées dans nos réserves. Une belle occasion d'acquérir une création Honoré devenue",
       "category": "fauteuil",
       "rawCategory": "Assises",
-      "price": 200,
+      "price": 500,
       "currency": "EUR",
-      "url": "https://honoredeco.com/products/housse-seule-fauteuil-croisette-coton-jaune",
-      "imageUrl": null,
+      "url": "https://honoredeco.com/products/fauteuil-croisette-velours-fuchsia-structure-rouge-accoudoir-bois-clair-copie",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/ChatGPTImage17sept.2026_11_22_42.png?v=1789637039",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
       "styles": [
-        "spo-default",
-        "spo-enabled"
+        "archives sales",
+        "Assises",
+        "Coton",
+        "Croisette"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -443,7 +421,7 @@
       "price": 895,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/fauteuil-croisette-velours-milleraies",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/5_a8c09944-6b33-43df-867f-e61afc2204f0.jpg?v=1774955054",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/5_a8c09944-6b33-43df-867f-e61afc2204f0.jpg?v=1789482407",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -488,7 +466,7 @@
       "description": "Les Couvertures Slowdown Studio, produites en Californie et personnalisées par des artistes font le poids idéal pour être utilisées comme plaid pour vos canapés, couverture pour vos picnics et même accrochées au mur comme des oeuvres d'art. Elles sont fabriquées à partir de coton 100% cultivé et tissé aux USA. Les couvertures sont en coton dont 25% provient de coton recyclé. Toutes les couvertures",
       "category": "plaid",
       "rawCategory": "PLAID & COUVERTURES",
-      "price": 350,
+      "price": 295,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/couvertures-dessin-slowdown-studio",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/FullSizeRender_ba1ea639-f875-4c6a-99fc-496c3809351d.jpg?v=1774540036",
@@ -578,30 +556,6 @@
       "source": "feed"
     },
     {
-      "id": "honore-deco-15636635255128",
-      "store": "honore-deco",
-      "title": "Fauteuil Croisette Velours lie de vin structure blanc accoudoir bois clair",
-      "description": "Archives - Des pièces rares issues de collections passées Les pièces Archives proviennent d'anciennes collections Honoré. Il peut s'agir de modèles dont le tissu, la couleur ou certaines finitions ne sont plus produits aujourd'hui. Ces pièces sont neuves, mais correspondent à des éditions passées que nous avons conservées dans nos réserves. Une belle occasion d'acquérir une création Honoré devenue",
-      "category": "fauteuil",
-      "rawCategory": "Assises",
-      "price": 500,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/fauteuil-croisette-velours-copie-1",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/23_4edd5d83-5cc9-4a2a-b3a0-b3dd8db535c3.jpg?v=1772537509",
-      "brand": "honoredeco",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "archives sales",
-        "Assises",
-        "Coton",
-        "Croisette"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "honore-deco-15624289517912",
       "store": "honore-deco",
       "title": "Suspension Lanterne June Fibre Naturelle",
@@ -668,54 +622,6 @@
         "ete25",
         "Luminaires",
         "new"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-15619125838168",
-      "store": "honore-deco",
-      "title": "Pouf Circus Velours bleu céladon brick",
-      "description": "Prototypes / Samples - Les pièces qui ont accompagné nos salons et shootings. Les pièces Prototypes / Samples sont des modèles qui ont servi pour nos salons professionnels (comme Maison & Objet), nos expositions ou nos shootings photos. Elles ont parfois été manipulées, transportées ou installées à plusieurs reprises et peuvent donc présenter quelques marques légères ou traces d'usage. Chaque pièc",
-      "category": "fauteuil",
-      "rawCategory": "poufs",
-      "price": 660,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/pouf-circus-velours-copie",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/ChatGPT_Image_4_mars_2026_15_09_39.png?v=1772633402",
-      "brand": "honoredeco - Honoré Décoration",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "archives sales",
-        "Assises",
-        "circus",
-        "Fauteuil"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-7937282932955",
-      "store": "honore-deco",
-      "title": "Fauteuil Dolores Velours rose fuchsia structure brun",
-      "description": "Archives - Des pièces rares issues de collections passées Les pièces Archives proviennent d'anciennes collections Honoré. Il peut s'agir de modèles dont le tissu, la couleur ou certaines finitions ne sont plus produits aujourd'hui. Ces pièces sont neuves, mais correspondent à des éditions passées que nous avons conservées dans nos réserves. Une belle occasion d'acquérir une création Honoré devenue",
-      "category": "fauteuil",
-      "rawCategory": "Assises",
-      "price": 550,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/fauteuil-dolores-velours",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/ChatGPTImage4mars2026_15_20_09.png?v=1772634027",
-      "brand": "honoredeco",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "archives sales",
-        "Assises",
-        "spo-default",
-        "spo-enabled"
       ],
       "dimensionsCm": null,
       "availability": "out of stock",
@@ -797,7 +703,7 @@
       "id": "honore-deco-15542720299352",
       "store": "honore-deco",
       "title": "Etagère murale Dolores",
-      "description": "Etagère murale Dolores Une pièce pensée comme une petite architecture murale. Étagère murale composée d’un plateau en verre fumé reposant sur une structure en métal aux lignes ondulantes. À la fois graphique et légère, elle accueille objets décoratifs ou livres tout en apportant une touche sculpturale au mur. Détails techniques Dimensions : Largeur 42 cm Hauteur 20 cm Plateau : verre fumé securit ",
+      "description": "Etagère murale Dolores Une pièce pensée comme une petite architecture murale. Étagère murale composée d’un plateau en verre fumé reposant sur une structure en métal aux lignes ondulantes. À la fois graphique et légère, elle accueille objets décoratifs ou livres tout en apportant une touche sculpturale au mur. Détails techniques Dimensions : Largeur 42 cm Hauteur 20 cm Profondeur : 22 cm Plateau : ",
       "category": "etagere",
       "rawCategory": "ETAGERE DIVERS",
       "price": 170,
@@ -851,7 +757,7 @@
       "price": 160,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-murale-crepi-magma",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/archik-immobilier-ALDO-marseille-_nicolasfermin-5_b.jpg?v=1782998563",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/IMG_7502.jpg?v=1771518978",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -929,9 +835,9 @@
       "materials": [],
       "styles": [
         "ceramique",
+        "cuir",
         "spo-cs-disabled",
-        "spo-default",
-        "spo-enabled"
+        "spo-default"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -976,10 +882,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "cuir",
         "spo-cs-disabled",
         "spo-default",
-        "spo-enabled",
-        "spo-notify-me-disabled"
+        "spo-enabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1235,7 +1141,7 @@
       "price": 595,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/chaise-palmer-velours-tartan",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/ChaisePalmer_5.jpg?v=1776156371",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/11_13754b19-7da8-425e-885a-93b52038e3bb.jpg?v=1776156371",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -1390,30 +1296,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-9886411293016",
-      "store": "honore-deco",
-      "title": "Livre The Italian Interiors of Elsa Peretti",
-      "description": "The Italian Interiors of Elsa Peretti Nous entraîne au cœur de deux demeures somptueuses de la grande créatrice, dont les pièces ont révolutionné la joaillerie du XXᵉ siècle et continuent d’illuminer les plus grandes célébrités. À travers l’objectif aérien d’Estelle Hanania, on découvre la lumière d’argile de Torre Avoltore, résidence sauvage perchée à Porto Ercole, puis l’élégance romaine de l’ap",
-      "category": "",
-      "rawCategory": "LIVRES",
-      "price": 55,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/livre-the-italian-interiors-of-elsa-pretti",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/feedinstagram_97.jpg?v=1764934973",
-      "brand": "APARTAMENTO",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "spo-cs-disabled",
-        "spo-default",
-        "spo-disabled",
-        "spo-notify-me-disabled"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1629,7 +1511,7 @@
         "spo-default"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1721,8 +1603,8 @@
       "styles": [
         "banc",
         "bois",
-        "spo-cs-disabled",
-        "spo-default"
+        "cuir",
+        "spo-cs-disabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1745,8 +1627,8 @@
       "styles": [
         "banc",
         "bois",
-        "spo-cs-disabled",
-        "spo-default"
+        "cuir",
+        "spo-cs-disabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1768,9 +1650,9 @@
       "materials": [],
       "styles": [
         "Accessoires",
+        "cuir",
         "sacs",
-        "spo-cs-disabled",
-        "spo-default"
+        "spo-cs-disabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -2656,9 +2538,9 @@
       "materials": [],
       "styles": [
         "ceramique",
+        "cuir",
         "new25",
-        "spo-cs-disabled",
-        "spo-default"
+        "spo-cs-disabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -3118,30 +3000,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-9208784552280",
-      "store": "honore-deco",
-      "title": "Livre Secret Houses in Living in Menorca",
-      "description": "Livre Secret Houses in Living in Menorca Plongez dans l’art de vivre bohème-chic de l’île de Minorque grâce à cet ouvrage d’exception. Véritable voyage visuel, il dévoile l’architecture et les intérieurs emblématiques de ce joyau méditerranéen, en ouvrant les portes des refuges estivaux d’artistes, de créatifs et d’esprits en quête de soleil. Guidés par l’auteure Susana Gallardo, les lecteurs déco",
-      "category": "",
-      "rawCategory": "LIVRES",
-      "price": 72,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/livre-secret-houses-living-in-menorca",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/feed_instagram_-_2025-12-05T122615.643.jpg?v=1764933997",
-      "brand": "INTERART",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "spo-cs-disabled",
-        "spo-default",
-        "spo-disabled",
-        "spo-notify-me-disabled"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3654,7 +3512,7 @@
       "title": "Tête de Lit Paloma",
       "description": "Tête de Lit Paloma - Bois Vous l'attendiez tous, le joli plateau de bois de la gamme Paloma est enfin disponible en tête de lit! Ce calepinage du bois de hêtre est l'un des classiques de la boutique Honoré et la tete de lit viendra compléter une chambre de façon élégante et intemporelle. La tête de lit mesure 2m de large pour une hauteur de 1m, idéal pour les lits king size ou plus petits. Les têt",
       "category": "tete_de_lit",
-      "rawCategory": "",
+      "rawCategory": "têtes",
       "price": 1325,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/tete-de-lit-paloma",
@@ -5905,7 +5763,7 @@
       "price": 170,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-ronde-cuir",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/1rondcuirsurcrepi.jpg?v=1704851982",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/1rondcuirambiance.jpg?v=1704851982",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
@@ -5977,7 +5835,7 @@
       "price": 130,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-carree-dante",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/dante_carre_jaune_brule_ambiance.jpg?v=1776173789",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/danteterracotta.jpg?v=1776173789",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
@@ -6361,7 +6219,7 @@
       "price": 1840,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/banquette-croisette-velours",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/banquettecamelprofil2048.jpg?v=1776158418",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/ambianceveloursbleu.jpg?v=1600422366",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],

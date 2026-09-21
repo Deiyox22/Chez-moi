@@ -1,8 +1,224 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-09-14T09:31:17.246Z",
+  "updatedAt": "2026-09-21T09:33:36.528Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "tediber-15182814904644",
+      "store": "tediber",
+      "title": "Canapé-lit",
+      "description": "Le canapé convertible Tediber permet d'asseoir 3 à 4 personnes. En position lit, il offre un couchage 2 personnes. Livraison express et gratuite. 100 nuits d'essai.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-gris-clair-bois-clair_acoudoir_bois_packshot_jpg.jpg?v=1753109057",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15173762351428",
+      "store": "tediber",
+      "title": "Canapé-lit - Vert sauge",
+      "description": "Canapé convertible vert sauge au design élégant et confortable pour votre salon.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible-vert-sauge",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-vert-sauge-bois-clair_acoudoir_bois_packshot.jpg?v=1776176591",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15173760221508",
+      "store": "tediber",
+      "title": "Canapé-lit - Terracotta",
+      "description": "Canapé convertible terracotta avec tissu résistant et assise moelleuse.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible-terracotta",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-terracota-bois-clair_acoudoir_bois_packshot.jpg?v=1753964849",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15173762515268",
+      "store": "tediber",
+      "title": "Canapé-lit - Gris",
+      "description": "L'incroyable canapé lit gris permet d'asseoir 3 à 4 personnes et révèle un lit 2 places une fois déplié. Livraison express gratuite, retour simple et gratuit.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible-gris",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-gris-fonce-bois-clair_acoudoir_bois_packshot_jpg.jpg?v=1753964794",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15173764579652",
+      "store": "tediber",
+      "title": "Canapé-lit - Crème",
+      "description": "Canapé convertible crème confortable de jour comme de nuit, couchage 2 places une fois déplié. Livraison express et retour gratuits. Paiement 3x sans frais.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible-creme",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-gris-clair-bois-clair_acoudoir_bois_packshot_jpg.jpg?v=1753109057",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15173764153668",
+      "store": "tediber",
+      "title": "Canapé-lit - Beige",
+      "description": "Confort et style assurés avec le canapé convertible beige. Livraison gratuite.",
+      "category": "canape",
+      "rawCategory": "salon",
+      "price": 1390,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/canape-convertible-beige",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-beige-bois-clair_acoudoir_bois_packshot.jpg?v=1753964827",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Canapé 3 places",
+        "Canapé 4 places"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15527830749508",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride",
+      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française et belge Livraison gratuite & 30 nuits d'essai.",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 214.9,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048.jpg?v=1776327005",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "30NuitsReconditionés",
+        "Encombrant",
+        "PRODUITS_FRENCHDAYSP26",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15524409082180",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride Infinite",
+      "description": "",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 419.9,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride-infinite",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Slide1_Matelas_Hybride_Infinite.jpg?v=1776092885",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "30NuitsReconditionés",
+        "Encombrant",
+        "PRODUITS_FRENCHDAYSP26",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15524409016644",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride Premium",
+      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française, livraison gratuite & 100 nuits d'essai.",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 269.9,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride-premium",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048-1.jpg?v=1779701435",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "30NuitsReconditionés",
+        "Encombrant",
+        "PRODUITS_FRENCHDAYSP26",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "tediber-15635856621892",
       "store": "tediber",
@@ -1644,7 +1860,7 @@
         "reconditionne"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3467,7 +3683,7 @@
     {
       "id": "tediber-15230563254596",
       "store": "tediber",
-      "title": "Lit Boxspring",
+      "title": "Lit boxspring",
       "description": "Lit Boxspring Tediber : bois massif, ressorts ensachés recyclés et confort ferme digne des plus grands hôtels. Livraison offerte et paiement 4x.",
       "category": "lit",
       "rawCategory": "lit",
@@ -4641,30 +4857,6 @@
       "source": "feed"
     },
     {
-      "id": "tediber-15182775910724",
-      "store": "tediber",
-      "title": "Lit en bois",
-      "description": "Lit en bois au confort parfait et robustesse. Design de caractère tête de lit personnalisable. Assemblage malin et rapide 100 nuits d'essai.",
-      "category": "matelas",
-      "rawCategory": "lit",
-      "price": 1040,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/lit-bois",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-clair-packshot.jpg?v=1776665063",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "axclone",
-        "B2B_GLOBAL",
-        "CAMPAGNE/ALL",
-        "Encombrant"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "tediber-15181360300356",
       "store": "tediber",
       "title": "Housse de couette en satin de coton",
@@ -5189,7 +5381,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -6342,78 +6534,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15178861838660",
-      "store": "tediber",
-      "title": "Lit en bois - Bois noir",
-      "description": "Le lit en bois noir, design soigné et structure durable.",
-      "category": "lit",
-      "rawCategory": "lit",
-      "price": 1040,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/lit-bois-bois-noir",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-noir-packshot.jpg?v=1773830122",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "axclone",
-        "B2B_GLOBAL",
-        "CAMPAGNE/ALL",
-        "Encombrant"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15178861805892",
-      "store": "tediber",
-      "title": "Lit en bois - Bois foncé",
-      "description": "Lit en bois foncé, robuste et confortable, conçu pour durer.",
-      "category": "lit",
-      "rawCategory": "lit",
-      "price": 1102.4,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/lit-bois-bois-fonce",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-fonce-packshot.jpg?v=1776665088",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "axclone",
-        "B2B_GLOBAL",
-        "CAMPAGNE/ALL",
-        "Encombrant"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15178861773124",
-      "store": "tediber",
-      "title": "Lit en bois - Bois clair",
-      "description": "Montage facile et solidité garantie pour le lit en bois clair.",
-      "category": "lit",
-      "rawCategory": "lit",
-      "price": 1102.4,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/lit-bois-bois-clair",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-clair-packshot.jpg?v=1776665063",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "axclone",
-        "B2B_GLOBAL",
-        "CAMPAGNE/ALL",
-        "Encombrant"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {

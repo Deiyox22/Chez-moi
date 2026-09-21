@@ -1,6 +1,6 @@
 {
   "store": "harto",
-  "updatedAt": "2026-09-14T09:31:10.515Z",
+  "updatedAt": "2026-09-21T09:33:29.232Z",
   "feedType": "shopify",
   "products": [
     {
@@ -1544,7 +1544,7 @@
       "description": "Le banc Eustache en chêne massif et velours vert taupe, design Margaux Keller, associe élégance et praticité avec son panier en laiton.",
       "category": "",
       "rawCategory": "ASSISE",
-      "price": 1398,
+      "price": 1099,
       "currency": "EUR",
       "url": "https://harto.fr/products/eustache-banc-chene-vert-taupe",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/getpubthumb_63de0044-65a6-4b25-b037-e31ab7f4b71c.png?v=1730847590",
@@ -2269,7 +2269,7 @@
         "Suzon"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {

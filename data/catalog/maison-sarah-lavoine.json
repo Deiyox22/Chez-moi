@@ -1,8 +1,32 @@
 {
   "store": "maison-sarah-lavoine",
-  "updatedAt": "2026-09-14T09:31:12.171Z",
+  "updatedAt": "2026-09-21T09:33:30.987Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "maison-sarah-lavoine-8266429300934",
+      "store": "maison-sarah-lavoine",
+      "title": "Fauteuil Bozzolo - Vert Forêt",
+      "description": "Bien planté. Assise cocon par excellence, le fauteuil Bozzolo, qui compte parmi les incontournables de la Maison, fait aisément son numéro. Pivotant sur sa base, mais bien ancré sur un socle en chêne clair, ce charmant fauteuil affiche la couleur : la garantie d'un confort absolu. Irrésistible dans sa version bouclée et soyeux dans sa version velours, il épouse tout espace de ses lignes rondes et ",
+      "category": "fauteuil",
+      "rawCategory": "FAUTEUIL",
+      "price": 2950,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/fauteuil-bozzolo-b78-vertforet-noyer-110x91x102-b78-vertforet-noyer",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511120953_10FAUCOC-VERTFORET--H91xl110xP102cm_1.jpg?v=1722419575",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "ARCHIVES26",
+        "AVP26ETE",
+        "B78-VERTFORET-NOYER",
+        "FM-10FAUCOC-B78-VERTFORET-NOYER-110X91X102"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "maison-sarah-lavoine-15669092647289",
       "store": "maison-sarah-lavoine",
@@ -49,29 +73,6 @@
       "source": "feed"
     },
     {
-      "id": "maison-sarah-lavoine-15665918181753",
-      "store": "maison-sarah-lavoine",
-      "title": "Lampadaire Pol - Laiton",
-      "description": "Lumière fine. Il suffit d’un clic. Vous pressez l’interrupteur et tout d’un coup la lumière du Lampadaire Pol se diffuse et scintille. Intime, cette lumière fine. Son pied et son cadre en laiton doré soutiennent une grande cage perforée en thermolaqué blanc. À l’intérieur, une ampoule tubulaire épouse la forme tout en hauteur de sa prison dorée. C’est ainsi que le Lampadaire Pol éclaire d’un jour ",
-      "category": "lampadaire",
-      "rawCategory": "LAMPADAIRE",
-      "price": 1650,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/lampadaire-pol-laiton-cage-blanche-d24-3xh159-laiton-cage-blanche",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511059888_15VEABEL-VERT-H9CM_1_001_1.jpg?v=1785158827",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-16LAMPPOL-LAITON CAGE BLANCHE-D24.3XH159",
-        "NOLABEL"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "maison-sarah-lavoine-15665917002105",
       "store": "maison-sarah-lavoine",
       "title": "Verre à eau Totem - Vert",
@@ -110,72 +111,6 @@
       "styles": [
         "AH26-MAISON",
         "FM-15VEABEL-TRANSPARENT-H9CM"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-15665914839417",
-      "store": "maison-sarah-lavoine",
-      "title": "Assiette plate Lueur - Noir/Bleu Sarah",
-      "description": "Lueur d’espoir. L’Assiette Lueur brille et éclaire vos nuits festives, en particulier quand l’association des assiettes plates et des assiettes à dessert multiplie les étoiles dans le ciel. Cette assiette en céramique, bordée de noir, porte un dessin étoilé, réalisé à partir de la technique artisanale de la décalcomanie : le dessin posé sur un film est appliqué manuellement sur l’assiette avant qu",
-      "category": "",
-      "rawCategory": "ASSIETTE",
-      "price": 26,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/assiette-plate-lueur-bleu-sarah-d27cm-bleu-sarah",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511222596_15APLLUE-NOIR-BLEU_SARAH-D27CM_1_001.jpg?v=1785158068",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-15APLLUE-NOIR/BLEU SARAH-D27CM"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-15665914216825",
-      "store": "maison-sarah-lavoine",
-      "title": "Assiette à dessert Lueur - Noir/Bleu Sarah",
-      "description": "Lueur d’espoir. L’Assiette Lueur brille et éclaire vos nuits festives, en particulier quand l’association des assiettes plates et des assiettes à dessert multiplie les étoiles dans le ciel. Cette assiette en céramique, bordée de noir, porte un dessin étoilé, réalisé à partir de la technique artisanale de la décalcomanie : le dessin posé sur un film est appliqué manuellement sur l’assiette avant qu",
-      "category": "",
-      "rawCategory": "ASSIETTE",
-      "price": 22,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/assiette-a-dessert-lueur-bleu-sarah-d23cm-bleu-sarah",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511222602_15ADESLUE-NOIR-BLEU_SARAH-D22CM_001.jpg?v=1785158062",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-15ADESLUE-NOIR/BLEU SARAH-D23CM"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-15665913561465",
-      "store": "maison-sarah-lavoine",
-      "title": "Plaid Kimi - Bleu Sarah",
-      "description": "Estampe japonaise. Avec son design qui évoque la trame d’un kimono japonais, le Plaid Kimi vous transporte au Pays du Soleil levant en un clin d’œil. Composé intégralement de laine, son touché doux et soyeux évoque la sérénité d’un jardin zen. Négligemment posé sur votre canapé ou habilement utilisé pour décorer votre lit, le Plaid Kimi et sa teinte Bleu Sarah vous rapprochent chaque jour un peu p",
-      "category": "plaid",
-      "rawCategory": "PLAID",
-      "price": 295,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/plaid-kimi-bleu-sarah-130x170cm-bleu-sarah",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238917_13PLAKIM-BLEU_SARAH-_130X170CM_1.jpg?v=1785158074",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-13PLAKIM-BLEU SARAH-130X170CM"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -440,6 +375,7 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
         "FM-12DECVASORI-FAUVE-H34XD20CM"
       ],
       "dimensionsCm": null,
@@ -462,56 +398,11 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
         "FM-12DECVASORI-CHARBON-H28XD17CM"
       ],
       "dimensionsCm": null,
       "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-15665895014777",
-      "store": "maison-sarah-lavoine",
-      "title": "Bougie recharge TamTam Twist - Noir",
-      "description": "Ranimer la flamme. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Bleu Sarah, Carmin, Noir et Blanc, trois mèches, les recharges pour Bougies TamTam Tw",
-      "category": "decoration",
-      "rawCategory": "BOUGIE",
-      "price": 75,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/bougie-recharge-tamtam-twist-noir-oriental-noir-oriental",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238900_12DECRBOTAMTWI-NOIR-ORIENTAL-TAILLE_INTERMEDIAIRE_1.jpg?v=1785158094",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-12DECRBOTAMTWI-NOIR/ORIENTAL",
-        "ICONIQUES-DECORATION"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "maison-sarah-lavoine-15665894359417",
-      "store": "maison-sarah-lavoine",
-      "title": "Bougie recharge TamTam Twist - Carmin",
-      "description": "Ranimer la flamme. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Bleu Sarah, Carmin, Noir et Blanc, trois mèches, les recharges pour Bougies TamTam Tw",
-      "category": "decoration",
-      "rawCategory": "BOUGIE",
-      "price": 75,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/bougie-recharge-tamtam-twist-carmin-figue-carmin-figue",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238894_12DECRBOTAMTWI-CARMINFIGUIER-TAILLE_INTERMEDIAIRE_1001.jpg?v=1785158071",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-12DECRBOTAMTWI-CARMIN/FIGUE",
-        "ICONIQUES-DECORATION"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -583,28 +474,6 @@
       "source": "feed"
     },
     {
-      "id": "maison-sarah-lavoine-15665891672441",
-      "store": "maison-sarah-lavoine",
-      "title": "Bougie TamTam Twist - Bleu Sarah",
-      "description": "Esprit Totem durable. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Teintes Terracotta ou Bleu Sarah, trois mèches, les Bougies TamTam Twist illuminen",
-      "category": "decoration",
-      "rawCategory": "BOUGIE",
-      "price": 150,
-      "currency": "EUR",
-      "url": "https://maisonsarahlavoine.com/products/bougie-tamtam-twist-biscuit-bs-narguile-biscuit-bs-narguile",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238894_12DECRBOTAMTWI-CARMINFIGUIER-TAILLE_INTERMEDIAIRE_1_004_1.jpg?v=1785158063",
-      "brand": "Maison Sarah Lavoine",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AH26-MAISON",
-        "FM-12DECBOUTAMTWI-BISCUIT/BS/NARGUILE"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "maison-sarah-lavoine-15665891017081",
       "store": "maison-sarah-lavoine",
       "title": "Bougeoir Chouchou - Noisette",
@@ -620,6 +489,7 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
         "FM-12DECBGRCHO-NOISETTE-2XL15XH10"
       ],
       "dimensionsCm": null,
@@ -642,6 +512,7 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
         "FM-12DECBGRCHO-BLEU SARAH-2XL15XH10"
       ],
       "dimensionsCm": null,
@@ -778,10 +649,11 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
         "FM-10POULEA-TANGERINE-43X43XP37"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1075,6 +947,7 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAMAR-NOIR",
         "PAP-PE26"
@@ -1098,6 +971,7 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAMAR-LIGHT BLUE",
         "PAP-PE26"
@@ -1145,6 +1019,7 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "FM-14PULRIV-SABLE",
         "HAUTS-COLLECTION",
         "PAP-PE26"
@@ -1168,6 +1043,7 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "FM-14CHEROM-NOIR",
         "HAUTS-COLLECTION",
         "PAP-PE26"
@@ -1242,7 +1118,7 @@
         "a-verifier",
         "ACCESSOIRES-COLLECTION",
         "AH24-PAP",
-        "ALERTE STOCK BOUTIQUE"
+        "AVP26ETE-PAP"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1287,10 +1163,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAJOH-LIGHT BLUE",
-        "LIGHT BLUE",
-        "NRC"
+        "LIGHT BLUE"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1787,13 +1663,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "ART-DE-LA-TABLE-COLLECTION",
         "FM-13RIDDIP-FORET",
-        "FM-13RIDDIP-FORET-175X300CM",
-        "LINGE-MAISON-COLLECTION"
+        "FM-13RIDDIP-FORET-175X300CM"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -2159,7 +2035,7 @@
       "description": "Pop Art. Comme un impromptu tant attendu, le tapis Séquence fait swinguer les intérieurs. Idéale pour composer la chambre d’un adolescent ou rythmer un salon, cette pièce maîtresse libère ses bonnes ondes colorielles et géométriques. Quatre étapes de fabrication témoignent d'un savoir-faire unique. D'abord, le nouage à la main d'une laine sourcée en Nouvelle-Zélande. Le fil est ainsi passé, noué p",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1450,
+      "price": 1160,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-cadence-ocre-ocre",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/TAPISCADENCE_OCRE_01.jpg?v=1752159231",
@@ -2180,10 +2056,10 @@
       "id": "maison-sarah-lavoine-15334237208953",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Sombra - Naturel",
-      "description": "Chaud devant. Le motif Sombra sème ses feuilles grâce à un savant travail de relief sur chaque ligne. Idéal dans la pièce à vivre ou plus versatile dans une chambre à coucher, le tapis Sombra habille les sols avec élégance. De quoi révéler un parquet sobre ou réchauffer la pierre. Confectionné en Inde, le tapis a été minutieusement tufté à la main, grâce à un savoir-faire local. Parce que chaque i",
+      "description": "Chaud devant. Le motif Sombra sème ses feuilles grâce à un savant travail de relief sur chaque ligne. Idéal dans la pièce à vivre ou plus versatile dans une chambre à coucher, le tapis Sombra habille les sols avec élégance. De quoi révéler un parquet sobre ou réchauffer la pierre. Confectionné en Inde, le tapis a été minutieusement tufté à la main, grâce à un savoir-faire local. Fabriqué en Inde.",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-sombra",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/11TAPSOM_NATUREL_01.jpg?v=1770110426",
@@ -2821,7 +2697,7 @@
         "MAISON-PE26"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -3333,7 +3209,7 @@
       "description": "Effet mirage. Avec ses enivrantes lignes concentriques, le tapis Mirage donne à vos paysages intérieurs une touche d’exotisme qui éveille vos envies de voyage. Déjà présent sur les coussins et le set de table éponymes, le motif mirage marque de son empreinte le premier tapis ovale de la Maison. Composé de trois matières vivantes, la laine, la jute et le coton, le tapis Mirage a été tufté main grâc",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-mirage-the-de-chine-the-de-chine",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511225788-11TAPMIR-TAPISMIRAGE-ThedeChine-195X240CM_1_copie.jpg?v=1770123205",
@@ -3357,7 +3233,7 @@
       "description": "Effet mirage. Avec ses enivrantes lignes concentriques, le tapis Mirage donne à vos paysages intérieurs une touche d’exotisme qui éveille vos envies de voyage. Déjà présent sur les coussins et le set de table éponymes, le motif mirage marque de son empreinte le premier tapis ovale de la Maison. Composé de trois matières vivantes, la laine, la jute et le coton, le tapis Mirage a été tufté main grâc",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-mirage-naturel-naturel",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511225771-11TAPMIR-TAPISMIRAGE-Naturel-245X300CM_1_copie.jpg?v=1770133567",
@@ -3367,7 +3243,8 @@
       "styles": [
         "FM-11TAPMIR-NATUREL",
         "MAISON-PE26",
-        "NOLABEL"
+        "NOLABEL",
+        "REMISE_20"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -3628,7 +3505,7 @@
       "description": "Le tapis Boro est un véritable tableau. Parce que chaque intérieur est unique, ce tapis est disponible en sur mesure : contactez notre service client pour créer le vôtre. Fabrication : Inde",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1850,
+      "price": 1480,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-boro-ocre-ocre",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511119827_2311TAPBOR-OCRE--170X240CM_1.jpg?v=1720527198",
@@ -4345,10 +4222,10 @@
       "id": "maison-sarah-lavoine-15043791192441",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Séquence - Ocre",
-      "description": "Pop Art. Comme un impromptu tant attendu, le tapis Séquence fait swinguer les intérieurs. Idéale pour composer la chambre d’un adolescent ou rythmer un salon, cette pièce maîtresse libère ses bonnes ondes colorielles et géométriques. Quatre étapes de fabrication témoignent d'un savoir-faire unique. D'abord, le nouage à la main d'une laine sourcée en Nouvelle-Zélande. Le fil est ainsi passé, noué p",
+      "description": "Pop Art. Comme un impromptu tant attendu, le tapis Séquence fait swinguer les intérieurs. Idéale pour composer la chambre d'un adolescent ou rythmer un salon, cette pièce maîtresse libère ses bonnes ondes colorielles et géométriques. Quatre étapes de fabrication témoignent d'un savoir-faire unique. D'abord, le nouage à la main d'une laine sourcée en Nouvelle-Zélande. Le fil est ainsi passé, noué p",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1450,
+      "price": 1160,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-sequence-ocre-250x350cm-ocre",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/TAPISSEQUENCE_01.jpg?v=1752159062",
@@ -4372,7 +4249,7 @@
       "description": "Good Mood. Comme une piste colorielle des émotions, le tapis Cadence crée le tempo dans la maison. Teinte thé de Chine, cette pièce phare qui centralise les regards saura créer la bonne atmosphère. Quatre étapes de fabrication témoignent d'un savoir-faire unique. D'abord, le nouage à la main d'une laine sourcée en Nouvelle-Zélande. Le fil est ainsi passé, noué puis coupé à la longueur souhaitée. U",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1450,
+      "price": 1160,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-cadence-the-de-chine-250x350cm-the-de-chine",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/TAPISCADENCE_THEDECHINE_01.jpg?v=1752159116",
@@ -5556,12 +5433,12 @@
       "materials": [],
       "styles": [
         "AH25",
+        "ALERTE STOCK BOUTIQUE",
         "FM-13PLASKY-HAVANE-130X170CM",
-        "ICONIQUES-LINGE-DE-MAISON",
-        "LINGE-MAISON-COLLECTION"
+        "ICONIQUES-LINGE-DE-MAISON"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -5678,7 +5555,7 @@
         "a-verifier",
         "AH24-PAP",
         "AH25-PAP",
-        "COSTUMES-COLLECTION"
+        "ALERTE STOCK BOUTIQUE"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5700,9 +5577,9 @@
       "materials": [],
       "styles": [
         "AH25-PAP",
-        "ALERTE STOCK BOUTIQUE",
         "BLANC",
-        "COSTUMES-COLLECTION"
+        "COSTUMES-COLLECTION",
+        "FM-14VESFAU-BLANC"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5811,7 +5688,7 @@
       "description": "Toile de peintre. On affiche les œuvres d’art au mur ou… au sol. Le tapis Abstrait nous immerge dans l’éclat profond de la couleur signature de la Maison, le Bleu Sarah. Enrubanné d’un effet noir et blanc, il révèle ses douces courbes aux teintes nuancées, dans lesquelles on se loverait. Pièce forte, ce tapis s’expose aisément dans un salon aux teintes épurées ou une chambre que l'on veut réveille",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-abstrait-lin-lin",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511097125_2311TAPABS-LIN--170X240CM_1.jpg?v=1720525433",
@@ -5820,9 +5697,9 @@
       "materials": [],
       "styles": [
         "a-verifier",
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
-        "FM-11TAPABS-LIN",
-        "ICONIQUES-COLLECTION"
+        "FM-11TAPABS-LIN"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5832,10 +5709,10 @@
       "id": "maison-sarah-lavoine-8260921721030",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Boro - Crème",
-      "description": "Le tapis Boro est un véritable tableau, il se compose d'un camaïeu de bleus, nuances de verts, et est rehaussé par des rayures noires. Parce que chaque intérieur est unique, ce tapis est disponible en sur mesure : contactez notre service client pour créer le vôtre. Fabrication : Inde",
+      "description": "Le tapis Boro est un véritable tableau, il se compose d'un camaïu de bleus, nuances de verts, et est rehaussé par des rayures noires. Fabrication : Inde",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1850,
+      "price": 1480,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-boro-cream-cream",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511058577_2311TAPBOR-CREAM--170X240CM_1.jpg?v=1720527182",
@@ -5856,10 +5733,10 @@
       "id": "maison-sarah-lavoine-8260921852102",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Boro - Eucalyptus",
-      "description": "Le tapis Boro est un véritable tableau. Parce que chaque intérieur est unique, ce tapis est disponible en sur mesure : contactez notre service client pour créer le vôtre. Fabrication : Inde",
+      "description": "Le tapis Boro est un véritable tableau. Fabrication : Inde",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1850,
+      "price": 1480,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-boro-eucalyptus-eucalyptus",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511110312_2311TAPBOR-EUCALYPTUS--170X240CM_1.jpg?v=1720527189",
@@ -5867,10 +5744,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "EUCALYPTUS",
-        "FM-11TAPBOR-EUCALYPTUS",
-        "ICONIQUES-COLLECTION"
+        "FM-11TAPBOR-EUCALYPTUS"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5880,10 +5757,10 @@
       "id": "maison-sarah-lavoine-8260922114246",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Boro - Rose Petal",
-      "description": "Le tapis Boro est un véritable tableau, il se compose d'un camaïeu de beige, rose, et est rehaussé par des rayures noires. Parce que chaque intérieur est unique, ce tapis est disponible en sur mesure : contactez notre service client pour créer le vôtre. Fabrication : Inde",
+      "description": "Le tapis Boro est un véritable tableau, il se compose d'un camaïu de beige, rose, et est rehaussé par des rayures noires. Fabrication : Inde",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1850,
+      "price": 1480,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-boro-rose-petal-rose-petal",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511067395_2311TAPBOR-ROSE_20PETAL--170X240CM_1.jpg?v=1720527208",
@@ -5891,10 +5768,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "FM-11TAPBOR-ROSE PETAL",
-        "ICONIQUES-COLLECTION",
-        "ICONIQUES-TAPIS"
+        "ICONIQUES-COLLECTION"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5907,7 +5784,7 @@
       "description": "Chaud devant. Le motif Sombra illumine le tapis de la nouvelle collection Maison Sarah Lavoine, grâce à un savant travail de relief sur chaque ligne. Idéal dans la pièce à vivre ou plus versatile dans une chambre à coucher, le tapis Sombra habille les sols avec élégance. De quoi révéler un parquet sobre ou réchauffer la pierre. Confectionné en Inde, le tapis a été minutieusement tufté à la main, g",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-sombra-bleu-sarah-bleu-sarah",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511132178_2311TAPSOM-BLEU_20SARAH--170X240CM_1.jpg?v=1720525475",
@@ -5917,8 +5794,8 @@
       "styles": [
         "a-verifier",
         "AH24-MAISON",
-        "ALERTE STOCK BOUTIQUE",
-        "BLEU SARAH"
+        "BLEU SARAH",
+        "DECORATION-COLLECTION"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -5931,7 +5808,7 @@
       "description": "Toile de peintre. On affiche les œuvres d’art au mur ou… au sol. Le tapis Abstrait nous immerge dans l’éclat profond de la couleur signature de la Maison, le Bleu Sarah. Enrubanné d’un effet noir et blanc, il révèle ses douces courbes aux teintes nuancées, dans lesquelles on se loverait. Pièce forte, ce tapis s’expose aisément dans un salon aux teintes épurées ou une chambre que l'on veut réveille",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-abstrait-bleu-sarah-bleu-sarah",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511097101_2311TAPABS-BLEU_20SARAH--170X240CM_1.jpg?v=1720525408",
@@ -6419,13 +6296,13 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "BESTSELLER",
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "FM-16LDTNOM-NOISETTE-H43X15CM",
         "ICONIQUES-LUMINAIRES"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6576,7 +6453,7 @@
       "id": "maison-sarah-lavoine-14880565100921",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Esprit Libre - Aubergine",
-      "description": "Œuvre au sol. Quand l'art de la couleur rencontre l'excellence du savoir-faire français. Dessiné par le Studio Maison Sarah Lavoine, le tapis Esprit Libre s’inspire d’un modernisme revisité, où les lignes graphiques dialoguent avec les nuances vibrantes de l'Ecorce et de l'Aubergine , issues de la palette Ressource x Maison Sarah Lavoine. Véritable pièce d’art, il invite à repenser l’espace, trans",
+      "description": "Œuvre au sol. Quand l'art de la couleur rencontre l'excellence du savoir-faire français. Dessiné par le Studio Maison Sarah Lavoine, le tapis Esprit Libre s'inspire d'un modernisme revisité, où les lignes graphiques dialoguent avec les nuances vibrantes de l'Ecorce et de l'Aubergine , issues de la palette Ressource x Maison Sarah Lavoine. Véritable pièce d'art, il invite à repenser l'espace, trans",
       "category": "tapis",
       "rawCategory": "TAPIS",
       "price": 1950,
@@ -8304,10 +8181,10 @@
       "id": "maison-sarah-lavoine-8264926167238",
       "store": "maison-sarah-lavoine",
       "title": "Tapis Pâquerette - Williamsburg",
-      "description": "Les pieds dans l'herbe. On ne peut que l’aimer beaucoup, passionnément et à la folie. Le tapis Pâquerette en laine, jute blanche et coton déploie tous ses atouts et ses pétales dans une envolée de teintes signatures : Écru et Williamsburg. Son petit plus ? Le tuftage à la main, qui lui offre une épaisseur terriblement douillette. Avec son effet tapisserie, ce tapis illustré d’une fleur des champs ",
+      "description": "Les pieds dans l'herbe. On ne peut que l'aimer beaucoup, passionnément et à la folie. Le tapis Pâquerette en laine, jute blanche et coton déploie tous ses atouts et ses pétales dans une envolée de teintes signatures : Écru et Williamsburg. Son petit plus ? Le tuftage à la main, qui lui offre une épaisseur terriblement douillette. Avec son effet tapisserie, ce tapis illustré d'une fleur des champs ",
       "category": "tapis",
       "rawCategory": "TAPIS",
-      "price": 1150,
+      "price": 920,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/tapis-paquerette-juteblanc-williamsbu-juteblanc-williamsbu",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511075611_11TAPPAQ-JUTEBLANCWILLIAMSBU--170X240CM_1.jpg?v=1720603369",
@@ -8604,12 +8481,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
+        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
-        "FM-11COMESS-NOIR-BLANC CASSE-100CM",
-        "MEUBLES-BUREAUX-COLLECTION"
+        "FM-11COMESS-NOIR-BLANC CASSE-100CM"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -8628,12 +8505,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "FM-11BUFRIV-NATUREL-BL NOIR-120X42XH75",
-        "ICONIQUES-COLLECTION"
+        "ICONIQUES-COLLECTION",
+        "MEUBLES-BUREAUX-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -8748,12 +8625,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "FM-11ENFECA-NOYER-ECAILLE ECRU-160X45XH75",
-        "ICONIQUES-COLLECTION"
+        "ICONIQUES-COLLECTION",
+        "MEUBLES-BUREAUX-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -8940,12 +8817,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
-        "FM-11MIRHEC-OR-140X120CM",
-        "ICONIQUES-COLLECTION"
+        "FM-11MIRHEC-OR-140X120CM"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
