@@ -1,6 +1,6 @@
 {
   "store": "harto",
-  "updatedAt": "2026-09-21T09:33:29.232Z",
+  "updatedAt": "2026-09-28T10:28:57.923Z",
   "feedType": "shopify",
   "products": [
     {
@@ -1233,27 +1233,6 @@
       "currency": "EUR",
       "url": "https://harto.fr/products/camille-table-basse-s-chene",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/getpubthumb_f3ceb414-7862-4cb5-865e-b34ca9d38379.png?v=1730739232",
-      "brand": "Hartô",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Camille"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "harto-9502616781064",
-      "store": "harto",
-      "title": "Table basse Camille L29, Chêne naturel",
-      "description": "La table basse Camille L29 en chêne naturel allie élégance et modularité avec son design fluide. Une création de Guillaume Delvigne.",
-      "category": "table_basse",
-      "rawCategory": "TABLE BASSE",
-      "price": 597,
-      "currency": "EUR",
-      "url": "https://harto.fr/products/camille-table-basse-l29-chene",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/getpubthumb_446dd793-e6b4-4040-a6bf-8fb73bca8af0.png?v=1730739243",
       "brand": "Hartô",
       "colors": [],
       "materials": [],

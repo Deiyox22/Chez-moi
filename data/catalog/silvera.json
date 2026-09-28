@@ -1,6 +1,6 @@
 {
   "store": "silvera",
-  "updatedAt": "2026-09-21T10:21:42.033Z",
+  "updatedAt": "2026-09-28T11:21:32.469Z",
   "feedType": "sitemap-jsonld",
   "products": [
     {
@@ -3078,7 +3078,7 @@
       "materials": [],
       "styles": [],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {

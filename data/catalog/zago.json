@@ -1,6 +1,6 @@
 {
   "store": "zago",
-  "updatedAt": "2026-09-21T10:21:47.184Z",
+  "updatedAt": "2026-09-28T11:21:39.241Z",
   "feedType": "shopify",
   "products": [
     {
@@ -401,7 +401,7 @@
       "description": "Notre incontournable chaise BARI se décline maintenant en imitation cuir et chaise de bar . On adore la BARI pour son intemporalité , son élégance et sa simplicité. Dans un bar ou une cuisine, cette chaise d'une hauteur d'assise de 75cm est conçue pour créer un coin de convivialité. Le repose-pied intégré offre un soutien supplémentaire et vous permet d’être confortablement installé. Avec son allu",
       "category": "chaise",
       "rawCategory": "Assises> Chaises> Chaises hautes",
-      "price": 159,
+      "price": 127.2,
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/chaise-de-bar-pu-marron-bari-chabar07pu",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/bari-chabar07pu__ps_01.jpg?v=1788822108",
@@ -10171,7 +10171,7 @@
         "Meubles hauts"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -18972,7 +18972,7 @@
         "Famiroot"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22188,7 +22188,7 @@
         "Tapis"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22236,7 +22236,7 @@
         "Tapis"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
