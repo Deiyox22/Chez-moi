@@ -1,8 +1,77 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-09-28T10:29:04.763Z",
+  "updatedAt": "2026-10-05T11:08:27.335Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "tediber-15524409016644",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride Premium",
+      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française, livraison gratuite & 100 nuits d'essai.",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 234.5,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride-premium",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048-1.jpg?v=1779701435",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Encombrant",
+        "phenix",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "out of stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15524409082180",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride Infinite",
+      "description": "",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 367.5,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride-infinite",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Slide1_Matelas_Hybride_Infinite.jpg?v=1776092885",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Encombrant",
+        "phenix",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15527830749508",
+      "store": "tediber",
+      "title": "[Reconditionné] - Matelas Hybride",
+      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française et belge Livraison gratuite & 30 nuits d'essai.",
+      "category": "matelas",
+      "rawCategory": "POC_Reconditionné",
+      "price": 150.5,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-matelas-hybride",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048.jpg?v=1776327005",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Encombrant",
+        "phenix",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "tediber-15566729511236",
       "store": "tediber",
@@ -916,78 +985,6 @@
       "source": "feed"
     },
     {
-      "id": "tediber-15527830749508",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride",
-      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française et belge Livraison gratuite & 30 nuits d'essai.",
-      "category": "matelas",
-      "rawCategory": "POC_Reconditionné",
-      "price": 214.9,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048.jpg?v=1776327005",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "30NuitsReconditionés",
-        "Encombrant",
-        "PRODUITS_FRENCHDAYSP26",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15524409082180",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride Infinite",
-      "description": "",
-      "category": "matelas",
-      "rawCategory": "POC_Reconditionné",
-      "price": 419.9,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride-infinite",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Slide1_Matelas_Hybride_Infinite.jpg?v=1776092885",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "30NuitsReconditionés",
-        "Encombrant",
-        "PRODUITS_FRENCHDAYSP26",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "tediber-15524409016644",
-      "store": "tediber",
-      "title": "[Reconditionné] - Matelas Hybride Premium",
-      "description": "Matelas à ressorts ensachés et mousses premium reconditionné. Fraîcheur et respirabilité exceptionnelles. Fabrication française, livraison gratuite & 100 nuits d'essai.",
-      "category": "matelas",
-      "rawCategory": "POC_Reconditionné",
-      "price": 269.9,
-      "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-matelas-hybride-premium",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/Image_05_048-1.jpg?v=1779701435",
-      "brand": "Tediber",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "30NuitsReconditionés",
-        "Encombrant",
-        "PRODUITS_FRENCHDAYSP26",
-        "reconditionne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "tediber-15635856621892",
       "store": "tediber",
       "title": "Cadre à lattes",
@@ -1404,7 +1401,7 @@
         "reconditionne"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -4158,7 +4155,7 @@
         "Gamme iconique"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -7710,7 +7707,7 @@
         "Gamme iconique"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
