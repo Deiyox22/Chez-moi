@@ -1,6 +1,6 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-10-05T11:08:27.335Z",
+  "updatedAt": "2026-10-12T11:37:24.600Z",
   "feedType": "shopify",
   "products": [
     {
@@ -18,12 +18,12 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "30Nuitsrecontionne",
         "Encombrant",
-        "phenix",
-        "reconditionne"
+        "phenix"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -41,9 +41,9 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "30Nuitsrecontionne",
         "Encombrant",
-        "phenix",
-        "reconditionne"
+        "phenix"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -64,9 +64,9 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "30Nuitsrecontionne",
         "Encombrant",
-        "phenix",
-        "reconditionne"
+        "phenix"
       ],
       "dimensionsCm": null,
       "availability": "in stock",

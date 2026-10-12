@@ -1,8 +1,32 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-10-05T11:08:25.398Z",
+  "updatedAt": "2026-10-12T11:37:22.211Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "honore-deco-16076718375256",
+      "store": "honore-deco",
+      "title": "PORTE COUTEAUX",
+      "description": "",
+      "category": "",
+      "rawCategory": "",
+      "price": 16,
+      "currency": "EUR",
+      "url": "https://honoredeco.com/products/porte-couteaux",
+      "imageUrl": null,
+      "brand": "LE POTIER D'ETAIN",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "spo-cs-disabled",
+        "spo-default",
+        "spo-disabled",
+        "spo-notify-me-disabled"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "honore-deco-15929267224920",
       "store": "honore-deco",
@@ -238,30 +262,6 @@
         "Assises",
         "Coton",
         "Croisette"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-5436824944797",
-      "store": "honore-deco",
-      "title": "Chaise Longue Carmen",
-      "description": "La Chaise Longue Carmen est une chilienne épurée et colorée dont la marque de fabrique Honoré se distingue par une broderie H++ sur la toile de l'assise. La simplicité de forme de sa structure en fer invite à la détente et au confort absolu. Cette chaise longue a autant de succès en mobilier intérieur qu'extérieur. Sa toile déperlante et sa structure en fer recouverte d'une peinture epoxy lui font",
-      "category": "fauteuil",
-      "rawCategory": "Assises",
-      "price": 450,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/chaise-longue-carmen",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/ambiancecarmenbleupacific.jpg?v=1725539124",
-      "brand": "honoredeco",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Fauteuil",
-        "Outdoor",
-        "spo-default",
-        "spo-enabled"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -925,7 +925,7 @@
       "price": 160,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-murale-crepi-magma",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/applique_magma_4.jpg?v=1791194546",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/AppliqueMagma.jpg?v=1779701299",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -1641,7 +1641,7 @@
       "description": "Rosace en métal - Bronze satiné Complétez votre suspension Honoré avec le plafonnier en métal Creative Câbles, reconnues pour leur qualité et leur design soigné. Disponible en blanc mat ou bronze satiné. Le bronze satiné, plus profond et enveloppant, s’accorde idéalement aux ambiances naturelles et solaires chères à Honoré. Élégant et discret, cette rosace assure une finition parfaite au plafond. ",
       "category": "",
       "rawCategory": "ROSACES",
-      "price": 14.6,
+      "price": 16,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/rosace-en-metal-bronze-satine",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Captured_ecran2026-03-10115653.jpg?v=1775823509",
@@ -1665,7 +1665,7 @@
       "description": "Rosace en métal - Blanc brillant Complétez votre suspension Honoré avec le plafonnier en métal Creative Cables, reconnues pour leur qualité et leur design soigné. Disponible en blanc brillant ou bronze satiné. Le blanc brillant évoque la simplicité et la pureté, parfait pour des intérieurs lumineux et épurés. Élégant et discret, cette rosace assure une finition parfaite au plafond. Chaque modèle s",
       "category": "",
       "rawCategory": "ROSACES",
-      "price": 8.8,
+      "price": 10,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/rosace-en-metal-blanc-mat",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/kit-rosace-metallique-cylindrique.jpg?v=1764942575",
@@ -1679,7 +1679,7 @@
         "spo-default"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -1727,7 +1727,7 @@
         "spo-default"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -5475,7 +5475,7 @@
       "price": 130,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/applique-carree-dante",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/A_8.jpg?v=1776173789",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/products/danteterracotta.jpg?v=1776173789",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],

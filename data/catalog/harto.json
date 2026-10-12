@@ -1,6 +1,6 @@
 {
   "store": "harto",
-  "updatedAt": "2026-10-05T11:08:19.973Z",
+  "updatedAt": "2026-10-12T11:37:17.575Z",
   "feedType": "shopify",
   "products": [
     {
@@ -42,7 +42,7 @@
         "Hyppolite"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
