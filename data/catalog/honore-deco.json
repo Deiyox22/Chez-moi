@@ -1,6 +1,6 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-10-12T11:37:22.211Z",
+  "updatedAt": "2026-10-19T09:33:03.222Z",
   "feedType": "shopify",
   "products": [
     {
@@ -240,7 +240,7 @@
         "Parasol"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -1333,7 +1333,7 @@
       "price": 655,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/bureau-croisette",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Bureauxcroisette_6.jpg?v=1767713831",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Bureauxcroisette.jpg?v=1767713831",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -1381,7 +1381,7 @@
       "price": 1165,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/fauteuil-campo-velours",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/FauteuilCampoveloursmilleraies.jpg?v=1767712103",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/FauteuilCampoveloursmilleraies_2.jpg?v=1767712103",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -2676,7 +2676,7 @@
       "price": 140,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/etagere-necchi",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/IMG_8619.jpg?v=1769524210",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/E_2.jpg?v=1753718293",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -3324,7 +3324,7 @@
       "price": 325,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/cache-pot-torsade",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/cachepottorsadecollection.jpg?v=1742291438",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/L1140620.jpg?v=1776156903",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
@@ -3941,7 +3941,7 @@
       "price": 560,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/console-dolores",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Console_dolors_sans_catena_copie.jpg?v=1742402596",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/consoledoloresmini.jpg?v=1742402596",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
@@ -4058,7 +4058,7 @@
       "price": 350,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/lampe-a-poser-piz",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/7_ed3107a1-48f6-4297-9eb2-bfc16bc9405a.jpg?v=1767795756",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/LAMPE_PIZ_AMBIANCE.jpg?v=1767795756",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],

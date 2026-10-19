@@ -1,8 +1,128 @@
 {
   "store": "zago",
-  "updatedAt": "2026-10-12T12:28:51.085Z",
+  "updatedAt": "2026-10-19T10:18:47.680Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "zago-11738573406548",
+      "store": "zago",
+      "title": "Table basse en bois chêne naturel",
+      "description": "Notre petite table basse en chêne vernis de la collection EASY saura donner une touche naturelle à votre intérieur. Parfait pour habiller votre séjour. On aime sa finition en métal noir époxy qui faire ressortir le bois et qui lui donne cet aspect brut. Equilibre parfait entre design aux lignes arrondies et l'élégance du mix matières.",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants > Tables > Tables basses",
+      "price": 349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-carre-easy-18831",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_dbdcd5c6-2b9b-4153-b15d-45a98b48e4a3.jpg?v=1734480925",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "EASY",
+        "Famiroot",
+        "Meubles et déco bohème chic",
+        "Meubles meublants"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-11739401650516",
+      "store": "zago",
+      "title": "Fauteuil vert canard",
+      "description": "Le rocking-chair est un élément déco qui ne se démode pas, et pour cause, c’est le symbole incontestable de la relaxation. Les mamans de toutes les générations ont bercé et allaité leurs bébés, tandis que les plus grands enfants se le disputaient dans le salon. Il nous rappelle aussi ce cliché du grand-père du grand-ouest américain qui se balance devant le porche de sa maison en sirotant. Ici, Evy",
+      "category": "canape",
+      "rawCategory": "Assises > Fauteuils - Canapés > Rocking Chair",
+      "price": 399,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/rocking-chair-scandinave-tissu-vert-canard-evy-20887",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_2bce8dc4-b2a1-41a2-ab26-faa46525bb15.jpg?v=1734509748",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "EVY",
+        "Famiroot",
+        "Fauteuils - Canapes"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-11783993459028",
+      "store": "zago",
+      "title": "Tabouret de bar vert",
+      "description": "A la recherche d'une pièce vintage incontournable ? Découvrez le tabouret de bar Marcel. Ce tabouret a des allures vintages qui raviront les amoureux des années rétro . Avec sa hauteur d'assise de 75cm, il est conçu pour s'intégrer parfaitement à votre bar ou à votre îlot de cuisine, vous permettant ainsi de profiter de moments conviviaux en tout confort. Le revêtement est en imitation cuir , et s",
+      "category": "pouf",
+      "rawCategory": "Assises > Tabourets > Tabourets hauts",
+      "price": 115,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/tabouret-de-bar-imitation-cuir-vert-22417",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/marcel-taboubar06__ps_01-1.jpg?v=1737048710",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Assises",
+        "MARCEL",
+        "Tabourets",
+        "Tabourets hauts"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-11784009089364",
+      "store": "zago",
+      "title": "Bout de canapé placage noyer",
+      "description": "Laissez-vous séduire par le bout de canapé rond PLASMA en placage noyer , une pièce élégante et moderne pour sublimer votre intérieur. Avec un diamètre de 50cm et une hauteur de 40cm , ce bout de canapé est parfait pour ajouter une touche tendance à n'importe quel espace. Son design contemporain, accentué par un pied rond , s'inscrit parfaitement dans la mouvance organique actuelle. Le placage noy",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants > Tables > Bouts de canapé",
+      "price": 199,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/bout-de-canape-placage-noyer-plasma-bdc50w",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/plasma-bdc50w__ps_01.jpg?v=1737049519",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Bouts de canapé",
+        "Meubles meublants",
+        "PLASMA",
+        "Tables"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-11784009220436",
+      "store": "zago",
+      "title": "Table basse placage noyer",
+      "description": "Découvrez la table basse ronde PLASMA en placage noyer , un chef-d'oeuvre de design contemporain. Avec son diamètre de 80cm et son épais plateau de 4cm, cette table ronde est à la fois robuste et élégante. Son pied rond, très tendance, s'inscrit parfaitement dans la tendance organique actuelle. Idéale pour un intérieur moderne, la table basse PLASMA apporte une touche naturelle à votre salon et cr",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants > Tables > Tables basses",
+      "price": 349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-placage-noyer-plasma-tb80w",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/plasma-tb80w__ps_01.jpg?v=1737049524",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "PLASMA",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "zago-15846393053524",
       "store": "zago",
@@ -1162,7 +1282,7 @@
       "price": 1299,
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/bibliotheque-7-niches-2-tiroirs-flow-bib110",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/flow-bib110__ps_01.jpg?v=1787316998",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/flow-bib110__ps_07.jpg?v=1787138462",
       "brand": "ZAGO STORE",
       "colors": [],
       "materials": [],
@@ -1917,7 +2037,7 @@
         "Tables basses"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3826,7 +3946,7 @@
       "price": 1299,
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/meuble-bas-4-portes-chene-intense-mb4p",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/INTENSE-MB4P_ambiance_2x_0a6a671e-f17f-406f-a43f-47ed443ef6c0.png?v=1785339134",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/intense-mb4p__ps_01.jpg?v=1782774304",
       "brand": "ZAGO STORE",
       "colors": [],
       "materials": [],
@@ -8733,7 +8853,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -11607,7 +11727,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -12759,7 +12879,7 @@
         "Poufs"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -17497,7 +17617,7 @@
       "price": 703.2,
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/canape-2-places-velours-cotele-vert-sapin-cleo-21486",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/SUBLIME_CLEO_02-Photoroom.jpg?v=1785763558",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_78972b8c-8926-460b-9962-221f9c4ef534.jpg?v=1734529687",
       "brand": "ZAGO STORE",
       "colors": [],
       "materials": [],

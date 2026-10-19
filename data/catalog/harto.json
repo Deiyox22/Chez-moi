@@ -1,6 +1,6 @@
 {
   "store": "harto",
-  "updatedAt": "2026-10-12T11:37:17.575Z",
+  "updatedAt": "2026-10-19T09:32:58.291Z",
   "feedType": "shopify",
   "products": [
     {
@@ -42,7 +42,7 @@
         "Hyppolite"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -63,7 +63,7 @@
         "Honoré"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -84,7 +84,7 @@
         "Gaston"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {

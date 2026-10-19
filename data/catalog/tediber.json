@@ -1,8 +1,31 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-10-12T11:37:24.600Z",
+  "updatedAt": "2026-10-19T09:33:05.250Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "tediber-15524409540932",
+      "store": "tediber",
+      "title": "[Reconditionné] - Canapé-lit",
+      "description": "",
+      "category": "canape",
+      "rawCategory": "Reconditionné",
+      "price": 486.5,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/reconditionne-canape-lit",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/canape-lit-vert-sauge-bois-clair_acoudoir_coussin_packshot_jpg.jpg?v=1753964886",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Encombrant",
+        "phenix",
+        "reconditionne"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "tediber-15524409016644",
       "store": "tediber",
@@ -4899,7 +4922,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6123,7 +6146,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
