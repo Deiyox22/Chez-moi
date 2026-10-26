@@ -1,8 +1,77 @@
 {
   "store": "zago",
-  "updatedAt": "2026-10-19T10:18:47.680Z",
+  "updatedAt": "2026-10-26T10:21:53.816Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "zago-15892099727700",
+      "store": "zago",
+      "title": "Table céramique KEROS 130-190x100cm pivotante effet bois mat",
+      "description": "Un dîner qui se prolonge, des invités qui s’ajoutent… KEROS fait de la place à vos envies. Avec la table extensible KEROS en céramique effet bois mat , votre espace repas s’adapte aux petits comme aux grands rendez-vous. Son plateau passe de 130 à 190 cm de longueur grâce à son système d’allonge pivotante intégrée : de quoi agrandir la tablée pour un déjeuner en famille ou un dîner entre amis. Dan",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2319,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-keros-130-190x100cm-pivotante-effet-bois-mat-ker-tr130a_c00",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ker-tr130a_c00__ps_02.jpg?v=1792450894",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15892099694932",
+      "store": "zago",
+      "title": "Table céramique KEROS 130-190x100cm pivotante marbre blanc mat",
+      "description": "Une table lumineuse pour le café du matin, les repas partagés et les soirées qui s’étirent. La table extensible KEROS en céramique effet marbre blanc mat apporte une note claire et élégante à votre espace repas. Son décor marbré s’associe à la chaleur du pied en placage noyer , tandis que la structure en métal noir dessine un contraste contemporain. Un mélange de matières qui trouve sa place dans ",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2319,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-keros-130-190x100cm-pivotante-marbre-blanc-mat-ker-tr130a_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ker-tr130a_c02__ps_02.jpg?v=1792450895",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15892099662164",
+      "store": "zago",
+      "title": "Table céramique KEROS 130-190x100cm pivotante noir mat effet métal",
+      "description": "Une table de caractère pour les repas du quotidien comme pour les grandes retrouvailles. Avec son plateau en céramique noir mat effet métal , la table extensible KEROS donne le ton dans votre salle à manger. Son aspect métallique rencontre les nuances chaleureuses du pied en placage noyer , tandis que la structure en métal noir prolonge cette association contemporaine. Un repas à quelques-uns, pui",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2319,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-keros-130-190x100cm-pivotante-noir-mat-effet-metal-ker-tr130a_c01",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ker-tr130a_c01__ps_02.jpg?v=1792450894",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "zago-11738573406548",
       "store": "zago",
@@ -1921,30 +1990,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11966950375764",
-      "store": "zago",
-      "title": "Tapis 160 x 230 cm SOFT gris clair",
-      "description": "Découvrez le tapis Soft en polypropylène. Ces tapis sont très appréciés pour leur résistance et leur facilité d'entretien. Ce tapis mesure 160x230 cm, idéal pour toutes les pièces avec son format, dans votre séjour votre chambre ou votre bureau, son coloris gris clair a l'avantage de se marier à toutes les décorations. Ce tapis est également disponible dans une grande dimension de 200x290 cm pour ",
-      "category": "tapis",
-      "rawCategory": "Décoration> Accessoires de décoration> Tapis",
-      "price": 209,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-polypropylene-gris-clair-160-x-230cm-soft-tap-soft160091",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/tap-soft160091__ps_01_121430fe-bb0b-4497-9212-1e237f6eb1eb.jpg?v=1745449292",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de décoration",
-        "Décoration",
-        "SOFT",
-        "Tapis"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11784000438612",
       "store": "zago",
       "title": "Tabouret snack rouge",
@@ -2014,54 +2059,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11966955815252",
-      "store": "zago",
-      "title": "Table basse D80 cm placage chêne",
-      "description": "Table basse POLEN : Tendance et épurée pour votre salon ! Transformez votre salon avec la table basse POLEN, un meuble à la fois contemporain et simple. Elle se distingue par son plateau rond de 80cm de diamètre en placage chêne , une surface généreuse pour accueillir vos objets du quotidien. Sa hauteur de 35cm est idéale pour une table basse, permettant un accès facile et pratique depuis votre ca",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Tables basses",
-      "price": 329,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-d80cm-placage-chene-polen-tb80",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/polen-tb80__ps_01.jpg?v=1745449417",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "POLEN",
-        "Tables",
-        "Tables basses"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11740006711636",
-      "store": "zago",
-      "title": "Table repas 140 cm",
-      "description": "Table repas 140 cm en acacia, pin et chêne",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 143.6,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-140-cm-omega-21454",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_2b71eb58-59df-467a-be7d-2e191118a06e.jpg?v=1734528621",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "Meubles meublants",
-        "OMEGA",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -2206,30 +2203,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739944190292",
-      "store": "zago",
-      "title": "Fauteuil tissu effet laine bouclette gris foncé",
-      "description": "Ce joli fauteuil Kami a tout ce qu'on aime : des lignes fines, un tissu effet mohair pour un moment cocooning , une assise enveloppante pour un maximum de confort. On se voit déjà dans un intérieur cosy, que ce soit dans le séjour, une chambre ou encore un bureau. Ce coloris gris foncé donne du charme à votre décoration et de la profondeur à une pièce. Le fauteuil Kami existe aussi en velours ou e",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Fauteuils",
-      "price": 329,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/fauteuil-tissu-effet-laine-bouclette-gris-fonce-kami-21376",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_41aa619a-d2b5-46f9-b1d0-6bca08e505d5.jpg?v=1734525758",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Famiroot",
-        "Fauteuils",
-        "Fauteuils - Canapes"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -2473,30 +2446,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783991984468",
-      "store": "zago",
-      "title": "Chaise repas avec accoudoirs en frêne naturel",
-      "description": "Laissez-vous séduire par l'élégance naturelle de la chaise OLGA en bois massif . Cette chaise repas en bois massif de frêne est conçue pour apporter une touche de charme naturel à votre intérieur en combinant l'esthétique scandinave et bohème . La chaise OLGA puise son inspiration à la fois dans les lignes épurées du style scandinave et dans l'effervescence artistique du style bohème. Cette fusion",
-      "category": "chaise",
-      "rawCategory": "Assises > Chaises > Chaises repas",
-      "price": 249,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/chaise-repas-avec-accoudoirs-en-frene-naturel-22421",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/olga-cha00__ps_01-1.jpg?v=1737048616",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Chaises",
-        "Chaises repas",
-        "OLGA"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11740426568020",
       "store": "zago",
       "title": "Chaise repas outdoor métal vert amande",
@@ -2637,7 +2586,7 @@
         "Famiroot"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -5857,30 +5806,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-12480141197652",
-      "store": "zago",
-      "title": "Table basse ou bout de canapé en verre trempé marron",
-      "description": "Apportez légèreté et élégance à votre intérieur avec cette table basse en verre trempé 10 mm au style vintage. Son design transparent et minimaliste s'adapte aussi parfaitement comme bout de canapé. Disponible en transparent, marron et bleu gris, elle combine style, robustesse et polyvalence. Découvrez toutes nos tables basses.",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Tables basses",
-      "price": 169,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-ou-bout-de-canape-en-verre-trempe-marron-savio-tbv07",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/savio-tbv07__ps_01.jpg?v=1769472259",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SAVIO",
-        "Tables",
-        "Tables basses"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-12480141164884",
       "store": "zago",
       "title": "Bout de canapé en verre trempé bleu gris",
@@ -5915,30 +5840,6 @@
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/table-basse-ou-bout-de-canape-en-verre-trempe-bleu-gris-savio-tbv094",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/savio-tbv094__ps_01.png?v=1769472475",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SAVIO",
-        "Tables",
-        "Tables basses"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-12480141099348",
-      "store": "zago",
-      "title": "Table basse ou bout de canapé en verre trempé transparent",
-      "description": "Apportez légèreté et élégance à votre intérieur avec cette table basse en verre trempé 10 mm au style vintage. Son design transparent et minimaliste s'adapte aussi parfaitement comme bout de canapé. Disponible en transparent, marron et bleu gris, elle combine style, robustesse et polyvalence. Découvrez toutes nos tables basses.",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Tables basses",
-      "price": 159,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-ou-bout-de-canape-en-verre-trempe-transparent-savio-tbv00",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/savio-tbv00__ps_01.jpg?v=1769472273",
       "brand": "ZAGO STORE",
       "colors": [],
       "materials": [],
@@ -6251,30 +6152,6 @@
       "currency": "EUR",
       "url": "https://www.zago-store.com/products/table-basse-gigogne-triangle-set-de-2-woody-tbgig50",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/woody-tbgig50__ps_02.jpg?v=1768867454",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "Tables",
-        "Tables gigogne",
-        "WOODY"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-12468509901140",
-      "store": "zago",
-      "title": "Table basse gigogne forme libre set de 2",
-      "description": "La table basse gigogne forme libre WOODY, en set de 2 , allie design contemporain et matériaux nobles pour sublimer votre salon. Chaque plateau en teck massif recyclé verni nitrocellulosique révèle la beauté naturelle du bois tout en offrant une finition durable, tandis que les pieds en métal noir assurent stabilité et élégance. Avec sa forme libre et ses dimensions complémentaires (76x53x45 cm et",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Tables gigogne",
-      "price": 269,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-gigogne-forme-libre-set-de-2-woody-tbgig76",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/woody-tbgig76__ps_02.jpg?v=1768867461",
       "brand": "ZAGO STORE",
       "colors": [],
       "materials": [],
@@ -7389,7 +7266,7 @@
         "POPY"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -8761,102 +8638,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11966956044628",
-      "store": "zago",
-      "title": "Table repas D120 cm placage chêne",
-      "description": "Découvrez la table repas POLEN, une ode à la simplicité et l'élégance pour votre salle à manger. Son plateau rond de 120cm de diamètre est en placage chêne , un matériau facile à entretenir. Tout comme son pied conique de 76cm de hauteur. La table repas POLEN est parfaitement dimensionnée pour des repas confortables. Son diamètre généreux de 120cm permet d'accueillir jusqu'à 6 convives. La table r",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants> Tables> Tables repas",
-      "price": 829,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-d120cm-placage-chene-polen-trd120",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/polen-trd120__ps_01.jpg?v=1745449424",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "POLEN",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11966955749716",
-      "store": "zago",
-      "title": "Bout de canapé D45 cm placage chêne",
-      "description": "Apportez une touche d' élégance minimaliste dans votre intérieur avec le bout de canapé POLEN . Ce meuble compact et élégant est parfait pour compléter un séjour moderne avec son design simple et épuré . Son plateau rond de 45cm de diamètre est en placage chêne, ce qui lui confère une chaleur naturelle, tout en étant facile à entretenir. Il a également l’avantage de s'harmoniser avec divers styles",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Bouts de canapé",
-      "price": 189,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/bout-de-canape-d45cm-placage-chene-polen-bdc45",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/polen-bdc45__ps_01.jpg?v=1745449415",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Bouts de canapé",
-        "Meubles meublants",
-        "POLEN",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11966955618644",
-      "store": "zago",
-      "title": "Bout de canapé D45 cm placage chêne",
-      "description": "Le bout de canapé PALM , avec son diamètre de 45cm , complètera idéalement votre salon. En placage chêne et avec son pied en bois avec stries ajoute une touche de caractère à ce meuble tendance. Idéal pour poser une lampe ou des objets décoratifs ! Pour plus d'inspirations, découvrez tous nos modèles de bout de canapé .",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants> Tables> Bouts de canapé",
-      "price": 149,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/bout-de-canape-d45cm-placage-chene-palm-bdc45",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/palm-bdc45__ps_01.jpg?v=1745449410",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Bouts de canapé",
-        "Meubles meublants",
-        "PALM",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11966955422036",
-      "store": "zago",
-      "title": "Table repas D120 cm placage chêne",
-      "description": "Découvrez la table de repas PEPPER , une table ronde qui incarne parfaitement le style scandinave . Son plateau en plaqué chêne et ses pieds en bois d'hévéa massif apportent chaleur et élégance à votre salle à manger. Dimensions disponibles : 100cm de diamètre : 3 à 4 personnes 120cm de diamètre : 4 à 6 personnes 140cm de diamètre : 6 à 8 personnes Disposez des chaises en bois autour de cette tabl",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants> Tables> Tables repas",
-      "price": 399,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-d120cm-placage-chene-pepper-trd120",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pepper-trd120__ps_01.jpg?v=1745449403",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "PEPPER",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11966955192660",
       "store": "zago",
       "title": "Table repas D120 cm placage chêne",
@@ -9046,99 +8827,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11957717401940",
-      "store": "zago",
-      "title": "Armoire 5 tiroirs, 1 porte",
-      "description": "Redécouvrez la beauté des meubles d'antan avec ce fairinier de la collection Région. En pin massif brut , il ne demande qu'a être customisé avec la finition de votre choix : vernis, huile, cire, voire peinture, pour donner à votre intérieur une ambiance authentique et naturelle. Ce farinier Région séduit par sa robustesse et sa fonctionnalité, mais aussi par son style rustique. Doté de 5 tiroirs e",
-      "category": "armoire",
-      "rawCategory": "Meubles meublants> Meubles de cuisine> Confituriers / Fariniers",
-      "price": 399,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/armoire-5-tiroirs-1-porte-reg-arm1p-5t-b",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/reg-arm1p_5t_b__ps_01.jpg?v=1745018709",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Confituriers / Fariniers",
-        "Meubles de cuisine",
-        "Meubles meublants",
-        "REGION"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11957708751188",
-      "store": "zago",
-      "title": "Traversin 160 cm Softyne n°1 moelleux",
-      "description": "Enveloppe extérieure : 100% coton supérieur traité ACTIPURE® anti-acariens végétal. (La substance active est le Géraniol). Enveloppe intérieure : 100% coton. Garnissage : 100% polyester siliconé creux.",
-      "category": "oreiller",
-      "rawCategory": "Literie> Equipement du lit> Oreillés - traversins",
-      "price": 44.9,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/traversin-160cm-softyne-ndeg1-moelleux-les-trsofde090160",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/les-trsofde090160.jpg?v=1745018286",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Equipement du lit",
-        "Literie",
-        "Oreillés - traversins"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11957708685652",
-      "store": "zago",
-      "title": "Traversin 140 cm Softyne n°1 moelleux",
-      "description": "Enveloppe extérieure : 100% coton supérieur traité ACTIPURE® anti-acariens végétal. (La substance active est le Géraniol). Enveloppe intérieure : 100% coton. Garnissage : 100% polyester siliconé creux.",
-      "category": "oreiller",
-      "rawCategory": "Literie> Equipement du lit> Oreillés - traversins",
-      "price": 39.9,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/traversin-140cm-softyne-ndeg1-moelleux-les-trsofde090140",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/les-trsofde090140.jpg?v=1745018280",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Equipement du lit",
-        "Literie",
-        "Oreillés - traversins"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11957708587348",
-      "store": "zago",
-      "title": "Traversin 90 cm Softyne n°1 moelleux",
-      "description": "ARTVAR_VALUE",
-      "category": "oreiller",
-      "rawCategory": "Literie> Equipement du lit> Oreillés - traversins",
-      "price": 29.9,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/traversin-90cm-softyne-ndeg1-moelleux-les-trsofde090090",
-      "imageUrl": null,
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Equipement du lit",
-        "Literie",
-        "Oreillés - traversins"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -9666,30 +9354,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783986020692",
-      "store": "zago",
-      "title": "Table repas 150cm chêne naturel avec allonge",
-      "description": "Laissez-vous séduire par l'élégance naturelle et le charme brut de la table repas Copen. Cette table en chêne naturel massif incarne la parfaite fusion entre le style authentique du bois et la modernité de son concept. Fabriquée en bois de chêne naturel, la table repas Copen mesure initialement 150cm de longueur, idéale pour accueillir confortablement 6 à 8 personnes . Grâce à une allonge astucieu",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 874.5,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-150cm-chene-naturel-avec-allonge-22345",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/copen-tr150a__ps_01.jpg?v=1737048260",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "COPENAGHEN",
-        "Meubles meublants",
-        "que RETRAIT MAGASIN",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10293,54 +9957,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783980646740",
-      "store": "zago",
-      "title": "Table basse 150 cm acajou massif Jorgen",
-      "description": "Créez une atmosphère apaisante dans votre intérieur avec la table basse en bois Jorgen. Cette table basse incarne l'élégance au naturel. Le bois d'acajou, réputé pour sa beauté chaleureuse ajoute une touche intemporelle. Avec ses 150cm de largeur , cette table s'intègre dans tous les espaces. Elle se compose de deux plateaux : Le plateau supérieur pour disposer des livres, magazines ou des objets ",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 499,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-150-cm-acajou-massif-jorgen-22296",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/jorgen-tb150__ps_01-1.png?v=1737713922",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "JORGEN",
-        "Meubles meublants",
-        "Tables",
-        "Tables basses"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783976878420",
-      "store": "zago",
-      "title": "Meuble haut 2 portes coulissantes 2 tiroirs Acajou massif",
-      "description": "Pour un intérieur raffiné et plein de charme , ce meuble haut en bois Jorgen est idéal. Avec ses 2 portes coulissantes , ses 2 tiroirs et ses 2 niches , ce meuble offre des rangements pratiques et esthétiques. Les portes coulissantes permettent un accès facile, tandis ce que les tiroirs et les niches apportent un espace de rangement supplémentaire. Que vous souhaitiez ranger vos livres, vos bibelo",
-      "category": "",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Meubles hauts",
-      "price": 1399,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/meuble-haut-2-portes-coulissantes-2-tiroirs-acajou-massif-jorgen-22294",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/jorgen-mh2p_2t__ps_01-1.png?v=1737713918",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "JORGEN",
-        "Meubles de salon - salle à manger",
-        "Meubles hauts"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783973830996",
       "store": "zago",
       "title": "Meuble Télé 2 portes coulissantes 1 tiroir - 180 cm",
@@ -10458,30 +10074,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783967539540",
-      "store": "zago",
-      "title": "Pouf tissu effet laine bouclette beige",
-      "description": "Mettez une touche d'originalité dans votre intérieur avec le pouf effet laine bouclette Lomos. Avec son design original en forme de pont, ce pouf apporte une touche ludique à votre intérieur. Son revêtement en tissu effet laine bouclette éveille vos sens. Doux et moelleux au toucher, on s'imagine aisément s'y poser après une longue journée de travail. Plus qu'une assise d’appoint, ce pouf est un v",
-      "category": "pouf",
-      "rawCategory": "Assises > Autres types d'assises > Poufs",
-      "price": 89,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/pouf-tissu-effet-laine-bouclette-beige-lomos-22217",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lomos-pouf022m__ps_01-1.png?v=1737713565",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Autres types d'assises",
-        "LOMOS",
-        "Poufs"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -10789,30 +10381,6 @@
         "MARBLE",
         "Meubles meublants",
         "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784014168404",
-      "store": "zago",
-      "title": "Table repas ovale 180 cm placage noyer",
-      "description": "Découvrez la table repas XYLO en placage chêne ou noyer . Avec son plateau rond , la XYLO favorise la convivialité, tout en apportant une touche de modernité à votre intérieur. Son pied compas est emblématique du design scandinave . Disponible en deux finitions : placage chêne ou placage noyer. La table repas XYLO est également proposée en deux dimensions, avec un diamètre de 120cm ou 180cm , perm",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 659,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-ovale-180-cm-placage-noyer-22726",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/xylo-tro180w__ps_01.jpg?v=1737049848",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "Tables",
-        "Tables repas",
-        "XYLO"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -11131,30 +10699,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11784012267860",
-      "store": "zago",
-      "title": "Table basse D80 cm marbre marron placage chêne",
-      "description": "Vous allez adorer la table basse Marble ! L'essence du style Japandi moderne. Son plateau rond en marbre marron de 80cm de diamètre repose sur un pied en placage chêne . Parfaite pour apporter une touche de raffinement à votre salon, cette table basse incarne l'harmonie entre le design japonais et scandinave , aussi appelé japandi. Pour plus d'inspirations, découvrez tous nos modèles de tables bas",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 469,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-d80-cm-marbre-marron-placage-chene-22704",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/marble-tb80_07__ps_01.jpg?v=1737049723",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "MARBLE",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11784012169556",
       "store": "zago",
       "title": "Chaise repas tissu gris clair pied noyer",
@@ -11224,54 +10768,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011841876",
-      "store": "zago",
-      "title": "Console 90 cm en chêne",
-      "description": "Optimisez votre espace avec cette console CAFI en chêne de 90cm de longueur et 25cm de largeur , idéale pour les entrées. Son design épuré et sa finition en bois naturel apportent une touche chaleureuse à votre intérieur. Cette console compacte est parfaite pour poser tous vos objets du quotidien. Pour plus d'inspirations, découvrez tous nos modèles de consoles .",
-      "category": "rangement",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Consoles",
-      "price": 179,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/console-90cm-en-chene-cafi-con90",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/cafi-con90__ps_01.jpg?v=1737049699",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "CAFI",
-        "Consoles",
-        "Meubles de salon - salle à manger",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011743572",
-      "store": "zago",
-      "title": "Table repas D100 cm blanc",
-      "description": "Apportez une touche d'élégance scandinave à votre intérieur avec la table repas SALT . Avec son plateau rond en plaqué blanc , elle incarne la simplicité et la modernité. Idéale pour des moments conviviaux, cette table sublimera votre espace repas avec son design épuré. Dimensions disponibles : 100cm de diamètre : 3 à 4 personnes 120cm de diamètre : 4 à 6 personnes Cette table se décline aussi en ",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 329,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-d100-cm-blanc-22691",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/salt-trd100__ps_01.jpg?v=1737049714",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SALT",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -11347,78 +10843,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11784011415892",
-      "store": "zago",
-      "title": "Table repas 120-200 cm blanc avec 2 allonges",
-      "description": "Craquez pour la table repas SALT, au style scandinave moderne et fonctionnel. Avec son plateau rond plaqué blanc et ses pieds en hévéa massif, cette table apporte une touche épurée à votre salle à manger. Elle est dotée de deux allonges de 40cm chacune, permettant une grande flexibilité. Dimensions disponibles : 100cm (extensible jusqu'à 180cm) : Idéale pour accueillir confortablement 4 à 8 person",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 589,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-120-200-cm-blanc-2-allonges-22690",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/salt-tr120a__ps_01.jpg?v=1737049666",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SALT",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011350356",
-      "store": "zago",
-      "title": "Table repas 100-180 cm blanc avec 2 allonges",
-      "description": "Craquez pour la table repas SALT, au style scandinave moderne et fonctionnel. Avec son plateau rond plaqué blanc et ses pieds en hévéa massif, cette table apporte une touche épurée à votre salle à manger. Elle est dotée de deux allonges de 40cm chacune, permettant une grande flexibilité. Dimensions disponibles : 100cm (extensible jusqu'à 180cm) : Idéale pour accueillir confortablement 4 à 8 person",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 499,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-100-180-cm-blanc-2-allonges-22689",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/salt-tr100a__ps_01.jpg?v=1737049662",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SALT",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011317588",
-      "store": "zago",
-      "title": "Table repas D100 cm placage chêne",
-      "description": "Découvrez la table de repas PEPPER , une table ronde qui incarne parfaitement le style scandinave . Son plateau en plaqué chêne et ses pieds en bois d'hévéa massif apportent chaleur et élégance à votre salle à manger. Dimensions disponibles : 100cm de diamètre : 3 à 4 personnes 120cm de diamètre : 4 à 6 personnes 140cm de diamètre : 6 à 8 personnes Disposez des chaises en bois autour de cette tabl",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 359,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-d100-cm-placage-chene-22687",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pepper-trd100__ps_01.jpg?v=1737049662",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "PEPPER",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11784011153748",
       "store": "zago",
       "title": "Chaise repas tissu gris clair pied chêne",
@@ -11440,54 +10864,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784011120980",
-      "store": "zago",
-      "title": "Table repas 120-200 cm placage chêne avec 2 allonges",
-      "description": "Sublimez votre intérieur avec la table repas PEPPER , la quintessence du style scandinave moderne . Cette table est dotée d'un plateau rond en placage chêne et de pieds en hévéa massif . Grâce à ses deux allonges de 40cm chacune, la PEPPER s'adapte à toutes vos occasions. Dimensions disponibles : 100cm (extensible à 180cm) : Parfaite pour accueillir 4 à 8 personnes. 120cm (extensible à 200cm) : Id",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 629,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-120-200-cm-placage-chene-2-allonges-22684",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pepper-tr120a__ps_01.jpg?v=1737049649",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "PEPPER",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784010891604",
-      "store": "zago",
-      "title": "Table repas 100-180 cm placage chêne 2 allonges",
-      "description": "Sublimez votre intérieur avec la table repas PEPPER , la quintessence du style scandinave moderne . Cette table est dotée d'un plateau rond en placage chêne et de pieds en hévéa massif . Grâce à ses deux allonges de 40cm chacune, la PEPPER s'adapte à toutes vos occasions. Dimensions disponibles : 100cm (extensible à 180cm) : Parfaite pour accueillir 4 à 8 personnes. 120cm (extensible à 200cm) : Id",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 579,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-100-180-cm-placage-chene-2-allonges-22683",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/pepper-tr100a__ps_01.jpg?v=1737049634",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "PEPPER",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -11704,30 +11080,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11784007385428",
-      "store": "zago",
-      "title": "Table repas en céramique noir 90 cm avec allonge",
-      "description": "Découvrez la table repas carrée SCAR , alliant design contemporain et fonctionnalité exceptionnelle. Cette table carrée de 90cm est extensible grâce à une astucieuse allonge papillon de 60cm , vous permettant de passer facilement de 90cm à 150cm pour accueillir plus de convives. Idéale pour les grands repas familiaux, elle peut recevoir de 4 à 8 personnes . Le plateau, fabriqué en céramique et ver",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 990,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-en-ceramique-noir-90-cm-avec-allonge-scar-22582",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/scar-tr90a01__ps_01.jpg?v=1737049466",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SCAR",
-        "Tables",
-        "Tables repas"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -12499,30 +11851,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11784001651028",
-      "store": "zago",
-      "title": "Fauteuil pivotant safran",
-      "description": "Tentez l'expérience du fauteuil RENA , où l'élégance du velours rencontre le cocooning . Ce fauteuil se distingue par son revêtement en tissu velours, disponible en 4 coloris : blanc, bleu, vert et safran . Le design rond du fauteuil RENA, associé à ses formes enveloppantes , crée un véritable cocon de douceur et de confort. Ce fauteuil douillet et cosy invite à la détente, offrant un refuge parfa",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Fauteuils",
-      "price": 343.2,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/fauteuil-pivotant-safran-rena-22600",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/rena-faut081__ps_01.jpg?v=1737049191",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Fauteuils",
-        "Fauteuils - Canapés",
-        "RENA"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11784001618260",
       "store": "zago",
       "title": "Fauteuil pivotant bleu",
@@ -12832,54 +12160,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783998800212",
-      "store": "zago",
-      "title": "Pouf tissu effet fourrure rase vert d'eau",
-      "description": "Découvrez le pouf FINO , la pièce incontournable pour sublimer votre intérieur. Le Pouf FINO séduit par son revêtement effet fourrure rase , une texture douce qui invite à la détente. Sa forme tout en rondeur apporte une touche moderne et cocooning. Polyvalent, le Pouf FINO s'adapte à toutes les pièces de la maison. Installez-le dans votre salon pour un coin détente convivial, dans la chambre à co",
-      "category": "pouf",
-      "rawCategory": "Assises > Autres types d'assises > Poufs",
-      "price": 89,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/pouf-tissu-effet-fourrure-rase-vert-d-eau-fino-22539",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/fino-pouf069__ps_01.jpg?v=1737048985",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Autres types d'assises",
-        "FINO",
-        "Poufs"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783998734676",
-      "store": "zago",
-      "title": "Pouf tissu effet fourrure rase vert d'eau",
-      "description": "Original, le pouf Lomos en bouclette rase apporte une touche moderne à un intérieur. Son design en forme de pont lui confère un caractère ludique et original . Placé aux cotés de votre canapé ou autour de votre table basse, ce siège d'appoint fera sensation. Son revêtement effet bouclette rase donne une véritable touche cocooning . Il se décline en 3 coloris : vert émeraude, vert d'eau ou vieux ro",
-      "category": "pouf",
-      "rawCategory": "Assises > Autres types d'assises > Poufs",
-      "price": 89,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/pouf-tissu-effet-fourrure-rase-vert-d-eau-lomos-22536",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lomos-pouf069__ps_01.jpg?v=1737048982",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Autres types d'assises",
-        "LOMOS",
-        "Poufs"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -13579,30 +12859,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783992443220",
-      "store": "zago",
-      "title": "Chaise repas velours gris bleu YATA",
-      "description": "Découvrez la chaise YATA en velours , le mélange parfait d'élégance et de confort pour votre espace repas. Avec son revêtement en velours somptueux, cette chaise est une invitation à la détente. Doux au toucher, elle ajoute une touche de sophistication à votre intérieur. Disponible dans une gamme de couleurs tendance, dont le noir , l'ocre , le gris clair et le gris bleu , la chaise YATA s'adapte ",
-      "category": "chaise",
-      "rawCategory": "Assises > Chaises > Chaises repas",
-      "price": 77.4,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/chaise-repas-velours-gris-bleu-22403",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/yata-cha094__ps_01.jpg?v=1737048646",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Chaises",
-        "Chaises repas",
-        "quantity-discount"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783992344916",
       "store": "zago",
       "title": "Chaise repas en tissu gris anthracite pied",
@@ -13699,30 +12955,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783991722324",
-      "store": "zago",
-      "title": "Table repas outdoor en acacia avec allonge de 40 cm",
-      "description": "Passez d'agréables soirées estivales sur cette table repas outdoor en acacia CAVALO. Cette grande table de jardin sera le point central de vos soirées d'été entre amis ou en famille, pour partager des moments de vie inoubliables. Avec une allonge intégrée de 40cm grâce à son mécanisme d'ouverture papillon, cette table s'adapte à toutes les occasions, passant de 180cm à 220cm en un clin d'œil. De q",
-      "category": "table_repas",
-      "rawCategory": "Aménagement extérieur > Jardin > Mobilier extérieur",
-      "price": 549,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-outdoor-en-acacia-avec-allonge-de-40-cm-22418",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/cavalo-tr180a__ps_01.jpg?v=1737048576",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Aménagement extérieur",
-        "CAVALO",
-        "exclu CCHEZVOUS1",
-        "Jardin"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783991263572",
       "store": "zago",
       "title": "Chaise repas tissu sable",
@@ -13744,30 +12976,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783991165268",
-      "store": "zago",
-      "title": "Table ronde en teck naturel 120 cm",
-      "description": "Pour un intérieur tendance et chaleureux, la table en teck ronde KAMALA est le choix idéal. Avec son diamètre de 120cm , cette table ronde peut accueillir confortablement 4/5 convives . Vous avez le choix entre le teck naturel qui apporte une touche chaleureuse ou le teck noir pour un style plus moderne et minimaliste . Son pied en lattes ajoute une note originale tout en maintenant une allure lég",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 659,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-ronde-en-teck-naturel-120-cm-22405",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/kamala-tr120n__ps_01-1.jpg?v=1737048520",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "KAMALA",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -13981,30 +13189,6 @@
         "Tables",
         "Tables gigogne",
         "WOODY"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783986217300",
-      "store": "zago",
-      "title": "Table repas 180cm en placage chêne avec allonge intégrée 50 cm",
-      "description": "On ne vous présente plus la table repas Manhattan en chêne, un classique intemporel ! Cette pièce intemporelle allie la beauté naturelle du bois à des pieds en acier robustes qui lui assurent une belle durabilité. D'une longueur de 180cm , cette table dispose de dimensions généreuses pour toute la famille. Une allonge papillon de 50cm est également intégrée pour recevoir encore plus de convives, s",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 999,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-placage-manhattan-180-cm-avec-allonge-22301",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/man-tr180a__ps_01.jpg?v=1737048364",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "MANHATTAN",
-        "Meubles meublants",
-        "Tables"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -14851,30 +14035,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783969538388",
-      "store": "zago",
-      "title": "Table repas 180cm céramique Nero Dorato Mat noire",
-      "description": "Envie d'un intérieur contemporain ? La table en céramique Arabescato mat blanc Cruise est celle qu'il vous faut ! Cette table repas de 180cm attire tous les regards. Son plateau est en céramique et se décline en 2 modèles. Le modèle Arabescato mat blanc qui est une symphonie de pureté et de sophistication. L'Arabescato, avec ses veines délicates et son aspect marbré , ajoute élégance intemporelle ",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 949,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-180cm-ceramique-nero-dorato-mat-noire-cruise-22227",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/cruise-tr18001__ps_01.jpg?v=1737047083",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "CRUISE",
-        "exclu CCHEZVOUS1",
-        "exclu GEFCO",
-        "exclu GLS"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783969177940",
       "store": "zago",
       "title": "Tables basses gigognes teck recyclé - Set de 3",
@@ -14994,30 +14154,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783965507924",
-      "store": "zago",
-      "title": "Consoles gigognes teck recyclé 74cm - Set de 2",
-      "description": "Laissez-vous séduire par ces magnifiques consoles gigognes Slat en teck recyclé au bois strié. Cet ensemble de consoles gigognes est conçu pour apporter une solution pratique à votre intérieur. Vendu par set de 2 , il offre une grande flexibilité pour s'adapter à votre espace en fonction de vos besoins. La plus grande console mesure 72cm de hauteur et 74cm de longueur , tandis que la plus petite m",
-      "category": "rangement",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Consoles",
-      "price": 239,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/consoles-gigognes-teck-recycle-74cm-set-de-2-slat-22331",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/slat-congig74__ps_03.jpg?v=1737046779",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Consoles",
-        "Meubles de salon - salle à manger",
-        "Meubles meublants",
-        "SLAT"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783965376852",
       "store": "zago",
       "title": "Commode teck recyclé 4 tiroirs",
@@ -15039,54 +14175,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783965245780",
-      "store": "zago",
-      "title": "Tables basses gigognes teck recyclé 70cm - Set de 2",
-      "description": "Tables basses gigognes en teck recyclé",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables gigogne",
-      "price": 199,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tables-basses-gigognes-teck-recycle-70cm-set-de-2-22337",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/slat-tbgig70__ps_01.jpg?v=1737046758",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "SLAT",
-        "Tables",
-        "Tables gigogne"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783964721492",
-      "store": "zago",
-      "title": "Meuble télé 150cm en chêne\r Prima",
-      "description": "Faites de votre coin télé un havre de tranquillité avec le meuble télé en chêne 150cm de la collection Prima. Plus qu'un support pour votre écran de télévision, ce meuble TV est un véritable élément de design qui allie beauté et praticité. En chêne plaqué et massif , il donne une touche chaleureuse à ce coin de votre intérieur. Les deux portes ornées de striures délicates sont inspirées du style J",
-      "category": "",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Meubles TV",
-      "price": 249.5,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/meuble-tele-150cm-en-chene-prima-22236",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/prima-mt150__ps_01.jpg?v=1737046707",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles de salon - salle à manger",
-        "Meubles meublants",
-        "Meubles TV",
-        "Prima"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -15642,29 +14730,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783942734164",
-      "store": "zago",
-      "title": "Étagère murale LessNaturel Hübsch",
-      "description": "Petite étagère murale naturel en placage de chêne. Celle-ci mesure 35cm de large, pour une profondeur de 22cm et une hauteur de 25cm.",
-      "category": "etagere",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Autres rangements",
-      "price": 100,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/etagere-murale-lessnaturel-hubsch-hu-881107f",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/hu-881107f__ps_01.jpg?v=1737045312",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Autres rangements",
-        "Meubles de salon - salle à manger",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783938408788",
       "store": "zago",
       "title": "Canapé 3 places effet bouclette écru BERYL",
@@ -15713,77 +14778,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11783934935380",
-      "store": "zago",
-      "title": "Cube de rangement pin brut 5 niches",
-      "description": "A la fois pratique et fonctionnel, ce meuble répondra à toutes vos attentes en terme de rangement.",
-      "category": "rangement",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Cubes",
-      "price": 329,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/cube-de-rangement-pin-brut-5-niches-trip-cube5",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/trip-cube5__ps_01.jpg?v=1737044861",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Cubes",
-        "Meubles de salon - salle à manger",
-        "Meubles meublants",
-        "TRIPLI"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783934869844",
-      "store": "zago",
-      "title": "Cube de rangement pin brut 10 niches",
-      "description": "A la fois pratique et fonctionnel, ce meuble répondra à toutes vos attentes en terme de rangement.",
-      "category": "rangement",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Cubes",
-      "price": 419,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/cube-de-rangement-pin-brut-10-niches-trip-cube10",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/trip-cube10__ps_01.jpg?v=1737044873",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Cubes",
-        "Meubles de salon - salle à manger",
-        "Meubles meublants",
-        "TRIPLI"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783933985108",
-      "store": "zago",
-      "title": "Cadre de lit rustique 140 x 190 cm en pin massif Avoriaz",
-      "description": "Ce cadre de lit en 140 x 190 cm se compose de pin massif dans un style rustique. Il s'intégrera parfaitement dans une chambre montagnarde ou campagnarde. On craque pour sa finition cirée, teintée miel, qui lui donne une note chaleureuse et authentique et qui s'associera à la plupart des meubles en pin, notamment à note mobilier savoyard, comme les commodes, bonnetières ou armoires du Grenier Alpin",
-      "category": "lit",
-      "rawCategory": "Literie> Sommiers> Sommiers",
-      "price": 299,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/cadre-de-lit-rustique-140-x-190cm-en-pin-massif-avoriaz-avo-lit_sommier140",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/avo-lit_sommier140__ps_01.jpg?v=1737044791",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AVORIAZ",
-        "Literie",
-        "Sommiers"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11783933034836",
       "store": "zago",
       "title": "Tête de lit palette 115 cm",
@@ -15829,54 +14823,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783932674388",
-      "store": "zago",
-      "title": "Billot de cuisine en pin massif  Avoriaz",
-      "description": "Ce billot en pin massif ciré de teinte miel sera très pratique dans une cuisine rustique pour préparer les repas. Composé de 3 tiroirs, une planche à découper et 2 étagères, il permettra de ranger tous vos plats et ustensiles de cuisine. Vous pourrez le placer contre un mur ou au centre de la pièce en guise d'ilot central. On aime les petits détails esthétiques comme les poignées et les renforts e",
-      "category": "",
-      "rawCategory": "Meubles meublants> Meubles de cuisine> Billots",
-      "price": 699,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/billot-de-cuisine-en-pin-massif-avoriaz-avo-bill3t",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/avo-bill3t__ps_01.jpg?v=1737044723",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "AVORIAZ",
-        "Billots",
-        "exclu CCHEZVOUS1",
-        "Meubles de cuisine"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11783932117332",
-      "store": "zago",
-      "title": "Table repas 160cm avec allonge chêne naturel Mika",
-      "description": "Découvrez notre table Mikado, très pratique pour les petits espaces. Cette table de160cm passe facilement à 210cm grâce à son allonge papillon de 50cm. On aime son style naturel en placage chêne qui s'adapte à tous les intérieurs et toutes les décorations. Pour plus de choix, découvrez toutes nos tables.",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 539.4,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-160cm-avec-allonge-chene-naturel-mika-21910",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/mika-tr160a__ps_01.jpg?v=1737044702",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "Meubles meublants",
-        "MIKADO",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -16576,30 +15522,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11740444000596",
-      "store": "zago",
-      "title": "Fauteuil tissu anthracite pieds noirs",
-      "description": "Laissez-vous envelopper par le fauteuil en tissu de la collection Moon. Avec ses formes arrondies , vous vous sentirez comme emmitouflé dans ce fauteuil très douillet. Son tissu doux au toucher vous enveloppera dans un cocon de douceur. Avec son style affirmé et original, il sera la petite touche d'originalité dans une pièce aux nuances claires ou dans une chambre à l'esprit naturel. D'une longueu",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Fauteuils",
-      "price": 529,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/fauteuil-tissu-anthracite-pieds-noirs-moon-21760",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_ef212733-37dd-4787-b6ff-f298713156cb.jpg?v=1734541107",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Famiroot",
-        "Fauteuils",
-        "Fauteuils - Canapes"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11740440854868",
       "store": "zago",
       "title": "Table basse gigogne teck recyclé 74cm - Set de 2",
@@ -17005,30 +15927,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11740371190100",
-      "store": "zago",
-      "title": "Coussin outdoor 60x35cm jaune citron",
-      "description": "Avec son imprimé feuillage ce coussin d'extérieur Azur a comme un air de vacances ! Avec ses teintes originales et chaudes, ce coussin sera parfait le long d'un banc en rotin ou sur un canapé ou un fauteuil outdoor. Bleu foncé, bleu turquoise et jaune citron , des couleurs acidulées et pleine de gaieté pour profiter pleinement de son extérieur. Il apportera à coup sûr une touche d'élégance à votre",
-      "category": "coussin",
-      "rawCategory": "Aménagement extérieur > Jardin > Décoration extérieur",
-      "price": 34.9,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/coussin-outdoor-60x35cm-jaune-citron-azur-21691",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_f13da995-7515-4e1e-9260-26784489794d.jpg?v=1734538957",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Amenagement exterieur",
-        "AZUR",
-        "Decoration exterieur",
-        "Famiroot"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -17512,30 +16410,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11740039741780",
-      "store": "zago",
-      "title": "Canapé 3 places velours côtelé beige",
-      "description": "Ce spacieux canapé 3 places en velours côtelé beige Yoko intègrera facilement un salon contemporain pour passer de délicieux moments de détente. Il mesure 217cm de longueur pour accueillir toute la famille, du plus petit au plus grand. Pour plus de confort, vous pouvez compléter votre canapé droit avec un pouf pour créer un repose-pied . Son design subtil et élégant insuffle un air de douceur à vo",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Canapés fixes",
-      "price": 1249,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/canape-3-places-velours-cotele-beige-yoko-21496",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_05dc779c-0522-4918-8bce-be10d59af82d.jpg?v=1734530289",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Canapes fixes",
-        "Famiroot",
-        "Fauteuils - Canapes"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11740031320404",
       "store": "zago",
       "title": "Fauteuil velours côtelé chocolat",
@@ -17554,30 +16428,6 @@
         "CLEO",
         "Famiroot",
         "Fauteuils"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11740026208596",
-      "store": "zago",
-      "title": "Canapé 2 places velours côtelé beige",
-      "description": "Vous allez adorer le canapé 2 places en velours côtelé beige de la collection Yoko ! D'une longueur de 171cm , ce grand canapé 2 places sera parfait pour les couples ou les petites familles. Ses grandes assises spacieuses et ses coussins moelleux invitent à la détente . Prenez le temps de vous installer confortablement pour lire un livre ou simplement vous reposer un instant. Ce canapé sera la piè",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Canapés fixes",
-      "price": 999,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/canape-2-places-velours-cotele-beige-yoko-21488",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_47626524-7307-405b-a4ea-0aa51d3a1fc9.jpg?v=1734529824",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Canapes fixes",
-        "Famiroot",
-        "Fauteuils - Canapes"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -17992,102 +16842,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11739988394324",
-      "store": "zago",
-      "title": "Table basse en chêne naturel 80cm Bloom",
-      "description": "La table basse en chêne naturel 80cm de la collection Bloom est le parfait accord entre minimalisme et modernité. Son plateau triangle aux bords arrondis est soutenu par trois pieds en chêne pour assurer robustesse et stabilité. La chaleur naturelle du bois inspire une ambiance chaleureuse et cocooning . Pour un style d’inspiration scandinave , misez sur des objets de décoration aux couleurs clair",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 189,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-en-chene-naturel-80cm-bloom-21434",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_6d7b2cd1-9d57-488a-86cc-f538b24d5535.jpg?v=1734527737",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "BLOOM",
-        "Famiroot",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739987673428",
-      "store": "zago",
-      "title": "Table basse 110cm chêne naturel Bloom",
-      "description": "Vous allez adorer la table basse en chêne 110 cm de la collection Bloom. De forme rectangulaire aux bords arrondis, elle se mariera parfaitement avec l’ensemble de vos meubles. La simplicité et la modernité sont les éléments clés de cette table, qui lui permettent de s’adapter à tous les styles de décoration. Scandinave, design ou encore bohème, agrémentez-la des objets déco et accessoires de votr",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 199,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-en-chene-naturel-110cm-bloom-21433",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_5068633e-98d6-4483-a451-86df02cc47e6.jpg?v=1734527685",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "BLOOM",
-        "Famiroot",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739985183060",
-      "store": "zago",
-      "title": "Table basse plateau chêne naturel",
-      "description": "La nouvelle table basse en chêne de la collection Grayson a tout pour vous séduire. Son plateau en chêne naturel apporte une touche d’authenticité contrebalancé par le piètement en acier noir plus industriel. Ce mix très tendance entre bois et métal est parfait pour une déco ethnique chic. La table basse en chêne Grayson associe le fonctionnel au style. Grâce à ses deux zones de rangement superpos",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 499,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/console-en-chene-naturel-90cm-bloom-21430",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_bc1fbcc7-5e84-4e60-b415-288fba140d8e.jpg?v=1734527547",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "GRAYSON",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739984789844",
-      "store": "zago",
-      "title": "Bout de canapé plateau chêne naturel",
-      "description": "Succombez au charme de notre nouveau bout de canapé en chêne de la collection Grayson . Ultra-pratique, il s’adapte facilement à tous les espaces. En forme de demi-lune, on l’imagine aussi bien en bout de canapé qu’en petite table basse. Composé de deux niveaux, il permet d’avoir à portée de main vos objets du quotidien. Télécommandes, téléphone portable ou matériel informatique… Vous pouvez aussi",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Bouts de canapé",
-      "price": 91.6,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/bout-de-canape-en-chene-naturel-et-metal-noir-grayson-21429",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_8cb4d103-d2f4-412c-be6b-3be99afaa088.jpg?v=1734527501",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Bouts de canape",
-        "Famiroot",
-        "GRAYSON",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739953463636",
       "store": "zago",
       "title": "Chaise snack velours gris clair",
@@ -18376,76 +17130,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11739887599956",
-      "store": "zago",
-      "title": "Porte-bouteilles style chalet en teck 4 niches Noldor",
-      "description": "Ce porte-bouteilles en teck dispose de 6 emplacements pour entreposer vos meilleures bouteilles de vin. Pratique, il est également doté d'un emplacement pour suspendre vos verres, vous proposant ainsi la fonctionnalité d'un comptoir de bar. On aime ses dimensions toutes en hauteurs, qui lui permettent de se loger facilement dans les petits espaces. Son style nature et authentique est souligné par ",
-      "category": "pouf",
-      "rawCategory": "Assises > Tabourets > Tabourets",
-      "price": 249,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/porte-bouteilles-style-chalet-en-teck-4-niches-noldor-cav-vin4",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_46429b6d-e2df-4559-ac8a-90ebfeb12eb8.jpg?v=1734524073",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Meubles meublants",
-        "NOLDOR"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739886190932",
-      "store": "zago",
-      "title": "Porte-bouteilles style chalet en teck Noldor",
-      "description": "Ce porte-bouteilles en teck Noldor donnera une touche montagne à votre séjour. Sa structure en rondins de bois lui donnent un air très nature et rustique. Pratique, il est conçu pour accueillir vos verres (étagère supérieure) et jusqu'à 14 bouteilles.",
-      "category": "rangement",
-      "rawCategory": "Meubles meublants > Meubles de salon - salle à manger > Autres rangements",
-      "price": 249,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/porte-bouteilles-style-chalet-en-teck-noldor-cav-bar1",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_569248ce-a561-4e74-acaf-fce2388fc03f.jpg?v=1734524034",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Autres rangements",
-        "exclu GLS",
-        "Famiroot",
-        "Meubles de salon - salle a manger"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739868758356",
-      "store": "zago",
-      "title": "Panier rond en tressage Abaca et corde Rop (set de 2)",
-      "description": "Vous cherchez à donner à votre intérieur une atmosphère zen et relaxante ? Succombez à ce 2 panier tressage Abaca tout droit tiré de la collection Rop. Réalisé à partir d’Abaca, espèce de bananier originaire des Philippines, et qui aujourd’hui pousse dans les îles d’Indonésie, ces paniers apportent une touche naturelle à votre espace de vie. Pratique et esthétique , ce panier sera parfait pour ran",
-      "category": "decoration",
-      "rawCategory": "Décoration > Accessoires de décoration > Paniers",
-      "price": 155,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/panier-rond-en-tressage-abaca-et-corde-rop-set-de-2-rop-2bask07",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/18a22ed77614902fc9d56184103d7e9a.jpg?v=1739268681",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Paniers"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739841266004",
       "store": "zago",
       "title": "Chaise snack velours côtelé gris clair",
@@ -18638,30 +17322,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11739749056852",
-      "store": "zago",
-      "title": "Fauteuil tissu gris clair",
-      "description": "Le fauteuil Martin saura mettre en valeur votre intérieur. Dans un séjour, une entrée, une chambre, il trouvera parfaitement sa place. On aime ses lignes fines avec ses pieds en métal noir pour un style légèrement industriel. Ce fauteuil en tissu 100% polyestr est proposé en 2 nuances de gris : un gris clair et un gris foncé. Deux couleurs parfaites pour toutes les décorations. En plus d'être beau",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Fauteuils",
-      "price": 349,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/fauteuil-tissu-gris-clair-pieds-metal-noir-martin-21219",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_1055c5c9-5949-47aa-989c-9393979d7ec1.jpg?v=1734519957",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Famiroot",
-        "Fauteuils",
-        "Fauteuils - Canapes"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739746861396",
       "store": "zago",
       "title": "Fauteuil velours côtelé vert sapin",
@@ -18851,30 +17511,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739710292308",
-      "store": "zago",
-      "title": "Table basse bois de hêtre et laqué gris rectangulaire 120cm Scandie",
-      "description": "Table basse grise",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 89.4,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-bois-de-hetre-et-laque-gris-rectangulaire-120cm-scandie-21182",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_a9885821-1035-46a3-9973-7f856646ecae.jpg?v=1734518569",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu GEFCO",
-        "exclu GLS",
-        "Famiroot",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -19115,30 +17751,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739597996372",
-      "store": "zago",
-      "title": "Tapis 200 x 290 cm BRONX gris foncé",
-      "description": "Découvrez le tapis Bronx en polypropylène au toucher velours. Ce tapis est très apprécié pour sa résistance et sa facilité d'entretien, il conviendra aussi bien à une utilisation intérieure qu'extérieure. Ce tapis mesure 200x290 cm, une dimension parfaite pour décorer de grands espaces, notamment sur une terrasse. Craquez pour ce tapis gris foncé au motif géométrique écru. Ce tapis est également d",
-      "category": "tapis",
-      "rawCategory": "Décoration > Accessoires de décoration > Tapis",
-      "price": 309,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-polypropylene-gris-fonce-200-x-290-cm-bronx-21095",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_15ced23b-a3bf-4914-b4dd-76e7346cb857.jpg?v=1734515107",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "BRONX",
-        "Decoration",
-        "Famiroot"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -19502,30 +18114,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11739284046164",
-      "store": "zago",
-      "title": "Tables basses gigognes métal noir GRAYSON",
-      "description": "Craquez pour cette table basse gigogne , composée de 2 tables rondes soudées entre elle. La grande table mesure 80 cm de diamètre et la petite 60 cm de diamètre, ce qui crée une grande table basse de 140 cm. Placée dans votre séjour, elle sera parfaite pour déposer une jolie décoration et garder vos accessoires à porter de main. Pour un style industriel et design moderne , cette table saura vous s",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables gigogne",
-      "price": 399,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tables-basses-gigognes-metal-noir-grayson-20801",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_6d50a220-6c03-4914-95f1-040edaefbdf8.jpg?v=1734507246",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "GRAYSON",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739283325268",
       "store": "zago",
       "title": "Etagère murale métal noir 40cm",
@@ -19616,30 +18204,6 @@
         "Chaises",
         "Chaises hautes",
         "Famiroot"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11739227291988",
-      "store": "zago",
-      "title": "Table repas 110cm avec allonge chêne naturel",
-      "description": "Craquez pour notre table ronde en chêne plaqué. Cette table 110 cm ronde offre un moment de convivialité entre les personnes assises autour de son plateau. Équipée d'une allonge de 60 cm, elle permet de recevoir du monde tout en optimisant la place au quotidien. On apprécie la solidité de cette pièce, notamment ces pieds en chêne qui apportent une super stabilité. Cette table est proposée en chêne",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 849,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-ronde-110-cm-extensible-chene-naturel-twist-20788",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_fd2548e3-5039-4ee1-bd0e-419df34770d1.jpg?v=1734506594",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "Meubles meublants",
-        "Tables",
-        "Tables repas"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -20462,30 +19026,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11739055522132",
-      "store": "zago",
-      "title": "Chaise snack ombre",
-      "description": "Découvrez les chaises plan de travail de la collection Sense. Déclinées en gris clair , gris foncé , marron clair et bleu foncé elles sont idéales pour les cuisines disposant d'un plan de travail ou d'un îlot central . En effet, la hauteur d'assise de 65 cm s'intègre parfaitement sous les plans de travail qui mesurent en général 70 cm. Cette chaise offre une structure solide en contreplaqué, garni",
-      "category": "chaise",
-      "rawCategory": "Assises > Chaises > Chaises hautes",
-      "price": 95,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/chaise-plan-de-travail-tissu-ombre-pietement-metal-h-65-cm-sense-20556",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_3854577c-13f5-4428-af4e-e470f2093f98.jpg?v=1734500305",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Chaises",
-        "Chaises hautes",
-        "Famiroot"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739052573012",
       "store": "zago",
       "title": "Cadre de lit  90 x 190 cm (kit) - 18 lattes",
@@ -20822,30 +19362,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11738992509268",
-      "store": "zago",
-      "title": "Table basse métal noir ovale 120 cm deux plateaux GRAYSON",
-      "description": "Craquez pour la table basse en métal noir de la collection Grayson . Elle mesure 120cm de longueur, 60cm de profondeur et 40cm de hauteur. Son double plateau permet de ranger les objets du quotidien comme les magazines ou télécommandes. Elle ira parfaitement dans un séjour au style art déco. Vous pouvez alors l'associer à un canapé en velours comme le Beryl par exemple, ainsi qu'avec du mobilier e",
-      "category": "table_basse",
-      "rawCategory": "Meubles meublants > Tables > Tables basses",
-      "price": 459,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-basse-metal-noir-ovale-120-cm-deux-plateaux-grayson-19953",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_e1dae161-1b57-4f88-a2be-b1753a6ec84e.jpg?v=1734496221",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "GRAYSON",
-        "Meubles meublants",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11738986053972",
       "store": "zago",
       "title": "Console métal bleu",
@@ -21059,30 +19575,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738789839188",
-      "store": "zago",
-      "title": "Tapis bleu 160 cm",
-      "description": "Craquez pour le tapis Diago , celui-ci mesure 160 par 230 cm. On aime son motif géométrique qui saura prendre place dans un intérieur moderne design, art déco ou scandinave. 100% laine , et fait à la main , il propose une densité de 8 nœuds/cm². Pour plus d'inspiration, consultez toute notre sélection de tapis.",
-      "category": "tapis",
-      "rawCategory": "Décoration > Accessoires de décoration > Tapis",
-      "price": 369,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-bleu-motifs-hexagonales-en-laine-230-x-160-cm-diago-19164",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_abc01690-2600-4159-b547-4252d9906198.jpg?v=1734486990",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Tapis"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22118,30 +20610,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11738361233748",
-      "store": "zago",
-      "title": "Fauteuil tissu et métal gris foncé design Hall",
-      "description": "Laissez-vous séduire par ce fauteuil en tissu (100% polyester) ultra moderne. Son piétement épuré en métal noir souligne un design sobre et minimaliste très chic. Quant à sa finition époxy, elle est gage de qualité. Son assise et son dossier vous assure un confort indéniable avec une densité de mousse de 30 kg/m3, densité dossier 30 kg/m3. Un confort fort appréciable. Voilà un fauteuil contemporai",
-      "category": "canape",
-      "rawCategory": "Assises > Fauteuils - Canapés > Fauteuils",
-      "price": 66,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/fauteuil-tissu-et-metal-gris-fonce-design-hall-17907",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_3185c636-57c8-429f-8493-cdf7d4be9161.jpg?v=1734472259",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Famiroot",
-        "Fauteuils",
-        "Fauteuils - Canapes"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11738360217940",
       "store": "zago",
       "title": "Cube 1 niche",
@@ -22334,30 +20802,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11738321912148",
-      "store": "zago",
-      "title": "Tapis navy Ø 120 cm",
-      "description": "Tapis 100% polyester, cette matière séduit pour sa résistance. Craquez pour ce joli tapis rond ! Tissé façon crochet, il vous plaira pour son style bohème gipsy, tendance et coloré. Dans une chambre, un séjour ou une entrée, il est idéal pour créer une ambiance chaleureuse, typée nature, sa forme offre du mouvement dans la pièce. Avec ces 120 cm de diamètre, il prendra parfaitement sa place dans d",
-      "category": "tapis",
-      "rawCategory": "Décoration > Accessoires de décoration > Tapis",
-      "price": 69,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-bleu-o120-cm-umaa-17723",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_04d8f385-c62b-4634-879b-9c577a55ac4d.jpg?v=1734470459",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Tapis"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11738306019668",
       "store": "zago",
       "title": "Tapis écru 120 cm",
@@ -22379,54 +20823,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738305266004",
-      "store": "zago",
-      "title": "Tapis Mocha 120 cm",
-      "description": "Le tapis en laine, une matière noble, idéale pour apporter une ambiance chaleureuse à son intérieur, de profiter du confort et de la chaleur aux pieds de cette matière. Ce tapis en laine noir donnera du caractère à votre séjour ou votre chambre. On aime sa teinte chinée, moderne et élégante, qui offre du cachet à votre décoration. Existe en dimensions 230 x 160 (TAP-PAVA160/01) et 300 x 200 cm (TA",
-      "category": "tapis",
-      "rawCategory": "Décoration > Accessoires de décoration > Tapis",
-      "price": 179,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-en-laine-gris-chine-170-x-120-cm-pava-17702",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_b992ead9-02e0-46b0-bf4b-a4dae9b96d1b.jpg?v=1734470143",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Tapis"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738303463764",
-      "store": "zago",
-      "title": "Tapis gris 120 cm",
-      "description": "Craquez pour ce joli tapis rectangulaire en laine : tissé avec de la laine de Nouvelle-Zélande, il vous assure des fibres douces au toucher et d'une qualité indéniable. On aime ses bords frangés et sa teinte chinée, qui soulignent son esprit nordique et nature. Existe en dimensions 230 x 160 cm (ref. TAP-CHANDA160/09).",
-      "category": "tapis",
-      "rawCategory": "Décoration > Accessoires de décoration > Tapis",
-      "price": 219,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tapis-laine-de-nouvelle-zelande-gris-chine-170-x-120-cm-chandani-17679",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_12d29a87-8c3b-48fd-abd5-dadd69bfc067.jpg?v=1734470017",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Meubles et déco bohème chic"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22643,30 +21039,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738246480212",
-      "store": "zago",
-      "title": "Pouf moutarde",
-      "description": "Élégant et confortable, ce pouf en velours a tous les atouts pour vous séduire. Vous aimerez ses lignes épurées, mises en valeur par un piétement effilé en bois d'hévéa naturel. Son style cosy chic donnera une touche de douceur à votre intérieur.",
-      "category": "pouf",
-      "rawCategory": "Assises > Tabourets > Tabourets",
-      "price": 54,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/pouf-en-velours-moutarde-pieds-bois-naturel-popy-17261",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_730346b2-e644-4680-a2ef-0f1fb5a5cd29.jpg?v=1734466954",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Assises",
-        "Famiroot",
-        "POPY",
-        "Tabourets"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -23098,30 +21470,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11738174914900",
-      "store": "zago",
-      "title": "Miroir 190 cm",
-      "description": "Ce miroir en chêne rectangulaire se place facilement dans une entrée ou un séjour . On aime son cadre en chêne naturel vernis , modernisé par deux bandes latérales de métal noir patiné. Moderne et contemporain , il trouvera facilement sa place dans votre intérieur. Pratique, il peut s'installer horizontalement afin de donner une impression d'espace dans un séjour , au-dessus d'un buffet par exempl",
-      "category": "miroir",
-      "rawCategory": "Décoration > Accessoires de décoration > Miroirs",
-      "price": 299,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/miroir-rectangulaire-chene-190-x-60-cm-manhattan-16084",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_e951ea38-c72b-4e0e-8f01-9bcad7f3d526.jpg?v=1734462660",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "exclu GEFCO",
-        "exclu GLS"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11738174226772",
       "store": "zago",
       "title": "Table repas 200 cm",
@@ -23143,30 +21491,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738173505876",
-      "store": "zago",
-      "title": "Table de bar 90 cm",
-      "description": "Craquez pour la table bar de la mythique collection Manhattan. Celle-ci offre des dimensions de 90 cm de long pour 105 cm de hauteur . Le plateau est en chêne massif et les pieds en acier peint, brossé à la main . Ulta-solide, le plateau supporte un poids de 100 kg maximum. Vous pourrez l'utiliser dans un séjour avec cuisine ouverte ou dans une cuisine fermée afin de gagner le plus d'espace possib",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables hautes",
-      "price": 589,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-de-bar-carree-chene-et-metal-90-x-90-cm-manhattan-16079",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_d93a2eca-f803-4aa8-a6eb-831dbf85b207.jpg?v=1734462562",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "Famiroot",
-        "MANHATTAN",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -23284,30 +21608,6 @@
         "Famiroot",
         "MANHATTAN",
         "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738164560212",
-      "store": "zago",
-      "title": "Table repas",
-      "description": "Craquez pour cette jolie table en teck et métal WOODY. Idéale dans une cuisine ou un petit salon, elle accueille jusqu'à 4 personnes. On aime l'association réussie du plateau travaillé en bois de teck recyclé et du piétement en métal noir. Son style bohème donnera du caractère à votre intérieur. Existe en format rectangulaire, de dimensions 150 x 80 cm (ref. WOODY-TR150).",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 219,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-teck-et-metal-80-x-73-cm-woody-16001",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_84efe160-711b-41ee-bcc1-2cadee21e552.jpg?v=1734462083",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "Meubles meublants",
-        "Tables",
-        "Tables repas"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -23479,54 +21779,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738041942356",
-      "store": "zago",
-      "title": "Bouts de canapé gig. (set de 2)",
-      "description": "Attention, une table basse peut en cacher une autre ! Séparées, ces tables basses gigognes peuvent être utilisées comme tables d'appoint ou bouts de canapé dans votre salon. Assemblées, elles serviront de table basse pour accueillir vos invités. Elles peuvent aussi compléter la table basse en verre Bloom d'un diamètre de 90 cm (réf. : BLOOM-TB01). Leurs lignes sobres et épurées sont soulignées par",
-      "category": "canape",
-      "rawCategory": "Meubles meublants > Tables > Bouts de canapé",
-      "price": 139,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/tables-basses-gigognes-chene-et-verre-scandie-13991",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_11641d3d-96b1-4d8a-8762-6446fda505c4.jpg?v=1734459332",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "BLOOM",
-        "Bouts de canape",
-        "Famiroot",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11738031391060",
-      "store": "zago",
-      "title": "Table repas carrée 140 cm",
-      "description": "Sobre et élégante, la table en bois carrée Manhattan habillera votre séjour avec style. Son plateau de 140x140cm est en chêne massif et se marie parfaitement avec son piètement en acier noir. Un mélange de matières subtile et réussi ! Dans une cuisine ou dans une salle à manger, la table carrée s'intègre dans tous les espaces, pour un gain de place non négligeable. Ses dimensions généreuses permet",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 479.4,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-chene-carree-140-x-140-cm-manhattan-12103",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_4f94fd5e-e70b-44c7-a1d5-edd4688ff47f.jpg?v=1734458649",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "exclu CCHEZVOUS1",
-        "Famiroot",
-        "MANHATTAN",
-        "Meubles meublants"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -23839,30 +22091,6 @@
       ],
       "dimensionsCm": null,
       "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "zago-11737978569044",
-      "store": "zago",
-      "title": "Porte-manteau en bois recyclé foncé de mangrove",
-      "description": "Un bout de forêt entre dans votre intérieur avec ce porte-manteau en teck . Chaque pièce est unique et sa fabrication artisanale. Il trouve sa place dans un salon, une entrée ou une chambre pour un intérieur aux inspirations nature. Et pour une déco à l'esprit 100% bohème, découvrez tous nos meubles gipsy ici .",
-      "category": "rangement",
-      "rawCategory": "Décoration > Accessoires de décoration > Portes-manteaux",
-      "price": 299,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/porte-manteau-en-bois-recycle-fonce-de-mangrove-6336",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_d9979804-e3d8-45ae-a77d-6fe5d4ceb1cc.jpg?v=1734456334",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Accessoires de decoration",
-        "Decoration",
-        "Famiroot",
-        "Portes-manteaux"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
       "source": "feed"
     }
   ]

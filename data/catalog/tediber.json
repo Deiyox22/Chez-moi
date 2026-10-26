@@ -1,8 +1,104 @@
 {
   "store": "tediber",
-  "updatedAt": "2026-10-19T09:33:05.250Z",
+  "updatedAt": "2026-10-26T09:38:03.370Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "tediber-15182775910724",
+      "store": "tediber",
+      "title": "Lit en bois",
+      "description": "Lit en bois au confort parfait et robustesse. Design de caractère tête de lit personnalisable. Assemblage malin et rapide 100 nuits d'essai.",
+      "category": "matelas",
+      "rawCategory": "lit",
+      "price": 1040,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/lit-bois",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-clair-slide1.jpg?v=1776665063",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "axclone",
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Encombrant"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15178861838660",
+      "store": "tediber",
+      "title": "Lit en bois - Bois noir",
+      "description": "Le lit en bois noir, design soigné et structure durable.",
+      "category": "lit",
+      "rawCategory": "lit",
+      "price": 1040,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/lit-bois-bois-noir",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-noir-standard-slide1.jpg?v=1773830122",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "axclone",
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Encombrant"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15178861805892",
+      "store": "tediber",
+      "title": "Lit en bois - Bois foncé",
+      "description": "Lit en bois foncé, robuste et confortable, conçu pour durer.",
+      "category": "lit",
+      "rawCategory": "lit",
+      "price": 1087.4,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/lit-bois-bois-fonce",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-fonce-standard-slide1.jpg?v=1776665088",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "axclone",
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Encombrant"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "tediber-15178861773124",
+      "store": "tediber",
+      "title": "Lit en bois - Bois clair",
+      "description": "Montage facile et solidité garantie pour le lit en bois clair.",
+      "category": "lit",
+      "rawCategory": "lit",
+      "price": 1087.4,
+      "currency": "EUR",
+      "url": "https://tediber.com/products/lit-bois-bois-clair",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/lit-bois-clair-slide1.jpg?v=1776665063",
+      "brand": "Tediber",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "axclone",
+        "B2B_GLOBAL",
+        "CAMPAGNE/ALL",
+        "Encombrant"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "tediber-15524409540932",
       "store": "tediber",
@@ -1171,7 +1267,7 @@
         "reconditionne"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1269,13 +1365,13 @@
     {
       "id": "tediber-15524408787268",
       "store": "tediber",
-      "title": "[Reconditionné] - Lot de 2 oreillers Universel",
+      "title": "[Reconditionné] - Oreillers universels",
       "description": "",
       "category": "oreiller",
       "rawCategory": "Reconditionné",
       "price": 65,
       "currency": "EUR",
-      "url": "https://tediber.com/products/reconditionne-oreillers-universel",
+      "url": "https://tediber.com/products/reconditionne-oreiller-universel",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/oreiller-universel_double_60x60_packshot.jpg?v=1776097338",
       "brand": "Tediber",
       "colors": [],
@@ -1575,7 +1671,7 @@
       "price": 259.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-tapissier-beige-standard-slide1.jpg?v=1776663611",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_tapissier_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -4263,7 +4359,7 @@
       "price": 750,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-bois",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-bois-noir-standard-slide1.jpg?v=1773828271",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_bois_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -4527,7 +4623,7 @@
       "price": 259.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-beige",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-tapissier-beige-standard-slide1.jpg?v=1776663611",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_tapissier_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -4791,7 +4887,7 @@
       "price": 479.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-coffre",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-coffre-beige-standard-slide1.jpg?v=1776663838",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_coffre_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -5042,7 +5138,7 @@
         "Gamme iconique"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -5151,7 +5247,7 @@
       "price": 169.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/matelas-bebe-tedi",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/matelas-bebe-standard-packshot_9f65f840-5c57-4a2a-a324-24a1a8ed914e.jpg?v=1775814546",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/matelas-bebe-detail-standard.jpg?v=1792656936",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -5186,7 +5282,7 @@
         "Encombrant"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -5295,7 +5391,7 @@
       "price": 479.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-coffre-beige",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-coffre-beige-standard-slide1.jpg?v=1776663838",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_coffre_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -5799,7 +5895,7 @@
       "price": 229.9,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-lattes",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-lattes-standard-slide1.jpg?v=1776665460",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_lattes_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -6087,7 +6183,7 @@
       "price": 750,
       "currency": "EUR",
       "url": "https://tediber.com/products/sommier-bois-bois-fonce",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/sommier-bois-fonce-standard-slide1.jpg?v=1776665143",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0903/1342/5220/files/main_slider_sommier_bois_copie.jpg?v=1792513107",
       "brand": "Tediber",
       "colors": [],
       "materials": [],
@@ -6728,7 +6824,7 @@
     {
       "id": "tediber-15173761106244",
       "store": "tediber",
-      "title": "Protèges oreiller",
+      "title": "Protèges oreillers",
       "description": "Protège oreiller absorbant et respirant Lot de 2. Hypoallergénique doux et silencieux. Fabrication française & 30 nuits d'essai.",
       "category": "oreiller",
       "rawCategory": "protection_literie",
@@ -7730,7 +7826,7 @@
         "Gamme iconique"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -7754,7 +7850,7 @@
         "Gamme iconique"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {

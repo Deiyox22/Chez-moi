@@ -1,6 +1,6 @@
 {
   "store": "harto",
-  "updatedAt": "2026-10-19T09:32:58.291Z",
+  "updatedAt": "2026-10-26T09:37:56.393Z",
   "feedType": "shopify",
   "products": [
     {
@@ -42,7 +42,7 @@
         "Hyppolite"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -2051,7 +2051,7 @@
       "price": 1790,
       "currency": "EUR",
       "url": "https://harto.fr/products/marius-vaisselier-chene",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/12010723665_MARIUS_VAISSELIER_120_CM_CHENE_NATUREL_PACKSHOT_1.png?v=1785424206",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/12010723665_MARIUS_VAISSELIER_120_CM_CHENE_NATUREL_PACKSHOT_1_0adf7fa4-7171-4bdf-99dd-638cac1692ef.png?v=1792590840",
       "brand": "Hartô",
       "colors": [],
       "materials": [],
@@ -2269,7 +2269,7 @@
         "Sonia"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {

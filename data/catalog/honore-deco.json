@@ -1,8 +1,56 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-10-19T09:33:03.222Z",
+  "updatedAt": "2026-10-26T09:38:01.356Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "honore-deco-16139307942232",
+      "store": "honore-deco",
+      "title": "COUSSINS BERBERES",
+      "description": "",
+      "category": "coussin",
+      "rawCategory": "COUSSINS",
+      "price": 69,
+      "currency": "EUR",
+      "url": "https://honoredeco.com/products/coussins-berberes",
+      "imageUrl": null,
+      "brand": "HONOREDECO",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "spo-cs-disabled",
+        "spo-default",
+        "spo-disabled",
+        "spo-notify-me-disabled"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "honore-deco-16139199578456",
+      "store": "honore-deco",
+      "title": "ASSIETTES VINTAGE",
+      "description": "",
+      "category": "",
+      "rawCategory": "Assiettes Vintage",
+      "price": null,
+      "currency": "EUR",
+      "url": "https://honoredeco.com/products/assiettes-vintage-1",
+      "imageUrl": null,
+      "brand": "VINTAGE VINTED",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "spo-cs-disabled",
+        "spo-default",
+        "spo-disabled",
+        "spo-notify-me-disabled"
+      ],
+      "dimensionsCm": null,
+      "availability": "out of stock",
+      "source": "feed"
+    },
     {
       "id": "honore-deco-16076718375256",
       "store": "honore-deco",
@@ -240,7 +288,7 @@
         "Parasol"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1860,7 +1908,7 @@
       "price": 770,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/fauteuil-carlo-velours-cotele-et-appuie-tete",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/Fauteuil_carlo_velours_cotele_5f82da55-9465-404d-8790-e2903796902e.jpg?v=1776157609",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/1_615bef7b-237d-4590-b3bb-8e84bde9cb67.jpg?v=1776157609",
       "brand": "honoredeco - Honoré Décoration",
       "colors": [],
       "materials": [],
@@ -3180,7 +3228,7 @@
       "price": 375,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/tabouret-de-bar-dolores-velours",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/veloursceladon.jpg?v=1703234845",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/C1.jpg?v=1762523234",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
@@ -3300,7 +3348,7 @@
       "price": 680,
       "currency": "EUR",
       "url": "https://honoredeco.com/products/banc-torsade",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/ChatGPT_Image_19_juin_2026_17_29_32.png?v=1781883007",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0412/7811/1901/files/LAMPE_PIZ_AMBIANCE.jpg?v=1767795756",
       "brand": "honoredeco",
       "colors": [],
       "materials": [],
