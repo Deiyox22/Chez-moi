@@ -1,6 +1,6 @@
 {
   "store": "fly",
-  "updatedAt": "2026-10-26T10:06:17.117Z",
+  "updatedAt": "2026-11-02T12:24:42.247Z",
   "feedType": "sitemap-jsonld",
   "products": [
     {
@@ -3234,25 +3234,6 @@
       "source": "feed"
     },
     {
-      "id": "fly-P-KERI-CHA07A1",
-      "store": "fly",
-      "title": "Chaise - PERY",
-      "description": "Ce produit est uniquement vendu par lot de 2 chaises Disponible à l'unité en magasin",
-      "category": "chaise",
-      "rawCategory": "",
-      "price": 129.9,
-      "currency": "EUR",
-      "url": "https://fly.fr/boutique/meubles/assises/chaises/pery-chaise/",
-      "imageUrl": "https://fly.fr/wp-content/uploads/2024/05/pery-chaise-22-e1715774647556.jpg",
-      "brand": "FLY",
-      "colors": [],
-      "materials": [],
-      "styles": [],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "fly-COMETE140X190",
       "store": "fly",
       "title": "Matelas 140x190 cm - COMETE",
@@ -4764,6 +4745,25 @@
       "currency": "EUR",
       "url": "https://fly.fr/boutique/meubles/tables/pelina-table-basse/",
       "imageUrl": "https://fly.fr/wp-content/uploads/2024/05/pelina-table-basse-1-e1715786819982.jpg",
+      "brand": "FLY",
+      "colors": [],
+      "materials": [],
+      "styles": [],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "fly-SUB-MT165",
+      "store": "fly",
+      "title": "Meuble TV - PYLI",
+      "description": "Distinguez votre espace de divertissement avec le meuble TV PYLI, un choix élégant et fonctionnel pour votre salon. Il est doté de deux niches, offrant amplement d'espace de rangement pour vos appareils multimédias, vos jeux et autres articles essentiels. Les étagères et les ouvertures sont conçues pour accueillir votre box et organiser les fils de manière ordonnée.",
+      "category": "meuble_tv",
+      "rawCategory": "",
+      "price": 799.9,
+      "currency": "EUR",
+      "url": "https://fly.fr/boutique/meubles/rangements/meubles-tv/pelina-meuble-tv-2/",
+      "imageUrl": "https://fly.fr/wp-content/uploads/2024/05/pelina-meuble-tv-10-e1715778455986.jpg",
       "brand": "FLY",
       "colors": [],
       "materials": [],
