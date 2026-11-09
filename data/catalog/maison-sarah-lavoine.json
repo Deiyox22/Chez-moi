@@ -1,8 +1,457 @@
 {
   "store": "maison-sarah-lavoine",
-  "updatedAt": "2026-11-02T11:57:56.767Z",
+  "updatedAt": "2026-11-09T12:29:19.098Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "maison-sarah-lavoine-15046777799033",
+      "store": "maison-sarah-lavoine",
+      "title": "Coffret Duo Mini Stella - Fleur de Figue / Ambre Noire",
+      "description": "Tout feu, tout flammes. Écrin ultra-désirable, le coffret duo Mini Stella en verre monogrammé et cire parfumée, appelle à la découverte — celle des senteurs signatures de la maison. Composition de deux bougies en petit format précieux, ce coffret découverte associe, d'un part, la senteur Fleur de Figue à l'Ambre Noire, et d'autre part le Bois de Santal au Songe d’Orient. Coulées à la main en Franc",
+      "category": "decoration",
+      "rawCategory": "BOUGIE",
+      "price": 60,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/coffret-duo-mini-stella-ambre-figue-2x50gr-ambre-figue",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511179074_12SENDUOBOUSTE--FLEURDEFIGUEAMBRENOIRE_1.jpg?v=1754059672",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH25",
+        "ARCHIVES26",
+        "AVP26ETE",
+        "BOUGIE-PARFUM-COLLECTION"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15669092221305",
+      "store": "maison-sarah-lavoine",
+      "title": "Plafonnier Jean - Blanc",
+      "description": "La tête dans les étoiles. Elle a beau être discrète, la lumière qui descend du plafond a le pouvoir de vous transporter dans un autre univers. Avec sa structure perforée, le Plafonnier Jean projette en effet un ciel étoilé au-dessus de votre tête. Une touche onirique renforcée par l’effet miroir du laiton poli. En installant plusieurs plafonniers dans une même pièce, vous multipliez les sources de",
+      "category": "luminaire_plafond",
+      "rawCategory": "SPOT",
+      "price": 395,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/plafonnier-jean-non-electrifie-blanc-d133xh145-blanc",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511002181_16PLANELJEA_-BLANC-D133xH145mm_1_001.jpg?v=1785158062",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
+        "CAPSULE-NOEL-26",
+        "FM-16PLANELJEA-BLANC-D133XH145"
+      ],
+      "dimensionsCm": null,
+      "availability": "out of stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665917002105",
+      "store": "maison-sarah-lavoine",
+      "title": "Verre à eau Totem - Vert",
+      "description": "Tourbillon verre. Le Verre à eau Totem vous propose un voyage au croisement de la tradition et de la transition. Ce produit artisanal marocain est fabriqué depuis les années 1940 dans l’enceinte du Beldi Country Club à Marrakech grâce à un savoir-faire d’exception. Conçus à partir de verre recyclé, les verres sont soufflés à la bouche, puis coupés artisanalement à la flamme d’oxygène et de gaz, av",
+      "category": "",
+      "rawCategory": "VERRE",
+      "price": 18,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/verre-a-eau-totem-vert-h9cm-vert",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511230416_15VEABEL-VERT-H9CM_1_001.jpg?v=1785158070",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-15VEABEL-VERT-H9CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665915855225",
+      "store": "maison-sarah-lavoine",
+      "title": "Verre à eau Totem - Transparent",
+      "description": "Tourbillon verre. Le Verre à eau Totem vous propose un voyage au croisement de la tradition et de la transition. Ce produit artisanal marocain est fabriqué depuis les années 1940 dans l’enceinte du Beldi Country Club à Marrakech grâce à un savoir-faire d’exception. Conçus à partir de verre recyclé, les verres sont soufflés à la bouche, puis coupés artisanalement à la flamme d’oxygène et de gaz, av",
+      "category": "",
+      "rawCategory": "VERRE",
+      "price": 18,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/verre-a-eau-totem-transparent-h9cm-transparent",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511230409_15VEABEL-TRASNPARENT-H9CM_1_001.jpg?v=1785158070",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-15VEABEL-TRANSPARENT-H9CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665914839417",
+      "store": "maison-sarah-lavoine",
+      "title": "Assiette plate Lueur - Noir/Bleu Sarah",
+      "description": "Lueur d’espoir. L’Assiette Lueur brille et éclaire vos nuits festives, en particulier quand l’association des assiettes plates et des assiettes à dessert multiplie les étoiles dans le ciel. Cette assiette en céramique, bordée de noir, porte un dessin étoilé, réalisé à partir de la technique artisanale de la décalcomanie : le dessin posé sur un film est appliqué manuellement sur l’assiette avant qu",
+      "category": "",
+      "rawCategory": "ASSIETTE",
+      "price": 26,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/assiette-plate-lueur-bleu-sarah-d27cm-bleu-sarah",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511222596_15APLLUE-NOIR-BLEU_SARAH-D27CM_1_001.jpg?v=1785158068",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-15APLLUE-NOIR/BLEU SARAH-D27CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665914216825",
+      "store": "maison-sarah-lavoine",
+      "title": "Assiette à dessert Lueur - Noir/Bleu Sarah",
+      "description": "Lueur d’espoir. L’Assiette Lueur brille et éclaire vos nuits festives, en particulier quand l’association des assiettes plates et des assiettes à dessert multiplie les étoiles dans le ciel. Cette assiette en céramique, bordée de noir, porte un dessin étoilé, réalisé à partir de la technique artisanale de la décalcomanie : le dessin posé sur un film est appliqué manuellement sur l’assiette avant qu",
+      "category": "",
+      "rawCategory": "ASSIETTE",
+      "price": 22,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/assiette-a-dessert-lueur-bleu-sarah-d23cm-bleu-sarah",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511222602_15ADESLUE-NOIR-BLEU_SARAH-D22CM_001.jpg?v=1785158062",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-15ADESLUE-NOIR/BLEU SARAH-D23CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665913561465",
+      "store": "maison-sarah-lavoine",
+      "title": "Plaid Kimi - Bleu Sarah",
+      "description": "Estampe japonaise. Avec son design qui évoque la trame d’un kimono japonais, le Plaid Kimi vous transporte au Pays du Soleil levant en un clin d’œil. Composé intégralement de laine, son touché doux et soyeux évoque la sérénité d’un jardin zen. Négligemment posé sur votre canapé ou habilement utilisé pour décorer votre lit, le Plaid Kimi et sa teinte Bleu Sarah vous rapprochent chaque jour un peu p",
+      "category": "plaid",
+      "rawCategory": "PLAID",
+      "price": 295,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/plaid-kimi-bleu-sarah-130x170cm-bleu-sarah",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238917_13PLAKIM-BLEU_SARAH-_130X170CM_1.jpg?v=1785158074",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-13PLAKIM-BLEU SARAH-130X170CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665900683641",
+      "store": "maison-sarah-lavoine",
+      "title": "Jeu de cartes All In",
+      "description": "À vos cartes ! Amoureuse des moments partagés, Sarah Poniatowski a voulu penser l'ultime accessoire des journées et soirées réussies : le jeu de cartes All-In. Ce jeu de cartes reprend le monogramme Maison Sarah Lavoine, ici décliné dans un imprimé all-over. À garder sur sa table basse, pour suggérer subtilement les instants de jeu. Imprimé en Espagne.",
+      "category": "",
+      "rawCategory": "LIFESTYLE",
+      "price": 20,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/jeu-de-cartes-all-in-bleu-sarah-56-cartes-bleu-sarah",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511230591_12LIFJEUALL1-BLEU_SARAH-56_CARTES_1_002_copie.jpg?v=1785158070",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-12LIFJEUALL1-BLEU SARAH-56 CARTES",
+        "ICONIQUES-DECORATION"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665896456569",
+      "store": "maison-sarah-lavoine",
+      "title": "Vase / Photophore Orion - Fauve",
+      "description": "Constellation d’usages. En photophore ou en vase, Orion est une pièce unique qui fait coup double. Avec son verre strié, qui lui donne une élégance tout en relief, le Photophore / Vase Orion trouve aussi bien sa place en intérieur qu’en extérieur. On imagine ce produit sculptural accueillant une bougie pour éclairer votre terrasse le soir venu ou bien abritant un bouquet luxuriant pour parfumer vo",
+      "category": "decoration",
+      "rawCategory": "VASE",
+      "price": 160,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/vase-photophore-orion-fauve-h34xd20cm-fauve",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511231376_12DECVASORI-CHARBON-H28XD17CM_1_001.jpg?v=1785158064",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-12DECVASORI-FAUVE-H34XD20CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665895735673",
+      "store": "maison-sarah-lavoine",
+      "title": "Vase / Photophore Orion - Charbon",
+      "description": "Constellation d’usages. En photophore ou en vase, Orion est une pièce unique qui fait coup double. Avec son verre strié, qui lui donne une élégance tout en relief, le Photophore / Vase Orion trouve aussi bien sa place en intérieur qu’en extérieur. On imagine ce produit sculptural accueillant une bougie pour éclairer votre terrasse le soir venu ou bien abritant un bouquet luxuriant pour parfumer vo",
+      "category": "decoration",
+      "rawCategory": "VASE",
+      "price": 125,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/vase-photophore-orion-charbon-h28xd17cm-charbon",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511231406_12DECVASORI-FAUVE-H34XD20CM_1_002.jpg?v=1785158063",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "CAPSULE-NOEL-26",
+        "FM-12DECVASORI-CHARBON-H28XD17CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665891017081",
+      "store": "maison-sarah-lavoine",
+      "title": "Bougeoir Chouchou - Noisette",
+      "description": "Danseurs chou. C’est une danse échevelée. Les flammes des bougies répondent à ces deux duos de bougeoirs qui ne font plus qu’un. Un vrai couple de danseurs. Le Bougeoir Chouchou porte bien son nom, la symétrie du mot faisant écho à celle du design. Les courbes et rondeurs de cette forme organique en céramique émaillée dessinent une pièce de design à forte personnalité. Cette pièce statutaire a voc",
+      "category": "decoration",
+      "rawCategory": "BOUGEOIR",
+      "price": 95,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/bougeoir-chouchou-noisette-2xl15xh10-noisette",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238948_12DECBGRCHO-NOISETTE-_2_MODULES_L15XH10_1_001.jpg?v=1785158063",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
+        "CAPSULE-NOEL-26",
+        "FM-12DECBGRCHO-NOISETTE-2XL15XH10"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665887904121",
+      "store": "maison-sarah-lavoine",
+      "title": "Bougeoir Chouchou - Bleu Sarah",
+      "description": "Danseurs chou. C’est une danse échevelée. Les flammes des bougies répondent à ces deux duos de bougeoirs qui ne font plus qu’un. Un vrai couple de danseurs. Le Bougeoir Chouchou porte bien son nom, la symétrie du mot faisant écho à celle du design. Les courbes et rondeurs de cette forme organique en céramique émaillée dessinent une pièce de design à forte personnalité. Cette pièce statutaire a voc",
+      "category": "decoration",
+      "rawCategory": "BOUGEOIR",
+      "price": 95,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/bougeoir-chouchou-bleu-sarah-2xl15xh10-bleu-sarah",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511238924_12DECBGRCHO-BLEU_SARAH-_2_MODULES_L15XH10__001.jpg?v=1785158073",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
+        "CAPSULE-NOEL-26",
+        "FM-12DECBGRCHO-BLEU SARAH-2XL15XH10"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665059692921",
+      "store": "maison-sarah-lavoine",
+      "title": "Plafonnier Jean - Noir",
+      "description": "La tête dans les étoiles. Elle a beau être discrète, la lumière qui descend du plafond a le pouvoir de vous transporter dans un autre univers. Avec sa structure perforée, le Plafonnier Jean projette en effet un ciel étoilé au-dessus de votre tête. Une touche onirique renforcée par l’effet miroir du laiton poli. En installant plusieurs plafonniers dans une même pièce, vous multipliez les sources de",
+      "category": "luminaire_plafond",
+      "rawCategory": "SPOT",
+      "price": 395,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/plafonnier-jean-non-electrifie-noir-d133xh145",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511002228_16PLANELJEA_-NOIR-D133xH145mm_1_001.jpg?v=1785158063",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
+        "CAPSULE-NOEL-26",
+        "FM-16PLANELJEA-NOIR-D133XH145"
+      ],
+      "dimensionsCm": null,
+      "availability": "out of stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15665059103097",
+      "store": "maison-sarah-lavoine",
+      "title": "Plafonnier Jean - Laiton Doré",
+      "description": "La tête dans les étoiles. Elle a beau être discrète, la lumière qui descend du plafond a le pouvoir de vous transporter dans un autre univers. Avec sa structure perforée, le Plafonnier Jean projette en effet un ciel étoilé au-dessus de votre tête. Une touche onirique renforcée par l’effet miroir du laiton poli. En installant plusieurs plafonniers dans une même pièce, vous multipliez les sources de",
+      "category": "luminaire_plafond",
+      "rawCategory": "SPOT",
+      "price": 395,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/plafonnier-jean-non-electrifie-laiton-d133xh145",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511002211_16PLANELJEA_-LAITON-D133xH145mm_1_001.jpg?v=1785158073",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH26-MAISON",
+        "ALERTE STOCK BOUTIQUE",
+        "CAPSULE-NOEL-26",
+        "FM-16PLANELJEA-LAITON-D133XH145"
+      ],
+      "dimensionsCm": null,
+      "availability": "out of stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15044166353273",
+      "store": "maison-sarah-lavoine",
+      "title": "Set de table Murmure - Noir",
+      "description": "Plein écran. Zoom sur nos vies quotidiennes, le set de table Murmure habille chaque séquence du repas. En noir et blanc, ce linge de table ravive les souvenirs de tablées partagées, imprimés sur pellicule, et en filme de nouveaux. Conçu par impression digitale, le motif de ce délicat linge de table arbore aussi le monogramme de la Maison, doré en version fêtes. Fabriqué en Inde.",
+      "category": "table_repas",
+      "rawCategory": "SET DE TABLE",
+      "price": 28,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/set-de-table-murmure-noir-45x35cm-noir",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511178886_13SETTABMUR_01.jpg?v=1752140642",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH25",
+        "ART-DE-LA-TABLE-COLLECTION",
+        "CAPSULE-NOEL-26",
+        "FM-13SETTABMUR-NOIR-45X35CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-15044163862905",
+      "store": "maison-sarah-lavoine",
+      "title": "Serviette de table Murmure - Noir",
+      "description": "Réminiscences. En noir et blanc et impressions d’antan, la serviette de table Murmure évoque aisément l’ère des films sur pellicules. Une invitation à prendre le temps, attablé à plusieurs ou en solo devant un bon petit-déjeuner ou un café. Conçu par impression digitale, le motif de ce délicat linge de table arbore aussi le monogramme de la Maison, doré en version fêtes. Fabriqué en Inde.",
+      "category": "linge_de_bain",
+      "rawCategory": "SERVIETTE DE TABLE",
+      "price": 18,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/serviette-de-table-murmure-noir-45x45cm-noir",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511178893_13SERMUR_01.jpg?v=1752156705",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "AH25",
+        "ART-DE-LA-TABLE-COLLECTION",
+        "CAPSULE-NOEL-26",
+        "FM-13SERMUR-NOIR-45X45CM"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-8258942238918",
+      "store": "maison-sarah-lavoine",
+      "title": "Bougeoir Slave - Mordoré",
+      "description": "Entretenir la flamme. Pièce signature de la marque, le bougeoir Slave joue des accents totémiques pour offrir le meilleur des deux mondes. À savoir : une silhouette élancée en argile locale avec une rondeur des courbes. Tout en combinant la faïence minérale et une flamme ardente. Ce bijou d'intérieur sort son épingle du jeu. Pluriel, il offre une multitude de combinaisons — de tailles et de couleu",
+      "category": "decoration",
+      "rawCategory": "BOUGEOIR",
+      "price": 60,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/bougeoir-slave-mordore-h30cm-mordore",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511132093_2312DECBGRSLA-MORDORE--H30CM_1.jpg?v=1720520786",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "a-verifier",
+        "AH24-MAISON",
+        "BOUGEOIR-PHOTOPHORE-COLLECTION",
+        "capsule-noel-2024"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-8258940666054",
+      "store": "maison-sarah-lavoine",
+      "title": "Bougeoir Slave - Mordoré",
+      "description": "Entretenir la flamme. Pièce signature de la marque, le bougeoir Slave joue des accents totémiques pour offrir le meilleur des deux mondes. À savoir : une silhouette élancée en argile locale avec une rondeur des courbes. Tout en combinant la faïence minérale et une flamme ardente. Ce bijou d'intérieur sort son épingle du jeu. Pluriel, il offre une multitude de combinaisons — de tailles et de couleu",
+      "category": "decoration",
+      "rawCategory": "BOUGEOIR",
+      "price": 55,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/bougeoir-slave-mordore-h25cm-mordore",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511132086_2312DECBGRSLA-MORDORE--H25CM_1.jpg?v=1720520756",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "a-verifier",
+        "AH24-MAISON",
+        "BOUGEOIR-PHOTOPHORE-COLLECTION",
+        "capsule-noel-2024"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "maison-sarah-lavoine-8258939158726",
+      "store": "maison-sarah-lavoine",
+      "title": "Bougeoir Slave - Mordoré",
+      "description": "Entretenir la flamme. Pièce signature de la marque, le bougeoir Slave joue des accents totémiques pour offrir le meilleur des deux mondes. À savoir : une silhouette élancée en argile locale avec une rondeur des courbes. Tout en combinant la faïence minérale et une flamme ardente. Ce bijou d'intérieur sort son épingle du jeu. Pluriel, il offre une multitude de combinaisons — de tailles et de couleu",
+      "category": "decoration",
+      "rawCategory": "BOUGEOIR",
+      "price": 50,
+      "currency": "EUR",
+      "url": "https://maisonsarahlavoine.com/products/bougeoir-slave-mordore-h20cm-mordore",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/3664511132079_2312DECBGRSLA-MORDORE--H20CM_1.jpg?v=1720520726",
+      "brand": "Maison Sarah Lavoine",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "a-verifier",
+        "AH24-MAISON",
+        "BOUGEOIR-PHOTOPHORE-COLLECTION",
+        "capsule-noel-2024"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "maison-sarah-lavoine-15329742291321",
       "store": "maison-sarah-lavoine",
@@ -567,12 +1016,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
+        "ALERTE STOCK BOUTIQUE",
         "FM-16LDTSIC-OCRE/NOIR-30X20CM",
-        "ICONIQUES-COLLECTION",
-        "ICONIQUES-LUMINAIRES"
+        "ICONIQUES-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -702,7 +1151,7 @@
       "description": "Couleur et Tissu personnalisable",
       "category": "canape",
       "rawCategory": "FAUTEUIL",
-      "price": 1657.5,
+      "price": 1950,
       "currency": "EUR",
       "url": "https://maisonsarahlavoine.com/products/fauteuil-noa-90x90x80",
       "imageUrl": "https://cdn.shopify.com/s/files/1/0567/4545/9910/files/Fauteuil_Noa_-_Blanc.png?v=1780308348",
@@ -816,7 +1265,7 @@
     {
       "id": "maison-sarah-lavoine-15665891672441",
       "store": "maison-sarah-lavoine",
-      "title": "Bougie TamTam Twist - Narguillé",
+      "title": "Bougie TamTam Twist - Bleu Sarah",
       "description": "Esprit Totem durable. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Teintes Terracotta ou Bleu Sarah, quatres mèches, les Bougies TamTam Twist illumin",
       "category": "decoration",
       "rawCategory": "BOUGIE",
@@ -1165,7 +1614,7 @@
         "FM-12DECVIDCOC-NOISETTE-24X24X4CM"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -1216,7 +1665,7 @@
     {
       "id": "maison-sarah-lavoine-15665893048697",
       "store": "maison-sarah-lavoine",
-      "title": "Bougie recharge TamTam Twist - Narguillé",
+      "title": "Bougie recharge TamTam Twist - Narguilé",
       "description": "Ranimer la flamme. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Bleu Sarah, Carmin, Noir et Blanc, quatres mèches, les recharges (vendues séparément)",
       "category": "decoration",
       "rawCategory": "BOUGIE",
@@ -1239,7 +1688,7 @@
     {
       "id": "maison-sarah-lavoine-15665892393337",
       "store": "maison-sarah-lavoine",
-      "title": "Bougie TamTam Twist - Narguillé",
+      "title": "Bougie TamTam Twist - Terracotta",
       "description": "Esprit Totem durable. Nées de la collaboration entre Maison Sarah Lavoine et Côté Bougie Marrakech, les Bougies TamTam Twist célèbrent les racines de cœur de la créatrice, entre tradition marocaine et couleurs parisiennes. Grâce à leur recharge amovible, elles alimentent désormais la flamme d’un design plus durable. Teintes Terracotta ou Bleu Sarah, quatres mèches, les Bougies TamTam Twist illumin",
       "category": "decoration",
       "rawCategory": "BOUGIE",
@@ -1597,9 +2046,9 @@
       "materials": [],
       "styles": [
         "AH26-MAISON",
-        "ALERTE STOCK BOUTIQUE",
         "FM-11TAPCAD-CHOCOLAT",
-        "NOLABEL"
+        "NOLABEL",
+        "PRECOMMANDE"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1644,10 +2093,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAMAR-LIGHT BLUE",
-        "PAP-PE26",
-        "VPAH26-PAP"
+        "PAP-PE26"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1740,10 +2189,10 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "FM-14CHEELY-LIGHT BLUE",
         "HAUTS-COLLECTION",
-        "PAP-PE26"
+        "PAP-PE26",
+        "VPAH26-PAP"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1765,9 +2214,9 @@
       "materials": [],
       "styles": [
         "ACCESSOIRES-COLLECTION",
-        "ALERTE STOCK BOUTIQUE",
         "FM-14BASCLA-SILVER",
-        "PAP-PE26"
+        "PAP-PE26",
+        "VPAH26-PAP"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1815,7 +2264,7 @@
         "a-verifier",
         "ACCESSOIRES-COLLECTION",
         "AH24-PAP",
-        "ALERTE STOCK BOUTIQUE"
+        "AVP26ETE-PAP"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1836,10 +2285,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BAS-COLLECTION",
         "FM-14JEAJOH-LIGHT BLUE",
-        "LIGHT BLUE",
-        "NRC"
+        "LIGHT BLUE"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -1866,7 +2315,7 @@
         "OBJETS-DECO-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -2360,13 +2809,12 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "FM-16LAMTOW-NOISETTE-15X15XH129",
         "MAISON-PE26",
         "NOLABEL"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -2384,13 +2832,12 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "FM-16LAMTOW-ECRU REACTIF-15X15XH129",
         "MAISON-PE26",
         "NOLABEL"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -2716,10 +3163,10 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "FM-11TAPSOM-NATUREL",
         "MAISON-PE26",
-        "NOLABEL"
+        "NOLABEL",
+        "PRECOMMANDE"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -3388,13 +3835,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "DECORATION-COLLECTION",
         "FM-12DECVASAQU-ROSE/AUBEPINE-D100XH230",
-        "MAISON-PE26",
-        "VASES-COLLECTION"
+        "MAISON-PE26"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3842,13 +4289,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "FM-13CLIPAS-OCRE",
         "FM-13CLIPAS-OCRE-175X350CM",
-        "LINGE-MAISON-COLLECTION",
-        "MAISON-PE26"
+        "LINGE-MAISON-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3890,10 +4337,10 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
         "FM-11TAPMIR-NATUREL",
-        "MAISON-PE26"
+        "MAISON-PE26",
+        "NOLABEL"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -4793,9 +5240,9 @@
       "materials": [],
       "styles": [
         "AH25",
+        "ALERTE STOCK BOUTIQUE",
         "AVP26ETE",
-        "BLACKFRIDAY",
-        "DECORATION-COLLECTION"
+        "BLACKFRIDAY"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -6279,10 +6726,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
         "CREAM",
-        "DECORATION-COLLECTION",
-        "FM-11TAPBOR-CREAM"
+        "DECORATION-COLLECTION"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -6303,10 +6750,10 @@
       "colors": [],
       "materials": [],
       "styles": [
-        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
         "DECORATION-COLLECTION",
-        "EUCALYPTUS"
+        "EUCALYPTUS",
+        "FM-11TAPBOR-EUCALYPTUS"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -6327,10 +6774,10 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
         "DECORATION-COLLECTION",
-        "FM-11TAPBOR-ROSE PETAL",
-        "ICONIQUES-COLLECTION"
+        "FM-11TAPBOR-ROSE PETAL"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -6591,13 +7038,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "FM-11TBSGEGE-INOX BROSSE-90X90XH35",
         "ICONIQUES-MOBILIER",
-        "INOX BROSSÉ",
-        "MAISON-PE25"
+        "INOX BROSSÉ"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6615,13 +7062,13 @@
       "colors": [],
       "materials": [],
       "styles": [
+        "ALERTE STOCK BOUTIQUE",
         "FM-11TBSGEGE-MT NOIR-90X90XH35",
         "ICONIQUES-MOBILIER",
-        "MAISON-PE25",
-        "MOBILIER-PREMIUM"
+        "MAISON-PE25"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -8705,8 +9152,8 @@
       "styles": [
         "ACCESSOIRES-COLLECTION",
         "AH24-PAP",
-        "ALERTE STOCK BOUTIQUE",
-        "BLANC/BLEU SARAH"
+        "BLANC/BLEU SARAH",
+        "FM-14BASCLA-BLANC/BLEU SARAH"
       ],
       "dimensionsCm": null,
       "availability": "in stock",
@@ -9160,12 +9607,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
-        "FM-11ENFECA-NOYER-ECAILLE ECRU-160X45XH75"
+        "FM-11ENFECA-NOYER-ECAILLE ECRU-160X45XH75",
+        "ICONIQUES-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -9837,7 +10284,7 @@
         "ICONIQUES-COLLECTION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -9904,12 +10351,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "BLACKFRIDAY",
-        "CHENE"
+        "CHENE",
+        "FM-11TBSPUZGM-CHENE-120X60XH40"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -9928,12 +10375,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "CHENE",
-        "FM-11TBSRDEPUZGM-CHENE-D80XH35"
+        "FM-11TBSRDEPUZGM-CHENE-D80XH35",
+        "ICONIQUES-MOBILIER"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -10144,12 +10591,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "BLEU SARAH",
-        "DECORATION-COLLECTION"
+        "DECORATION-COLLECTION",
+        "FM-12BOILAQRT-BLEU SARAH-D90XH110"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -10168,12 +10615,12 @@
       "materials": [],
       "styles": [
         "a-verifier",
-        "ALERTE STOCK BOUTIQUE",
         "BLEU SARAH",
-        "FM-12BOILAQRT-BLEU SARAH-D170XH156"
+        "FM-12BOILAQRT-BLEU SARAH-D170XH156",
+        "ICONIQUES-DECORATION"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {

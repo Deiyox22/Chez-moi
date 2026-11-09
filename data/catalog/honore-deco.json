@@ -1,80 +1,8 @@
 {
   "store": "honore-deco",
-  "updatedAt": "2026-11-02T11:57:59.892Z",
+  "updatedAt": "2026-11-09T12:29:21.458Z",
   "feedType": "shopify",
   "products": [
-    {
-      "id": "honore-deco-16139307942232",
-      "store": "honore-deco",
-      "title": "COUSSINS BERBERES",
-      "description": "",
-      "category": "coussin",
-      "rawCategory": "COUSSINS",
-      "price": 69,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/coussins-berberes",
-      "imageUrl": null,
-      "brand": "HONOREDECO",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "spo-cs-disabled",
-        "spo-default",
-        "spo-disabled",
-        "spo-notify-me-disabled"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-16139199578456",
-      "store": "honore-deco",
-      "title": "ASSIETTES VINTAGE",
-      "description": "",
-      "category": "",
-      "rawCategory": "Assiettes Vintage",
-      "price": null,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/assiettes-vintage-1",
-      "imageUrl": null,
-      "brand": "VINTAGE VINTED",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "spo-cs-disabled",
-        "spo-default",
-        "spo-disabled",
-        "spo-notify-me-disabled"
-      ],
-      "dimensionsCm": null,
-      "availability": "out of stock",
-      "source": "feed"
-    },
-    {
-      "id": "honore-deco-16076718375256",
-      "store": "honore-deco",
-      "title": "PORTE COUTEAUX",
-      "description": "",
-      "category": "",
-      "rawCategory": "",
-      "price": 16,
-      "currency": "EUR",
-      "url": "https://honoredeco.com/products/porte-couteaux",
-      "imageUrl": null,
-      "brand": "LE POTIER D'ETAIN",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "spo-cs-disabled",
-        "spo-default",
-        "spo-disabled",
-        "spo-notify-me-disabled"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
     {
       "id": "honore-deco-15929267224920",
       "store": "honore-deco",
@@ -312,7 +240,7 @@
         "Croisette"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -6302,7 +6230,7 @@
         "spo-default"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
