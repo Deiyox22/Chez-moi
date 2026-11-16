@@ -1,8 +1,514 @@
 {
   "store": "zago",
-  "updatedAt": "2026-11-09T13:10:18.207Z",
+  "updatedAt": "2026-11-16T13:12:25.230Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "zago-15961344803156",
+      "store": "zago",
+      "title": "Table céramique LEROS 135x90 (Diam135)cm pivotante marbre blanc mat",
+      "description": "Vous cherchez une table compacte au quotidien qui s’agrandit quand les invités arrivent ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique effet marbre blanc mat à un pied central en placage noyer . Le plateau clair apporte de la luminosité à la salle à manger, tandis que le noyer réchauffe l’ensemble. Le pied central laisse plus de liberté pour disposer les chai",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-135x90-diam135-cm-pivotante-marbre-blanc-mat-ler-td135a_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td135a_c02__ps_02.jpg?v=1794268925",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961344770388",
+      "store": "zago",
+      "title": "Table céramique LEROS 135x90 (Diam135)cm pivotante noir mat effet métal",
+      "description": "Vous aimez recevoir, mais vous préférez garder de la place autour de la table au quotidien ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique noir mat effet métal à un pied central en placage noyer . Le veinage du noyer réchauffe le plateau sombre, et le pied central laisse plus de liberté pour placer les chaises autour de la table. Pour les repas de tous les jou",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-135x90-diam135-cm-pivotante-noir-mat-effet-metal-ler-td135a_c01",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td135a_c01__ps_02.jpg?v=1794268925",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961344508244",
+      "store": "zago",
+      "title": "Table céramique LEROS 135x90 (Diam135)cm pivotante effet métal rouille mat",
+      "description": "Et si votre table s’adaptait aussi bien aux dîners en petit comité qu’aux repas entre amis ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique effet métal rouille mat à un pied central en placage noyer . Les nuances cuivrées du plateau répondent aux tons chauds du bois, tandis que le pied central laisse plus de liberté pour disposer les chaises. Au quotidien, son ",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-135x90-diam135-cm-pivotante-effet-metal-rouille-mat-ler-td135a_c07",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td135a_c07__ps_02.jpg?v=1794268911",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961344442708",
+      "store": "zago",
+      "title": "Table céramique LEROS 135x90 (Diam135)cm pivotante Pandora brillant",
+      "description": "Comment garder de la place autour de la table tout en prévoyant deux couverts de plus ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique Pandora brillant à un pied central en placage noyer . La finition brillante capte la lumière et fait ressortir le décor du plateau, tandis que le veinage du noyer réchauffe l’ensemble. En position fermée, son format de 135 × 90 ",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-135x90-diam135-cm-pivotante-pandora-brillant-ler-td135a_c08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td135a_c08__ps_02.jpg?v=1794268911",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961344278868",
+      "store": "zago",
+      "title": "Table céramique LEROS 150x90 (Diam150)cm pivotante marbre blanc mat",
+      "description": "Vous aimez les grandes tablées, mais vous souhaitez garder une salle à manger aérée au quotidien ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique effet marbre blanc mat à un pied central en placage noyer . Le décor marbré apporte de la lumière à la pièce, tandis que les nuances du noyer réchauffent l’ensemble. Le pied central laisse plus de liberté pour réparti",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-150x90-diam150-cm-pivotante-marbre-blanc-mat-ler-td150a_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td150a_c02__ps_02.jpg?v=1794268910",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961344344404",
+      "store": "zago",
+      "title": "Table céramique LEROS 150x90 (Diam150)cm pivotante noir mat effet métal",
+      "description": "Vous cherchez une table pour les repas de tous les jours qui s’ouvre en grand quand vous recevez ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique noir mat effet métal à un pied central en placage noyer . Le veinage du noyer réchauffe le plateau sombre, tandis que le pied central laisse plus de liberté pour disposer les chaises. En position fermée, son format de",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-150x90-diam150-cm-pivotante-noir-mat-effet-metal-ler-td150a_c01",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td150a_c01__ps_02.jpg?v=1794268910",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961343689044",
+      "store": "zago",
+      "title": "Table céramique LEROS 150x90 (Diam150)cm pivotante effet métal rouille mat",
+      "description": "Et si votre table de tous les jours devenait une grande table ronde le temps d’un dîner entre amis ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique effet métal rouille mat à un pied central en placage noyer . Les nuances cuivrées du plateau font écho aux tons chauds du bois, tandis que le pied central laisse plus de liberté pour répartir les chaises. Fermée, la",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-150x90-diam150-cm-pivotante-effet-metal-rouille-mat-ler-td150a_c07",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td150a_c07__ps_02.jpg?v=1794268900",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961343623508",
+      "store": "zago",
+      "title": "Table céramique LEROS 150x90 (Diam150)cm pivotante Pandora brillant",
+      "description": "Et si votre table s’ouvrait en rond pour faire une place aux invités de dernière minute ? Issue de la gamme Cérenne , la table de repas LEROS associe un plateau en céramique Pandora brillant à un pied central en placage noyer . La finition brillante accroche la lumière et révèle les nuances du décor Pandora, tandis que le veinage du noyer réchauffe l’ensemble. En position fermée, son format de 150",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-leros-150x90-diam150-cm-pivotante-pandora-brillant-ler-td150a_c08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/ler-td150a_c08__ps_02.jpg?v=1794268899",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961343492436",
+      "store": "zago",
+      "title": "Table céramique LAGOS 135x90 (Diam135)cm pivotante marbre blanc mat",
+      "description": "Envie d’une table qui laisse de la place pour circuler en semaine et pour recevoir le week-end ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique effet marbre blanc mat à un pied central en placage chêne . Le décor marbré apporte de la lumière à la salle à manger, tandis que le veinage du chêne réchauffe l’ensemble. Dans son format de 135 × 90 cm , la table accue",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-135x90-diam135-cm-pivotante-marbre-blanc-mat-lag-td135a_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td135a_c02__ps_02.jpg?v=1794268899",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961343426900",
+      "store": "zago",
+      "title": "Table céramique LAGOS 135x90 (Diam135)cm pivotante effet métal rouille mat",
+      "description": "Vous cherchez une table qui donne du caractère à votre salle à manger et s’agrandit quand vous recevez ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique effet métal rouille mat à un pied central en placage chêne . Les nuances cuivrées du plateau contrastent avec le veinage naturel du chêne, tandis que le pied central laisse plus de liberté pour placer les chaise",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-135x90-diam135-cm-pivotante-effet-metal-rouille-mat-lag-td135a_c07",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td135a_c07__ps_02.jpg?v=1794268898",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961342869844",
+      "store": "zago",
+      "title": "Table céramique LAGOS 135x90 (Diam135)cm pivotante Pandora brillant",
+      "description": ".",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2209,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-135x90-diam135-cm-pivotante-pandora-brillant-lag-td135a_c08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td135a_c08__ps_02.jpg?v=1794268890",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961342804308",
+      "store": "zago",
+      "title": "Table céramique LAGOS 150x90 (Diam150)cm pivotante noir mat effet métal",
+      "description": "Vous cherchez une table qui donne du caractère à votre salle à manger et s’adapte au nombre d’invités ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique noir mat effet métal à un pied central en placage chêne . Le veinage du chêne adoucit le contraste avec le plateau sombre, tandis que la base en métal noir rappelle sa finition. Fermée, la table mesure 150 × 90 c",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-150x90-diam150-cm-pivotante-noir-mat-effet-metal-lag-td150a_c01",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td150a_c01__ps_02.jpg?v=1794268889",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961342673236",
+      "store": "zago",
+      "title": "Table céramique LAGOS 150x90 (Diam150)cm pivotante marbre blanc mat",
+      "description": "Envie d’une table claire et chaleureuse qui fait aussi de la place aux grandes tablées ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique effet marbre blanc mat à un pied central en placage chêne . Le veinage du bois réchauffe le blanc du plateau, tandis que la base en métal noir souligne la silhouette de la table. En position fermée, son format de 150 × 90 cm ac",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-150x90-diam150-cm-pivotante-marbre-blanc-mat-lag-td150a_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td150a_c02__ps_02.jpg?v=1794268888",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961342607700",
+      "store": "zago",
+      "title": "Table céramique LAGOS 150x90 (Diam150)cm pivotante effet métal rouille mat",
+      "description": "Envie d’une table aux teintes chaleureuses qui s’agrandit pour les repas entre amis ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique effet métal rouille mat à un pied central en placage chêne . Les nuances cuivrées du plateau font écho au veinage du bois, tandis que la base en métal noir souligne le contraste entre les matières. Au quotidien, son format de 150 ",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-150x90-diam150-cm-pivotante-effet-metal-rouille-mat-lag-td150a_c07",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td150a_c07__ps_02.jpg?v=1794268887",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961341886804",
+      "store": "zago",
+      "title": "Table céramique LAGOS 150x90 (Diam150)cm pivotante Pandora brillant",
+      "description": "Et si votre table captait la lumière le jour et s’ouvrait en grand pour vos dîners entre amis ? Issue de la gamme Cérenne , la table de repas LAGOS associe un plateau en céramique Pandora brillant à un pied central en placage chêne . La finition brillante révèle les nuances du décor Pandora au fil de la journée, tandis que le veinage du chêne apporte une touche chaleureuse. Fermée, la table mesure",
+      "category": "table_repas",
+      "rawCategory": "Meubles meublants> Tables> Tables repas",
+      "price": 2349,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-ceramique-lagos-150x90-diam150-cm-pivotante-pandora-brillant-lag-td150a_c08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/lag-td150a_c08__ps_02.jpg?v=1794268879",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables repas"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961341854036",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante noir mat effet métal",
+      "description": "Comment garder un salon aéré tout en ayant assez de place pour poser les verres quand vous recevez ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique noir mat effet métal à une structure en métal noir finition époxy. Les deux hauteurs dessinent une silhouette graphique, que la finition mate adoucit. En position fermée, les plateaux se superposent et occupe",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-noir-mat-effet-metal-zaf-tb70_c01",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c01__ps_02.jpg?v=1794268877",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961341821268",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante effet bois mat",
+      "description": "Envie d’une table basse qui libère de la place au quotidien et s’agrandit à l’heure de l’apéritif ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique effet bois mat à une structure en métal noir. Le décor bois apporte de la chaleur au salon, tandis que les deux plateaux, placés à des hauteurs différentes, donnent du relief à l’ensemble. En position fermée, ",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-effet-bois-mat-zaf-tb70_c00",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c00__ps_02.jpg?v=1794268877",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961341788500",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante marbre blanc mat",
+      "description": "Et si votre table basse faisait de la place pour un apéritif sans encombrer le salon le reste du temps ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique effet marbre blanc mat à une structure en métal noir finition époxy. Le décor marbré apporte de la lumière au salon, tandis que la base noire souligne les lignes arrondies des plateaux. En position fermée",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-marbre-blanc-mat-zaf-tb70_c02",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c02__ps_02.jpg?v=1794268878",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961340510548",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante effet métal rouille mat",
+      "description": "Et si vous pouviez agrandir votre table basse le temps d’un apéritif, puis retrouver un salon aéré ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique effet métal rouille mat à une structure en métal noir finition époxy. Les nuances cuivrées du décor réchauffent le salon, tandis que le piètement noir souligne les courbes des plateaux. En position fermée, le",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-effet-metal-rouille-mat-zaf-tb70_c07",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c07__ps_02.jpg?v=1794268866",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961340477780",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante Carrara or brillant",
+      "description": "Vous aimez recevoir au salon et garder de la place pour circuler le reste du temps ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique Carrara or brillant à une structure en métal noir finition époxy. La lumière fait ressortir les nuances dorées du décor marbré, tandis que la structure noire souligne les lignes arrondies de la table. En position fermée, les",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-carrara-or-brillant-zaf-tb70_c05",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c05__ps_02.jpg?v=1794268867",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961340445012",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante Pandora brillant",
+      "description": "Vous cherchez une table basse qui capte la lumière et s’agrandit quand vous recevez ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique Pandora brillant à une structure en métal noir finition époxy. Les reflets de la finition brillante révèlent les nuances du décor Pandora, tandis que le piètement noir souligne les courbes des plateaux. En position fermée, ",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-pandora-brillant-zaf-tb70_c08",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c08__ps_02.jpg?v=1794268866",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "zago-15961340412244",
+      "store": "zago",
+      "title": "Table basse céramique ZAFORA 70cm + 50cm pivotante gris fantasy brillant",
+      "description": "Un café en solo ou un apéritif entre amis ? Et si votre table basse s’adaptait aux deux ? Issue de la gamme Cérenne , la table basse ZAFORA associe deux plateaux ronds en céramique gris Fantasy brillant à une structure en métal noir finition époxy. Les reflets de la finition brillante mettent en valeur les nuances du gris, tandis que le piètement noir souligne les courbes des plateaux. En position",
+      "category": "table_basse",
+      "rawCategory": "Meubles meublants> Tables> Tables basses",
+      "price": 989,
+      "currency": "EUR",
+      "url": "https://www.zago-store.com/products/table-basse-ceramique-zafora-70cm-50cm-pivotante-gris-fantasy-brillant-zaf-tb70_c09",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/zaf-tb70_c09__ps_02.jpg?v=1794268867",
+      "brand": "ZAGO STORE",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Meubles meublants",
+        "Tables",
+        "Tables basses"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "zago-15938953281876",
       "store": "zago",
@@ -3564,30 +4070,6 @@
       "source": "feed"
     },
     {
-      "id": "zago-11740404744532",
-      "store": "zago",
-      "title": "Table de jardin carrée 80cm pied central métal beige OPUS",
-      "description": "Optez pour la praticité et la longévité avec cette table de jardin carrée de 80x80cm . De la collection Opus, cette table au pied central a un design qui fera sensation dans votre extérieur. Cette table de jardin est fabriquée dans un métal solide et résistant à la rouille, ce qui garantit sa durabilité et sa stabilité. Elle dispose d'un simple plateau carré en métal et s'insère dans tous les styl",
-      "category": "table_repas",
-      "rawCategory": "Meubles meublants > Tables > Tables repas",
-      "price": 379,
-      "currency": "EUR",
-      "url": "https://www.zago-store.com/products/table-repas-carre-outdoor-80cm-pied-central-metal-beige-opus-21706",
-      "imageUrl": "https://cdn.shopify.com/s/files/1/0842/6186/3764/files/false_2b6df4e5-874a-41b5-8a99-57195d24c2b3.jpg?v=1734539452",
-      "brand": "ZAGO STORE",
-      "colors": [],
-      "materials": [],
-      "styles": [
-        "Famiroot",
-        "Meubles meublants",
-        "OPUS",
-        "Tables"
-      ],
-      "dimensionsCm": null,
-      "availability": "in stock",
-      "source": "feed"
-    },
-    {
       "id": "zago-11739287978324",
       "store": "zago",
       "title": "Table repas 110cm avec allonge chêne noir",
@@ -3608,7 +4090,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3704,7 +4186,7 @@
         "Meubles et déco bohème chic"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -3896,7 +4378,7 @@
         "POLKA"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -4040,7 +4522,7 @@
         "SEMA"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -4592,7 +5074,7 @@
         "SORI"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -7760,7 +8242,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -11359,7 +11841,7 @@
         "GALA"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -17620,7 +18102,7 @@
         "Famiroot"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -17692,7 +18174,7 @@
         "exclu CCHEZVOUS1"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -18604,7 +19086,7 @@
         "Chaises repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -19492,7 +19974,7 @@
         "Famiroot"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -19924,7 +20406,7 @@
         "Tapis"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22060,7 +22542,7 @@
         "Tables basses"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22372,7 +22854,7 @@
         "Tapis"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
