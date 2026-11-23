@@ -1,6 +1,6 @@
 {
   "store": "zago",
-  "updatedAt": "2026-11-16T13:12:25.230Z",
+  "updatedAt": "2026-11-23T14:40:46.429Z",
   "feedType": "shopify",
   "products": [
     {
@@ -4066,7 +4066,7 @@
         "Tabourets hauts"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -4090,7 +4090,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {
@@ -7114,7 +7114,7 @@
         "Chaises repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -9370,7 +9370,7 @@
         "Poufs"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -11841,7 +11841,7 @@
         "GALA"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -12199,7 +12199,7 @@
         "POPY"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -12775,7 +12775,7 @@
         "Tables repas"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -16950,7 +16950,7 @@
         "NEBRASKA"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -17214,7 +17214,7 @@
         "Fauteuils - Canapes"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
@@ -22542,7 +22542,7 @@
         "Tables basses"
       ],
       "dimensionsCm": null,
-      "availability": "out of stock",
+      "availability": "in stock",
       "source": "feed"
     },
     {

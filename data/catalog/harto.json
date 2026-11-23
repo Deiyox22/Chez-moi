@@ -1,8 +1,50 @@
 {
   "store": "harto",
-  "updatedAt": "2026-11-16T12:23:59.209Z",
+  "updatedAt": "2026-11-23T13:58:47.095Z",
   "feedType": "shopify",
   "products": [
+    {
+      "id": "harto-12108510920968",
+      "store": "harto",
+      "title": "Portemanteau Fernand, frêne naturel/corail épicé",
+      "description": "Portemanteau Fernand en frêne naturel et corail épicé : anneaux sculpturaux signés AdriAn Blanc, alliant élégance et fonctionnalité dans l'entrée.",
+      "category": "",
+      "rawCategory": "DÉCORATION",
+      "price": 395,
+      "currency": "EUR",
+      "url": "https://harto.fr/products/portemanteau-fernand-frene-naturel-corail-epice",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/12010723620_FERNAND_PORTE-MANTEAUX_FRENE_NATURELCORAIL_EPICE_PACKSHOT_1.png?v=1795010787",
+      "brand": "Hartô",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Fernand"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
+    {
+      "id": "harto-9502837899528",
+      "store": "harto",
+      "title": "Portemanteau Fernand, frêne naturel/noir",
+      "description": "Le portemanteau Fernand en frêne naturel, avec ses anneaux sculpturaux noirs, allie élégance et fonctionnalité dans un esprit très graphique.",
+      "category": "",
+      "rawCategory": "DÉCORATION",
+      "price": 395,
+      "currency": "EUR",
+      "url": "https://harto.fr/products/fernand-portemanteau-frene-noir",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0885/9231/8728/files/getpubthumb_976c0985-77bb-4529-999e-218a4d8a0a2d.png?v=1730852091",
+      "brand": "Hartô",
+      "colors": [],
+      "materials": [],
+      "styles": [
+        "Fernand"
+      ],
+      "dimensionsCm": null,
+      "availability": "in stock",
+      "source": "feed"
+    },
     {
       "id": "harto-9502803362056",
       "store": "harto",
@@ -1492,7 +1534,7 @@
         "Eugénie"
       ],
       "dimensionsCm": null,
-      "availability": "in stock",
+      "availability": "out of stock",
       "source": "feed"
     },
     {
